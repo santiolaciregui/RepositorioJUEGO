@@ -15,4 +15,39 @@ public abstract class GameObject{
 		this.pos= new Point(x, y);
 		imagen= new ImageIcon();
 	}
+
+	public void setVida(int vida) {
+		this.vida = vida;
+	}
+
+
+	public Point getPos() {
+		return pos;
+	}
+
+	public void setPos(Point pos) {
+		this.pos = pos;
+	}
+
+	public int getPuntosDeMuerte() {
+		return puntosDeMuerte;
+	}
+
+	public void setPuntosDeMuerte(int puntosDeMuerte) {
+		this.puntosDeMuerte = puntosDeMuerte;
+	}
+
+	public void disminuirVida(int dano ) {
+		vida-=dano;
+		if(vida<0)
+			vida=0;
+	}
+	
+	public void aumentarVida(int vida ) {
+		this.vida+=vida;
+		if(vida>100)
+			vida=100;
+	}
+	
+	
 }

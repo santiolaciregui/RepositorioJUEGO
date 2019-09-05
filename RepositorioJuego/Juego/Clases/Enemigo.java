@@ -7,6 +7,8 @@ public class Enemigo extends GameObject{
 	
 	public Enemigo(int x, int y) {
 		super(x,y);
+		altura=70;
+		ancho=40;
 	}
 
 }
