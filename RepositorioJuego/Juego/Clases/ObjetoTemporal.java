@@ -2,8 +2,8 @@ package Clases;
 
 public class ObjetoTemporal extends GameObject {
 
-	public ObjetoTemporal(int v, int d, int a) {
-		super(v, d, a);
+	public ObjetoTemporal(int x, int y) {
+		super(x,y);
 	}
 
 }

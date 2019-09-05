@@ -2,8 +2,8 @@ package Clases;
 
 public class ObjetoConVida extends GameObject {
 
-	public ObjetoConVida(int v, int d, int a) {
-		super(v, d, a);
+	public ObjetoConVida(int x, int y) {
+		super(x,y);
 	}
 
 }

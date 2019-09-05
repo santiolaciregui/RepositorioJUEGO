@@ -1,10 +1,13 @@
 package Aliados;
+import javax.swing.ImageIcon;
+
 import Clases.Aliado;
 
 public class Maggie extends Aliado {
 
-	public Maggie(int v, int d, int a) {
-		super(v, d, a);
+	public Maggie(int x, int y) {
+		super(x,y);
+		imagen= new ImageIcon(this.getClass().getResource("/Sprites/Aliados/abuelo.png"));
 	}
 
 }
