@@ -7,7 +7,7 @@ public class Bart extends Aliado {
 
 	public Bart(int x, int y) {
 		super(x,y);
-		imagen= new ImageIcon(this.getClass().getResource("/Sprites/Aliados/abuelo.png"));
+		imagen= new ImageIcon(this.getClass().getResource("RepositorioJuego/Sprites/Aliados/abuelo.png"));
 	}
 
 }
