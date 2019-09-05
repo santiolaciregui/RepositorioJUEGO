@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\Agus\Google Drive\(2SC) TDP - Tecnologia de Programación\+Proyecto\RepositorioJuego\RepositorioJUEGO\RepositorioJuego\.metadata\.plugins\org.eclipse.jdt.core
