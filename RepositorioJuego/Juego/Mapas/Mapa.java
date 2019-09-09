@@ -9,6 +9,7 @@ public abstract class Mapa {
 	protected LinkedList<GameObject> entidades;
 	protected int cantEnemigos, cantObstaculos, cantKamikazes;
 	protected Juego juego;
+	protected int vida;
 	
 	protected Mapa(Juego j) {
 		juego=j;
