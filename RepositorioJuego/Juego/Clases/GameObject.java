@@ -14,15 +14,12 @@ public abstract class GameObject{
 	public GameObject(int x, int y) {
 		this.pos= new Point(x, y);
 		imagen= new ImageIcon();
+		altura=70;
+		ancho=40;
 	}
 
 	public void setVida(int vida) {
 		this.vida = vida;
-	}
-
-
-	public Point getPos() {
-		return pos;
 	}
 
 	public void setPos(Point pos) {

@@ -9,7 +9,6 @@ public class Homero extends Aliado {
 		super(x,y);
 		imagen= new ImageIcon(this.getClass().getResource("/Sprites/Aliados/abuelo.png"));
 		vida=2000;
-		int vi;
 		
 	}
 
