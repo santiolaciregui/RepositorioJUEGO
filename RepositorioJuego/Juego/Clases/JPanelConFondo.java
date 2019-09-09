@@ -1,5 +1,6 @@
 package Clases;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -8,11 +9,23 @@ import javax.swing.JPanel;
 
 public class JPanelConFondo extends JPanel {
 
-	private Image imagen = new ImageIcon(this.getClass().getResource("/Imagenes/menuFondo.png")).getImage();
-	
+	private Image img;
+	public JPanelConFondo(String img) {
+		this(new ImageIcon(img).getImage());
+	}
+	public JPanelConFondo(Image img) {
+		this.img = img;
+		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
+		setPreferredSize(size);
+		setMinimumSize(size);
+		setMaximumSize(size);
+		setSize(size);
+		setLayout(null);
+	}
+
 	public void paint(Graphics g) {
-		 g.drawImage(imagen, 0, 0, getWidth(), getHeight(),this);
-	     setOpaque(false);
-	     super.paint(g);
+		g.drawImage(img, 0, 0, getWidth(), getHeight(),this);
+		setOpaque(false);
+		super.paint(g);
 	}
 }

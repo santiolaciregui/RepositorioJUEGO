@@ -3,6 +3,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PruebaGUI extends JFrame{
 	
@@ -11,13 +13,14 @@ public class PruebaGUI extends JFrame{
 	private JButton jugar;
 	private JButton salir;
 	private JPanel contentPane;
+	private JPanel panelDelMapa;
 
 	
 	public PruebaGUI() {
 		
-		contentPane = new JPanelConFondo();
+		contentPane = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/menuFondo.png")).getImage());
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(null);
+		contentPane.setLayout(new GridLayout(2,2,2,2));
 		setTitle(titulo);
 		setSize(size);
 		setResizable(false);
@@ -40,6 +43,7 @@ public class PruebaGUI extends JFrame{
 	private void inicializarJugar() {
 		ImageIcon icono = new ImageIcon(this.getClass().getResource("/Imagenes/jugar.png"));
 		jugar = new JButton("Jugar ",icono);
+		jugar.addActionListener(new OyenteJugar());
 		jugar.setForeground(Color.BLACK);
 		jugar.setFont(new java.awt.Font("Tahoma", 1, 18));
 		jugar.setBounds(1, 5, 120, 25);
@@ -57,7 +61,16 @@ public class PruebaGUI extends JFrame{
 		contentPane.add(salir);
 	}
 	
+	private class OyenteJugar implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			panelDelMapa = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/menuFondo.png")).getImage());
+			contentPane.add(panelDelMapa);
+			System.out.println("asdsadsadas");
+		}
+	}
+	
 	public static void main (String [] args) {
 		PruebaGUI p = new PruebaGUI();		
 	}
+	
 }
