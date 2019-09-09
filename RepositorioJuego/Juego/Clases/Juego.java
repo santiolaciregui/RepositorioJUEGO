@@ -27,7 +27,6 @@ public class Juego {
 	
 	public void iniciarEntidades() {
 		entidades= this.mapa.crearEntidades();
-		
 		for(GameObject e: entidades) {
 			gui.add(e.getGrafico());
 			e.setJuego(this);

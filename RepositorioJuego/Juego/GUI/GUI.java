@@ -12,10 +12,7 @@ public class GUI extends JFrame{
 	public static Dimension size = new Dimension(1244,407);
 	private JPanel contentPane;
 	
-
-	
 	public GUI() {
-		
 		contentPane = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/fondo.png")).getImage());
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new GridLayout(2,2,2,2));
@@ -26,7 +23,6 @@ public class GUI extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(contentPane);
 		init();
-		
 	}
 	
 	public void init() {
@@ -36,7 +32,7 @@ public class GUI extends JFrame{
 	}
 	
 	public static void main (String [] args) {
-		GUI p = new GUI();		
+		GUI p = new GUI();
 	}
 	
 }
