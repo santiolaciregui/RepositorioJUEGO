@@ -9,11 +9,11 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
-	public static Dimension size = new Dimension(1244,407);
+	public static Dimension size = new Dimension(1400,700);
 	private JPanel contentPane;
 	
 	public GUI() {
-		contentPane = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/fondo.png")).getImage());
+		contentPane = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/estas-aqui-inicio-3d-comunidad-simpsons.jpg")).getImage());
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new GridLayout(2,2,2,2));
 		setTitle(titulo);
