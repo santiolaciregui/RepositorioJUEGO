@@ -3,6 +3,7 @@ package Clases;
 import java.awt.Point;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public abstract class GameObject{
 	protected int vida, dano;
@@ -10,6 +11,8 @@ public abstract class GameObject{
 	protected int altura, ancho;
 	protected int puntosDeMuerte;
 	protected Icon imagen;
+	protected JLabel grafico;
+	protected Juego juego;
 
 	public GameObject(int x, int y) {
 		this.pos= new Point(x, y);
@@ -44,6 +47,25 @@ public abstract class GameObject{
 		this.vida+=vida;
 		if(vida>100)
 			vida=100;
+	}
+	
+	public void setJuego(Juego j) {
+		juego=j;
+	}
+	
+	protected void actualizarGrafico(){
+		if(this.grafico != null){
+			this.grafico.setIcon(this.imagen);
+			this.grafico.setBounds(this.pos.x, this.pos.y, ancho, altura);
+		}
+	}
+	
+	public JLabel getGrafico(){
+		if(this.grafico == null){
+			this.grafico = new JLabel(imagen);
+			this.grafico.setBounds(this.pos.x, this.pos.y, ancho, altura);
+		}
+		return this.grafico;
 	}
 	
 	

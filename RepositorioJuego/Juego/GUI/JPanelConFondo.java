@@ -1,4 +1,4 @@
-package Clases;
+package GUI;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
