@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
-	public static Dimension size = new Dimension(1400,700);
+	public static Dimension size = new Dimension(2496,1172);
 	private JPanel contentPane;
 	
 	public GUI() {
