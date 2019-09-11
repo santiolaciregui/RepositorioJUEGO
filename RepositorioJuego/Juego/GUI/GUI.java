@@ -20,7 +20,7 @@ public class GUI extends JFrame{
 	private JButton homero, marge, lisa, bart, maggie,krtusty;
 	
 	public GUI() {
-		contentPane = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/estas-aqui-inicio-3d-comunidad-simpsons.jpg")).getImage());
+		contentPane = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/FondoConGrilla.png")).getImage());
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new GridLayout(2,2,2,2));
 		setTitle(titulo);
@@ -64,7 +64,7 @@ public class GUI extends JFrame{
 		@Override
 		public void mouseClicked(MouseEvent evt) {
 			homer= new JLabel();
-			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ataquegif.gif")));
+			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
 			homer.setBounds(100,400+200, 500, 400);
 			homer.setLocation(evt.getX(), evt.getY());
 			System.out.println("cree una imagen");
@@ -104,7 +104,7 @@ public class GUI extends JFrame{
 			@Override
 			public void mouseClicked(MouseEvent evt) {
 				krusty= new JLabel();
-				krusty.setIcon(new ImageIcon(getClass().getResource("/Imagenes/payaso.gif")));
+				krusty.setIcon(new ImageIcon(getClass().getResource("/Imagenes/PremioKrusty.gif")));
 				krusty.setBounds(100,400, 100, 100);
 				krusty.setLocation(evt.getX(), evt.getY()+200);
 				krusty.setVisible(true);
