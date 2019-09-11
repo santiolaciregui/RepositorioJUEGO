@@ -36,8 +36,8 @@ public class GUI extends JFrame{
 	}
 	
 	public void iniciarBotones() {
-		homero=  new JButton();
-		krtusty= new JButton();
+		homero=  new JButton("homero");
+		krtusty= new JButton("krusty");
 //		marge=  new JButton();
 //		bart=  new JButton();
 //		lisa=  new JButton();
@@ -65,7 +65,7 @@ public class GUI extends JFrame{
 		public void mouseClicked(MouseEvent evt) {
 			homer= new JLabel();
 			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ataquegif.gif")));
-			homer.setBounds(100,400+100, 500, 400);
+			homer.setBounds(100,400+200, 500, 400);
 			homer.setLocation(evt.getX(), evt.getY());
 			System.out.println("cree una imagen");
 			homer.setVisible(true);
