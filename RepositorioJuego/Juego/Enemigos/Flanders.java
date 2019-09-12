@@ -8,7 +8,7 @@ public class Flanders extends Enemigo {
 
 	public Flanders(int x, int y) {
 		super(x,y);
-		imagen= new ImageIcon(this.getClass().getResource("/Sprites/Aliados/abuelo.png"));
+		setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
 	}
 
 }

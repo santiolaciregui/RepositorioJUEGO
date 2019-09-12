@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import Clases.Juego;
+import Enemigos.Flanders;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,6 +13,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.plaf.basic.BasicButtonUI;
+
+import Aliados.Homero;
+
 import java.awt.event.MouseMotionListener;
 
 public class GUI extends JFrame{
@@ -20,9 +24,7 @@ public class GUI extends JFrame{
 	public static Dimension size = new Dimension(1250, 660);
 	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
-	private JLabel homer,krusty;
-	private JLabel puntaje;
-	private JButton botonHomero, botonMarge, botonLisa, botonBart, botonAbuelo, boton [];
+	private JButton botonHomero, botonMarge, botonLisa, botonBart, botonAbuelo,jugar;
 	
 	public GUI() {
 		
@@ -39,7 +41,9 @@ public class GUI extends JFrame{
 		setResizable(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		oyenteHomero oyente= new oyenteHomero();
 		botonHomero.addMouseListener(new oyenteHomero());
+		
 	}
 	private void iniciarContentPane() {
 		contentPane = new JPanel();
@@ -62,11 +66,14 @@ public class GUI extends JFrame{
 	
 	private void iniciarPanelGrilla() {
 		panelGrilla = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/FondoConGrilla.png")).getImage());
-		panelGrilla.setLayout(new FlowLayout());
+		panelGrilla.setLayout(null);
 		contentPane.add(panelGrilla);
 	}
 	
+	
 	public void iniciarBotones() {
+		jugar= new JButton("Jugar");
+		jugar.setFont(new Font("Century Gothic",25, 20));
 		botonHomero =  new RoundButton(54);
 		botonMarge =  new RoundButton(54);
 		botonBart =  new RoundButton(54);
@@ -82,52 +89,49 @@ public class GUI extends JFrame{
 		panelAbajo.add(botonBart);
 		panelAbajo.add(botonLisa);
 		panelAbajo.add(botonAbuelo);
+		panelArriba.add(jugar);
+		jugar.setVisible(true);
 		
+		jugar.addActionListener(new oyentejugar());
 		repaint();
+	}
+	
+	private class oyentejugar implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			Flanders flan= new Flanders(550,-44);
+			flan.setBounds(600, 170,115 , 108);
+			jugar.setVisible(false);
+			panelGrilla.add(flan);
+			flan.setVisible(true);
+			repaint();
+		}
 	}
 		
 	private class oyenteHomero implements MouseListener{
-
-		@Override
 		public void mouseClicked(MouseEvent e) {
-			homer= new JLabel();
-			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
-			homer.setLocation(e.getLocationOnScreen());
-			panelGrilla.add(homer);
-			homer.setVisible(true);
-			repaint();
 		}
 
 		@Override
 		public void mousePressed(MouseEvent e) {
-			homer= new JLabel();
-			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
-			homer.setLocation(e.getLocationOnScreen());
-			panelGrilla.add(homer);
-			homer.setVisible(true);
-			repaint();
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			homer= new JLabel();
-			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
-			homer.setLocation(e.getLocationOnScreen());
-			panelGrilla.add(homer);
-			homer.setVisible(true);
-			repaint();
-			
+			Homero homero= new Homero(21,56);
+			if(homero.obtenercant()<3)
+				homero.parar();
+			else
+				if(homero.obtenercant()<6)
+					homero.atacar();
+			homero.setLocation(e.getXOnScreen()-200, e.getYOnScreen()-235);
+			panelGrilla.add(homero);
+			homero.setVisible(true);
+			repaint();	
 		}
 
 		@Override
 		public void mouseEntered(MouseEvent e) {
-			homer= new JLabel();
-			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
-			homer.setLocation(e.getLocationOnScreen());
-			panelGrilla.add(homer);
-			homer.setVisible(true);
-			repaint();
-			
+
 		}
 
 		@Override
@@ -136,6 +140,8 @@ public class GUI extends JFrame{
 			
 		}
 	}
+	
+	
 
 	public static void main (String [] args) {
 		GUI p = new GUI();

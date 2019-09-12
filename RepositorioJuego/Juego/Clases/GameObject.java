@@ -5,7 +5,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public abstract class GameObject{
+public abstract class GameObject extends JLabel{
 	protected int vida, dano;
 	protected Point posicion;
 	protected int altura, ancho;
