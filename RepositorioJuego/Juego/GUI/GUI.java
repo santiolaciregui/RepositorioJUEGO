@@ -39,7 +39,7 @@ public class GUI extends JFrame{
 		setResizable(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		botonHomero.addMouseMotionListener(new oyenteHomero());
+		botonHomero.addMouseListener(new oyenteHomero());
 	}
 	private void iniciarContentPane() {
 		contentPane = new JPanel();
@@ -62,7 +62,7 @@ public class GUI extends JFrame{
 	
 	private void iniciarPanelGrilla() {
 		panelGrilla = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/FondoConGrilla.png")).getImage());
-		panelGrilla.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+		panelGrilla.setLayout(new FlowLayout());
 		contentPane.add(panelGrilla);
 	}
 	
@@ -72,7 +72,6 @@ public class GUI extends JFrame{
 		botonBart =  new RoundButton(54);
 		botonLisa =  new RoundButton(54);
 		botonAbuelo =  new RoundButton(54);
-		botonHomero.setBounds(1, 3, 40, 40);
 		botonAbuelo.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoAbuelo.png")));
 		botonHomero.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoHomero.png")));
 		botonMarge.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoMarge.png")));
@@ -87,34 +86,55 @@ public class GUI extends JFrame{
 		repaint();
 	}
 		
-	private class oyenteHomero implements MouseMotionListener{
+	private class oyenteHomero implements MouseListener{
+
 		@Override
-		public void mouseDragged(MouseEvent e) {
-			int x=0;
-			int y=0;
-			moviendoListener(e,x,y);
+		public void mouseClicked(MouseEvent e) {
 			homer= new JLabel();
 			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
+			homer.setLocation(e.getLocationOnScreen());
 			panelGrilla.add(homer);
-			homer.setLocation(x-(homer.getWidth() / 2),y - (homer.getHeight() / 2));
 			homer.setVisible(true);
+			repaint();
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			homer= new JLabel();
+			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
+			homer.setLocation(e.getLocationOnScreen());
+			panelGrilla.add(homer);
+			homer.setVisible(true);
+			repaint();
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			homer= new JLabel();
+			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
+			homer.setLocation(e.getLocationOnScreen());
+			panelGrilla.add(homer);
+			homer.setVisible(true);
+			repaint();
 			
 		}
+
 		@Override
-		public void mouseMoved(MouseEvent e) {
+		public void mouseEntered(MouseEvent e) {
+			homer= new JLabel();
+			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
+			homer.setLocation(e.getLocationOnScreen());
+			panelGrilla.add(homer);
+			homer.setVisible(true);
+			repaint();
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
 			// TODO Auto-generated method stub
 			
 		}
-		
-		private void moviendoListener(MouseEvent evt, int x, int y) {
-//			homer.setVisible(true);
-			repaint();
-			x=evt.getX();
-			y=evt.getY();
-					
-	        
-	        System.out.println(evt.getX()+", "+evt.getY());
-	    }
 	}
 
 	public static void main (String [] args) {
