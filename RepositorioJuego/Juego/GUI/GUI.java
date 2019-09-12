@@ -99,8 +99,6 @@ public class GUI extends JFrame{
 			homer.setLocation(x-(homer.getWidth() / 2),y - (homer.getHeight() / 2));
 			homer.setVisible(true);
 			
-			
-			
 		}
 		@Override
 		public void mouseMoved(MouseEvent e) {
