@@ -2,7 +2,7 @@ package Clases;
 
 import javax.swing.ImageIcon;
 
-public class Aliado extends GameObject {
+public class Aliado extends GameObject{
 	protected int monedas;
 
 	public Aliado(int x, int y) {

@@ -4,141 +4,121 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import Clases.Juego;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.event.MouseMotionListener;
 
 public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
-	public static Dimension size = new Dimension(2496,1172);
-	private JPanel contentPane;
+	public static Dimension size = new Dimension(1250, 660);
+	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
+	private Juego juego;
 	private JLabel homer,krusty;
-	private JButton homero, marge, lisa, bart, maggie,krtusty;
+	private JLabel puntaje;
+	private JButton botonHomero, botonMarge, botonLisa, botonBart, botonAbuelo, boton [];
 	
 	public GUI() {
-		contentPane = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/FondoConGrilla.png")).getImage());
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new GridLayout(2,2,2,2));
+		
+		iniciarContentPane();
+		iniciarPanelArriba();
+		iniciarPanelGrilla();
+		iniciarPanelAbajo();
+		iniciarBotones();
+
+		
+		setVisible(true);
 		setTitle(titulo);
 		setSize(size);
 		setResizable(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setContentPane(contentPane);
-		init();
-		iniciarBotones();
-		homero.addMouseListener(new oyenteHomero());
-		krtusty.addMouseListener(new oyenteKrus());
+		botonHomero.addMouseMotionListener(new oyenteHomero());
+	}
+	private void iniciarContentPane() {
+		contentPane = new JPanel();
+		contentPane.setSize(size);
+		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+		this.setContentPane(contentPane);
+	}
+	
+	private void iniciarPanelArriba() {
+		panelArriba = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/PanelArriba.png")).getImage());
+		panelArriba.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+		contentPane.add(panelArriba);
+	}
+	
+	private void iniciarPanelAbajo() {
+		panelAbajo = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/PanelAbajo.png")).getImage());
+		panelAbajo.setLayout(new FlowLayout());
+		contentPane.add(panelAbajo);
+	}
+	
+	private void iniciarPanelGrilla() {
+		panelGrilla = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/FondoConGrilla.png")).getImage());
+		panelGrilla.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+		contentPane.add(panelGrilla);
 	}
 	
 	public void iniciarBotones() {
-		homero=  new JButton("homero");
-		krtusty= new JButton("krusty");
-//		marge=  new JButton();
-//		bart=  new JButton();
-//		lisa=  new JButton();
-//		maggie=  new JButton();
+		botonHomero =  new RoundButton(54);
+		botonMarge =  new RoundButton(54);
+		botonBart =  new RoundButton(54);
+		botonLisa =  new RoundButton(54);
+		botonAbuelo =  new RoundButton(54);
+		botonHomero.setBounds(1, 3, 40, 40);
+		botonAbuelo.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoAbuelo.png")));
+		botonHomero.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoHomero.png")));
+		botonMarge.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoMarge.png")));
+		botonBart.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoBart.png")));
+		botonLisa.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoLisa.png")));		
+		panelAbajo.add(botonHomero);
+		panelAbajo.add(botonMarge);
+		panelAbajo.add(botonBart);
+		panelAbajo.add(botonLisa);
+		panelAbajo.add(botonAbuelo);
 		
-//		contentPane.add(marge);
-//		contentPane.add(lisa);
-//		contentPane.add(maggie);
-//		contentPane.add(bart);
-		krtusty.setSize(54, 23);
-		homero.setSize(54, 12);
-		contentPane.add(krtusty);
-		contentPane.add(homero);
 		repaint();
 	}
-	
-	public void init() {
-		setLayout(new GridLayout(15,1,0,0));
-		setVisible(true);
-
-	}		
-	private class oyenteHomero implements MouseListener{
 		
+	private class oyenteHomero implements MouseMotionListener{
 		@Override
-		public void mouseClicked(MouseEvent evt) {
+		public void mouseDragged(MouseEvent e) {
+			int x=0;
+			int y=0;
+			moviendoListener(e,x,y);
 			homer= new JLabel();
-			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
-			homer.setBounds(100,400+200, 500, 400);
-			homer.setLocation(evt.getX(), evt.getY());
-			System.out.println("cree una imagen");
+			homer.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
+			panelGrilla.add(homer);
+			homer.setLocation(x-(homer.getWidth() / 2),y - (homer.getHeight() / 2));
 			homer.setVisible(true);
-			contentPane.add(homer);
+			
+			
+			
+		}
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		private void moviendoListener(MouseEvent evt, int x, int y) {
+//			homer.setVisible(true);
 			repaint();
-			
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+			x=evt.getX();
+			y=evt.getY();
+					
+	        
+	        System.out.println(evt.getX()+", "+evt.getY());
+	    }
 	}
 
-		private class oyenteKrus implements MouseListener{
-			
-			@Override
-			public void mouseClicked(MouseEvent evt) {
-				krusty= new JLabel();
-				krusty.setIcon(new ImageIcon(getClass().getResource("/Imagenes/PremioKrusty.gif")));
-				krusty.setBounds(100,400, 100, 100);
-				krusty.setLocation(evt.getX(), evt.getY()+200);
-				krusty.setVisible(true);
-				contentPane.add(krusty);
-				repaint();
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-
-	}
 	public static void main (String [] args) {
 		GUI p = new GUI();
 	}

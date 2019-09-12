@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 
 public abstract class GameObject{
 	protected int vida, dano;
-	protected Point pos;
+	protected Point posicion;
 	protected int altura, ancho;
 	protected int puntosDeMuerte;
 	protected Icon imagen;
@@ -15,7 +15,7 @@ public abstract class GameObject{
 	protected Juego juego;
 
 	public GameObject(int x, int y) {
-		this.pos= new Point(x, y);
+		this.posicion= new Point(x, y);
 		imagen= new ImageIcon();
 		altura=70;
 		ancho=40;
@@ -26,7 +26,7 @@ public abstract class GameObject{
 	}
 
 	public void setPos(Point pos) {
-		this.pos = pos;
+		this.posicion = pos;
 	}
 
 	public int getPuntosDeMuerte() {
@@ -56,14 +56,14 @@ public abstract class GameObject{
 	protected void actualizarGrafico(){
 		if(this.grafico != null){
 			this.grafico.setIcon(this.imagen);
-			this.grafico.setBounds(this.pos.x, this.pos.y, ancho, altura);
+			this.grafico.setBounds(this.posicion.x, this.posicion.y, ancho, altura);
 		}
 	}
 	
 	public JLabel getGrafico(){
 		if(this.grafico == null){
 			this.grafico = new JLabel(imagen);
-			this.grafico.setBounds(this.pos.x, this.pos.y, ancho, altura);
+			this.grafico.setBounds(this.posicion.x, this.posicion.y, ancho, altura);
 		}
 		return this.grafico;
 	}

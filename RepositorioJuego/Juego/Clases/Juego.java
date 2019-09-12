@@ -14,7 +14,6 @@ public class Juego {
 	private Mapa mapa;
 	
 	public Juego(GUI gui) {
-		
 		this.mapa=new Mapa1(this);
 		this.gui=gui; 
 		iniciarJugador();

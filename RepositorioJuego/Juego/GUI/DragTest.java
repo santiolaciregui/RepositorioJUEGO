@@ -63,6 +63,10 @@ class MyButton extends JButton implements MouseMotionListener{
 
 	public void mouseDragged(MouseEvent mme) {
 
+	}
+
+	public void mouseMoved(MouseEvent mme) {
+
 		setLocation(
 
 				this.getX() + mme.getX() - this.getWidth() / 2,
@@ -70,9 +74,6 @@ class MyButton extends JButton implements MouseMotionListener{
 				this.getY() + mme.getY() - this.getHeight() / 2
 
 				);
-
 	}
-
-	public void mouseMoved(MouseEvent mme) {}
 
 }
