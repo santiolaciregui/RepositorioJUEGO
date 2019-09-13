@@ -8,14 +8,17 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class JPanelConFondo extends JPanel {
-
 	private Image img;
+	private int ma;
+	
 	public JPanelConFondo(String img) {
 		this(new ImageIcon(img).getImage());
+		
 	}
+	
 	public JPanelConFondo(Image img) {
 		this.img = img;
-		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
+		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null)+10);
 		setPreferredSize(size);
 		setMinimumSize(size);
 		setMaximumSize(size);
