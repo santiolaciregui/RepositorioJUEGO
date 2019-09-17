@@ -32,6 +32,7 @@ public class GUI extends JFrame{
 		iniciarPanelArriba();
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
+		
 		iniciarBotones();
 		
 
@@ -69,6 +70,7 @@ public class GUI extends JFrame{
 		panelGrilla.setLayout(null);
 		contentPane.add(panelGrilla);
 		
+		
 	}
 	
 	
@@ -100,7 +102,7 @@ public class GUI extends JFrame{
 	private class oyentejugar implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			Flanders flan= new Flanders(550,-44);
-			flan.setBounds(600, 170,115 , 108);
+			flan.setBounds(800, 0,115 , 108);
 			jugar.setVisible(false);
 			panelGrilla.add(flan);
 			flan.setVisible(true);
@@ -124,9 +126,10 @@ public class GUI extends JFrame{
 			else
 				if(homero.obtenercant()<6)
 					homero.atacar();
-			homero.setLocation(e.getXOnScreen()-100, e.getYOnScreen()-335);
+			homero.setLocation(e.getXOnScreen()-200, e.getYOnScreen()-400);
 			panelGrilla.add(homero);
-			homero.setFocusable(true);
+			panelGrilla.moveToFront(homero);
+			panelArriba.moveToFront(homero);
 			homero.setVisible(true);
 			repaint();	
 		}

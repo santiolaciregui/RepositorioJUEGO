@@ -7,7 +7,7 @@ import Clases.GameObject;
 
 public abstract class Mapa {
 	protected LinkedList<GameObject> entidades;
-	protected int cantEnemigos, cantObstaculos, cantKamikazes;
+	protected int cantEnemigos, cantObstaculos;
 	protected Juego juego;
 	protected int vida;
 	

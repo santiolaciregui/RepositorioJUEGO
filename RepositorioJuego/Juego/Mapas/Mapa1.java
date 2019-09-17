@@ -10,6 +10,8 @@ public class Mapa1 extends Mapa {
 	public Mapa1(Juego j) {
 		super(j);
 		vida=5;
+		cantEnemigos=4;
+		
 	}
 
 	@Override
