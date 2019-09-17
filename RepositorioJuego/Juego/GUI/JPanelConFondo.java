@@ -5,9 +5,10 @@ import java.awt.Graphics;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-public class JPanelConFondo extends JPanel {
+public class JPanelConFondo extends JLayeredPane {
 	private Image img;
 	private int ma;
 	

@@ -22,7 +22,7 @@ public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
 	public static Dimension size = new Dimension(1250, 660);
-	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
+	private JLayeredPane panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	private JButton botonHomero, botonMarge, botonLisa, botonBart, botonAbuelo,jugar;
 	
@@ -33,8 +33,8 @@ public class GUI extends JFrame{
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
 		iniciarBotones();
-
 		
+
 		setVisible(true);
 		setTitle(titulo);
 		setSize(size);
@@ -46,7 +46,7 @@ public class GUI extends JFrame{
 		
 	}
 	private void iniciarContentPane() {
-		contentPane = new JPanel();
+		contentPane = new JLayeredPane();
 		contentPane.setSize(size);
 		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
 		this.setContentPane(contentPane);
@@ -68,6 +68,7 @@ public class GUI extends JFrame{
 		panelGrilla = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/FondoConGrilla.png")).getImage());
 		panelGrilla.setLayout(null);
 		contentPane.add(panelGrilla);
+		
 	}
 	
 	
@@ -123,8 +124,9 @@ public class GUI extends JFrame{
 			else
 				if(homero.obtenercant()<6)
 					homero.atacar();
-			homero.setLocation(e.getXOnScreen()-200, e.getYOnScreen()-235);
+			homero.setLocation(e.getXOnScreen()-100, e.getYOnScreen()-335);
 			panelGrilla.add(homero);
+			homero.setFocusable(true);
 			homero.setVisible(true);
 			repaint();	
 		}
