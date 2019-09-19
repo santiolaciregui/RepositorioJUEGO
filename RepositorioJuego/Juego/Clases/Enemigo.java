@@ -11,4 +11,16 @@ public class Enemigo extends GameObject{
 		ancho=40;
 	}
 
+	@Override
+	public void atacar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void parar() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

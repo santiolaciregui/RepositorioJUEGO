@@ -10,13 +10,10 @@ public abstract class GameObject extends JLabel{
 	protected Point posicion;
 	protected int altura, ancho;
 	protected int puntosDeMuerte;
-	protected Icon imagen;
-	protected JLabel grafico;
 	protected Juego juego;
 
 	public GameObject(int x, int y) {
 		this.posicion= new Point(x, y);
-		imagen= new ImageIcon();
 		altura=70;
 		ancho=40;
 	}
@@ -53,20 +50,8 @@ public abstract class GameObject extends JLabel{
 		juego=j;
 	}
 	
-	protected void actualizarGrafico(){
-		if(this.grafico != null){
-			this.grafico.setIcon(this.imagen);
-			this.grafico.setBounds(this.posicion.x, this.posicion.y, ancho, altura);
-		}
-	}
-	
-	public JLabel getGrafico(){
-		if(this.grafico == null){
-			this.grafico = new JLabel(imagen);
-			this.grafico.setBounds(this.posicion.x, this.posicion.y, ancho, altura);
-		}
-		return this.grafico;
-	}
+	public abstract void atacar();
+	public abstract void parar();
 	
 	
 }

@@ -8,7 +8,15 @@ import Clases.Aliado;
 public class Abuelo extends Aliado {
 	public Abuelo(int x, int y) {
 		super(x,y);
-		imagen= new ImageIcon(this.getClass().getResource("oooo/Sprites/Aliados/abuelo.png"));
+		vida=2000;
+		setBounds(21, 56,115 , 108);
 	}
-
+	
+	public void atacar() {
+		setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
+	}
+	
+	public void parar() {
+		setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloParado.png")));
+	}
 }
