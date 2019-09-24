@@ -64,7 +64,7 @@ public class GUI extends JFrame{
 	}
 	
 	private void iniciarPanelArriba() {
-		panelArriba = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/PanelArriba.png")).getImage());
+		panelArriba = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/PanelArribaoriginal.png")).getImage());
 		panelArriba.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
 		contentPane.add(panelArriba);
 	}
@@ -76,7 +76,7 @@ public class GUI extends JFrame{
 	}
 	
 	private void iniciarPanelGrilla() {
-		panelGrilla = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/FondoConGrilla.png")).getImage());
+		panelGrilla = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/FondoConGrillaoriginal.png")).getImage());
 		panelGrilla.setLayout(null);
 		contentPane.add(panelGrilla);
 		panelGrilla.addMouseListener(new oyenteAgregarEntidad());
@@ -144,6 +144,7 @@ public class GUI extends JFrame{
 				int x=e.getX();
 				int y=e.getY();
 				proximoAagregar.setBounds(x-50,y-100, 95, 105);
+				System.out.println(y);
 				juego.agregarEntidad(proximoAagregar);
 				proximoAagregar=null;
 				repaint();
