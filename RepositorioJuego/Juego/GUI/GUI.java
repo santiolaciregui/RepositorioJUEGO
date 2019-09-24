@@ -31,7 +31,7 @@ public class GUI extends JFrame{
 	private JLayeredPane panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	protected GameObject proximoAagregar;
-	private JButton botonHomero, botonMarge, botonLisa, botonBart, botonAbuelo,jugar;
+	private JButton botonHomero, botonMarge, botonLisa, botonBart, botonAbuelo, jugar, eliminar;
 	
 	public GUI() {
 		
@@ -53,9 +53,9 @@ public class GUI extends JFrame{
 		botonMarge.addMouseListener(new oyenteMarge());
 		botonBart.addMouseListener(new oyenteBart());
 		botonLisa.addMouseListener(new oyenteLisa());
-		botonAbuelo.addMouseListener(new oyenteAbuelo());
-		
+		botonAbuelo.addMouseListener(new oyenteAbuelo());	
 	}
+	
 	private void iniciarContentPane() {
 		contentPane = new JLayeredPane();
 		contentPane.setSize(size);
@@ -81,11 +81,12 @@ public class GUI extends JFrame{
 		contentPane.add(panelGrilla);
 		panelGrilla.addMouseListener(new oyenteAgregarEntidad());
 	}
-	
-	
+		
 	public void iniciarBotones() {
 		jugar= new JButton("Jugar");
 		jugar.setFont(new Font("Century Gothic",25, 20));
+		eliminar = new JButton("Eliminar");
+		eliminar.setFont(new Font("Century Gothic",25, 20));
 		botonHomero =  new RoundButton(54);
 		botonMarge =  new RoundButton(54);
 		botonBart =  new RoundButton(54);
@@ -102,8 +103,10 @@ public class GUI extends JFrame{
 		panelAbajo.add(botonLisa);
 		panelAbajo.add(botonAbuelo);
 		panelArriba.add(jugar);
+		panelArriba.add(eliminar);
 		jugar.setVisible(true);
 		
+		eliminar.addActionListener(new oyenteEliminar());
 		jugar.addActionListener(new oyentejugar());
 		repaint();
 	}
@@ -113,7 +116,13 @@ public class GUI extends JFrame{
 		nuevo.setLocation(nuevo.getBounds().getLocation());
 		repaint();
 	}
-	private class oyentejugar implements ActionListener{
+	private class oyenteEliminar implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			panelGrilla.removeAll();
+			repaint();
+		}
+	}
+	private class oyentejugar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Flanders flan= new Flanders(550,-44);
 			flan.setBounds(800, 0,115 , 108);
