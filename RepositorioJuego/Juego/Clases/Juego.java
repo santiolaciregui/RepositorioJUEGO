@@ -22,11 +22,56 @@ public class Juego {
 	
 	public void agregarEntidad(GameObject nuevo) {
 		if(!hayColisiones(nuevo)) {
-			gui.agregarAliado(nuevo);
+			ubicacionDefinitiva(nuevo);
+			gui.agregarObject(nuevo);
 			entidades.addLast(nuevo);
-			System.out.println(entidades.size());
+			System.out.println(nuevo.getBounds().getX()+50 +"       " + nuevo.getBounds().getY());
 		}
 	}
+	
+	private void ubicacionDefinitiva(GameObject nuevo) {
+		int pos= (int) nuevo.getBounds().getY();
+		Rectangle aux= nuevo.getBounds();
+		if(pos>=-90 && pos<-65)
+			nuevo.setBounds(aux.x, -65, aux.width, aux.height);
+		else
+		if(pos>=-65 && pos<-32)
+			nuevo.setBounds(aux.x, -65, aux.width, aux.height);
+		else
+			if(pos>=-32 && pos<=5)
+				nuevo.setBounds(aux.x, 3, aux.width, aux.height);
+			else
+				if(pos>5 && pos<40)
+					nuevo.setBounds(aux.x, 38, aux.width, aux.height);
+				else
+					if(pos>=40 && pos<=72)
+						nuevo.setBounds(aux.x, 69, aux.width, aux.height);
+					else
+						if(pos>72 && pos<110)
+							nuevo.setBounds(aux.x, 105, aux.width, aux.height);
+			
+		
+		
+	}
+	
+	public void eliminarEntidad(GameObject aEliminar) {
+		puntaje+=aEliminar.puntosDeMuerte;
+		entidades.remove(buscarEntidad(aEliminar));
+		gui.eliminarEnemigo(aEliminar);
+		System.out.println(puntaje);
+	}
+	
+	private int buscarEntidad(GameObject elem) {
+		int index=0;
+		Iterator<GameObject> it = entidades.iterator();
+		GameObject aux= it.hasNext()? it.next() : null;
+		while(aux!=null && aux!=elem) {
+			index++;
+			aux= it.next();
+		}
+		return index;
+	}
+	
 	
 	public boolean hayColisiones(GameObject nuevo) {
 		boolean hayColision=false;
@@ -40,14 +85,17 @@ public class Juego {
 	}
 	
 	private boolean verificarColision(GameObject aux,GameObject nuevo) {
-		boolean colision=false;
-		Rectangle r1= new Rectangle(aux.getBounds().width-50, aux.getBounds().height-50);
-		Rectangle r2= new Rectangle(nuevo.getBounds().width, nuevo.getBounds().height);
-		if(r1.intersects(r2))
-			colision=true;
-		return colision;
+		Rectangle r1= aux.getBounds();r1.height=40;r1.width=70;
+		Rectangle r2= nuevo.getBounds(); r2.height=40; r2.width=70;
+		return r1.intersects(r2);
 			
 	}
+	
+//	public void actualizarGrafico() {
+//		for(GameObject e : entidades) {
+//			if(e.getLocation().)
+//		}
+//	}
 	
 //	public void verificarMapa() {
 //		if(entidades.size()==0) {

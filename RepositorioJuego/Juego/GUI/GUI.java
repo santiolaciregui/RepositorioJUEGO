@@ -30,7 +30,7 @@ public class GUI extends JFrame{
 	public static Dimension size = new Dimension(1250, 660);
 	private JLayeredPane panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
-	protected GameObject proximoAagregar;
+	protected GameObject proximoAagregar, proximoAeliminar;
 	private JButton botonHomero, botonMarge, botonLisa, botonBart, botonAbuelo, jugar, eliminar;
 	
 	public GUI() {
@@ -110,26 +110,29 @@ public class GUI extends JFrame{
 		jugar.addActionListener(new oyentejugar());
 		repaint();
 	}
-	
-	public void agregarAliado(GameObject nuevo) {
+		
+	public void agregarObject(GameObject nuevo) {
 		panelGrilla.add(nuevo);
 		nuevo.setLocation(nuevo.getBounds().getLocation());
 		repaint();
 	}
+	
+	public void eliminarEnemigo(GameObject aEliminar) {
+		panelGrilla.remove(aEliminar);
+	}
+	
+	
 	private class oyenteEliminar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			panelGrilla.removeAll();
+			juego.eliminarEntidad(proximoAeliminar);
 			repaint();
 		}
 	}
 	private class oyentejugar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Flanders flan= new Flanders(550,-44);
-			flan.setBounds(800, 0,115 , 108);
-			jugar.setVisible(false);
-			panelGrilla.add(flan);
-			flan.setVisible(true);
-			repaint();
+			proximoAagregar=flan;
+			proximoAeliminar=flan;
 		}
 	}
 		
@@ -140,13 +143,11 @@ public class GUI extends JFrame{
 			if(proximoAagregar!=null) {
 				int x=e.getX();
 				int y=e.getY();
-				proximoAagregar.setBounds(x,y, 113, 100);
+				proximoAagregar.setBounds(x-50,y-100, 95, 105);
 				juego.agregarEntidad(proximoAagregar);
 				proximoAagregar=null;
 				repaint();
-			}
-				
-			
+			}	
 		}
 
 		@Override
@@ -177,7 +178,7 @@ public class GUI extends JFrame{
 	private class oyenteHomero implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
 			Aliado homero= new Homero(21,56);
-			homero.parar();
+			homero.atacar();
 			proximoAagregar=homero;
 		}
 
@@ -213,15 +214,8 @@ public class GUI extends JFrame{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado marge= new Marge(21,56);
-			if(marge.obtenercant()<3)
-				marge.parar();
-			else
-				if(marge.obtenercant()<6)
-					marge.atacar();
-			int x=e.getXOnScreen()-200;
-			int y=e.getYOnScreen()-400;
-			System.out.println(x+"  :  "+y);
-//			juego.agregarEntidad(marge, x, y);
+			marge.parar();
+			proximoAagregar=marge;
 		}
 
 		@Override
@@ -248,15 +242,8 @@ public class GUI extends JFrame{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado bart= new Bart(21,56);
-			if(bart.obtenercant()<3)
-				bart.parar();
-			else
-				if(bart.obtenercant()<6)
-					bart.atacar();
-			int x=e.getXOnScreen()-200;
-			int y=e.getYOnScreen()-400;
-			System.out.println(x+"  :  "+y);
-//			juego.agregarEntidad(bart, x, y);
+			bart.parar();
+			proximoAagregar=bart;
 		}
 
 		@Override
@@ -283,15 +270,8 @@ public class GUI extends JFrame{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado lisa= new Lisa(21,56);
-			if(lisa.obtenercant()<3)
-				lisa.parar();
-			else
-				if(lisa.obtenercant()<6)
-					lisa.atacar();
-			int x=e.getXOnScreen()-200;
-			int y=e.getYOnScreen()-400;
-			System.out.println(x+"  :  "+y);
-//			juego.agregarEntidad(lisa, x, y);
+			lisa.parar();
+			proximoAagregar=lisa;
 		}
 
 		@Override
@@ -318,15 +298,8 @@ public class GUI extends JFrame{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado abuelo= new Abuelo(21,56);
-			if(abuelo.obtenercant()<3)
-				abuelo.parar();
-			else
-				if(abuelo.obtenercant()<6)
-					abuelo.atacar();
-			int x=e.getXOnScreen()-200;
-			int y=e.getYOnScreen()-400;
-			System.out.println(x+"  :  "+y);
-//			juego.agregarEntidad(abuelo, x, y);
+			abuelo.parar();
+			proximoAagregar=abuelo;
 		}
 
 		@Override
@@ -347,5 +320,7 @@ public class GUI extends JFrame{
 	public static void main (String [] args) {
 		GUI p = new GUI();
 	}
+
+	
 
 }
