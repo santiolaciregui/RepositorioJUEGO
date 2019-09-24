@@ -12,8 +12,6 @@ public class Aliado extends GameObject{
 
 	public Aliado(int x, int y) {
 		super(x,y);
-		altura=70;
-		ancho=40;
 		Random r=  new Random();
 		cant=r.nextInt(10);
 		
