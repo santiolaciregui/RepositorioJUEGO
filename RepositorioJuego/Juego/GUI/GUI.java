@@ -124,7 +124,7 @@ public class GUI extends JFrame{
 	
 	private class oyenteEliminar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			juego.eliminarEntidad(proximoAeliminar);
+			juego.eliminarEntidad();
 			repaint();
 		}
 	}
@@ -132,7 +132,6 @@ public class GUI extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			Flanders flan= new Flanders(550,-44);
 			proximoAagregar=flan;
-			proximoAeliminar=flan;
 		}
 	}
 		
@@ -215,7 +214,7 @@ public class GUI extends JFrame{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado marge= new Marge(21,56);
-			marge.parar();
+			marge.atacar();
 			proximoAagregar=marge;
 		}
 
@@ -243,7 +242,7 @@ public class GUI extends JFrame{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado bart= new Bart(21,56);
-			bart.parar();
+			bart.atacar();
 			proximoAagregar=bart;
 		}
 
@@ -271,7 +270,7 @@ public class GUI extends JFrame{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado lisa= new Lisa(21,56);
-			lisa.parar();
+			lisa.atacar();
 			proximoAagregar=lisa;
 		}
 
@@ -299,7 +298,7 @@ public class GUI extends JFrame{
 		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado abuelo= new Abuelo(21,56);
-			abuelo.parar();
+			abuelo.atacar();
 			proximoAagregar=abuelo;
 		}
 

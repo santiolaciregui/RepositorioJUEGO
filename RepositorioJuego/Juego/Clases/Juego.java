@@ -8,7 +8,7 @@ import Mapas.Mapa;
 import Mapas.Mapa1;
 
 public class Juego {
-	private LinkedList<GameObject> entidades;
+	private LinkedList<GameObject> entidades, entidadesAeliminar;
 	private GUI gui;
 	private int puntaje=0;
 	private int kills=0;
@@ -18,6 +18,7 @@ public class Juego {
 		this.mapa=new Mapa1(this);
 		this.gui=gui; 
 		entidades= new LinkedList<GameObject>();
+		entidadesAeliminar = new LinkedList<GameObject>();
 	}
 	
 	public void agregarEntidad(GameObject nuevo) {
@@ -25,41 +26,49 @@ public class Juego {
 			ubicacionDefinitiva(nuevo);
 			gui.agregarObject(nuevo);
 			entidades.addLast(nuevo);
-			System.out.println(nuevo.getBounds().getX()+50 +"       " + nuevo.getBounds().getY());
+			if(nuevo instanceof Enemigo)
+				entidadesAeliminar.addLast(nuevo);
+//			System.out.println(nuevo.getBounds().getX()+50 +"       " + nuevo.getBounds().getY());
 		}
 	}
 	
 	private void ubicacionDefinitiva(GameObject nuevo) {
 		int pos= (int) nuevo.getBounds().getY();
 		Rectangle aux= nuevo.getBounds();
-		if(pos>=145 && pos<185)
-			nuevo.setBounds(aux.x, 180, aux.width, aux.height);
+		if(pos>=85 && pos<115)
+			nuevo.setBounds(aux.x, 110, aux.width, aux.height);
 		else
-			if(pos>=185 && pos<=225)
-				nuevo.setBounds(aux.x, 215, aux.width, aux.height);
+			if(pos>=117 && pos<=146)
+				nuevo.setBounds(aux.x, 142, aux.width, aux.height);
 			else
-				if(pos>225 && pos<265)
-					nuevo.setBounds(aux.x, 245, aux.width, aux.height);
+				if(pos>150 && pos<182)
+					nuevo.setBounds(aux.x, 178, aux.width, aux.height);
 				else
-					if(pos>=265 && pos<=305)
-						nuevo.setBounds(aux.x, 285, aux.width, aux.height);
+					if(pos>=182 && pos<=215)
+						nuevo.setBounds(aux.x, 210, aux.width, aux.height);
 					else
-						if(pos>305 && pos<345)
-							nuevo.setBounds(aux.x, 325, aux.width, aux.height);
-
-
-
+						if(pos>218 && pos<245)
+							nuevo.setBounds(aux.x, 240, aux.width, aux.height);
+						else
+							if(pos>=248 && pos<=278)
+								nuevo.setBounds(aux.x, 274, aux.width, aux.height);
+							else
+								if(pos>281 && pos<306)
+									nuevo.setBounds(aux.x, 304, aux.width, aux.height);
 	}
 	
-	public void eliminarEntidad(GameObject aEliminar) {
-		puntaje+=aEliminar.puntosDeMuerte;
-		entidades.remove(buscarEntidad(aEliminar));
-		gui.eliminarEnemigo(aEliminar);
-		System.out.println(puntaje);
+	public void eliminarEntidad() {
+		GameObject aEliminar= entidadesAeliminar.isEmpty()? null: entidadesAeliminar.getFirst();
+		if(aEliminar!=null) {
+			puntaje+=aEliminar.puntosDeMuerte;
+			entidadesAeliminar.remove();
+			gui.eliminarEnemigo(aEliminar);
+		}
+//		System.out.println(puntaje);
 	}
 	
 	private boolean fueraDeGrilla(GameObject elem) {
-		return elem.getBounds().y< 175;
+		return elem.getBounds().y< 85;
 	}
 	
 	private int buscarEntidad(GameObject elem) {
