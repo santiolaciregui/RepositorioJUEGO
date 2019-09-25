@@ -26,7 +26,7 @@ public class Juego {
 			ubicacionDefinitiva(nuevo);
 			gui.agregarObject(nuevo);
 			entidades.addLast(nuevo);
-			if(nuevo instanceof Enemigo)
+
 				entidadesAeliminar.addLast(nuevo);
 //			System.out.println(nuevo.getBounds().getX()+50 +"       " + nuevo.getBounds().getY());
 		}
@@ -58,9 +58,9 @@ public class Juego {
 	}
 	
 	public void eliminarEntidad() {
-		GameObject aEliminar= entidadesAeliminar.isEmpty()? null: entidadesAeliminar.getFirst();
-		if(aEliminar!=null) {
-			puntaje+=aEliminar.puntosDeMuerte;
+		GameObject aEliminar = entidadesAeliminar.isEmpty()? null: entidadesAeliminar.getFirst();
+		if(aEliminar != null) {
+			puntaje += aEliminar.puntosDeMuerte;
 			entidadesAeliminar.remove();
 			gui.eliminarEnemigo(aEliminar);
 		}

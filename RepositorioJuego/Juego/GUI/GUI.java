@@ -55,6 +55,9 @@ public class GUI extends JFrame{
 		botonBart.addMouseListener(new oyenteBart());
 		botonLisa.addMouseListener(new oyenteLisa());
 		botonAbuelo.addMouseListener(new oyenteAbuelo());	
+		
+		
+		
 		etiquetaPuntaje = new JLabel("PUNTAJE:");
 		etiquetaPuntaje.setForeground(Color.WHITE);
 		etiquetaPuntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
@@ -126,7 +129,21 @@ public class GUI extends JFrame{
 		panelGrilla.remove(aEliminar);
 	}
 	
-	
+	void misterio() {
+		Thread t = new Thread(new Runnable() {
+			public void run() {
+				try {
+					for (int z = 0; z < 100; z++) {
+						etiquetaPuntaje.setLocation((etiquetaPuntaje.getLocationOnScreen().x+100), etiquetaPuntaje.getLocationOnScreen().y+100);
+						Thread.sleep(1000);
+					}
+				} catch (Exception ae) {
+					
+				}
+			}
+	});
+		t.start();
+	}
 	private class oyenteEliminar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			juego.eliminarEntidad();
