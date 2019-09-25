@@ -9,7 +9,7 @@ public class Abuelo extends Aliado {
 	public Abuelo(int x, int y) {
 		super(x,y);
 		vida=2000;
-		setBounds(21, 56,115 , 108);
+		setBounds(21, 56,170 , 160);
 	}
 	
 	public void atacar() {

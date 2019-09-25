@@ -136,187 +136,83 @@ public class GUI extends JFrame{
 	}
 		
 	private class oyenteAgregarEntidad implements MouseListener{
-
-		@Override
 		public void mouseClicked(MouseEvent e) {
 			if(proximoAagregar!=null) {
 				int x=e.getX();
 				int y=e.getY();
-				proximoAagregar.setBounds(x-50,y-100, 95, 105);
+				proximoAagregar.setBounds(x-50,y-100, 127, 120);
 				System.out.println(y);
 				juego.agregarEntidad(proximoAagregar);
 				proximoAagregar=null;
 				repaint();
 			}	
 		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
+		public void mousePressed(MouseEvent e) {}
+		public void mouseReleased(MouseEvent e) {}
+		public void mouseEntered(MouseEvent e) {}
+		public void mouseExited(MouseEvent e) {}
 	}
+	
 	private class oyenteHomero implements MouseListener{
-		public void mouseClicked(MouseEvent e) {
+		public void mouseReleased(MouseEvent e) {
 			Aliado homero= new Homero(21,56);
 			homero.atacar();
 			proximoAagregar=homero;
 		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			
- 		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseClicked(MouseEvent e) {}
+		public void mousePressed(MouseEvent e) {}
+		public void mouseEntered(MouseEvent e) {}
+		public void mouseExited(MouseEvent e) {}
 	}
 	
 	private class oyenteMarge implements MouseListener{
-		public void mouseClicked(MouseEvent e) {
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-		}
-
-		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado marge= new Marge(21,56);
 			marge.atacar();
 			proximoAagregar=marge;
 		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseClicked(MouseEvent e) {}
+		public void mousePressed(MouseEvent e) {}
+		public void mouseEntered(MouseEvent e) {}
+		public void mouseExited(MouseEvent e) {}
 	}
 	
-	
 	private class oyenteBart implements MouseListener{
-		public void mouseClicked(MouseEvent e) {
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-		}
-
-		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado bart= new Bart(21,56);
 			bart.atacar();
 			proximoAagregar=bart;
 		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseClicked(MouseEvent e) {}
+		public void mousePressed(MouseEvent e) {}
+		public void mouseEntered(MouseEvent e) {}
+		public void mouseExited(MouseEvent e) {}
 	}
 	
-	
 	private class oyenteLisa implements MouseListener{
-		public void mouseClicked(MouseEvent e) {
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-		}
-
-		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado lisa= new Lisa(21,56);
 			lisa.atacar();
 			proximoAagregar=lisa;
 		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseClicked(MouseEvent e) {}
+		public void mousePressed(MouseEvent e) {}
+		public void mouseEntered(MouseEvent e) {}
+		public void mouseExited(MouseEvent e) {}
 	}
 	
-	
 	private class oyenteAbuelo implements MouseListener{
-		public void mouseClicked(MouseEvent e) {
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-		}
-
-		@Override
 		public void mouseReleased(MouseEvent e) {
 			Aliado abuelo= new Abuelo(21,56);
 			abuelo.atacar();
 			proximoAagregar=abuelo;
 		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void mouseClicked(MouseEvent e) {}
+		public void mousePressed(MouseEvent e) {}
+		public void mouseEntered(MouseEvent e) {}
+		public void mouseExited(MouseEvent e) {}
 	}
 	
-	
-	
-
 	public static void main (String [] args) {
 		GUI p = new GUI();
 	}

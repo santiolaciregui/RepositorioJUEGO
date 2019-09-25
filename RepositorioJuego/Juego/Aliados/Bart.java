@@ -12,7 +12,7 @@ public class Bart extends Aliado {
 	}
 
 	public void atacar() {
-		setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtaqueGif.gif")));
+		setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
 	}
 	
 	public void parar() {
