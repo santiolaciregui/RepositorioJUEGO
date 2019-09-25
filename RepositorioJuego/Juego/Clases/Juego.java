@@ -10,8 +10,8 @@ import Mapas.Mapa1;
 public class Juego {
 	private LinkedList<GameObject> entidades, entidadesAeliminar;
 	private GUI gui;
-	private int puntaje=0;
-	private int kills=0;
+	private int puntaje = 0;
+	private int kills = 0;
 	private Mapa mapa;
 	
 	public Juego(GUI gui) {
@@ -64,7 +64,6 @@ public class Juego {
 			entidadesAeliminar.remove();
 			gui.eliminarEnemigo(aEliminar);
 		}
-//		System.out.println(puntaje);
 	}
 	
 	private boolean fueraDeGrilla(GameObject elem) {
@@ -101,6 +100,9 @@ public class Juego {
 			
 	}
 	
+	public int getPuntaje() {
+		return puntaje;
+	}
 //	public void actualizarGrafico() {
 //		for(GameObject e : entidades) {
 //			if(e.getLocation().)

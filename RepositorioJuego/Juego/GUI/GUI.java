@@ -32,6 +32,7 @@ public class GUI extends JFrame{
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;
 	private JButton botonHomero, botonMarge, botonLisa, botonBart, botonAbuelo, jugar, eliminar;
+	private JLabel etiquetaPuntaje;
 	
 	public GUI() {
 		
@@ -54,6 +55,10 @@ public class GUI extends JFrame{
 		botonBart.addMouseListener(new oyenteBart());
 		botonLisa.addMouseListener(new oyenteLisa());
 		botonAbuelo.addMouseListener(new oyenteAbuelo());	
+		etiquetaPuntaje = new JLabel("PUNTAJE:");
+		etiquetaPuntaje.setForeground(Color.WHITE);
+		etiquetaPuntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
+		panelArriba.add(etiquetaPuntaje);
 	}
 	
 	private void iniciarContentPane() {
@@ -125,6 +130,7 @@ public class GUI extends JFrame{
 	private class oyenteEliminar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			juego.eliminarEntidad();
+			etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje());
 			repaint();
 		}
 	}
