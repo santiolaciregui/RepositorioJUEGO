@@ -1,5 +1,7 @@
 package Clases;
 
+import javax.swing.ImageIcon;
+
 import Inteligencias.InteligenciaEnemigo;
 
 public class Enemigo extends GameObject{
@@ -8,7 +10,11 @@ public class Enemigo extends GameObject{
 	
 	public Enemigo(int x, int y) {
 		super(x,y);
-		inteligencia= new InteligenciaEnemigo(this);
+//		inteligencia= new InteligenciaEnemigo(this);
+		vida=100;
+		dano=10;
+		setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
+		
 	}
 
 	@Override

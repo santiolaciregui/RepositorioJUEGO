@@ -16,18 +16,27 @@ public class Juego {
 	
 	public Juego(GUI gui) {
 		this.mapa=new Mapa1(this);
-		this.gui=gui; 
+		this.gui=gui;
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar = new LinkedList<GameObject>();
+		iniciarEntidades();
 	}
 	
+	
+	public void iniciarEntidades() {
+		entidades= this.mapa.crearEntidades();
+		entidadesAeliminar= new LinkedList<GameObject>();
+		for(GameObject e: entidades) {
+			e.setJuego(this);
+			agregarEntidad(e);
+		}
+	}
 	public void agregarEntidad(GameObject nuevo) {
 		if(!hayColisiones(nuevo) && !fueraDeGrilla(nuevo)) {
 			ubicacionDefinitiva(nuevo);
 			gui.agregarObject(nuevo);
 			entidades.addLast(nuevo);
-
-				entidadesAeliminar.addLast(nuevo);
+			entidadesAeliminar.addLast(nuevo);
 //			System.out.println(nuevo.getBounds().getX()+50 +"       " + nuevo.getBounds().getY());
 		}
 	}
@@ -100,18 +109,17 @@ public class Juego {
 			
 	}
 	
+	public void aumentarPuntaje(int p) {
+		puntaje=p;
+	}
+	
 	public int getPuntaje() {
 		return puntaje;
 	}
-//	public void actualizarGrafico() {
-//		for(GameObject e : entidades) {
-//			if(e.getLocation().)
-//		}
-//	}
 	
-//	public void verificarMapa() {
-//		if(entidades.size()==0) {
-//			mapa.mapaSiguiente();
-//		}
-//	}
+	public void verificarMapa() {
+		if(entidades.size()==0) {
+			mapa.mapaSiguiente();
+		}
+	}
 }
