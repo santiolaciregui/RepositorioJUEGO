@@ -104,7 +104,12 @@ public class GUI extends JFrame{
 		botonHomero.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoHomero.png")));
 		botonMarge.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoMarge.png")));
 		botonBart.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoBart.png")));
-		botonLisa.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoLisa.png")));		
+		botonLisa.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoLisa.png")));
+		botonHomero.setToolTipText(" ░▒▓ 𝗛𝗢𝗠𝗘𝗥𝗢 ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
+		botonMarge.setToolTipText(" ░▒▓ 𝗠𝗔𝗥𝗚𝗘  ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
+		botonBart.setToolTipText(" ░▒▓ 𝗕𝗔𝗥𝗧 ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
+		botonLisa.setToolTipText(" ░▒▓ 𝗟𝗜𝗦𝗔  ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
+		botonAbuelo.setToolTipText(" ░▒▓ 𝗔𝗕𝗨𝗘𝗟𝗢 ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
 		panelAbajo.add(botonHomero);
 		panelAbajo.add(botonMarge);
 		panelAbajo.add(botonBart);
@@ -113,7 +118,6 @@ public class GUI extends JFrame{
 		panelArriba.add(jugar);
 		panelArriba.add(eliminar);
 		jugar.setVisible(true);
-		
 		eliminar.addActionListener(new oyenteEliminar());
 		jugar.addActionListener(new oyentejugar());
 		repaint();
