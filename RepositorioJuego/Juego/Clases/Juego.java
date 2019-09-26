@@ -44,26 +44,28 @@ public class Juego {
 	private void ubicacionDefinitiva(GameObject nuevo) {
 		int pos= (int) nuevo.getBounds().getY();
 		Rectangle aux= nuevo.getBounds();
-		if(pos>=85 && pos<115)
-			nuevo.setBounds(aux.x, 110, aux.width, aux.height);
+		if(pos>=85 && pos<115) {
+			nuevo.setBounds(aux.x, 105, aux.width, aux.height);
+			System.out.println("jahahha");
+		}
 		else
 			if(pos>=117 && pos<=146)
-				nuevo.setBounds(aux.x, 142, aux.width, aux.height);
+				nuevo.setBounds(aux.x, 136, aux.width, aux.height);
 			else
 				if(pos>150 && pos<182)
-					nuevo.setBounds(aux.x, 178, aux.width, aux.height);
+					nuevo.setBounds(aux.x, 172, aux.width, aux.height);
 				else
 					if(pos>=182 && pos<=215)
-						nuevo.setBounds(aux.x, 210, aux.width, aux.height);
+						nuevo.setBounds(aux.x, 205, aux.width, aux.height);
 					else
 						if(pos>218 && pos<245)
-							nuevo.setBounds(aux.x, 240, aux.width, aux.height);
+							nuevo.setBounds(aux.x, 235, aux.width, aux.height);
 						else
 							if(pos>=248 && pos<=278)
-								nuevo.setBounds(aux.x, 274, aux.width, aux.height);
+								nuevo.setBounds(aux.x, 271, aux.width, aux.height);
 							else
 								if(pos>281 && pos<306)
-									nuevo.setBounds(aux.x, 304, aux.width, aux.height);
+									nuevo.setBounds(aux.x, 300, aux.width, aux.height);
 	}
 	
 	public void eliminarEntidad() {
@@ -122,4 +124,5 @@ public class Juego {
 			mapa.mapaSiguiente();
 		}
 	}
+	
 }

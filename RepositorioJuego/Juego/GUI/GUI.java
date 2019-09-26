@@ -135,6 +135,7 @@ public class GUI extends JFrame{
 					for (int z = 0; z < 100; z++) {
 						etiquetaPuntaje.setLocation((etiquetaPuntaje.getLocationOnScreen().x+100), etiquetaPuntaje.getLocationOnScreen().y+100);
 						Thread.sleep(1000);
+						
 					}
 				} catch (Exception ae) {
 					
@@ -162,8 +163,7 @@ public class GUI extends JFrame{
 			if(proximoAagregar!=null) {
 				int x=e.getX();
 				int y=e.getY();
-				proximoAagregar.setBounds(x-50,y-100, 127, 120);
-				System.out.println(y);
+				proximoAagregar.setBounds(x-50,y-100, proximoAagregar.getBounds().width, proximoAagregar.getBounds().height);
 				juego.agregarEntidad(proximoAagregar);
 				proximoAagregar=null;
 				repaint();
