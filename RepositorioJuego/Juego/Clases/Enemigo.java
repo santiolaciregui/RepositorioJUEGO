@@ -14,13 +14,15 @@ public class Enemigo extends GameObject{
 		vida=100;
 		dano=10;
 		setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
+		puntosDeMuerte=100;
+		
 		
 	}
 
 	@Override
 	public void atacar() {
 		// TODO Auto-generated method stub
-		
+		inteligencia.mover();
 	}
 
 	@Override

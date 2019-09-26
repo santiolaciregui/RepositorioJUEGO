@@ -28,7 +28,8 @@ public class Juego {
 		entidadesAeliminar= new LinkedList<GameObject>();
 		for(GameObject e: entidades) {
 			e.setJuego(this);
-			agregarEntidad(e);
+			ubicacionDefinitiva(e);
+			gui.agregarObject(e);
 		}
 	}
 	public void agregarEntidad(GameObject nuevo) {
@@ -36,7 +37,6 @@ public class Juego {
 			ubicacionDefinitiva(nuevo);
 			gui.agregarObject(nuevo);
 			entidades.addLast(nuevo);
-			entidadesAeliminar.addLast(nuevo);
 //			System.out.println(nuevo.getBounds().getX()+50 +"       " + nuevo.getBounds().getY());
 		}
 	}
@@ -44,10 +44,8 @@ public class Juego {
 	private void ubicacionDefinitiva(GameObject nuevo) {
 		int pos= (int) nuevo.getBounds().getY();
 		Rectangle aux= nuevo.getBounds();
-		if(pos>=85 && pos<115) {
+		if(pos>=85 && pos<115) 
 			nuevo.setBounds(aux.x, 105, aux.width, aux.height);
-			System.out.println("jahahha");
-		}
 		else
 			if(pos>=117 && pos<=146)
 				nuevo.setBounds(aux.x, 136, aux.width, aux.height);
@@ -69,10 +67,10 @@ public class Juego {
 	}
 	
 	public void eliminarEntidad() {
-		GameObject aEliminar = entidadesAeliminar.isEmpty()? null: entidadesAeliminar.getFirst();
+		GameObject aEliminar = entidades.isEmpty()? null: entidades.getFirst();
 		if(aEliminar != null) {
 			puntaje += aEliminar.puntosDeMuerte;
-			entidadesAeliminar.remove();
+			entidades.remove();
 			gui.eliminarEnemigo(aEliminar);
 		}
 	}

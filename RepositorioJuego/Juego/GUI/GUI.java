@@ -61,7 +61,8 @@ public class GUI extends JFrame{
 		etiquetaPuntaje = new JLabel("PUNTAJE:");
 		etiquetaPuntaje.setForeground(Color.WHITE);
 		etiquetaPuntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
-		panelArriba.add(etiquetaPuntaje);
+		panelAbajo.add(etiquetaPuntaje);
+//		misterio();
 	}
 	
 	private void iniciarContentPane() {
