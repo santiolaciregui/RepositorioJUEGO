@@ -6,7 +6,7 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 
-public class Aliado extends GameObject{
+public class Aliado extends GameObject implements MouseMotionListener{
 	protected int monedas;
 	protected int cant;
 
@@ -21,13 +21,20 @@ public class Aliado extends GameObject{
 		return cant;
 	}
 	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-		
+	public void atacar() {}
+
+	@Override
+	public void parar() {}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		setLocation(e.getX(), e.getY());
 	}
 
 	@Override
-	public void parar() {		
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

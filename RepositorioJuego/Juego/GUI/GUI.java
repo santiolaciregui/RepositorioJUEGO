@@ -61,7 +61,8 @@ public class GUI extends JFrame{
 		etiquetaPuntaje = new JLabel("PUNTAJE:");
 		etiquetaPuntaje.setForeground(Color.WHITE);
 		etiquetaPuntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
-		panelArriba.add(etiquetaPuntaje);
+		panelAbajo.add(etiquetaPuntaje);
+//		misterio();
 	}
 	
 	private void iniciarContentPane() {
@@ -105,11 +106,6 @@ public class GUI extends JFrame{
 		botonMarge.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoMarge.png")));
 		botonBart.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoBart.png")));
 		botonLisa.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoLisa.png")));
-		botonHomero.setToolTipText(" ░▒▓ 𝗛𝗢𝗠𝗘𝗥𝗢 ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
-		botonMarge.setToolTipText(" ░▒▓ 𝗠𝗔𝗥𝗚𝗘  ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
-		botonBart.setToolTipText(" ░▒▓ 𝗕𝗔𝗥𝗧 ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
-		botonLisa.setToolTipText(" ░▒▓ 𝗟𝗜𝗦𝗔  ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
-		botonAbuelo.setToolTipText(" ░▒▓ 𝗔𝗕𝗨𝗘𝗟𝗢 ▓▒░  PRECIO:200 | VIDA:1500 | DAÑO:400 ");
 		panelAbajo.add(botonHomero);
 		panelAbajo.add(botonMarge);
 		panelAbajo.add(botonBart);
@@ -140,6 +136,7 @@ public class GUI extends JFrame{
 					for (int z = 0; z < 100; z++) {
 						etiquetaPuntaje.setLocation((etiquetaPuntaje.getLocationOnScreen().x+100), etiquetaPuntaje.getLocationOnScreen().y+100);
 						Thread.sleep(1000);
+						
 					}
 				} catch (Exception ae) {
 					
@@ -167,8 +164,7 @@ public class GUI extends JFrame{
 			if(proximoAagregar!=null) {
 				int x=e.getX();
 				int y=e.getY();
-				proximoAagregar.setBounds(x-50,y-100, 127, 120);
-				System.out.println(y);
+				proximoAagregar.setBounds(x-50,y-100, proximoAagregar.getBounds().width, proximoAagregar.getBounds().height);
 				juego.agregarEntidad(proximoAagregar);
 				proximoAagregar=null;
 				repaint();
