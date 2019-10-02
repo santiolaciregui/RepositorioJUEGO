@@ -1,22 +1,36 @@
-package GUI;
+package Botones;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.geom.*;
 import javax.swing.*;
-public class RoundButton extends JButton {
-	public RoundButton(int tamBoton) {
+
+import Aliados.Bart;
+import Clases.Aliado;
+import Clases.GameObject;
+import Clases.Tienda;
+
+
+public abstract class RoundButton extends JButton {
+	protected Tienda tienda;
+	
+	public RoundButton() {
 		//These statements enlarge the button so that it 
 		//becomes a circle rather than an oval.
 		Dimension size = getPreferredSize();
-		size.width = size.height = Math.max(size.width+tamBoton, size.height+tamBoton);
+		size.width = size.height = Math.max(size.width+54, size.height+54);
 		setPreferredSize(size);
 		//This call causes the JButton not to paint 
 		//the background.
 		//This allows us to paint a round background.
 		setContentAreaFilled(false);
 		setLayout(new FlowLayout());
-		
 		setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoAbuelo.png")));
+		
+//		this.addActionListener(new oyenteBoton());
 	}
 	//Paint the round background and label.
 	protected void paintComponent(Graphics g) {
@@ -49,16 +63,15 @@ public class RoundButton extends JButton {
 		}
 		return shape.contains(x, y);
 	}
-	//Test routine.
-	public static void main(String[] args) {
-		//Create a button with the label "Jackpot".
-		JButton button = new RoundButton(100);
-		//Create a frame in which to show the button.
-		JFrame frame = new JFrame();
-		frame.getContentPane().setBackground(Color.yellow);
-		frame.getContentPane().add(button);
-		frame.getContentPane().setLayout(new FlowLayout());
-		frame.setSize(250, 250);
-		frame.setVisible(true);
-	}
+
+//	private class oyenteBoton implements ActionListener{
+//		public void actionPerformed(ActionEvent e) {
+//			// TODO Auto-generated method stub
+//			Aliado entidad= crear();
+//			tienda.aAgregar(entidad);	
+//		}
+//	}
+	
+	public abstract Aliado crear();
 }
+

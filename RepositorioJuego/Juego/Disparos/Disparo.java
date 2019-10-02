@@ -1,5 +1,6 @@
 package Disparos;
 
+import Clases.Enemigo;
 import Clases.GameObject;
 
 public abstract class Disparo extends GameObject {
@@ -10,5 +11,8 @@ public abstract class Disparo extends GameObject {
 		vida=1;
 		puntosDeMuerte=0;
 	}
+	
+
+	
 }
 	

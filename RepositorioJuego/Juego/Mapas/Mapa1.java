@@ -17,10 +17,11 @@ public class Mapa1 extends Mapa {
 	@Override
 	public LinkedList<GameObject> crearEntidades() {
 		entidades= new LinkedList<GameObject>();
-		int y=-20;
+		int y=85;
+		int x=1000;
 		for(int i=0;i<cantEnemigos;i++) {
 			Enemigo nuevo= new Enemigo(10,2);
-			nuevo.setBounds(1000, y+=40, 600, 300);
+			nuevo.label().setBounds(x-=50, y+=40, 110, 100);
 			entidades.addFirst(nuevo);
 		}
 		return entidades;

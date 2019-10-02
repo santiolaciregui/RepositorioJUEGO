@@ -1,10 +1,11 @@
-package Clases;
+package Obstaculos;
 
+import Clases.GameObject;
 import Visitadores.Visitor;
 
-public class ObjetoPrecioso extends GameObject {
+public class ObjetoTemporal extends GameObject {
 
-	public ObjetoPrecioso(int x, int y) {
+	public ObjetoTemporal(int x, int y) {
 		super(x,y);
 	}
 

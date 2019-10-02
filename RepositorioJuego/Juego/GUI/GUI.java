@@ -21,6 +21,8 @@ import Aliados.Bart;
 import Aliados.Homero;
 import Aliados.Lisa;
 import Aliados.Marge;
+import Botones.ColeccionBotones;
+import Botones.RoundButton;
 
 import java.awt.event.MouseMotionListener;
 
@@ -31,10 +33,15 @@ public class GUI extends JFrame{
 	private JLayeredPane panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;
-	private JButton botonHomero, botonMarge, botonLisa, botonBart, botonAbuelo, jugar, eliminar;
+	private JButton jugar, eliminar;
+	private ColeccionBotones botones;
 	private JLabel etiquetaPuntaje;
+	private boolean lock = false;
+	private HiloTiempo tiempo;
+	private int direction = -1;
 	
 	public GUI() {
+		
 		
 		iniciarContentPane();
 		iniciarPanelArriba();
@@ -44,19 +51,15 @@ public class GUI extends JFrame{
 		iniciarBotones();
 
 		juego=new Juego(this);
+		tiempo = new HiloTiempo(juego);
+		tiempo.start();
 		setVisible(true);
 		setTitle(titulo);
 		setSize(size);
 		setResizable(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		botonHomero.addMouseListener(new oyenteHomero());
-		botonMarge.addMouseListener(new oyenteMarge());
-		botonBart.addMouseListener(new oyenteBart());
-		botonLisa.addMouseListener(new oyenteLisa());
-		botonAbuelo.addMouseListener(new oyenteAbuelo());	
-		
-		
+		botones= new ColeccionBotones();
 		
 		etiquetaPuntaje = new JLabel("PUNTAJE:");
 		etiquetaPuntaje.setForeground(Color.WHITE);
@@ -96,37 +99,23 @@ public class GUI extends JFrame{
 		jugar.setFont(new Font("Century Gothic",25, 20));
 		eliminar = new JButton("Eliminar");
 		eliminar.setFont(new Font("Century Gothic",25, 20));
-		botonHomero =  new RoundButton(54);
-		botonMarge =  new RoundButton(54);
-		botonBart =  new RoundButton(54);
-		botonLisa =  new RoundButton(54);
-		botonAbuelo =  new RoundButton(54);
-		botonAbuelo.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoAbuelo.png")));
-		botonHomero.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoHomero.png")));
-		botonMarge.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoMarge.png")));
-		botonBart.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoBart.png")));
-		botonLisa.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoLisa.png")));
-		panelAbajo.add(botonHomero);
-		panelAbajo.add(botonMarge);
-		panelAbajo.add(botonBart);
-		panelAbajo.add(botonLisa);
-		panelAbajo.add(botonAbuelo);
+		
 		panelArriba.add(jugar);
 		panelArriba.add(eliminar);
 		jugar.setVisible(true);
 		eliminar.addActionListener(new oyenteEliminar());
 		jugar.addActionListener(new oyentejugar());
 		repaint();
+		botones.agregaraPanel(panelAbajo);
 	}
 		
-	public void agregarObject(GameObject nuevo) {
+	public void agregarObject(JLabel nuevo) {
 		panelGrilla.add(nuevo);
 		nuevo.setLocation(nuevo.getBounds().getLocation());
 		repaint();
 	}
-	
 	public void eliminarEnemigo(GameObject aEliminar) {
-		panelGrilla.remove(aEliminar);
+		panelGrilla.remove(aEliminar.label());
 	}
 	
 	void misterio() {
@@ -145,6 +134,21 @@ public class GUI extends JFrame{
 	});
 		t.start();
 	}
+	
+	
+	public boolean getLock(){
+		return this.lock;
+	}
+	
+	public void toggleLock(){
+		this.lock = !this.lock;
+	}
+	
+	public int getDirection(){
+		return this.direction;
+	}
+	
+	
 	private class oyenteEliminar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			juego.eliminarEntidad();
@@ -164,14 +168,12 @@ public class GUI extends JFrame{
 			if(proximoAagregar!=null) {
 				int x=e.getX();
 				int y=e.getY();
-				proximoAagregar.setBounds(x-50,y-100, proximoAagregar.getBounds().width, proximoAagregar.getBounds().height);
-				juego.agregarEntidad(proximoAagregar);
-				proximoAagregar=null;
-				repaint();
+				juego.clickEnMapa(x,y);
 			}	
 		}
 		public void mousePressed(MouseEvent e) {}
-		public void mouseReleased(MouseEvent e) {}
+		public void mouseReleased(MouseEvent e) {
+		}
 		public void mouseEntered(MouseEvent e) {}
 		public void mouseExited(MouseEvent e) {}
 	}

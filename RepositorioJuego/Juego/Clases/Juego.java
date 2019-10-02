@@ -8,63 +8,42 @@ import Mapas.Mapa;
 import Mapas.Mapa1;
 
 public class Juego {
-	private LinkedList<GameObject> entidades, entidadesAeliminar;
+	private LinkedList<GameObject> entidades;
+	private LinkedList<Enemigo> enemigos;
 	private GUI gui;
 	private int puntaje = 0;
 	private int kills = 0;
+	private int monedas;
+	private Tienda tienda;
 	private Mapa mapa;
 	
 	public Juego(GUI gui) {
 		this.mapa=new Mapa1(this);
 		this.gui=gui;
 		entidades= new LinkedList<GameObject>();
-		entidadesAeliminar = new LinkedList<GameObject>();
+		enemigos = new LinkedList<Enemigo>();
 		iniciarEntidades();
 	}
 	
 	
 	public void iniciarEntidades() {
 		entidades= this.mapa.crearEntidades();
-		entidadesAeliminar= new LinkedList<GameObject>();
 		for(GameObject e: entidades) {
 			e.setJuego(this);
-			ubicacionDefinitiva(e);
-			gui.agregarObject(e);
+			enemigos.addLast((Enemigo) e);
+			if(!hayColisiones(e))
+				gui.agregarObject(e.label());
 		}
 	}
 	public void agregarEntidad(GameObject nuevo) {
 		if(!hayColisiones(nuevo) && !fueraDeGrilla(nuevo)) {
-			ubicacionDefinitiva(nuevo);
-			gui.agregarObject(nuevo);
+			gui.agregarObject(nuevo.label());
+			
 			entidades.addLast(nuevo);
 //			System.out.println(nuevo.getBounds().getX()+50 +"       " + nuevo.getBounds().getY());
 		}
 	}
 	
-	private void ubicacionDefinitiva(GameObject nuevo) {
-		int pos= (int) nuevo.getBounds().getY();
-		Rectangle aux= nuevo.getBounds();
-		if(pos>=85 && pos<115) 
-			nuevo.setBounds(aux.x, 105, aux.width, aux.height);
-		else
-			if(pos>=117 && pos<=146)
-				nuevo.setBounds(aux.x, 136, aux.width, aux.height);
-			else
-				if(pos>150 && pos<182)
-					nuevo.setBounds(aux.x, 172, aux.width, aux.height);
-				else
-					if(pos>=182 && pos<=215)
-						nuevo.setBounds(aux.x, 205, aux.width, aux.height);
-					else
-						if(pos>218 && pos<245)
-							nuevo.setBounds(aux.x, 235, aux.width, aux.height);
-						else
-							if(pos>=248 && pos<=278)
-								nuevo.setBounds(aux.x, 271, aux.width, aux.height);
-							else
-								if(pos>281 && pos<306)
-									nuevo.setBounds(aux.x, 300, aux.width, aux.height);
-	}
 	
 	public void eliminarEntidad() {
 		GameObject aEliminar = entidades.isEmpty()? null: entidades.getFirst();
@@ -76,7 +55,7 @@ public class Juego {
 	}
 	
 	private boolean fueraDeGrilla(GameObject elem) {
-		return elem.getBounds().y< 85;
+		return elem.label().getBounds().y< 85;
 	}
 	
 	private int buscarEntidad(GameObject elem) {
@@ -103,8 +82,8 @@ public class Juego {
 	}
 	
 	private boolean verificarColision(GameObject aux,GameObject nuevo) {
-		Rectangle r1= aux.getBounds();r1.height=40;r1.width=70;
-		Rectangle r2= nuevo.getBounds(); r2.height=40; r2.width=70;
+		Rectangle r1= aux.label().getBounds();r1.height=20;r1.width=60;
+		Rectangle r2= nuevo.label().getBounds(); r2.height=20; r2.width=60;
 		return r1.intersects(r2);
 			
 	}
@@ -113,14 +92,36 @@ public class Juego {
 		puntaje=p;
 	}
 	
+	
+	public int getMonedas() {
+		return monedas;
+	}
 	public int getPuntaje() {
 		return puntaje;
+	}
+	
+//	public void disparar() {
+//		for(GameObject e: entidades) {
+//			e.disparar();
+//		}
+//	}
+	public void moverEnemigo(){
+		for(Enemigo e: enemigos){
+			e.mover(1);
+		}
 	}
 	
 	public void verificarMapa() {
 		if(entidades.size()==0) {
 			mapa.mapaSiguiente();
 		}
+	}
+
+
+	public void clickEnMapa(int x, int y) {
+		GameObject nuevo= tienda.getCompra(x,y);
+		if(nuevo!=null)
+			nuevo.setPos(x-50,y-100);
 	}
 	
 }

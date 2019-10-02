@@ -1,5 +1,7 @@
 package Clases;
 
+import Visitadores.Visitor;
+
 public class MagiaTemporal extends GameObject {
 
 	public MagiaTemporal(int x, int y) {
@@ -14,6 +16,30 @@ public class MagiaTemporal extends GameObject {
 
 	@Override
 	public void parar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mover() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearJugador(GameObject j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void golpearEnemigo(GameObject e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void accept(Visitor v) {
 		// TODO Auto-generated method stub
 		
 	}

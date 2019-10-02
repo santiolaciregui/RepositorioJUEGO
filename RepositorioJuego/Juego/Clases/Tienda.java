@@ -1,0 +1,27 @@
+package Clases;
+
+import Mapas.Mapa;
+
+public class Tienda {
+	protected Juego juego;
+	protected Aliado aAgregar;
+
+	public Tienda(Juego j) {
+		juego=j;
+		aAgregar=null;
+	}
+	
+	public void aAgregar(Aliado nuevo) {
+		if(juego.getMonedas()>= nuevo.getMonedas())
+			aAgregar=nuevo;
+	}
+
+	public GameObject getCompra(int x, int y) {
+		if(aAgregar!=null)
+			return aAgregar;
+		return null;
+		
+	}
+	
+	
+}
