@@ -16,7 +16,7 @@ public class Tienda {
 			aAgregar=nuevo;
 	}
 
-	public GameObject getCompra(int x, int y) {
+	public GameObject getCompra() {
 		if(aAgregar!=null)
 			return aAgregar;
 		return null;

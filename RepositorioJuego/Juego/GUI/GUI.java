@@ -30,7 +30,7 @@ public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
 	public static Dimension size = new Dimension(1250, 660);
-	private JLayeredPane panelAbajo, panelGrilla, panelArriba, contentPane;
+	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;
 	private JButton jugar, eliminar;
@@ -59,8 +59,7 @@ public class GUI extends JFrame{
 		setResizable(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		botones= new ColeccionBotones();
-		
+//		botones= new ColeccionBotones(panelAbajo);
 		etiquetaPuntaje = new JLabel("PUNTAJE:");
 		etiquetaPuntaje.setForeground(Color.WHITE);
 		etiquetaPuntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
@@ -69,7 +68,7 @@ public class GUI extends JFrame{
 	}
 	
 	private void iniciarContentPane() {
-		contentPane = new JLayeredPane();
+		contentPane = new JPanel();
 		contentPane.setSize(size);
 		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
 		this.setContentPane(contentPane);
@@ -95,18 +94,17 @@ public class GUI extends JFrame{
 	}
 		
 	public void iniciarBotones() {
+		botones= new ColeccionBotones(panelAbajo);
 		jugar= new JButton("Jugar");
 		jugar.setFont(new Font("Century Gothic",25, 20));
 		eliminar = new JButton("Eliminar");
 		eliminar.setFont(new Font("Century Gothic",25, 20));
-		
 		panelArriba.add(jugar);
 		panelArriba.add(eliminar);
 		jugar.setVisible(true);
 		eliminar.addActionListener(new oyenteEliminar());
 		jugar.addActionListener(new oyentejugar());
 		repaint();
-		botones.agregaraPanel(panelAbajo);
 	}
 		
 	public void agregarObject(JLabel nuevo) {
@@ -115,7 +113,7 @@ public class GUI extends JFrame{
 		repaint();
 	}
 	public void eliminarEnemigo(GameObject aEliminar) {
-		panelGrilla.remove(aEliminar.label());
+//		panelGrilla.remove(aEliminar.label());
 	}
 	
 	void misterio() {
@@ -168,6 +166,7 @@ public class GUI extends JFrame{
 			if(proximoAagregar!=null) {
 				int x=e.getX();
 				int y=e.getY();
+				System.out.println(x+"    "+y);
 				juego.clickEnMapa(x,y);
 			}	
 		}

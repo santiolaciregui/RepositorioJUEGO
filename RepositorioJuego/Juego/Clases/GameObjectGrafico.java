@@ -1,22 +1,30 @@
 package Clases;
 
+import java.awt.Image;
 import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public class GameObjectGrafico extends JLabel {
+public class GameObjectGrafico {
+	protected JLabel label;
 	public GameObjectGrafico(int x, int y) {
-		setBounds(x,y);
+		label= new JLabel();
+		Rectangle aux= label.getBounds();
+		label.setLocation(x, y);
 	}
 	
-	public void setImage(String img) {
-		setIcon(new ImageIcon(getClass().getResource(img)));
+	public JLabel getLabel() {
+		return label;
 	}
 	
-
-	public void setBounds(int x, int y) {
-		Rectangle aux= this.getBounds();
-		setBounds(x,y, aux.width, aux.height);
+	public void setPosicion(int x, int y) {
+		Rectangle aux= label.getBounds();
+		label.setBounds(x,y, aux.width, aux.height);
 	}
+	
+	public void atacarGrafico() {}
+	public void pararGrafico() {}
+	
+	
 }

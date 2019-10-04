@@ -1,17 +1,22 @@
 package Mapas;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 import Clases.Enemigo;
 import Clases.GameObject;
 import Clases.Juego;
+import Enemigos.Flanders;
 
 public class Mapa1 extends Mapa {
-
 	public Mapa1(Juego j) {
 		super(j);
 		vida=5;
 		cantEnemigos=4;
+		enemigos= new Enemigo[2];
+		enemigos[0]= new Flanders();
+		enemigos[1]= new Barney();
+		
 	}
 
 	@Override
@@ -19,9 +24,11 @@ public class Mapa1 extends Mapa {
 		entidades= new LinkedList<GameObject>();
 		int y=85;
 		int x=1000;
+		Random ran= new Random(enemigos.length);
+		int aux= ran.nextInt();
 		for(int i=0;i<cantEnemigos;i++) {
-			Enemigo nuevo= new Enemigo(10,2);
-			nuevo.label().setBounds(x-=50, y+=40, 110, 100);
+			GameObject nuevo=enemigos[aux].;
+			nuevo.getLabel().setBounds(x-=50, y+=40, 110, 100);
 			entidades.addFirst(nuevo);
 		}
 		return entidades;

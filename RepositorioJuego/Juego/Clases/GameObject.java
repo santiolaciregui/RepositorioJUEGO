@@ -16,24 +16,20 @@ public abstract class GameObject {
 	protected Visitor visitor;
 	protected Inteligencia inteligencia;
 
-	public GameObject(int x, int y) {
-		label= new GameObjectGrafico(x,y);
-	}
-
 	public void setVida(int vida) {
 		this.vida = vida;
 	}
-
-	public void setPos(int x, int y) {
-		label.setBounds(x, y);
+	
+	public JLabel getLabel() {
+		return label.getLabel();
 	}
 	
 	public Point getPos() {
-		return label.getLocation();
+		return label.getLabel().getLocation();
 	}
 	
-	public GameObjectGrafico label() {
-		return label;
+	public void setPos(int x, int y) {
+		label.setPosicion(x, y);
 	}
 
 	public int getPuntosDeMuerte() {
@@ -46,9 +42,7 @@ public abstract class GameObject {
 	
 	public int getDano() {
 		return dano;	
-	}
-	
-	
+	}	
 
 	public void disminuirVida(int dano) {
 		vida-=dano;

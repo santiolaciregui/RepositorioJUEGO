@@ -64,13 +64,13 @@ public abstract class RoundButton extends JButton {
 		return shape.contains(x, y);
 	}
 
-//	private class oyenteBoton implements ActionListener{
-//		public void actionPerformed(ActionEvent e) {
-//			// TODO Auto-generated method stub
-//			Aliado entidad= crear();
-//			tienda.aAgregar(entidad);	
-//		}
-//	}
+	private class oyenteBoton implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			Aliado entidad= crear();
+			tienda.aAgregar(entidad);	
+		}
+	}
 	
 	public abstract Aliado crear();
 }

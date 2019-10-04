@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-public class JPanelConFondo extends JLayeredPane {
+public class JPanelConFondo extends JPanel {
 	private Image img;
 	private int ma;
 	

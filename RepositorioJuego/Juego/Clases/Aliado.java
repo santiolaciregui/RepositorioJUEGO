@@ -12,7 +12,7 @@ public abstract class Aliado extends GameObject {
 	protected int monedas;
 
 	public Aliado(int x, int y) {
-		super(x,y);
+		super();
 	}
 
 	@Override

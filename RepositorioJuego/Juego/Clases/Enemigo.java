@@ -5,16 +5,14 @@ import javax.swing.ImageIcon;
 import Inteligencias.InteligenciaEnemigo;
 import Visitadores.Visitor;
 
-public class Enemigo extends GameObject{
+public abstract class Enemigo extends GameObject{
 	protected int monedas;
 	protected int velocidad;
 	
 	public Enemigo(int x, int y) {
-		super(x,y);
 		inteligencia= new InteligenciaEnemigo(this);
 		vida=100;
 		dano=10;
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersCaminaGif.gif")));
 		puntosDeMuerte=100;
 		
 	}
@@ -72,5 +70,7 @@ public class Enemigo extends GameObject{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public abstract Enemigo clonar();
 
 }
