@@ -10,4 +10,10 @@ public class Apu extends Enemigo {
 		super(x,y);
 	}
 
+	@Override
+	public Enemigo clonar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

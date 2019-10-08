@@ -12,7 +12,7 @@ public abstract class GameObject {
 	protected int vida, dano;
 	protected int puntosDeMuerte;
 	protected Juego juego;
-	protected GameObjectGrafico label;
+	protected JLabel label;
 	protected Visitor visitor;
 	protected Inteligencia inteligencia;
 
@@ -21,15 +21,11 @@ public abstract class GameObject {
 	}
 	
 	public JLabel getLabel() {
-		return label.getLabel();
-	}
-	
-	public Point getPos() {
-		return label.getLabel().getLocation();
+		return label;
 	}
 	
 	public void setPos(int x, int y) {
-		label.setPosicion(x, y);
+		label.setLocation(x, y);
 	}
 
 	public int getPuntosDeMuerte() {
