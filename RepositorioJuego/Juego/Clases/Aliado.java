@@ -11,8 +11,8 @@ import Visitadores.Visitor;
 public abstract class Aliado extends GameObject {
 	protected int monedas;
 
-	public Aliado(int x, int y) {
-		super();
+	protected Aliado(int x, int y) {
+		super(x,y);
 	}
 
 	@Override

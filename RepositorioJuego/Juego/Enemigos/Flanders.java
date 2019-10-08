@@ -19,6 +19,10 @@ public class Flanders extends Enemigo  {
 	public void pararGrafico() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersParado.png")));
 	}
+	
+	public void acaestoy() {
+		System.out.println(label.getX()+"  :  "+label.getY());
+	}
 
 	@Override
 	public Enemigo clonar() {

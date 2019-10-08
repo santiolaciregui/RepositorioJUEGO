@@ -1,7 +1,5 @@
 package Clases;
 
-import java.awt.Rectangle;
-import java.util.Iterator;
 import java.util.LinkedList;
 import GUI.*;
 import Mapas.Mapa;
@@ -30,8 +28,12 @@ public class Juego {
 		entidades= this.mapa.crearEntidades();
 		for(GameObject e: entidades) {
 			e.setJuego(this);
-			enemigos.addLast((Enemigo) e);
-			gui.agregarObject(e.getLabel());
+			
+			if(mapa.agregarEntidad(e, e.getPos().x,e.getPos().y)) {
+				System.out.println("aca: "+e.getPos().x+"   :   "+e.getPos().y);
+				gui.agregarObject(e.getLabel());
+				enemigos.addLast((Enemigo) e);
+			}
 		}
 	}
 	
@@ -40,25 +42,14 @@ public class Juego {
 		if(aEliminar != null) {
 			puntaje += aEliminar.puntosDeMuerte;
 			entidades.remove();
+			kills++;
 			gui.eliminarEnemigo(aEliminar);
 		}
 	}
-	
-	private int buscarEntidad(GameObject elem) {
-		int index=0;
-		Iterator<GameObject> it = entidades.iterator();
-		GameObject aux= it.hasNext()? it.next() : null;
-		while(aux!=null && aux!=elem) {
-			index++;
-			aux= it.next();
-		}
-		return index;
-	}
-	
+		
 	public void aumentarPuntaje(int p) {
 		puntaje=p;
 	}
-	
 	
 	public int getMonedas() {
 		return monedas;

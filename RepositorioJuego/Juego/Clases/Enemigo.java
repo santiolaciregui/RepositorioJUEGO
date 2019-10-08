@@ -9,7 +9,8 @@ public abstract class Enemigo extends GameObject{
 	protected int monedas;
 	protected int velocidad;
 	
-	public Enemigo(int x, int y) {
+	protected Enemigo(int x, int y) {
+		super(x,y);
 		inteligencia= new InteligenciaEnemigo(this);
 		vida=100;
 		dano=10;
