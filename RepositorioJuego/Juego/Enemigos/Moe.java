@@ -7,7 +7,24 @@ import Clases.Enemigo;
 public class Moe extends Enemigo {
 
 	public Moe(int x, int y) {
-		super(x,y);
+		super(x, y);
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeParado.png")));
+		label.setBounds(x, y,117 , 110);
 	}
+	
+	public void atacarGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeAtacaGif.gif")));
+	}
+	
+	public void pararGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeParado.png")));
+	}
+
+	@Override
+	public Enemigo clonar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 
 }
