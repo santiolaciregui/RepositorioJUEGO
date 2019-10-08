@@ -17,12 +17,8 @@ public abstract class Enemigo extends GameObject{
 		
 	}
 
-	public void mover1() {
+	public void mover() {
 		inteligencia.mover();
-	}
-	
-	public void mover(int velocidad) {
-		this.setPos(this.getPos().x-velocidad, this.getPos().y);
 	}
 	
 	public void disminuirVida(int damage) {
@@ -52,13 +48,7 @@ public abstract class Enemigo extends GameObject{
 	}
 
 	@Override
-	public void golpearEnemigo(GameObject e) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
-
+	public void golpearEnemigo(GameObject e) {}
 	
 	public void accept(Visitor v) {
 		v.visitEnemigo(this);
@@ -66,11 +56,7 @@ public abstract class Enemigo extends GameObject{
 	}
 
 	@Override
-	public void accionar() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	public void accionar() {}	
 	public abstract Enemigo clonar();
 
 }

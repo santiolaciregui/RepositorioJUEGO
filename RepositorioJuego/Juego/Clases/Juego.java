@@ -74,7 +74,7 @@ public class Juego {
 //	}
 	public void moverEnemigo(){
 		for(Enemigo e: enemigos){
-			e.mover(1);
+			e.mover();
 		}
 	}
 	

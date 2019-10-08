@@ -7,7 +7,6 @@ import java.util.LinkedList;
 import Clases.Juego;
 import Clases.Enemigo;
 import Clases.GameObject;
-import Clases.GameObjectGrafico;
 
 public abstract class Mapa {
 	protected LinkedList<GameObject> entidades;
@@ -45,7 +44,7 @@ public abstract class Mapa {
 			
 	}
 	
-	public void ubicacionDefinitiva(GameObjectGrafico nuevo) {
+	public void ubicacionDefinitiva(GameObject nuevo) {
 		int pos= (int) nuevo.getLabel().getBounds().getY();
 		Rectangle aux= nuevo.getLabel().getBounds();
 		if(pos>=85 && pos<115) 
