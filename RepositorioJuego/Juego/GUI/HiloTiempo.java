@@ -18,7 +18,7 @@ public class HiloTiempo extends Thread{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			juego.moverEnemigo();
+			juego.moverEnemigos();
 			juego.verificarMapa();	
 		}
 	}

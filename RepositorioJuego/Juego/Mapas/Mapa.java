@@ -38,10 +38,9 @@ public abstract class Mapa {
 	}
 	
 	private boolean verificarColision(GameObject aux,GameObject nuevo) {
-		Rectangle r1= aux.getLabel().getBounds();r1.height=1;r1.width=1;
-		Rectangle r2= nuevo.getLabel().getBounds(); r2.height=1; r2.width=1;
-		return r1.intersects(r2);
-			
+		Rectangle r1= aux.getLabel().getBounds();r1.height=20;r1.width=20;
+		Rectangle r2= nuevo.getLabel().getBounds(); r2.height=20; r2.width=20;
+		return r1.intersects(r2);		
 	}
 	
 	public void ubicacionDefinitiva(GameObject nuevo) {
@@ -73,10 +72,9 @@ public abstract class Mapa {
 		return elem.getLabel().getBounds().y< 85;
 	}
 
-	public boolean agregarEntidad(GameObject nuevo, int x, int y) {
-		nuevo.getLabel().setBounds(x, y, nuevo.getLabel().getBounds().width, nuevo.getLabel().getBounds().height);
+	public boolean puedoAgregar(GameObject nuevo, int x, int y) {
+		nuevo.getLabel().setLocation(x, y);
 		ubicacionDefinitiva(nuevo);
-		System.out.println(nuevo.getPos().x+"    :    "+ nuevo.getPos().y);
 		boolean resul=false;
 		if(!hayColisiones(nuevo) && !fueraDeGrilla(nuevo)) {
 			resul=true;

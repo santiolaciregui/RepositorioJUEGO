@@ -20,7 +20,10 @@ public class Juego {
 		this.gui=gui;
 		entidades= new LinkedList<GameObject>();
 		enemigos = new LinkedList<Enemigo>();
+		tienda= new Tienda(this);
 		iniciarEntidades();
+		monedas=10000000;
+		
 	}
 	
 	
@@ -28,12 +31,8 @@ public class Juego {
 		entidades= this.mapa.crearEntidades();
 		for(GameObject e: entidades) {
 			e.setJuego(this);
-			
-			if(mapa.agregarEntidad(e, e.getPos().x,e.getPos().y)) {
-				System.out.println("aca: "+e.getPos().x+"   :   "+e.getPos().y);
-				gui.agregarObject(e.getLabel());
-				enemigos.addLast((Enemigo) e);
-			}
+			gui.agregarObject(e.getLabel());
+			enemigos.addLast((Enemigo) e);
 		}
 	}
 	
@@ -63,7 +62,7 @@ public class Juego {
 //			e.disparar();
 //		}
 //	}
-	public void moverEnemigo(){
+	public void moverEnemigos(){
 		for(Enemigo e: enemigos){
 			e.mover();
 		}
@@ -79,9 +78,8 @@ public class Juego {
 	public void clickEnMapa(int x, int y) {
 		GameObject nuevo= tienda.getCompra();
 		if(nuevo!=null)
-			if(mapa.agregarEntidad(nuevo, x,y))
-				gui.agregarObject(nuevo.getLabel());
-				
+			if(mapa.puedoAgregar(nuevo, x,y))
+				gui.agregarObject(nuevo.getLabel());			
 	}
 	
 }

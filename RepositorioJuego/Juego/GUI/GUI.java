@@ -177,65 +177,7 @@ public class GUI extends JFrame{
 		public void mouseExited(MouseEvent e) {}
 	}
 	
-	private class oyenteHomero implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado homero= new Homero(21,56);
-			homero.atacar();
-			proximoAagregar=homero;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
 	
-	private class oyenteMarge implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado marge= new Marge(21,56);
-			marge.atacar();
-			proximoAagregar=marge;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
-	
-	private class oyenteBart implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado bart= new Bart(21,56);
-			bart.atacar();
-			proximoAagregar=bart;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
-	
-	private class oyenteLisa implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado lisa= new Lisa(21,56);
-			lisa.atacar();
-			proximoAagregar=lisa;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
-	
-	private class oyenteAbuelo implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado abuelo= new Abuelo(21,56);
-			abuelo.atacar();
-			proximoAagregar=abuelo;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
 	
 	public static void main (String [] args) {
 		GUI p = new GUI();

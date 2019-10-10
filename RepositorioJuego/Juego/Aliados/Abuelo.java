@@ -18,5 +18,6 @@ public class Abuelo extends Aliado {
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloParado.png")));
 	}
+	
 
 }
