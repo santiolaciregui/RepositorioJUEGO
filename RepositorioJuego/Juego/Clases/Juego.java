@@ -22,8 +22,7 @@ public class Juego {
 		enemigos = new LinkedList<Enemigo>();
 		tienda= new Tienda(this);
 		iniciarEntidades();
-		monedas=10000000;
-		
+		monedas=10000000;	
 	}
 	
 	
@@ -68,6 +67,17 @@ public class Juego {
 		}
 	}
 	
+	public void pararEnemigosSiEsNecesario() {
+		for(GameObject e: enemigos) {
+			if(hayAlgoCerca(e))
+				e.parar();
+		}
+	}
+	
+	public Tienda getTienda() {
+		return tienda;
+	}
+	
 	public void verificarMapa() {
 		if(entidades.size()==0) {
 			mapa.mapaSiguiente();
@@ -78,8 +88,19 @@ public class Juego {
 	public void clickEnMapa(int x, int y) {
 		GameObject nuevo= tienda.getCompra();
 		if(nuevo!=null)
-			if(mapa.puedoAgregar(nuevo, x,y))
-				gui.agregarObject(nuevo.getLabel());			
+			if(mapa.puedoAgregar(nuevo, x,y)) {
+				gui.agregarObject(nuevo.getLabel());
+				entidades.addLast(nuevo);
+			}
+	}
+
+
+	public boolean hayAlgoCerca(GameObject e) {
+		boolean toReturn=false;
+		if(mapa.hayColisiones(e)) {
+			toReturn=true;
+		}
+		return toReturn;
 	}
 	
 }

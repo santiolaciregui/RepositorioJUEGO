@@ -41,16 +41,13 @@ public class GUI extends JFrame{
 	private int direction = -1;
 	
 	public GUI() {
-		
-		
 		iniciarContentPane();
 		iniciarPanelArriba();
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
-		
-		iniciarBotones();
-
 		juego=new Juego(this);
+		iniciarBotones();
+		
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
 		setVisible(true);
@@ -94,7 +91,7 @@ public class GUI extends JFrame{
 	}
 		
 	public void iniciarBotones() {
-		botones= new ColeccionBotones(panelAbajo);
+		botones= new ColeccionBotones(panelAbajo, juego.getTienda());
 		jugar= new JButton("Jugar");
 		jugar.setFont(new Font("Century Gothic",25, 20));
 		eliminar = new JButton("Eliminar");
@@ -163,12 +160,10 @@ public class GUI extends JFrame{
 		
 	private class oyenteAgregarEntidad implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
-			if(proximoAagregar!=null) {
-				int x=e.getX();
+				int x=e.getX()
+						;
 				int y=e.getY();
-				System.out.println(x+"    "+y);
 				juego.clickEnMapa(x,y);
-			}	
 		}
 		public void mousePressed(MouseEvent e) {}
 		public void mouseReleased(MouseEvent e) {

@@ -19,7 +19,8 @@ public class HiloTiempo extends Thread{
 				e.printStackTrace();
 			}
 			juego.moverEnemigos();
-			juego.verificarMapa();	
+			juego.verificarMapa();
+			juego.pararEnemigosSiEsNecesario();
 		}
 	}
 	public void finalizar() {

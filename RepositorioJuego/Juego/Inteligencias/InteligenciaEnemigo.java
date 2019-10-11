@@ -7,10 +7,14 @@ public class InteligenciaEnemigo extends Inteligencia {
 	
 	public InteligenciaEnemigo(Enemigo e) {
 		enemigo=e;
-		velocidad=2;
+		velocidad=1;
 	}
 	
 	public void mover() {
 		enemigo.setPos(enemigo.getPos().x - velocidad, enemigo.getPos().y);
+	}
+	
+	public void parar() {
+		enemigo.setPos(enemigo.getPos().y, enemigo.getPos().y);
 	}
 }

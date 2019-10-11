@@ -17,8 +17,8 @@ import Clases.Tienda;
 public abstract class RoundButton extends JButton {
 	protected Tienda tienda;
 	
-	public RoundButton() {
-		tienda= new Tienda(juego);
+	public RoundButton(Tienda tien) {
+		tienda= tien;
 		//These statements enlarge the button so that it 
 		//becomes a circle rather than an oval.
 		Dimension size = getPreferredSize();

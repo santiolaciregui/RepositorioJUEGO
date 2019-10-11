@@ -1,6 +1,8 @@
 package Clases;
 
 import java.awt.Point;
+import java.awt.Rectangle;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -12,15 +14,14 @@ public abstract class GameObject {
 	protected int vida, dano;
 	protected int puntosDeMuerte;
 	protected Juego juego;
-	protected Point point;
 	protected JLabel label;
 	protected Visitor visitor;
 	protected Inteligencia inteligencia;
 
 	protected GameObject (int x, int y) {
 		label= new JLabel();
-		point= new Point();
 		setPos(x, y);
+//		ubicacionDefinitiva();
 	}
 	public void setVida(int vida) {
 		this.vida = vida;
@@ -32,12 +33,10 @@ public abstract class GameObject {
 	
 	public void setPos(int x, int y) {
 		label.setLocation(x, y);
-		point.x=x;
-		point.y=y;
 	}
 	
 	public Point getPos() {
-		return point;
+		return label.getLocation();
 	}
 
 	

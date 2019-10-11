@@ -8,7 +8,7 @@ public class Marge extends Aliado {
 	public Marge(int x, int y) {
 		super(x,y);
 		vida=2000;
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParado.png")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
 		label.setBounds(x, y,117 , 110);
 	}
 	
@@ -17,6 +17,6 @@ public class Marge extends Aliado {
 	}
 	
 	public void parar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParado.png")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
 	}
 }
