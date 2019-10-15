@@ -17,7 +17,8 @@ import Clases.Tienda;
 public abstract class RoundButton extends JButton {
 	protected Tienda tienda;
 	
-	public RoundButton() {
+	public RoundButton(Tienda tien) {
+		tienda= tien;
 		//These statements enlarge the button so that it 
 		//becomes a circle rather than an oval.
 		Dimension size = getPreferredSize();
@@ -28,9 +29,7 @@ public abstract class RoundButton extends JButton {
 		//This allows us to paint a round background.
 		setContentAreaFilled(false);
 		setLayout(new FlowLayout());
-		setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoAbuelo.png")));
-		
-//		this.addActionListener(new oyenteBoton());
+		this.addActionListener(new oyenteBoton());
 	}
 	//Paint the round background and label.
 	protected void paintComponent(Graphics g) {
@@ -67,6 +66,7 @@ public abstract class RoundButton extends JButton {
 	private class oyenteBoton implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
+			System.out.println("holiiiiiiis");
 			Aliado entidad= crear();
 			tienda.aAgregar(entidad);	
 		}

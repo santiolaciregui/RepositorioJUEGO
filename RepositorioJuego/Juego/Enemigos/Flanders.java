@@ -12,16 +12,12 @@ public class Flanders extends Enemigo  {
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacarGrafico() {
+	public void atacar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
 	}
 	
-	public void pararGrafico() {
+	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersParado.png")));
-	}
-	
-	public void acaestoy() {
-		System.out.println(label.getX()+"  :  "+label.getY());
 	}
 
 	@Override

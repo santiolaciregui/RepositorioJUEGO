@@ -1,10 +1,11 @@
-package Clases;
+package PowerUps;
 
+import Clases.GameObject;
 import Visitadores.Visitor;
 
-public class MagiaTemporal extends GameObject {
+public class ObjetoPrecioso extends GameObject {
 
-	public MagiaTemporal(int x, int y) {
+	public ObjetoPrecioso(int x, int y) {
 		super(x,y);
 	}
 
@@ -20,11 +21,7 @@ public class MagiaTemporal extends GameObject {
 		
 	}
 
-	@Override
-	public void mover() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public void golpearJugador(GameObject j) {
@@ -40,6 +37,12 @@ public class MagiaTemporal extends GameObject {
 
 	@Override
 	public void accept(Visitor v) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void accionar() {
 		// TODO Auto-generated method stub
 		
 	}

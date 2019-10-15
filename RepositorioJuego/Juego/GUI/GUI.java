@@ -41,16 +41,13 @@ public class GUI extends JFrame{
 	private int direction = -1;
 	
 	public GUI() {
-		
-		
 		iniciarContentPane();
 		iniciarPanelArriba();
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
-		
-		iniciarBotones();
-
 		juego=new Juego(this);
+		iniciarBotones();
+		
 		tiempo = new HiloTiempo(juego);
 		tiempo.start();
 		setVisible(true);
@@ -94,7 +91,7 @@ public class GUI extends JFrame{
 	}
 		
 	public void iniciarBotones() {
-		botones= new ColeccionBotones(panelAbajo);
+		botones= new ColeccionBotones(panelAbajo, juego.getTienda());
 		jugar= new JButton("Jugar");
 		jugar.setFont(new Font("Century Gothic",25, 20));
 		eliminar = new JButton("Eliminar");
@@ -163,12 +160,10 @@ public class GUI extends JFrame{
 		
 	private class oyenteAgregarEntidad implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
-			if(proximoAagregar!=null) {
-				int x=e.getX();
+				int x=e.getX()
+						;
 				int y=e.getY();
-				System.out.println(x+"    "+y);
 				juego.clickEnMapa(x,y);
-			}	
 		}
 		public void mousePressed(MouseEvent e) {}
 		public void mouseReleased(MouseEvent e) {
@@ -177,65 +172,7 @@ public class GUI extends JFrame{
 		public void mouseExited(MouseEvent e) {}
 	}
 	
-	private class oyenteHomero implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado homero= new Homero(21,56);
-			homero.atacar();
-			proximoAagregar=homero;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
 	
-	private class oyenteMarge implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado marge= new Marge(21,56);
-			marge.atacar();
-			proximoAagregar=marge;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
-	
-	private class oyenteBart implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado bart= new Bart(21,56);
-			bart.atacar();
-			proximoAagregar=bart;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
-	
-	private class oyenteLisa implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado lisa= new Lisa(21,56);
-			lisa.atacar();
-			proximoAagregar=lisa;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
-	
-	private class oyenteAbuelo implements MouseListener{
-		public void mouseReleased(MouseEvent e) {
-			Aliado abuelo= new Abuelo(21,56);
-			abuelo.atacar();
-			proximoAagregar=abuelo;
-		}
-		public void mouseClicked(MouseEvent e) {}
-		public void mousePressed(MouseEvent e) {}
-		public void mouseEntered(MouseEvent e) {}
-		public void mouseExited(MouseEvent e) {}
-	}
 	
 	public static void main (String [] args) {
 		GUI p = new GUI();

@@ -11,9 +11,8 @@ public class DisparoAliado extends Disparo{
 
 	public DisparoAliado(int damage, int x, int y) {
 		super(damage, x, y);
-		setBounds(x, y, 28,15);
-		setIcon(new ImageIcon(getClass().getResource("/Imagenes/BoloGif.gif")));
-		col= new ColDisparoAliado(this);
+		this.getLabel().setIcon(new ImageIcon(getClass().getResource("/Imagenes/BoloGif.gif")));
+		this.col= new ColDisparoAliado(this);
 		inteligencia= new InteligenciaDisparoAliado(this);
 	}
 

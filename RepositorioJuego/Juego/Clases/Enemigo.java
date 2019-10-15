@@ -15,7 +15,6 @@ public abstract class Enemigo extends GameObject{
 		vida=100;
 		dano=10;
 		puntosDeMuerte=100;
-		
 	}
 
 	public void mover() {
@@ -31,8 +30,8 @@ public abstract class Enemigo extends GameObject{
 
 	@Override
 	public void parar() {
-		// TODO Auto-generated method stub
-		
+		inteligencia.parar();
+			
 	}
 
 	@Override

@@ -18,7 +18,7 @@ public class Mapa1 extends Mapa {
 		enemigos[0]= new Flanders(1129,100);
 		enemigos[1]= new Barney(1080,160);
 		enemigos[2]= new Flanders(1012,230);
-		enemigos[3]= new Barney(1129,500);
+		enemigos[3]= new Barney(1129,270);
 
 		
 	}
@@ -26,13 +26,10 @@ public class Mapa1 extends Mapa {
 	@Override
 	public LinkedList<GameObject> crearEntidades() {
 		entidades= new LinkedList<GameObject>();
-		int y=85;
-		int x=1000;
 		Random ran= new Random(2);
 		int aux= ran.nextInt();
 		for(int i=0;i<cantEnemigos;i++) {
 			GameObject nuevo=enemigos[i];
-			nuevo.getLabel().setBounds(x-=50, y+=40, 110, 100);
 			entidades.addFirst(nuevo);
 		}
 		return entidades;

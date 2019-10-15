@@ -21,7 +21,6 @@ public abstract class Aliado extends GameObject {
 	@Override
 	public void parar() {}
 
-
 	@Override
 	public void golpearJugador(GameObject j) {
 		// TODO Auto-generated method stub

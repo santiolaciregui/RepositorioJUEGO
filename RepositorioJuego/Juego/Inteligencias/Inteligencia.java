@@ -10,6 +10,7 @@ public abstract class Inteligencia {
 	protected Juego juego;
 	
 	public abstract void mover();
+	public abstract void parar();
 	
 	public void verificarInteligencia() {
 	}
