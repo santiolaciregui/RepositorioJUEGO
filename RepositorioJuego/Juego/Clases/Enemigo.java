@@ -2,7 +2,9 @@ package Clases;
 
 import javax.swing.ImageIcon;
 
+import Colisionadores.ColisionadorEnemigo;
 import Inteligencias.InteligenciaEnemigo;
+import Inteligencias.InteligenciaStatic;
 import Visitadores.Visitor;
 
 public abstract class Enemigo extends GameObject{
@@ -15,6 +17,7 @@ public abstract class Enemigo extends GameObject{
 		vida=100;
 		dano=10;
 		puntosDeMuerte=100;
+		col= new ColisionadorEnemigo(this);
 	}
 
 	public void mover() {
@@ -30,7 +33,7 @@ public abstract class Enemigo extends GameObject{
 
 	@Override
 	public void parar() {
-		inteligencia.parar();
+		inteligencia=new InteligenciaStatic();
 			
 	}
 

@@ -23,7 +23,7 @@ public class DisparoAliado extends Disparo{
 	
 	public void mover() {
 		inteligencia.mover();
-		if(getBounds().x>1250)
+		if(this.getLabel().getLocation().x>1250)
 			this.vida=0;
 	}
 	@Override

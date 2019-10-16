@@ -36,15 +36,16 @@ public abstract class Mapa {
 		Iterator<GameObject> it=entidades.iterator();
 		while(it.hasNext() && !hayColision) {
 			GameObject aux=it.next();
-			if(verificarColision(aux,nuevo))
-				hayColision=true;
+			if(nuevo!=aux)
+				if(verificarColision(aux,nuevo)) 
+					hayColision=true;
 		}
 		return hayColision;
 	}
 	
-	private boolean verificarColision(GameObject aux,GameObject nuevo) {
-		Rectangle r1= aux.getLabel().getBounds();r1.height=0;r1.width=20;
-		Rectangle r2= nuevo.getLabel().getBounds(); r2.height=20; r2.width=20;
+	public boolean verificarColision(GameObject aux,GameObject nuevo) {
+		Rectangle r1= aux.getLabel().getBounds();r1.height=20;r1.width=40;
+		Rectangle r2= nuevo.getLabel().getBounds(); r2.height=20; r2.width=40;
 		return r1.intersects(r2);		
 	}
 	
@@ -64,8 +65,15 @@ public abstract class Mapa {
 		boolean resul=false;
 		if(!hayColisiones(nuevo) && !fueraDeGrilla(nuevo)) {
 			resul=true;
+			entidades.add(nuevo);
 		}
 		return resul;
 	}
 	
+	public void deboParar() {
+		for(GameObject e: entidades) {
+			if(hayColisiones(e))
+				e.parar();
+		}
+	}
 }

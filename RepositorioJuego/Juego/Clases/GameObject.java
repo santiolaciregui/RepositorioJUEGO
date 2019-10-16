@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import Colisionadores.Colisionador;
 import Inteligencias.Inteligencia;
 import Visitadores.Visitor;
 
@@ -15,7 +16,7 @@ public abstract class GameObject {
 	protected int puntosDeMuerte;
 	protected Juego juego;
 	protected JLabel label;
-	protected Visitor visitor;
+	protected Colisionador col;
 	protected Inteligencia inteligencia;
 
 	protected GameObject (int x, int y) {
@@ -72,6 +73,7 @@ public abstract class GameObject {
 	public abstract void accept(Visitor v);
 	public abstract void atacar();
 	public abstract void parar();
+	public abstract void mover();
 	public abstract void accionar();
 	public abstract void golpearJugador(GameObject j);
 	public abstract void golpearEnemigo(GameObject e);

@@ -20,6 +20,7 @@ public class HiloTiempo extends Thread{
 			}
 			juego.moverEnemigos();
 			juego.verificarMapa();
+//			juego.disparar();
 			juego.pararEnemigosSiEsNecesario();
 		}
 	}

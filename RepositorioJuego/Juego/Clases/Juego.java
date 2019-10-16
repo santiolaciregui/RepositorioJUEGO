@@ -7,7 +7,6 @@ import Mapas.Mapa1;
 
 public class Juego {
 	private LinkedList<GameObject> entidades;
-	private LinkedList<Enemigo> enemigos;
 	private GUI gui;
 	private int puntaje = 0;
 	private int kills = 0;
@@ -19,7 +18,6 @@ public class Juego {
 		this.mapa=new Mapa1(this);
 		this.gui=gui;
 		entidades= new LinkedList<GameObject>();
-		enemigos = new LinkedList<Enemigo>();
 		tienda= new Tienda(this);
 		iniciarEntidades();
 		monedas=10000000;	
@@ -31,15 +29,15 @@ public class Juego {
 		for(GameObject e: entidades) {
 			e.setJuego(this);
 			gui.agregarObject(e.getLabel());
-			enemigos.addLast((Enemigo) e);
 		}
 	}
 	
 	public void eliminarEntidad() {
+		LinkedList<GameObject> clonada= (LinkedList<GameObject>) entidades.clone();
 		GameObject aEliminar = entidades.isEmpty()? null: entidades.getFirst();
 		if(aEliminar != null) {
 			puntaje += aEliminar.puntosDeMuerte;
-			entidades.remove();
+			entidades.remove(aEliminar);
 			kills++;
 			gui.eliminarEnemigo(aEliminar);
 		}
@@ -62,16 +60,22 @@ public class Juego {
 //		}
 //	}
 	public void moverEnemigos(){
-		for(Enemigo e: enemigos){
-			e.mover();
-		}
+		if(!entidades.isEmpty())
+			for(GameObject e: entidades){
+				e.mover();
+			}
 	}
 	
 	public void pararEnemigosSiEsNecesario() {
-		for(GameObject e: enemigos) {
-			if(hayAlgoCerca(e))
-				e.parar();
+		mapa.deboParar();
+	}
+	
+	public boolean hayAlgoCerca(GameObject e) {
+		boolean toReturn=false;
+		if(mapa.hayColisiones(e)) {
+			toReturn=true;
 		}
+		return toReturn;
 	}
 	
 	public Tienda getTienda() {
@@ -93,14 +97,10 @@ public class Juego {
 				entidades.addLast(nuevo);
 			}
 	}
-
-
-	public boolean hayAlgoCerca(GameObject e) {
-		boolean toReturn=false;
-		if(mapa.hayColisiones(e)) {
-			toReturn=true;
-		}
-		return toReturn;
+	
+	public void disparar() {
+		for(GameObject e: entidades) 
+			e.atacar();
 	}
 	
 }

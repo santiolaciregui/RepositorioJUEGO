@@ -2,31 +2,34 @@ package Colisionadores;
 
 import Clases.Aliado;
 import Clases.Enemigo;
-import Disparos.Disparo;
 import Disparos.DisparoAliado;
 
-public class ColDisparoAliado implements Colisionador{
-	protected Disparo disparo;
+public class ColisionadorAliado extends Colisionador {
 	
-	public ColDisparoAliado(Disparo d) {
-		disparo=d;
+	public ColisionadorAliado(Aliado a) {
+		entidad=a;
 	}
-	
-	public void afectarJugador(Aliado j) {
-		// TODO Auto-generated method stub
-		
+
+	@Override
+	public void afectarJugador(Aliado a) {	
 	}
+
+	@Override
 	public void afectarEnemigo(Enemigo e) {
-		disparo.golpearEnemigo(e);
+		e.disminuirVida(entidad.getDano());
+		e.parar();
 	}
 
 	@Override
 	public void afectarDisparoAliado(DisparoAliado d) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void afectarDisparoEnemigo(DisparoAliado d) {
 		// TODO Auto-generated method stub
 		
-	}	
+	}
+
 }
