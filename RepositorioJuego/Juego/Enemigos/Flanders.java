@@ -8,6 +8,10 @@ public class Flanders extends Enemigo  {
 
 	public Flanders(int x, int y) {
 		super(x, y);
+		dano=300;
+		vida=1100;
+		monedas=700;
+		puntosDeMuerte=1300;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}

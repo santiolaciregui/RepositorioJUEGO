@@ -1,25 +1,21 @@
 package Clases;
-
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
-import java.util.Random;
-
-import javax.swing.ImageIcon;
-
 import Colisionadores.ColisionadorAliado;
-import Colisionadores.ColisionadorEnemigo;
-import Disparos.Disparo;
-import Disparos.DisparoAliado;
-import Visitadores.Visitor;
 
 public abstract class Aliado extends GameObject {
 	protected int monedas;
+	protected int precio;
 
 	protected Aliado(int x, int y) {
 		super(x,y);	
 		col= new ColisionadorAliado(this);
 	}
 
+	
+	public void disminuirValoryVida(int valor, int damage) {
+		super.disminuirVida(damage);
+		monedas=monedas/2;
+		inteligencia.verificarInteligencia();
+	}
 	@Override
 	public void atacar() {}
 
@@ -40,10 +36,6 @@ public abstract class Aliado extends GameObject {
 	
 	public int getMonedas() {
 		return monedas;
-	}
-
-	public void accept(Visitor v) {
-		v.visitAliado(this);
 	}
 
 	@Override

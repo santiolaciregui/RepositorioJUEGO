@@ -1,63 +1,70 @@
 package Clases;
 
 import java.awt.Point;
-import java.awt.Rectangle;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import Colisionadores.Colisionador;
 import Inteligencias.Inteligencia;
-import Visitadores.Visitor;
-
 public abstract class GameObject {
 	protected int vida, dano;
-	protected int puntosDeMuerte;
 	protected Juego juego;
 	protected JLabel label;
 	protected Colisionador col;
 	protected Inteligencia inteligencia;
 
+	
 	protected GameObject (int x, int y) {
 		label= new JLabel();
 		setPos(x, y);
-//		ubicacionDefinitiva();
 	}
+	
+	
 	public void setVida(int vida) {
 		this.vida = vida;
 	}
+	public int getVida() {
+		return vida;
+	}
 	
+	
+	public void setLabel(JLabel label) {
+		this.label = label;
+	}
 	public JLabel getLabel() {
 		return label;
 	}
 	
+	
 	public void setPos(int x, int y) {
 		label.setLocation(x, y);
 	}
-	
 	public Point getPos() {
 		return label.getLocation();
 	}
-
 	
-	public int getPuntosDeMuerte() {
-		return puntosDeMuerte;
-	}
-
-	public void setPuntosDeMuerte(int puntosDeMuerte) {
-		this.puntosDeMuerte = puntosDeMuerte;
-	}
-	
+	public void setDano(int dano) {
+		this.dano = dano;
+	}	
 	public int getDano() {
 		return dano;	
 	}	
-
-	public void disminuirVida(int dano) {
-		vida-=dano;
-		if(vida<0)
-			vida=0;
+	
+	
+	public Colisionador getCol() {
+		return col;
 	}
+	public void setCol(Colisionador col) {
+		this.col = col;
+	}
+	
+	
+	public Inteligencia getInteligencia() {
+		return inteligencia;
+	}
+	public void setInteligencia(Inteligencia inteligencia) {
+		this.inteligencia = inteligencia;
+	}
+	
 	
 	public void aumentarVida(int vida ) {
 		this.vida+=vida;
@@ -65,12 +72,22 @@ public abstract class GameObject {
 			vida=100;
 	}
 	
+	public void disminuirVida(int dano) {
+		vida-=dano;
+		if(vida<0)
+			vida=0;
+	}
+	
+	
 	public void setJuego(Juego j) {
 		juego=j;
 	}
 	
+	public Juego getJuego() {
+		return juego;
+	}
 	
-	public abstract void accept(Visitor v);
+	
 	public abstract void atacar();
 	public abstract void parar();
 	public abstract void mover();

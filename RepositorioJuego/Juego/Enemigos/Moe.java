@@ -8,6 +8,10 @@ public class Moe extends Enemigo {
 
 	public Moe(int x, int y) {
 		super(x, y);
+		dano=500;
+		vida=1200;
+		monedas=1000;
+		puntosDeMuerte=1500;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeParado.png")));
 		label.setBounds(x, y,117 , 110);
 	}

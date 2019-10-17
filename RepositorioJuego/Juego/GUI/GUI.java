@@ -1,10 +1,5 @@
 package GUI;
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-
-import Clases.Aliado;
 import Clases.GameObject;
 import Clases.Juego;
 import Enemigos.Flanders;
@@ -14,18 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.plaf.basic.BasicButtonUI;
-
-import Aliados.Abuelo;
-import Aliados.Bart;
-import Aliados.Homero;
-import Aliados.Lisa;
-import Aliados.Marge;
 import Botones.ColeccionBotones;
-import Botones.RoundButton;
 
-import java.awt.event.MouseMotionListener;
-
+@SuppressWarnings("serial")
 public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
@@ -33,9 +19,10 @@ public class GUI extends JFrame{
 	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;
-	private JButton jugar, eliminar;
+	private JButton jugar;
+	@SuppressWarnings("unused")
 	private ColeccionBotones botones;
-	private JLabel etiquetaPuntaje;
+	private JLabel etiquetaPuntaje, etiquetaVida;
 	private boolean lock = false;
 	private HiloTiempo tiempo;
 	private int direction = -1;
@@ -45,7 +32,9 @@ public class GUI extends JFrame{
 		iniciarPanelArriba();
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
+		
 		juego=new Juego(this);
+		
 		iniciarBotones();
 		
 		tiempo = new HiloTiempo(juego);
@@ -56,12 +45,10 @@ public class GUI extends JFrame{
 		setResizable(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		botones= new ColeccionBotones(panelAbajo);
 		etiquetaPuntaje = new JLabel("PUNTAJE:");
 		etiquetaPuntaje.setForeground(Color.WHITE);
 		etiquetaPuntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
 		panelAbajo.add(etiquetaPuntaje);
-//		misterio();
 	}
 	
 	private void iniciarContentPane() {
@@ -94,13 +81,9 @@ public class GUI extends JFrame{
 		botones= new ColeccionBotones(panelAbajo, juego.getTienda());
 		jugar= new JButton("Jugar");
 		jugar.setFont(new Font("Century Gothic",25, 20));
-		eliminar = new JButton("Eliminar");
-		eliminar.setFont(new Font("Century Gothic",25, 20));
 		panelArriba.add(jugar);
-		panelArriba.add(eliminar);
-		jugar.setVisible(true);
-		eliminar.addActionListener(new oyenteEliminar());
 		jugar.addActionListener(new oyentejugar());
+		
 		repaint();
 	}
 		
@@ -111,23 +94,7 @@ public class GUI extends JFrame{
 	}
 	public void eliminarEnemigo(GameObject aEliminar) {
 		panelGrilla.remove(aEliminar.getLabel());
-	}
-	
-	void misterio() {
-		Thread t = new Thread(new Runnable() {
-			public void run() {
-				try {
-					for (int z = 0; z < 100; z++) {
-						etiquetaPuntaje.setLocation((etiquetaPuntaje.getLocationOnScreen().x+100), etiquetaPuntaje.getLocationOnScreen().y+100);
-						Thread.sleep(1000);
-						
-					}
-				} catch (Exception ae) {
-					
-				}
-			}
-	});
-		t.start();
+		repaint();
 	}
 	
 	
@@ -143,14 +110,6 @@ public class GUI extends JFrame{
 		return this.direction;
 	}
 	
-	
-	private class oyenteEliminar implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			juego.eliminarEntidad();
-			etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje());
-			repaint();
-		}
-	}
 	private class oyentejugar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Flanders flan= new Flanders(550,-44);
@@ -160,10 +119,9 @@ public class GUI extends JFrame{
 		
 	private class oyenteAgregarEntidad implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
-				int x=e.getX()
-						;
+				int x=e.getX();
 				int y=e.getY();
-				juego.clickEnMapa(x,y);
+				juego.agregarEntidad(x,y);
 		}
 		public void mousePressed(MouseEvent e) {}
 		public void mouseReleased(MouseEvent e) {
@@ -175,7 +133,12 @@ public class GUI extends JFrame{
 	
 	
 	public static void main (String [] args) {
-		GUI p = new GUI();
+		new GUI();
+	}
+
+	public void actualizarPuntajes() {
+		etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje());
+		etiquetaVida.setText("VIDAS: "+juego.getVida());
 	}
 
 	

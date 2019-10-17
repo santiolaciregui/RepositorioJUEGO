@@ -5,7 +5,7 @@ import Clases.Enemigo;
 import Disparos.Disparo;
 import Disparos.DisparoAliado;
 
-public class ColDisparoAliado implements Colisionador{
+public class ColDisparoAliado extends Colisionador{
 	protected Disparo disparo;
 	
 	public ColDisparoAliado(Disparo d) {

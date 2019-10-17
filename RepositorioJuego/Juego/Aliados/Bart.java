@@ -7,7 +7,10 @@ public class Bart extends Aliado {
 
 	public Bart(int x, int y) {
 		super(x,y);
-		vida=2000;
+		dano=300;
+		vida=800;
+		precio=1000;
+		monedas=precio;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
 		label.setBounds(x, y,117 , 110);
 	}
@@ -19,6 +22,9 @@ public class Bart extends Aliado {
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
 	}
+
+	@Override
+	public void mover() {	}
 
 
 }

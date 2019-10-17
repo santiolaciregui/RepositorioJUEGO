@@ -8,7 +8,10 @@ import Clases.Aliado;
 public class Homero extends Aliado {
 	public Homero(int x, int y) {
 		super(x,y);
-		vida=2000;
+		dano=500;
+		vida=1100;
+		precio=1500;
+		monedas=precio;
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 		
@@ -19,8 +22,11 @@ public class Homero extends Aliado {
 		
 	}
 	
-	public void pararGrafico() {
+	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
 	}
+
+	@Override
+	public void mover() {  }
 
 }

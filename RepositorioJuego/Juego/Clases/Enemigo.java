@@ -5,18 +5,14 @@ import javax.swing.ImageIcon;
 import Colisionadores.ColisionadorEnemigo;
 import Inteligencias.InteligenciaEnemigo;
 import Inteligencias.InteligenciaStatic;
-import Visitadores.Visitor;
 
 public abstract class Enemigo extends GameObject{
 	protected int monedas;
 	protected int velocidad;
-	
+	protected int puntosDeMuerte;
 	protected Enemigo(int x, int y) {
 		super(x,y);
 		inteligencia= new InteligenciaEnemigo(this);
-		vida=100;
-		dano=10;
-		puntosDeMuerte=100;
 		col= new ColisionadorEnemigo(this);
 	}
 
@@ -27,8 +23,10 @@ public abstract class Enemigo extends GameObject{
 	public void disminuirVida(int damage) {
 		super.disminuirVida(damage);
 		inteligencia.verificarInteligencia();
-//		if(vida==0)
-//			PowerUp();
+		if(vida==0) {
+			juego.aumentarMonedas(damage);
+			juego.aumentarPuntaje(puntosDeMuerte);
+		}
 	}
 
 	@Override
@@ -52,11 +50,6 @@ public abstract class Enemigo extends GameObject{
 
 	@Override
 	public void golpearEnemigo(GameObject e) {}
-	
-	public void accept(Visitor v) {
-		v.visitEnemigo(this);
-		
-	}
 
 	@Override
 	public void accionar() {}	

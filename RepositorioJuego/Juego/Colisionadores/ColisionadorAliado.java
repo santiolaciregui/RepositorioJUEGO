@@ -21,9 +21,8 @@ public class ColisionadorAliado extends Colisionador {
 	}
 
 	@Override
-	public void afectarDisparoAliado(DisparoAliado d) {
-		// TODO Auto-generated method stub
-		
+	public void afectarDisparoAliado(DisparoAliado d) { 
+		entidad.golpearDisparo(d);
 	}
 
 	@Override

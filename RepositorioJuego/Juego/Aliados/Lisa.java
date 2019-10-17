@@ -8,7 +8,10 @@ public class Lisa extends Aliado {
 
 	public Lisa(int x, int y) {
 		super(x,y);
-		vida=2000;
+		dano=200;
+		vida=700;
+		precio=800;
+		monedas=precio;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParado.png")));
 		label.setBounds(x, y,117 , 110);
 	}
@@ -20,6 +23,9 @@ public class Lisa extends Aliado {
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParado.png")));
 	}
+
+	@Override
+	public void mover() {	}
 	
 
 }

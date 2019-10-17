@@ -8,6 +8,10 @@ public class Apu extends Enemigo {
 
 	public Apu(int x, int y) {
 		super(x,y);
+		dano=200;
+		vida=1000;
+		monedas=500;
+		puntosDeMuerte=1000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuParado.png")));
 		label.setBounds(x, y,117 , 110);
 	}

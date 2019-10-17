@@ -8,6 +8,10 @@ public class Burns extends Enemigo {
 
 	public Burns(int x, int y) {
 		super(x, y);
+		dano=800;
+		vida=2000;
+		monedas=1000;
+		puntosDeMuerte=2000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsParado.png")));
 		label.setBounds(x, y,117 , 110);
 	}

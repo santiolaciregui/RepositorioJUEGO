@@ -19,4 +19,7 @@ public class Marge extends Aliado {
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
 	}
+
+	@Override
+	public void mover() {	}
 }

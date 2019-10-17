@@ -8,6 +8,10 @@ public class Barney extends Enemigo {
 
 	public Barney(int x, int y) {
 		super(x,y);
+		dano=100;
+		vida=1300;
+		monedas=500;
+		puntosDeMuerte=1000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyAtacaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}
@@ -18,7 +22,7 @@ public class Barney extends Enemigo {
 	
 	public void pararGrafico() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyParado.png")));
-		inteligencia.parar();
+		super.parar();
 	}
 
 	@Override
