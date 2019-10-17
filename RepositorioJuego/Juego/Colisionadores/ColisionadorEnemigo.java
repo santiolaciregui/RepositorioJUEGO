@@ -10,26 +10,17 @@ public class ColisionadorEnemigo extends Colisionador{
 		entidad=a;
 	}
 	@Override
-	public void afectarJugador(Aliado a) {
+	public void afectarAliado(Aliado a) {
 		a.disminuirVida(entidad.getDano());
 	}
 
 	@Override
-	public void afectarEnemigo(Enemigo e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void afectarEnemigo(Enemigo e) {		}
 
 	@Override
-	public void afectarDisparoAliado(DisparoAliado d) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void afectarDisparoAliado(DisparoAliado d) {  }
 
 	@Override
-	public void afectarDisparoEnemigo(DisparoAliado d) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void afectarDisparoEnemigo(DisparoAliado d) {  }
 
 }

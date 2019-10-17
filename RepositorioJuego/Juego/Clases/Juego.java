@@ -44,13 +44,15 @@ public class Juego {
 				entidadesPendientes.addLast(nuevo);
 			}
 	}
-	public void agregarEntidades() {
-		for(GameObject e: entidadesPendientes) {
-			entidades.add(e);
-			gui.add(e.getLabel());
-		}
-		entidadesPendientes.clear();
 	
+	public void agregarEntidades() {
+		synchronized (entidadesPendientes) {
+			for(GameObject e: entidadesPendientes) {
+				entidades.add(e);
+				gui.agregarObject(e.getLabel());
+			}
+			entidadesPendientes.clear();
+		}
 	}
 	
 	
@@ -71,7 +73,7 @@ public class Juego {
 		LinkedList<GameObject> lista= entidadesAeliminar;
 		entidadesAeliminar= new LinkedList<GameObject>();
 		for(GameObject e: lista) {
-			gui.remove(e.getLabel());
+			gui.eliminarEnemigo(e);
 			gui.repaint();
 			entidades.remove(e);
 

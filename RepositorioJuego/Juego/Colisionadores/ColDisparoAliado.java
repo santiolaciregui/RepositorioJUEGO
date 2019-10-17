@@ -12,7 +12,7 @@ public class ColDisparoAliado extends Colisionador{
 		disparo=d;
 	}
 	
-	public void afectarJugador(Aliado j) {
+	public void afectarAliado(Aliado j) {
 		// TODO Auto-generated method stub
 		
 	}

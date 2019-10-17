@@ -1,8 +1,7 @@
 package Aliados;
-import java.util.Random;
-
 import javax.swing.ImageIcon;
 
+import Armas.ArmaHomero;
 import Clases.Aliado;
 
 public class Homero extends Aliado {
@@ -12,6 +11,7 @@ public class Homero extends Aliado {
 		vida=1100;
 		precio=1500;
 		monedas=precio;
+		arma= new ArmaHomero();
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 		
@@ -19,6 +19,7 @@ public class Homero extends Aliado {
 	
 	public void atacar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
+		arma.crearDisparo(x,y);
 		
 	}
 	

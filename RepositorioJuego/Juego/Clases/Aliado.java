@@ -1,9 +1,11 @@
 package Clases;
+import Armas.Arma;
 import Colisionadores.ColisionadorAliado;
 
 public abstract class Aliado extends GameObject {
 	protected int monedas;
 	protected int precio;
+	protected Arma arma;
 
 	protected Aliado(int x, int y) {
 		super(x,y);	
@@ -17,7 +19,8 @@ public abstract class Aliado extends GameObject {
 		inteligencia.verificarInteligencia();
 	}
 	@Override
-	public void atacar() {}
+	public void atacar() {
+	}
 
 	@Override
 	public void parar() {}
@@ -38,10 +41,5 @@ public abstract class Aliado extends GameObject {
 		return monedas;
 	}
 
-	@Override
-	public void accionar() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+
 }

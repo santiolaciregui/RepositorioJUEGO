@@ -33,6 +33,17 @@ public class GUI extends JFrame{
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
 		
+		
+		etiquetaVida= new JLabel("VIDA: ");
+		etiquetaVida.setForeground(Color.WHITE);
+		etiquetaVida.setFont(new java.awt.Font("Tahoma", 1, 18));
+		panelAbajo.add(etiquetaVida);
+		etiquetaPuntaje = new JLabel("PUNTAJE:");
+		etiquetaPuntaje.setForeground(Color.WHITE);
+		etiquetaPuntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
+		panelAbajo.add(etiquetaPuntaje);
+		
+		
 		juego=new Juego(this);
 		
 		iniciarBotones();
@@ -45,10 +56,7 @@ public class GUI extends JFrame{
 		setResizable(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		etiquetaPuntaje = new JLabel("PUNTAJE:");
-		etiquetaPuntaje.setForeground(Color.WHITE);
-		etiquetaPuntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
-		panelAbajo.add(etiquetaPuntaje);
+		
 	}
 	
 	private void iniciarContentPane() {

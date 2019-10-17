@@ -2,6 +2,7 @@ package Clases;
 
 import javax.swing.ImageIcon;
 
+import Armas.Arma;
 import Colisionadores.ColisionadorEnemigo;
 import Inteligencias.InteligenciaEnemigo;
 import Inteligencias.InteligenciaStatic;
@@ -10,6 +11,8 @@ public abstract class Enemigo extends GameObject{
 	protected int monedas;
 	protected int velocidad;
 	protected int puntosDeMuerte;
+	protected Arma arma;
+	
 	protected Enemigo(int x, int y) {
 		super(x,y);
 		inteligencia= new InteligenciaEnemigo(this);
@@ -51,8 +54,7 @@ public abstract class Enemigo extends GameObject{
 	@Override
 	public void golpearEnemigo(GameObject e) {}
 
-	@Override
-	public void accionar() {}	
+	
 	public abstract Enemigo clonar();
 
 }

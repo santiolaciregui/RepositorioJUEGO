@@ -12,7 +12,7 @@ public class ColDisparoEnemigo extends Colisionador{
 		disparo=d;
 	}
 
-	public void afectarJugador(Aliado j) {
+	public void afectarAliado(Aliado j) {
 		disparo.golpearJugador(j);
 	}
 	public void afectarEnemigo(Enemigo e) { }

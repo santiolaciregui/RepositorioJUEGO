@@ -9,7 +9,6 @@ public abstract class Disparo extends GameObject {
 		super(x,y);
 		dano=damage;
 		vida=1;
-		puntosDeMuerte=0;
 	}
 	
 

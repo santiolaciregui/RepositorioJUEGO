@@ -5,7 +5,6 @@ import javax.swing.ImageIcon;
 import Clases.GameObject;
 import Colisionadores.ColDisparoAliado;
 import Inteligencias.InteligenciaDisparoAliado;
-import Visitadores.Visitor;
 
 public class DisparoAliado extends Disparo{
 
@@ -42,17 +41,4 @@ public class DisparoAliado extends Disparo{
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void accept(Visitor v) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void accionar() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

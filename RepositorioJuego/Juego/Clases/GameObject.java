@@ -91,7 +91,6 @@ public abstract class GameObject {
 	public abstract void atacar();
 	public abstract void parar();
 	public abstract void mover();
-	public abstract void accionar();
 	public abstract void golpearJugador(GameObject j);
 	public abstract void golpearEnemigo(GameObject e);
 	
