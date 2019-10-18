@@ -19,7 +19,7 @@ public class Homero extends Aliado {
 	
 	public void atacar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
-		arma.crearDisparo(x,y);
+		arma.crearDisparo(this.getPos());
 		
 	}
 	
