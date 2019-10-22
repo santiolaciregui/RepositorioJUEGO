@@ -8,7 +8,7 @@ import Clases.Enemigo;
 import Clases.GameObject;
 
 public abstract class Mapa {
-	protected LinkedList<GameObject> entidades;
+	protected LinkedList<GameObject> entidades, entidadesPendientes;
 	protected int cantEnemigos, cantObstaculos;
 	protected Juego juego;
 	protected int cantFilas, altodelaFila, Hgrilla, Wgrilla;
@@ -64,7 +64,7 @@ public abstract class Mapa {
 		boolean resul=false;
 		if(!hayColisiones(nuevo) && !fueraDeGrilla(nuevo)) {
 			resul=true;
-			entidades.add(nuevo);
+			entidadesPendientes.add(nuevo);
 		}
 		return resul;
 	}
