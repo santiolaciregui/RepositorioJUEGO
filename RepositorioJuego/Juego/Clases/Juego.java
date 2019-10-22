@@ -41,14 +41,12 @@ public class Juego {
 		GameObject nuevo= tienda.getCompra();
 		if(nuevo!=null)
 			if(mapa.puedoAgregar(nuevo, x,y)) {
-				gui.agregarObject(nuevo.getLabel());
 				entidadesPendientes.addLast(nuevo);
 			}
 	}
 	
 	public void agregarDisparo(GameObject e) {
-		entidadesPendientes.add(e);
-		gui.agregarObject(e.getLabel());
+		entidadesPendientes.addLast(e);
 	}
 	
 	public LinkedList<GameObject> listaEntidades(){
@@ -148,9 +146,9 @@ public class Juego {
 	
 	public void atacar() {
 		for(GameObject e: entidades) 
-			if(hayAlgoCerca(e)) {
+//			if(hayAlgoCerca(e)) {
 				e.atacar(null);
-			}
+//			}
 	}
 	
 	

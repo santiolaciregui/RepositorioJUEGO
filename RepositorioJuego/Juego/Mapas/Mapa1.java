@@ -27,7 +27,7 @@ public class Mapa1 extends Mapa {
 
 	@Override
 	public LinkedList<GameObject> crearEntidades() {
-		entidades= new LinkedList<GameObject>();
+		LinkedList<GameObject> entidades= new LinkedList<GameObject>();
 		Random ran= new Random(2);
 		int aux= ran.nextInt();
 		for(int i=0;i<cantEnemigos;i++) {

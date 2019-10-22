@@ -4,10 +4,11 @@ import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
 import Clases.GameObject;
+import Clases.Juego;
 
 public class Barney extends Enemigo {
 
-	public Barney(int x, int y) {
+	public Barney( int x, int y) {
 		super(x,y);
 		dano=100;
 		vida=1300;

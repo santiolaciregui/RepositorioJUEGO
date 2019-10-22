@@ -19,9 +19,6 @@ public class ColDisparoAliado extends Colisionador{
 	}
 
 	@Override
-	public void visitarDisparo(DisparoAliado d) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void visitarDisparo(DisparoAliado d) {  }
 
 }

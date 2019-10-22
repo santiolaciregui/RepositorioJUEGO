@@ -8,7 +8,6 @@ import Clases.Enemigo;
 import Clases.GameObject;
 
 public abstract class Mapa {
-	protected LinkedList<GameObject> entidades;
 	protected int cantEnemigos, cantObstaculos;
 	protected Juego juego;
 	protected int cantFilas, altodelaFila, Hgrilla, Wgrilla;
@@ -21,7 +20,6 @@ public abstract class Mapa {
 		Hgrilla= 221;
 		altodelaFila=(int)(Hgrilla/cantFilas);
 		Wgrilla= 1250;
-		entidades=juego.listaEntidades();
 	}
 	
 	public abstract LinkedList<GameObject> crearEntidades();
@@ -32,7 +30,7 @@ public abstract class Mapa {
 	
 	public boolean hayColisiones(GameObject nuevo) {
 		boolean hayColision=false;
-		Iterator<GameObject> it=entidades.iterator();
+		Iterator<GameObject> it=juego.listaEntidades().iterator();
 		while(it.hasNext() && !hayColision) {
 			GameObject aux=it.next();
 			if(nuevo!=aux)
@@ -64,25 +62,21 @@ public abstract class Mapa {
 		boolean resul=false;
 		if(!hayColisiones(nuevo) && !fueraDeGrilla(nuevo)) {
 			resul=true;
-			entidades.add(nuevo);
 		}
 		return resul;
 	}
 	
-	public void eliminarEntidad(GameObject e) {
-		entidades.remove(e);
-	}
 	
 	public void moverEnemigos(){
-		if(!entidades.isEmpty())
-			for(GameObject e: entidades){
+		if(!juego.listaEntidades().isEmpty())
+			for(GameObject e: juego.listaEntidades()){
 				if(!hayColisiones(e))
 					e.mover();
 			}
 	}
 	
 	public void deboParar() {
-		for(GameObject e: entidades) {
+		for(GameObject e: juego.listaEntidades()) {
 			if(hayColisiones(e))
 				e.parar();
 		}

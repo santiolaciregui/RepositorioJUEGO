@@ -1,18 +1,18 @@
 package Disparos;
 
 import javax.swing.ImageIcon;
-
 import Clases.GameObject;
+import Clases.Juego;
 import Colisionadores.ColDisparoAliado;
 import Colisionadores.Colisionador;
 
 public class DisparoAliado extends Disparo{
-	public DisparoAliado(int damage, int x, int y) {
-		super(damage, x, y);
+	public DisparoAliado(Juego game, int damage, int x, int y) {
+		super(game,damage, x, y);
 		velocidad=2;
 		this.getLabel().setIcon(new ImageIcon(getClass().getResource("/Imagenes/BoloGif.gif")));
 		this.col= new ColDisparoAliado(this);
-		mover();
+//		mover();
 	}
 
 	public void golpearEnemigo(GameObject e) {

@@ -8,7 +8,7 @@ public abstract class Aliado extends GameObject {
 	protected int precio;
 	protected Arma arma;
 
-	protected Aliado(int x, int y) {
+	protected Aliado(int x,int y) {
 		super(x,y);	
 		col= new ColisionadorAliado(this);
 	}

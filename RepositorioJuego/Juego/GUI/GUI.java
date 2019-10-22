@@ -19,7 +19,6 @@ public class GUI extends JFrame{
 	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;
-	private JButton jugar;
 	@SuppressWarnings("unused")
 	private ColeccionBotones botones;
 	private JLabel etiquetaPuntaje, etiquetaVida;
@@ -86,12 +85,7 @@ public class GUI extends JFrame{
 	}
 		
 	public void iniciarBotones() {
-		botones= new ColeccionBotones(panelAbajo, juego.getTienda());
-		jugar= new JButton("Jugar");
-		jugar.setFont(new Font("Century Gothic",25, 20));
-		panelArriba.add(jugar);
-		jugar.addActionListener(new oyentejugar());
-		
+		botones= new ColeccionBotones(panelAbajo, juego.getTienda());		
 		repaint();
 	}
 		
@@ -118,13 +112,6 @@ public class GUI extends JFrame{
 		return this.direction;
 	}
 	
-	private class oyentejugar implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			Flanders flan= new Flanders(550,-44);
-			proximoAagregar=flan;
-		}
-	}
-		
 	private class oyenteAgregarEntidad implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
 				int x=e.getX();

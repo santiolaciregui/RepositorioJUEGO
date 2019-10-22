@@ -10,7 +10,7 @@ public abstract class Enemigo extends GameObject{
 	protected int puntosDeMuerte;
 	protected Arma arma;
 	
-	protected Enemigo(int x, int y) {
+	protected Enemigo(int x,int y) {
 		super(x,y);
 		col= new ColisionadorEnemigo(this);
 		velocidad=1;

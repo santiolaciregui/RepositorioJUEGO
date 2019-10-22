@@ -2,8 +2,10 @@ package Enemigos;
 
 import javax.swing.ImageIcon;
 
+
 import Clases.Enemigo;
 import Clases.GameObject;
+import Clases.Juego;
 
 public class Flanders extends Enemigo  {
 

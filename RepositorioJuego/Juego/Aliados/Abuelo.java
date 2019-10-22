@@ -3,6 +3,7 @@ import javax.swing.ImageIcon;
 
 import Clases.Aliado;
 import Clases.GameObject;
+import Clases.Juego;
 
 public class Abuelo extends Aliado {
 	public Abuelo(int x, int y) {
