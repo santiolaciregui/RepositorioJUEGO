@@ -70,16 +70,18 @@ public class Juego {
 		eliminarAux();
 	}
 	private void eliminarAux() {
-		LinkedList<GameObject> lista= entidadesAeliminar;
-		entidadesAeliminar= new LinkedList<GameObject>();
-		for(GameObject e: lista) {
-			gui.eliminarEnemigo(e);
-			gui.repaint();
-			entidades.remove(e);
+		synchronized (entidadesPendientes) {
+			LinkedList<GameObject> lista= entidadesAeliminar;
+			entidadesAeliminar= new LinkedList<GameObject>();
+			for(GameObject e: lista) {
+				gui.eliminarEnemigo(e);
+				gui.repaint();
+				entidades.remove(e);
 
+			}
+			entidadesAeliminar.clear();
+			gui.actualizarPuntajes();
 		}
-		entidadesAeliminar.clear();
-		gui.actualizarPuntajes();
 	}
 	
 
@@ -119,13 +121,6 @@ public class Juego {
 	public int getMonedas() {
 		return monedas;
 	}
-	
-	
-//	public void disparar() {
-//		for(GameObject e: entidades) {
-//			e.disparar();
-//		}
-//	}
 	
 	
 	public void moverEnemigos(){

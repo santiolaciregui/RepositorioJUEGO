@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 import Clases.GameObject;
 import Colisionadores.ColDisparoAliado;
+import Colisionadores.Colisionador;
 import Inteligencias.InteligenciaDisparoAliado;
 
 public class DisparoAliado extends Disparo{
@@ -25,6 +26,17 @@ public class DisparoAliado extends Disparo{
 		if(this.getLabel().getLocation().x>1250)
 			this.vida=0;
 	}
+	
+	public void serColisionado(Colisionador col) {
+		col.afectarDisparoAliado(this);
+	}
+	
+	public void golpearJugador(GameObject e) {
+		this.vida=0;
+	}
+	
+	public void golpearDisparoJugador(GameObject d) {}
+	
 	@Override
 	public void atacar() {
 		// TODO Auto-generated method stub
@@ -32,12 +44,6 @@ public class DisparoAliado extends Disparo{
 	}
 	@Override
 	public void parar() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void golpearJugador(GameObject j) {
 		// TODO Auto-generated method stub
 		
 	}

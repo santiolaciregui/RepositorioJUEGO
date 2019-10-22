@@ -5,7 +5,7 @@ import Disparos.DisparoAliado;
 public class InteligenciaDisparoAliado extends Inteligencia {
 	
 	public InteligenciaDisparoAliado(DisparoAliado d) {
-		velocidad=2;   
+		velocidad=6;   
 	}
 	
 	public void mover() {
