@@ -4,13 +4,11 @@ import java.awt.Point;
 import javax.swing.JLabel;
 
 import Colisionadores.Colisionador;
-import Inteligencias.Inteligencia;
 public abstract class GameObject {
 	protected int vida, dano;
 	protected Juego juego;
 	protected JLabel label;
 	protected Colisionador col;
-	protected Inteligencia inteligencia;
 
 	
 	protected GameObject (int x, int y) {
@@ -58,14 +56,6 @@ public abstract class GameObject {
 	}
 	
 	
-	public Inteligencia getInteligencia() {
-		return inteligencia;
-	}
-	public void setInteligencia(Inteligencia inteligencia) {
-		this.inteligencia = inteligencia;
-	}
-	
-	
 	public void aumentarVida(int vida ) {
 		this.vida+=vida;
 		if(vida>100)
@@ -88,10 +78,10 @@ public abstract class GameObject {
 	}
 	
 	
-	public abstract void atacar();
-	public abstract void parar();
+	public abstract void atacar(GameObject e);
 	public abstract void mover();
-	public abstract void golpearJugador(GameObject j);
+	public abstract void parar();
+	public abstract void golpearAliado(GameObject j);
 	public abstract void golpearEnemigo(GameObject e);
 	
 	

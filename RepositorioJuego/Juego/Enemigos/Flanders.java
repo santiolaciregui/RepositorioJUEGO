@@ -3,6 +3,7 @@ package Enemigos;
 import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
+import Clases.GameObject;
 
 public class Flanders extends Enemigo  {
 
@@ -12,17 +13,17 @@ public class Flanders extends Enemigo  {
 		vida=1100;
 		monedas=700;
 		puntosDeMuerte=1300;
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacar() {
+	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
 	}
 	
 	public void parar() {
-		super.parar();
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersParado.png")));
+		super.parar();
 	}
 
 	@Override

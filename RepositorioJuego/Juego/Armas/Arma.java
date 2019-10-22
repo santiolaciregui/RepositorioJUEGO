@@ -1,4 +1,4 @@
-package Armas;
+  package Armas;
 
 import java.awt.Point;
 

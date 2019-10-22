@@ -3,6 +3,7 @@ package Enemigos;
 import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
+import Clases.GameObject;
 
 public class Apu extends Enemigo {
 
@@ -16,7 +17,7 @@ public class Apu extends Enemigo {
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacar() {
+	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuAtacaGif.gif")));
 	}
 	

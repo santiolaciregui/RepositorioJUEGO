@@ -1,5 +1,6 @@
 package Clases;
 import Armas.Arma;
+import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorAliado;
 
 public abstract class Aliado extends GameObject {
@@ -16,19 +17,32 @@ public abstract class Aliado extends GameObject {
 	public void disminuirValoryVida(int valor, int damage) {
 		super.disminuirVida(damage);
 		monedas=monedas/2;
-		inteligencia.verificarInteligencia();
 	}
+	
+
+	public void serColisionado(Colisionador col) {
+		col.visitar(this);
+	}
+	
+	
 	@Override
-	public void atacar() {
-	}
+	public abstract void atacar(GameObject e);
 
 	@Override
-	public void parar() {}
-
-	@Override
-	public void golpearJugador(GameObject j) {
-		// TODO Auto-generated method stub
-		
+	public abstract void parar();
+	
+	public void golpearPowerUp(GameObject e) {
+	}
+	public void golpearObstaculoDestruible(GameObject o) {
+	}
+	
+	public void golpearAliado(GameObject j) {
+	}
+	public void golpearObstaculoBarricada(GameObject o) {
+	}
+	public void golpearDisparoJugador(GameObject d) {
+	}
+	public void golpearDisparoEnemigo(GameObject d) {
 	}
 
 	@Override

@@ -7,20 +7,19 @@ import Disparos.DisparoAliado;
 public class ColisionadorEnemigo extends Colisionador{
 	
 	public ColisionadorEnemigo(Enemigo a) {
-		entidad=a;
+		miPersonaje=a;
 	}
 	@Override
-	public void afectarAliado(Aliado a) {
-		a.disminuirVida(entidad.getDano());
+	public void visitar(Aliado a) {
+		miPersonaje.atacar(null);
 	}
-
 	@Override
-	public void afectarEnemigo(Enemigo e) {		}
-
+	public void visitar(Enemigo e) {}
+		
 	@Override
-	public void afectarDisparoAliado(DisparoAliado d) {  }
-
-	@Override
-	public void afectarDisparoEnemigo(DisparoAliado d) {  }
+	public void visitarDisparo(DisparoAliado d) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

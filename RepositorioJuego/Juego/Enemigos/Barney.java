@@ -3,6 +3,7 @@ package Enemigos;
 import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
+import Clases.GameObject;
 
 public class Barney extends Enemigo {
 
@@ -12,15 +13,15 @@ public class Barney extends Enemigo {
 		vida=1300;
 		monedas=500;
 		puntosDeMuerte=1000;
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyAtacaGif.gif")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacarGrafico() {
+	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyAtacaGif.gif")));
 	}
 	
-	public void pararGrafico() {
+	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyParado.png")));
 		super.parar();
 	}

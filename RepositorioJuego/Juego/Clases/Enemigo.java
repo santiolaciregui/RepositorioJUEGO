@@ -1,11 +1,8 @@
 package Clases;
 
-import javax.swing.ImageIcon;
-
 import Armas.Arma;
+import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorEnemigo;
-import Inteligencias.InteligenciaEnemigo;
-import Inteligencias.InteligenciaStatic;
 
 public abstract class Enemigo extends GameObject{
 	protected int monedas;
@@ -15,37 +12,43 @@ public abstract class Enemigo extends GameObject{
 	
 	protected Enemigo(int x, int y) {
 		super(x,y);
-		inteligencia= new InteligenciaEnemigo(this);
 		col= new ColisionadorEnemigo(this);
+		velocidad=1;
 	}
 
 	public void mover() {
-		inteligencia.mover();
+		this.setPos(this.getPos().x - velocidad, this.getPos().y);
+		if(this.getPos().x<-10) {
+			this.setVida(0);
+			juego.disminuirVida(1);
+		}
+	}
+	
+	@Override
+	public void parar() {
+		this.setPos(this.getPos().x, this.getPos().y);
+		atacar(null);
 	}
 	
 	public void disminuirVida(int damage) {
 		super.disminuirVida(damage);
-		inteligencia.verificarInteligencia();
 		if(vida==0) {
 			juego.aumentarMonedas(damage);
 			juego.aumentarPuntaje(puntosDeMuerte);
+			//largar PowerUp //faltaaaa
 		}
 	}
 
 	@Override
-	public void parar() {
-		inteligencia=new InteligenciaStatic();
-			
+	public void atacar(GameObject e) {
 	}
 
-	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-		
+	public void serColisionado(Colisionador col) {
+		col.visitar(this);
 	}
-
+	
 	@Override
-	public void golpearJugador(GameObject e) {
+	public void golpearAliado(GameObject e) {
 		e.disminuirVida(dano);
 		this.vida=0;
 		
@@ -54,6 +57,17 @@ public abstract class Enemigo extends GameObject{
 	@Override
 	public void golpearEnemigo(GameObject e) {}
 
+	public void golpearPowerUp(GameObject e) {
+	}
+
+	public void golpearObstaculoBarricada(GameObject o) {
+	}
+
+	public void golpearDisparoJugador(GameObject d) {
+	}
+
+	public void golpearDisparoEnemigo(GameObject d) {
+	}
 	
 	public abstract Enemigo clonar();
 

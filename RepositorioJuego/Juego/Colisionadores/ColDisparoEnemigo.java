@@ -12,14 +12,16 @@ public class ColDisparoEnemigo extends Colisionador{
 		disparo=d;
 	}
 
-	public void afectarAliado(Aliado j) {
-		disparo.golpearJugador(j);
+	public void visitar(Aliado j) {
+		disparo.golpearAliado(j);
 	}
-	public void afectarEnemigo(Enemigo e) { }
+	public void visitar(Enemigo e) { }
 
 	@Override
-	public void afectarDisparoAliado(DisparoAliado d) {  }
+	public void visitarDisparo(DisparoAliado d) {
+		// TODO Auto-generated method stub
+		
+	}
 
-	@Override
-	public void afectarDisparoEnemigo(DisparoAliado d) { }	
+
 }

@@ -10,7 +10,7 @@ public class ObjetoConVida extends GameObject {
 	}
 
 	@Override
-	public void atacar() {
+	public void atacar(GameObject e) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -18,13 +18,13 @@ public class HiloTiempo extends Thread{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
-			juego.moverEnemigos();
-			juego.verificarMapa();
-			juego.disparar();
-			juego.pararEnemigosSiEsNecesario();
 			juego.agregarEntidades();
 			juego.eliminarEntidades();
+			juego.moverEnemigos();
+			juego.verificarMapa();
+			juego.atacar();
+			juego.pararEnemigosSiEsNecesario();
+			
 		}
 	}
 	public void finalizar() {

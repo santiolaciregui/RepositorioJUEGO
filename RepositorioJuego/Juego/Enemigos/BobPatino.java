@@ -3,6 +3,7 @@ package Enemigos;
 import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
+import Clases.GameObject;
 
 public class BobPatino extends Enemigo {
 
@@ -16,11 +17,11 @@ public class BobPatino extends Enemigo {
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacarGrafico() {
+	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobPatinoAtacaGif.gif")));
 	}
 	
-	public void pararGrafico() {
+	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobPatinoParado.png")));
 	}
 

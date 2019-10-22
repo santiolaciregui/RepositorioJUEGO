@@ -3,6 +3,7 @@ package Enemigos;
 import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
+import Clases.GameObject;
 
 public class Burns extends Enemigo {
 
@@ -16,11 +17,12 @@ public class Burns extends Enemigo {
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacarGrafico() {
+	public void atacar(GameObject e) {
+		super.atacar(e);
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsAtacaGif.gif")));
 	}
 	
-	public void pararGrafico() {
+	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsParado.png")));
 	
 }

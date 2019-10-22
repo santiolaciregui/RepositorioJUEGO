@@ -2,6 +2,7 @@ package Aliados;
 import javax.swing.ImageIcon;
 
 import Clases.Aliado;
+import Clases.GameObject;
 
 public class Abuelo extends Aliado {
 	public Abuelo(int x, int y) {
@@ -11,7 +12,7 @@ public class Abuelo extends Aliado {
 		label.setBounds(x, y,127 , 116);
 	}
 	
-	public void atacar() {
+	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
 	}
 	

@@ -14,11 +14,12 @@ public class Juego {
 	private Mapa mapa;
 	
 	public Juego(GUI gui) {
-		this.mapa=new Mapa1(this);
+		
 		this.gui=gui;
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
+		this.mapa=new Mapa1(this);
 		tienda= new Tienda(this);
 		iniciarEntidades();
 		monedas=10000000;	
@@ -45,43 +46,41 @@ public class Juego {
 			}
 	}
 	
-	public void agregarEntidades() {
-		synchronized (entidadesPendientes) {
-			for(GameObject e: entidadesPendientes) {
-				entidades.add(e);
-				gui.agregarObject(e.getLabel());
-			}
-			entidadesPendientes.clear();
-		}
+	public void agregarDisparo(GameObject e) {
+		entidadesPendientes.add(e);
+		gui.agregarObject(e.getLabel());
 	}
 	
-	
+	public LinkedList<GameObject> listaEntidades(){
+		return entidades;
+	}
+	public void agregarEntidades() {
+		for(GameObject e: entidadesPendientes) {
+			entidades.add(e);
+			gui.agregarObject(e.getLabel());
+		}
+		entidadesPendientes.clear();
+	}
 	
 	public void eliminarEntidades() {
 		if(entidades.size()==0)
 			tiempo.finalizar();
-		@SuppressWarnings("unchecked")
-		LinkedList<GameObject> lista= (LinkedList<GameObject>) entidades.clone();
-		for(GameObject e: lista) {     
+		for(GameObject e: entidades) {     
 			if(e.getVida()==0) {
 				entidadesAeliminar.add(e);
 			}
 		}
-		eliminarAux();
+		eliminarAux(entidadesAeliminar);
 	}
-	private void eliminarAux() {
-		synchronized (entidadesPendientes) {
-			LinkedList<GameObject> lista= entidadesAeliminar;
+	private void eliminarAux(LinkedList<GameObject> lista) {
+			LinkedList<GameObject> aux= (LinkedList<GameObject>) entidadesAeliminar.clone();
 			entidadesAeliminar= new LinkedList<GameObject>();
-			for(GameObject e: lista) {
+			for(GameObject e: aux) {
 				gui.eliminarEnemigo(e);
-				gui.repaint();
 				entidades.remove(e);
-
 			}
 			entidadesAeliminar.clear();
 			gui.actualizarPuntajes();
-		}
 	}
 	
 
@@ -90,6 +89,7 @@ public class Juego {
 	}
 
 
+	
 	public void setTienda(Tienda tienda) {
 		this.tienda = tienda;
 	}
@@ -98,8 +98,8 @@ public class Juego {
 	}
 
 	
-	public void setVida(int vida) {
-		this.vida = vida;
+	public void disminuirVida(int vida) {
+		this.vida -= vida;
 	}
 	public int getVida() {
 		return vida;
@@ -123,16 +123,14 @@ public class Juego {
 	}
 	
 	
-	public void moverEnemigos(){
-		if(!entidades.isEmpty())
-			for(GameObject e: entidades){
-				e.mover();
-			}
+	public void moverEnemigos() {
+		mapa.moverEnemigos();
 	}
 	
 	public void pararEnemigosSiEsNecesario() {
 		mapa.deboParar();
 	}
+	
 	
 	public boolean hayAlgoCerca(GameObject e) {
 		boolean toReturn=false;
@@ -144,14 +142,15 @@ public class Juego {
 	
 	
 	public void verificarMapa() {
-		if(entidades.size()==0) {
+		if(entidades.size()==0) 
 			mapa.mapaSiguiente();
-		}
 	}
 	
-	public void disparar() {
+	public void atacar() {
 		for(GameObject e: entidades) 
-			e.atacar();
+			if(hayAlgoCerca(e)) {
+				e.atacar(null);
+			}
 	}
 	
 	
