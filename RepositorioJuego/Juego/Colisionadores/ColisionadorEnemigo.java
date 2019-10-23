@@ -7,11 +7,11 @@ import Disparos.DisparoAliado;
 public class ColisionadorEnemigo extends Colisionador{
 	
 	public ColisionadorEnemigo(Enemigo a) {
-		miPersonaje=a;
+		miEntidad=a;
 	}
 	@Override
 	public void visitar(Aliado a) {
-		miPersonaje.atacar(null);
+		miEntidad.golpearAliado(a);
 	}
 	@Override
 	public void visitar(Enemigo e) {}

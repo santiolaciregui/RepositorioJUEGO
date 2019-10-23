@@ -6,14 +6,13 @@ import Disparos.Disparo;
 import Disparos.DisparoAliado;
 
 public class ColDisparoEnemigo extends Colisionador{
-	protected Disparo disparo;
 
 	public ColDisparoEnemigo(Disparo d) {
-		disparo=d;
+		miEntidad=d;
 	}
 
 	public void visitar(Aliado j) {
-		disparo.golpearAliado(j);
+		miEntidad.golpearAliado(j);
 	}
 	public void visitar(Enemigo e) { }
 

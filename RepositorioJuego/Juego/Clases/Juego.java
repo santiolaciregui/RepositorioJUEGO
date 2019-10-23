@@ -21,7 +21,6 @@ public class Juego {
 		entidadesPendientes= new LinkedList<GameObject>();
 		this.mapa=new Mapa1(this);
 		tienda= new Tienda(this);
-		iniciarEntidades();
 		monedas=10000000;	
 		puntaje=0;
 		vida=3;
@@ -43,11 +42,14 @@ public class Juego {
 			if(mapa.puedoAgregar(nuevo, x,y)) {
 				nuevo.setJuego(this);
 				entidadesPendientes.addLast(nuevo);
+				System.out.println(entidades.size());
 			}
 	}
 	
 	public void agregarDisparo(GameObject e) {
 		entidadesPendientes.addLast(e);
+		System.out.println("dadad");
+		e.setJuego(this);
 	}
 	
 	public LinkedList<GameObject> listaEntidades(){
@@ -62,8 +64,8 @@ public class Juego {
 	}
 	
 	public void eliminarEntidades() {
-		if(entidades.size()==0)
-			tiempo.finalizar();
+//		if(entidades.size()==0)
+//			tiempo.finalizar();
 		for(GameObject e: entidades) {     
 			if(e.getVida()==0) {
 				entidadesAeliminar.add(e);
@@ -86,8 +88,7 @@ public class Juego {
 	public Mapa getMapa() {
 		return mapa;
 	}
-
-
+	
 	
 	public void setTienda(Tienda tienda) {
 		this.tienda = tienda;

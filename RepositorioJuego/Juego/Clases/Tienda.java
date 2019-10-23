@@ -17,10 +17,9 @@ public class Tienda {
 	}
 
 	public GameObject getCompra() {
-		if(aAgregar!=null)
-			return aAgregar;
-		return null;
-		
+		if(aAgregar==null)
+			return null;
+		return aAgregar;
 	}
 	
 	

@@ -7,7 +7,7 @@ import Disparos.DisparoAliado;
 public class ArmaHomero extends Arma {
 	
 	public DisparoAliado crearDisparo(Point pos) {
-		DisparoAliado disparo= new DisparoAliado(800, pos.x+40, pos.y+25);
+		DisparoAliado disparo= new DisparoAliado(800, pos.x, pos.y+80);
 		return disparo;
 	}
 	

@@ -1,4 +1,6 @@
 package Aliados;
+import java.util.Random;
+
 import javax.swing.ImageIcon;
 
 import Armas.ArmaHomero;
@@ -18,8 +20,10 @@ public class Homero extends Aliado {
 	}
 	
 	public void disparar() {
+		int s=  (int) (Math.random() * 50) + 1;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
-		juego.agregarDisparo(arma.crearDisparo(this.getPos()));
+		if(s==2)
+			juego.agregarDisparo(arma.crearDisparo(this.getPos()));
 	}
 	
 	public void parar() {

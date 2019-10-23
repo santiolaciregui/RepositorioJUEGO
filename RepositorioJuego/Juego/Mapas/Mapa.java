@@ -34,17 +34,40 @@ public abstract class Mapa {
 		while(it.hasNext() && !hayColision) {
 			GameObject aux=it.next();
 			if(nuevo!=aux)
-				if(verificarColision(aux,nuevo)) 
+				if(verificarColision(aux,nuevo)) {
 					hayColision=true;
+					
+				}
 		}
 		return hayColision;
 	}
 	
 	public boolean verificarColision(GameObject aux,GameObject nuevo) {
-		Rectangle r1= aux.getLabel().getBounds();r1.height=20;r1.width=40;
+		Rectangle r1= aux.getLabel().getBounds();
+		r1.height=20;r1.width=40;
 		Rectangle r2= nuevo.getLabel().getBounds(); r2.height=20; r2.width=40;
 		return r1.intersects(r2);		
 	}
+	
+//	public void colisionar(GameObject jugador) {
+//		for(int i=0; i<juego.listaEntidades().size();i++) {
+//			GameObject e1= juego.listaEntidades().get(i);
+//			verificarColision(e1,jugador);
+//			for(int j=i+1;j<juego.listaEntidades().size();j++) {
+//				GameObject e2=juego.listaEntidades().get(j);
+//				verificarColision(e1,e2);
+//			}
+//		}
+//	}
+//	private void verificarColision(GameObject e1, GameObject e2) {
+//		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
+//		Rectangle r1= new Rectangle(e1.getPos().x+2, e1.getPos().y+2, e1.getLabel().getWidth()-2, e1.getLabel().getHeight()-2);
+//		Rectangle r2= new Rectangle(e2.getPos().x+2, e2.getPos().y+2, e2.getLabel().getWidth()-2, e2.getLabel().getHeight()-2);
+//		if(r1.intersects(r2)) {
+//			colisionar(e2);
+//			colisionar(e1);
+//		}
+//	}
 	
 	public void ubicacionDefinitiva(GameObject nuevo) {
 		Rectangle rectangulo= nuevo.getLabel().getBounds();

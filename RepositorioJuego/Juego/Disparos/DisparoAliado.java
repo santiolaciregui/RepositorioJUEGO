@@ -7,13 +7,14 @@ import Colisionadores.ColDisparoAliado;
 public class DisparoAliado extends Disparo{
 	public DisparoAliado(int damage, int x, int y) {
 		super(damage, x, y);
-		velocidad=3;
+		velocidad=20;
 		this.getLabel().setIcon(new ImageIcon(getClass().getResource("/Imagenes/BoloGif.gif")));
 		this.getLabel().setBounds(this.getPos().x, this.getPos().y, 15, 15);
 		this.col= new ColDisparoAliado(this);
 	}
 
 	public void golpearEnemigo(GameObject e) {
+		System.out.println("jajajjaajaajajaajjajajaja");
 		e.disminuirVida(dano);	
 		this.vida=0;
 	}	

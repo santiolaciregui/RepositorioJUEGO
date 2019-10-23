@@ -7,7 +7,7 @@ import Disparos.DisparoAliado;
 
 public abstract class Colisionador {
 	
-	protected GameObject miPersonaje;
+	protected GameObject miEntidad;
 	
 	public abstract void visitar(Aliado a);
 	public abstract void visitar(Enemigo e);
