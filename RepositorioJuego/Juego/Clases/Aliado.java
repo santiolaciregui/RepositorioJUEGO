@@ -47,9 +47,8 @@ public abstract class Aliado extends GameObject {
 
 	@Override
 	public void golpearEnemigo(GameObject e) {
-		// TODO Auto-generated method stub
 		
-	}
+		}
 	
 	public int getMonedas() {
 		return monedas;

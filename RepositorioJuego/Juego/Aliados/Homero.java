@@ -4,8 +4,6 @@ import javax.swing.ImageIcon;
 import Armas.ArmaHomero;
 import Clases.Aliado;
 import Clases.GameObject;
-import Clases.Juego;
-import Disparos.Disparo;
 
 public class Homero extends Aliado {
 	public Homero( int x, int y) {
@@ -21,9 +19,7 @@ public class Homero extends Aliado {
 	
 	public void disparar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
-		Disparo pepe = arma.crearDisparo(this.getPos());
-//		System.out.println(pepe);
-		juego.agregarDisparo(pepe);
+		juego.agregarDisparo(arma.crearDisparo(this.getPos()));
 	}
 	
 	public void parar() {
@@ -36,7 +32,6 @@ public class Homero extends Aliado {
 	@Override
 	public void atacar(GameObject e) {
 		disparar();
-		
 	}
 
 }

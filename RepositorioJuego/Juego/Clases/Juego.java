@@ -41,6 +41,7 @@ public class Juego {
 		GameObject nuevo= tienda.getCompra();
 		if(nuevo!=null)
 			if(mapa.puedoAgregar(nuevo, x,y)) {
+				nuevo.setJuego(this);
 				entidadesPendientes.addLast(nuevo);
 			}
 	}
@@ -54,7 +55,7 @@ public class Juego {
 	}
 	public void agregarEntidades() {
 		for(GameObject e: entidadesPendientes) {
-			entidades.add(e);
+			entidades.addLast(e);
 			gui.agregarObject(e.getLabel());
 		}
 		entidadesPendientes.clear();
@@ -121,8 +122,8 @@ public class Juego {
 	}
 	
 	
-	public void moverEnemigos() {
-		mapa.moverEnemigos();
+	public void mover() {
+		mapa.mover();
 	}
 	
 	public void pararEnemigosSiEsNecesario() {
@@ -146,9 +147,7 @@ public class Juego {
 	
 	public void atacar() {
 		for(GameObject e: entidades) 
-//			if(hayAlgoCerca(e)) {
-				e.atacar(null);
-//			}
+			e.atacar(null);
 	}
 	
 	

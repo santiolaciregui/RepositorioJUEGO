@@ -67,7 +67,7 @@ public abstract class Mapa {
 	}
 	
 	
-	public void moverEnemigos(){
+	public void mover(){
 		if(!juego.listaEntidades().isEmpty())
 			for(GameObject e: juego.listaEntidades()){
 				if(!hayColisiones(e))

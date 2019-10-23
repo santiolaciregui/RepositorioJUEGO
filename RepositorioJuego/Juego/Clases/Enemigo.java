@@ -50,8 +50,6 @@ public abstract class Enemigo extends GameObject{
 	@Override
 	public void golpearAliado(GameObject e) {
 		e.disminuirVida(dano);
-		this.vida=0;
-		
 	}
 
 	@Override
