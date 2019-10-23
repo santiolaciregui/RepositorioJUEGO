@@ -55,6 +55,7 @@ public class Juego {
 	public LinkedList<GameObject> listaEntidades(){
 		return entidades;
 	}
+	
 	public void agregarEntidades() {
 		for(GameObject e: entidadesPendientes) {
 			entidades.addLast(e);
@@ -73,6 +74,7 @@ public class Juego {
 		}
 		eliminarAux(entidadesAeliminar);
 	}
+	
 	private void eliminarAux(LinkedList<GameObject> lista) {
 			LinkedList<GameObject> aux= (LinkedList<GameObject>) entidadesAeliminar.clone();
 			entidadesAeliminar= new LinkedList<GameObject>();
@@ -101,11 +103,10 @@ public class Juego {
 	public void disminuirVida(int vida) {
 		this.vida -= vida;
 	}
+	
 	public int getVida() {
 		return vida;
 	}
-	
-	
 	
 	public void aumentarPuntaje(int p) {
 		puntaje+=p;
@@ -159,5 +160,4 @@ public class Juego {
 		this.tiempo = tiempo;
 	}
 
-	
 }

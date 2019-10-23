@@ -83,6 +83,12 @@ public abstract class GameObject {
 	public abstract void parar();
 	public abstract void golpearAliado(GameObject j);
 	public abstract void golpearEnemigo(GameObject e);
+
+
+	public void accept(Colisionador v) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }
