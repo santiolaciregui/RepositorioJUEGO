@@ -19,6 +19,10 @@ public class Moe extends Enemigo {
 		arma = new ArmaMoe();
 	}
 	
+	public void mover() {
+		super.mover();
+		atacar(null);
+	}
 	public void atacar(GameObject e) {
 		int s=  (int) (Math.random() * 50) + 1;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeAtacaGif.gif")));

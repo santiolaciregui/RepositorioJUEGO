@@ -1,14 +1,13 @@
 package Disparos;
 
 import Clases.GameObject;
-import Colisionadores.ColDisparoAliado;
-import Colisionadores.Colisionador;
+import Colisionadores.*;
 
 public class DisparoEnemigo extends Disparo{
 	public DisparoEnemigo(int damage, int x, int y) {
 		super(damage, x, y);
 		velocidad=15;
-		this.col= new ColDisparoAliado(this);
+		this.col= new ColDisparoEnemigo(this);
 	}
 
 	public void mover() {

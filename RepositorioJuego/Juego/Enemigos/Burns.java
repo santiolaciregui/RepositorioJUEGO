@@ -13,7 +13,7 @@ public class Burns extends Enemigo {
 		vida=2000;
 		monedas=1000;
 		puntosDeMuerte=2000;
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsParado.png")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}
 	
