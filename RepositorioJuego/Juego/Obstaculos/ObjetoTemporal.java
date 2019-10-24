@@ -11,7 +11,7 @@ public class ObjetoTemporal extends GameObject {
 	public ObjetoTemporal(int x, int y) {
 		super(x,y);
 		duracion = 10;
-		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/PremioKrusty.png")));
+		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/TamborGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}
 
@@ -32,26 +32,15 @@ public class ObjetoTemporal extends GameObject {
 		// TODO Auto-generated method stub
 		
 	}
-
-	public void golpearJugador(GameObject j) {
+	
+	@Override
+	public void serColisionado(Colisionador col) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void golpearEnemigo(GameObject e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void accept(Colisionador v) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void golpearAliado(GameObject j) {
+	public void morir() {
 		// TODO Auto-generated method stub
 		
 	}

@@ -14,9 +14,7 @@ public class ColisionadorPowerUp extends Colisionador{
 	}
 	
 	@Override
-	public void visitar(Aliado a) {
-		power.atacar(a);		
-	}
+	public void visitar(Aliado a) {	}
 
 	@Override
 	public void visitar(Enemigo e) {	}
