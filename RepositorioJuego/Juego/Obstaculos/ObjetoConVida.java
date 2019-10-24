@@ -1,12 +1,19 @@
 package Obstaculos;
 
+import javax.swing.ImageIcon;
+
+
 import Clases.GameObject;
-import Visitadores.Visitor;
+import Colisionadores.Colisionador;
 
 public class ObjetoConVida extends GameObject {
-
+	protected int duracion;
+	
 	public ObjetoConVida(int x, int y) {
 		super(x,y);
+		duracion = 10;
+		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersMuerto.png")));
+		label.setBounds(x, y,117 , 110);
 	}
 
 	@Override
@@ -26,12 +33,7 @@ public class ObjetoConVida extends GameObject {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void golpearJugador(GameObject j) {
-		// TODO Auto-generated method stub
 		
-	}
 
 	@Override
 	public void golpearEnemigo(GameObject e) {
@@ -39,8 +41,13 @@ public class ObjetoConVida extends GameObject {
 		
 	}
 
+	public void accept(Colisionador col) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@Override
-	public void accept(Visitor v) {
+	public void golpearAliado(GameObject j) {
 		// TODO Auto-generated method stub
 		
 	}
