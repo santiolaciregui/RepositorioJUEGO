@@ -15,26 +15,11 @@ public class Mapa1 extends Mapa {
 		vida=5;
 		cantEnemigos=6;
 		enemigos= new Enemigo[cantEnemigos];
-		enemigos[0]= new Flanders(1300,200);
-		enemigos[1]= new Barney(1300,330);
-		enemigos[2]= new Flanders(1300,480);
-		enemigos[3]= new Barney(2000,330);
-		enemigos[4]= new Flanders(2000,480);
-		enemigos[5]= new Barney(2000,600);
-
-		
-	}
-
-	@Override
-	public LinkedList<GameObject> crearEntidades() {
-		LinkedList<GameObject> entidades= new LinkedList<GameObject>();
-		Random ran= new Random(2);
-		int aux= ran.nextInt();
-		for(int i=0;i<cantEnemigos;i++) {
-			ubicacionDefinitiva(enemigos[i]);
-			GameObject nuevo=enemigos[i];
-			entidades.addLast(nuevo);
-		}
-		return entidades;
+		enemigos[0]= new Flanders(1129,380);
+		enemigos[1]= new Barney(1080,210);
+		enemigos[2]= new Flanders(1012,240);
+		enemigos[3]= new Barney(1129,270);
+		enemigos[4]= new Flanders(1129,300);
+		enemigos[5]= new Barney(1129,340);		
 	}
 }

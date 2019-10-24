@@ -3,6 +3,7 @@ package Enemigos;
 import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
+import Clases.GameObject;
 
 public class Moe extends Enemigo {
 
@@ -12,16 +13,18 @@ public class Moe extends Enemigo {
 		vida=1200;
 		monedas=1000;
 		puntosDeMuerte=1500;
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeParado.png")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacarGrafico() {
+	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeAtacaGif.gif")));
+		e.disminuirVida(dano);
 	}
 	
-	public void pararGrafico() {
+	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeParado.png")));
+		super.parar();
 	}
 
 	@Override

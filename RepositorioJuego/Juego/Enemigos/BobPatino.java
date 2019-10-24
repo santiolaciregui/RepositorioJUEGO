@@ -13,16 +13,18 @@ public class BobPatino extends Enemigo {
 		vida=1400;
 		monedas=700;
 		puntosDeMuerte=1000;
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobPatinoParado.png")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}
 	
 	public void atacar(GameObject e) {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobPatinoAtacaGif.gif")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobAtacaGif.gif")));
+		e.disminuirVida(dano);
 	}
 	
 	public void parar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobPatinoParado.png")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobParado.png")));
+		super.parar();
 	}
 
 	@Override
