@@ -21,26 +21,21 @@ public class Homero extends Aliado {
 		contador=0;
 	}
 	
-	public void disparar() {
+	public void parar() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
+	}
+
+	@Override
+	public void mover() { atacar(null); }
+
+	@Override
+	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
 		contador++;
 		if(contador==55) {
 			juego.agregarObjetos(arma.crearDisparo(this.getPos()));
 			contador=0;
 		}
-	}
-	
-	public void parar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
-	}
-
-	@Override
-	public void mover() { disparar(); }
-
-	@Override
-	public void atacar(GameObject e) {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
-		disparar();
 	}
 
 	@Override

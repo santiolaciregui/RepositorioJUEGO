@@ -18,8 +18,10 @@ public class Moe extends Enemigo {
 	}
 	
 	public void atacar(GameObject e) {
+		int s=  (int) (Math.random() * 50) + 1;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeAtacaGif.gif")));
-		e.disminuirVida(dano);
+		if(s==2)
+			juego.agregarObjetos(arma.crearDisparo(this.getPos()));
 	}
 	
 	public void parar() {
