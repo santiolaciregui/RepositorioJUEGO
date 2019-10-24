@@ -8,6 +8,7 @@ import Mapas.*;
 public class Juego {
 	private LinkedList<GameObject> entidades, entidadesAeliminar, entidadesPendientes;
 	private GUI gui;
+	
 	private int puntaje, monedas, vida;
 	private Tienda tienda;
 	private HiloTiempo tiempo;
@@ -47,7 +48,7 @@ public class Juego {
 		}
 	}
 	
-	public void agregarDisparo(GameObject e) {
+	public void agregarObjetos(GameObject e) {
 		entidadesPendientes.addLast(e);
 		e.setJuego(this);
 	}
@@ -124,13 +125,10 @@ public class Juego {
 	}
 	
 	
-	public void mover(){
+	public void accionar(){
 		if(!entidades.isEmpty())
 			for(GameObject e: entidades)
-				if(!mapa.hayColisionesConOtrosPersonajes(e))
-					e.mover();
-				else
-					e.parar();
+				e.mover();
 	}
 	
 	public void colisionar() {
@@ -144,8 +142,10 @@ public class Juego {
 	}
 	private void verificarColision(GameObject e1, GameObject e2) {
 		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
-		Rectangle r1= e1.getLabel().getBounds();r1.height=20;r1.width=80;
-		Rectangle r2= e2.getLabel().getBounds();r2.height=20;r2.width=80;
+		Rectangle r1= e1.getLabel().getBounds();
+		r1.height/=2;
+		Rectangle r2= e2.getLabel().getBounds();
+		r2.height/=2;
 		if(r1.intersects(r2)) {
 			e1.colisionar(e2);
 			e2.colisionar(e1);

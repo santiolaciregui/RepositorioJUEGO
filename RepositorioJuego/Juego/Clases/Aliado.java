@@ -28,21 +28,6 @@ public abstract class Aliado extends GameObject {
 	@Override
 	public abstract void parar();
 	
-	public void golpearPowerUp(GameObject e) {
-	}
-	public void golpearObstaculoDestruible(GameObject o) {
-	}
-	
-	public void golpearAliado(GameObject j) {
-	}
-	public void golpearObstaculoBarricada(GameObject o) {
-	}
-	public void golpearDisparoJugador(GameObject d) {
-	}
-	public void golpearDisparoEnemigo(GameObject d) {
-	}
-
-	
 	public int getMonedas() {
 		return monedas;
 	}

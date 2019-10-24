@@ -35,19 +35,20 @@ public class ObjetoConVida extends GameObject {
 	}
 		
 
-	@Override
-	public void golpearEnemigo(GameObject e) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public void accept(Colisionador col) {
 		// TODO Auto-generated method stub
 		
 	}
 
+
 	@Override
-	public void golpearAliado(GameObject j) {
+	public void serColisionado(Colisionador col) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void morir() {
 		// TODO Auto-generated method stub
 		
 	}

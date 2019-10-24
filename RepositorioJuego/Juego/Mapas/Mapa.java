@@ -55,6 +55,7 @@ public abstract class Mapa {
 		rNuevo.height=30;
 		rNuevo.width=80;
 		Rectangle rIterador= new Rectangle();
+		it.next();
 		while(it.hasNext() && !hayColision) {
 			GameObject aux=it.next();
 			rIterador=aux.getLabel().getBounds();

@@ -1,12 +1,11 @@
 package Disparos;
 
-import javax.swing.ImageIcon;
 import Clases.GameObject;
 import Colisionadores.ColDisparoAliado;
 import Colisionadores.Colisionador;
 
-public class DisparoAliado extends Disparo{
-	public DisparoAliado(int damage, int x, int y) {
+public class DisparoEnemigo extends Disparo{
+	public DisparoEnemigo(int damage, int x, int y) {
 		super(damage, x, y);
 		velocidad=15;
 		this.col= new ColDisparoAliado(this);
@@ -19,7 +18,7 @@ public class DisparoAliado extends Disparo{
 	}
 	
 	public void serColisionado(Colisionador col) {
-
+		col.visitarDisparo(this);
 	}
 	
 	public void atacar(GameObject e) {

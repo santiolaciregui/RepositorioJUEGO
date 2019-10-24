@@ -1,8 +1,12 @@
 package Clases;
 
+import java.util.Random;
+
 import Armas.Arma;
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorEnemigo;
+import PowerUps.MagiaTemporal;
+import PowerUps.PowerUp;
 
 public abstract class Enemigo extends GameObject{
 	protected int monedas;
@@ -17,7 +21,6 @@ public abstract class Enemigo extends GameObject{
 	}
 
 	public void mover() {
-		
 		this.setPos(this.getPos().x - velocidad, this.getPos().y);
 		if(this.getPos().x<-10) {
 			this.setVida(0);
@@ -35,15 +38,27 @@ public abstract class Enemigo extends GameObject{
 		if(vida==0) {
 			juego.aumentarMonedas(damage);
 			juego.aumentarPuntaje(puntosDeMuerte);
-			//largar PowerUp //faltaaaa
+			lanzarPowerUp();
 		}
 	}
 
 	@Override
 	public void atacar(GameObject e) {
 		parar();
-		e.disminuirVida(dano);
-		
+		velocidad=0;
+	}
+	
+	protected void lanzarPowerUp() {
+		int n= 1;
+		PowerUp powerup=null;
+		switch(n) {
+		case 1: 
+			powerup= new MagiaTemporal(this.getPos().x,this.getPos().y);
+			break;
+		}
+		if(powerup!=null) {
+			juego.agregarObjetos(powerup);
+		}
 	}
 
 	public void serColisionado(Colisionador col) {
