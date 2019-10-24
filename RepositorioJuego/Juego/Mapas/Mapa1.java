@@ -15,11 +15,11 @@ public class Mapa1 extends Mapa {
 		vida=5;
 		cantEnemigos=6;
 		enemigos= new Enemigo[cantEnemigos];
-		enemigos[0]= new Flanders(1129,380);
-		enemigos[1]= new Barney(1080,210);
-		enemigos[2]= new Flanders(1012,240);
-		enemigos[3]= new Barney(1129,270);
-		enemigos[4]= new Flanders(1129,300);
-		enemigos[5]= new Barney(1129,340);		
+		enemigos[0]= new Flanders(1200,200);
+		enemigos[1]= new Barney(1200,330);
+		enemigos[2]= new Flanders(1200,450);
+		enemigos[3]= new Barney(2000,380);
+		enemigos[4]= new Flanders(2000,490);
+		enemigos[5]= new Barney(2000,600);		
 	}
 }

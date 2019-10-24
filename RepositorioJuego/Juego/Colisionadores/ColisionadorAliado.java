@@ -25,7 +25,7 @@ public class ColisionadorAliado extends Colisionador {
 		
 	}
 	@Override
-		public void visitarDisparo(DisparoEnemigo d) {	}
+	public void visitarDisparo(DisparoEnemigo d) {	}
 	
 	@Override
 	public void visitarPowerUp(PowerUp p) {	}
