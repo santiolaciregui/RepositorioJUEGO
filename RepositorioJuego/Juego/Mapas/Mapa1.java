@@ -33,7 +33,7 @@ public class Mapa1 extends Mapa {
 		for(int i=0;i<cantEnemigos;i++) {
 			ubicacionDefinitiva(enemigos[i]);
 			GameObject nuevo=enemigos[i];
-			entidades.addFirst(nuevo);
+			entidades.addLast(nuevo);
 		}
 		return entidades;
 	}

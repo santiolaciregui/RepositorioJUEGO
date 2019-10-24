@@ -8,22 +8,26 @@ import Clases.Aliado;
 import Clases.GameObject;
 
 public class Homero extends Aliado {
+	protected int contador;
 	public Homero( int x, int y) {
 		super(x,y);
-		dano=500;
+		dano=200;
 		vida=1100;
 		precio=1500;
 		monedas=precio;
 		arma= new ArmaHomero();
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
 		label.setBounds(x, y,117 , 110);
+		contador=0;
 	}
 	
 	public void disparar() {
-		int s=  (int) (Math.random() * 50) + 1;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
-		if(s==2)
+		contador++;
+		if(contador==55) {
 			juego.agregarDisparo(arma.crearDisparo(this.getPos()));
+			contador=0;
+		}
 	}
 	
 	public void parar() {
@@ -35,6 +39,7 @@ public class Homero extends Aliado {
 
 	@Override
 	public void atacar(GameObject e) {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
 		disparar();
 	}
 

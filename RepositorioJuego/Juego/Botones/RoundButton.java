@@ -66,7 +66,8 @@ public abstract class RoundButton extends JButton {
 	private class oyenteBoton implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			Aliado entidad= crear();
-			tienda.aAgregar(entidad);	
+			tienda.aAgregar(entidad);
+			entidad=null;
 		}
 	}
 	

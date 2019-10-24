@@ -88,6 +88,10 @@ public class GUI extends JFrame{
 		botones= new ColeccionBotones(panelAbajo, juego.getTienda());		
 		repaint();
 	}
+	
+	public JPanel panel() {
+		return panelGrilla;
+	}
 		
 	public void agregarObject(JLabel nuevo) {
 		panelGrilla.add(nuevo);

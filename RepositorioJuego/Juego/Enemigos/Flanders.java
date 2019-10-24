@@ -19,14 +19,19 @@ public class Flanders extends Enemigo  {
 		label.setBounds(x, y,117 , 110);
 	}
 	
+	public void mover() {
+		super.mover();
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersCaminaGif.gif")));
+	}
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
 		e.disminuirVida(dano);
 	}
 	
 	public void parar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersParado.png")));
 		super.parar();
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersParado.png")));
+		
 	}
 
 	@Override

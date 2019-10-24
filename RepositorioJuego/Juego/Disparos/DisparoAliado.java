@@ -8,9 +8,7 @@ import Colisionadores.Colisionador;
 public class DisparoAliado extends Disparo{
 	public DisparoAliado(int damage, int x, int y) {
 		super(damage, x, y);
-		velocidad=20;
-		this.getLabel().setIcon(new ImageIcon(getClass().getResource("/Imagenes/BoloGif.gif")));
-		this.getLabel().setBounds(this.getPos().x, this.getPos().y, 15, 15);
+		velocidad=15;
 		this.col= new ColDisparoAliado(this);
 	}
 
@@ -28,18 +26,11 @@ public class DisparoAliado extends Disparo{
 		e.disminuirVida(dano);	
 		this.vida=0;
 	}	
-	
-	public void golpearJugador(GameObject e) {
-		this.vida=0;
-	}
 
 	@Override
 	public void parar() {	}
 
 	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void morir() {	}
 
 }

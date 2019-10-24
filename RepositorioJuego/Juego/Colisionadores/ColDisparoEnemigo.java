@@ -4,6 +4,7 @@ import Clases.Aliado;
 import Clases.Enemigo;
 import Disparos.Disparo;
 import Disparos.DisparoAliado;
+import PowerUps.PowerUp;
 
 public class ColDisparoEnemigo extends Colisionador{
 
@@ -18,6 +19,12 @@ public class ColDisparoEnemigo extends Colisionador{
 
 	@Override
 	public void visitarDisparo(DisparoAliado d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afectarPowerUp(PowerUp p) {
 		// TODO Auto-generated method stub
 		
 	}

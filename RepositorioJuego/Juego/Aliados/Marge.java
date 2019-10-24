@@ -9,12 +9,14 @@ public class Marge extends Aliado {
 	public Marge(int x, int y) {
 		super(x,y);
 		vida=2000;
+		dano=100;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
 		label.setBounds(x, y,117 , 110);
 	}
 	
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeAtacaGif.gif")));
+		e.disminuirVida(dano);
 	}
 	
 	public void parar() {

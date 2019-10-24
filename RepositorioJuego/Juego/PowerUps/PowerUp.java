@@ -1,0 +1,18 @@
+package PowerUps;
+
+import java.awt.event.MouseListener;
+
+import Clases.GameObject;
+import Colisionadores.Colisionador;
+
+public abstract class PowerUp extends GameObject implements MouseListener{
+	protected GameObject aliado;
+	
+	protected PowerUp(int x, int y) {
+		super(x,y);
+		vida=50;
+		
+	}
+	public void mover() {	}
+	
+}

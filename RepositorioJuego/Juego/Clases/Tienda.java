@@ -12,6 +12,7 @@ public class Tienda {
 	}
 	
 	public void aAgregar(Aliado nuevo) {
+		aAgregar=null;
 		if(juego.getMonedas()>= nuevo.getMonedas())
 			aAgregar=nuevo;
 	}

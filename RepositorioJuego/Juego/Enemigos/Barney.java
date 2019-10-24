@@ -18,8 +18,13 @@ public class Barney extends Enemigo {
 		label.setBounds(x, y,117 , 110);
 	}
 	
+	public void mover() {
+		super.mover();
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyCaminaGif.gif")));
+	}
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyAtacaGif.gif")));
+		e.disminuirVida(dano);
 	}
 	
 	public void parar() {
