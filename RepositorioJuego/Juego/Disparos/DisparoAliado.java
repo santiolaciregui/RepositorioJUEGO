@@ -3,6 +3,7 @@ package Disparos;
 import javax.swing.ImageIcon;
 import Clases.GameObject;
 import Colisionadores.ColDisparoAliado;
+import Colisionadores.Colisionador;
 
 public class DisparoAliado extends Disparo{
 	public DisparoAliado(int damage, int x, int y) {
@@ -13,8 +14,17 @@ public class DisparoAliado extends Disparo{
 		this.col= new ColDisparoAliado(this);
 	}
 
-	public void golpearEnemigo(GameObject e) {
-		System.out.println("jajajjaajaajajaajjajajaja");
+	public void mover() {
+		this.setPos(this.getPos().x+velocidad,this.getPos().y);
+		if(this.getLabel().getLocation().x>1250)
+			this.vida=0;
+	}
+	
+	public void serColisionado(Colisionador col) {
+		col.visitarDisparo(this);
+	}
+	
+	public void atacar(GameObject e) {
 		e.disminuirVida(dano);	
 		this.vida=0;
 	}	
@@ -22,20 +32,14 @@ public class DisparoAliado extends Disparo{
 	public void golpearJugador(GameObject e) {
 		this.vida=0;
 	}
-	
-	public void golpearDisparoJugador(GameObject d) {}
-	
-	public void mover() {
-		this.setPos(this.getPos().x+velocidad,this.getPos().y);
-		if(this.getLabel().getLocation().x>1250)
-			this.vida=0;
-	}
-	
-	@Override
-	public void atacar(GameObject e) {	}
+
 	@Override
 	public void parar() {	}
 
 	@Override
-	public void golpearAliado(GameObject j) {	}
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

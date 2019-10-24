@@ -30,4 +30,10 @@ public class BobPatino extends Enemigo {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
 }

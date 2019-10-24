@@ -31,4 +31,10 @@ public class Apu extends Enemigo {
 		return null;
 	}
 
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

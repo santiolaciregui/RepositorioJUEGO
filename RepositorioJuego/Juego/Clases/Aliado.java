@@ -12,18 +12,15 @@ public abstract class Aliado extends GameObject {
 		super(x,y);	
 		col= new ColisionadorAliado(this);
 	}
-
 	
-	public void disminuirValoryVida(int valor, int damage) {
+	public void disminuirVida(int valor, int damage) {
 		super.disminuirVida(damage);
 		monedas=monedas/2;
 	}
-	
 
 	public void serColisionado(Colisionador col) {
 		col.visitar(this);
 	}
-	
 	
 	@Override
 	public abstract void atacar(GameObject e);
@@ -45,10 +42,6 @@ public abstract class Aliado extends GameObject {
 	public void golpearDisparoEnemigo(GameObject d) {
 	}
 
-	@Override
-	public void golpearEnemigo(GameObject e) {
-		
-		}
 	
 	public int getMonedas() {
 		return monedas;

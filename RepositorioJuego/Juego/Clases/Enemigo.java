@@ -17,6 +17,7 @@ public abstract class Enemigo extends GameObject{
 	}
 
 	public void mover() {
+		
 		this.setPos(this.getPos().x - velocidad, this.getPos().y);
 		if(this.getPos().x<-10) {
 			this.setVida(0);
@@ -27,7 +28,6 @@ public abstract class Enemigo extends GameObject{
 	@Override
 	public void parar() {
 		this.setPos(this.getPos().x, this.getPos().y);
-		atacar(null);
 	}
 	
 	public void disminuirVida(int damage) {
@@ -41,20 +41,15 @@ public abstract class Enemigo extends GameObject{
 
 	@Override
 	public void atacar(GameObject e) {
+		parar();
+		e.disminuirVida(dano);
+		
 	}
 
 	public void serColisionado(Colisionador col) {
 		col.visitar(this);
 	}
 	
-	@Override
-	public void golpearAliado(GameObject e) {
-		e.disminuirVida(dano);
-	}
-
-	@Override
-	public void golpearEnemigo(GameObject e) {}
-
 	public void golpearPowerUp(GameObject e) {
 	}
 

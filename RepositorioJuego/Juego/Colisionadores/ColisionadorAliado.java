@@ -16,7 +16,7 @@ public class ColisionadorAliado extends Colisionador {
 
 	@Override
 	public void visitar(Enemigo e) {
-		miEntidad.golpearEnemigo(e);
+		miEntidad.atacar(e);
 	}
 	
 	@Override

@@ -23,4 +23,10 @@ public class Marge extends Aliado {
 
 	@Override
 	public void mover() {	}
+
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
 }

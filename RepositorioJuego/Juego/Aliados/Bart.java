@@ -8,7 +8,7 @@ public class Bart extends Aliado {
 
 	public Bart(int x, int y) {
 		super(x,y);
-		dano=300;
+		dano=10;
 		vida=800;
 		precio=1000;
 		monedas=precio;
@@ -18,6 +18,7 @@ public class Bart extends Aliado {
 	
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+		e.disminuirVida(dano);
 	}
 	
 	public void parar() {
@@ -26,6 +27,11 @@ public class Bart extends Aliado {
 
 	@Override
 	public void mover() {	}
+
+	@Override
+	public void morir() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartMuereGif.gif")));
+	}
 
 
 }

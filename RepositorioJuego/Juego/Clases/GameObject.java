@@ -48,6 +48,10 @@ public abstract class GameObject {
 	}	
 	
 	
+	public void colisionar(GameObject e) {
+		e.serColisionado(col);
+	}
+	
 	public Colisionador getCol() {
 		return col;
 	}
@@ -64,8 +68,10 @@ public abstract class GameObject {
 	
 	public void disminuirVida(int dano) {
 		vida-=dano;
-		if(vida<0)
+		if(vida<0) {
 			vida=0;
+			this.morir();
+		}
 	}
 	
 	
@@ -77,12 +83,10 @@ public abstract class GameObject {
 		return juego;
 	}
 	
-	
+	public abstract void serColisionado(Colisionador col);
 	public abstract void atacar(GameObject e);
 	public abstract void mover();
 	public abstract void parar();
-	public abstract void golpearAliado(GameObject j);
-	public abstract void golpearEnemigo(GameObject e);
-	
+	public abstract void morir();
 	
 }

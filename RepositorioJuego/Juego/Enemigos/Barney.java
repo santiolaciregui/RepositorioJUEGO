@@ -32,5 +32,11 @@ public class Barney extends Enemigo {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

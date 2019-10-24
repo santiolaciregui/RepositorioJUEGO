@@ -11,7 +11,7 @@ public class Flanders extends Enemigo  {
 
 	public Flanders(int x, int y) {
 		super(x, y);
-		dano=300;
+		dano=30;
 		vida=1100;
 		monedas=700;
 		puntosDeMuerte=1300;
@@ -21,6 +21,7 @@ public class Flanders extends Enemigo  {
 	
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
+		e.disminuirVida(dano);
 	}
 	
 	public void parar() {
@@ -32,6 +33,12 @@ public class Flanders extends Enemigo  {
 	public Enemigo clonar() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

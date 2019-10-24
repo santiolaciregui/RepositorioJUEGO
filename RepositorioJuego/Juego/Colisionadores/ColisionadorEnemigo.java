@@ -11,15 +11,13 @@ public class ColisionadorEnemigo extends Colisionador{
 	}
 	@Override
 	public void visitar(Aliado a) {
-		miEntidad.golpearAliado(a);
+		miEntidad.atacar(a);
 	}
 	@Override
 	public void visitar(Enemigo e) {}
 		
 	@Override
 	public void visitarDisparo(DisparoAliado d) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
-
 }

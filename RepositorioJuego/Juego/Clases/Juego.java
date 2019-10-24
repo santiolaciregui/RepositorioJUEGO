@@ -1,5 +1,6 @@
 package Clases;
 
+import java.awt.Rectangle;
 import java.util.LinkedList;
 import GUI.*;
 import Mapas.Mapa;
@@ -38,17 +39,17 @@ public class Juego {
 	
 	public void agregarEntidad(int x, int y) {
 		GameObject nuevo= tienda.getCompra();
-		if(nuevo!=null)
-			if(mapa.puedoAgregar(nuevo, x,y)) {
+		nuevo.setPos(x, y);
+		mapa.ubicacionDefinitiva(nuevo);
+		if(nuevo!=null) 
+			if(!mapa.hayColisionesConOtrosPersonajes(nuevo)) {
 				nuevo.setJuego(this);
 				entidadesPendientes.addLast(nuevo);
-				System.out.println(entidades.size());
-			}
+		}
 	}
 	
 	public void agregarDisparo(GameObject e) {
 		entidadesPendientes.addLast(e);
-		System.out.println("dadad");
 		e.setJuego(this);
 	}
 	
@@ -64,10 +65,11 @@ public class Juego {
 	}
 	
 	public void eliminarEntidades() {
-//		if(entidades.size()==0)
-//			tiempo.finalizar();
+		if(vida==0)
+			tiempo.finalizar();
 		for(GameObject e: entidades) {     
 			if(e.getVida()==0) {
+				e.morir();
 				entidadesAeliminar.add(e);
 			}
 		}
@@ -123,32 +125,37 @@ public class Juego {
 	}
 	
 	
-	public void mover() {
-		mapa.mover();
+	public void mover(){
+		if(!entidades.isEmpty())
+			for(GameObject e: entidades)
+				if(!mapa.hayColisionesConOtrosPersonajes(e))
+					e.mover();
+				else
+					e.parar();
 	}
 	
-	public void pararEnemigosSiEsNecesario() {
-		mapa.deboParar();
-	}
-	
-	
-	public boolean hayAlgoCerca(GameObject e) {
-		boolean toReturn=false;
-		if(mapa.hayColisiones(e)) {
-			toReturn=true;
+	public void colisionar() {
+		for(int i=0; i<entidades.size();i++) {
+			for(int j=i+1;j<entidades.size();j++) {
+				GameObject e1= entidades.get(i);
+				GameObject e2=entidades.get(j);
+				verificarColision(e1,e2);
+			}
 		}
-		return toReturn;
 	}
-	
-	
+	private void verificarColision(GameObject e1, GameObject e2) {
+		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
+		Rectangle r1= e1.getLabel().getBounds();r1.height=20;r1.width=80;
+		Rectangle r2= e2.getLabel().getBounds();r2.height=20;r2.width=80;
+		if(r1.intersects(r2)) {
+			e1.colisionar(e2);
+			e2.colisionar(e1);
+		}
+	}
+		
 	public void verificarMapa() {
 		if(entidades.size()==0) 
 			mapa.mapaSiguiente();
-	}
-	
-	public void atacar() {
-		for(GameObject e: entidades) 
-			e.atacar(null);
 	}
 	
 	
@@ -158,6 +165,4 @@ public class Juego {
 	public void setTiempo(HiloTiempo tiempo) {
 		this.tiempo = tiempo;
 	}
-
-	
 }

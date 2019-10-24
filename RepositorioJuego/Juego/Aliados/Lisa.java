@@ -27,6 +27,12 @@ public class Lisa extends Aliado {
 
 	@Override
 	public void mover() {	}
+
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }
