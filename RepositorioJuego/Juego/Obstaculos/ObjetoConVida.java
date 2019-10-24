@@ -16,6 +16,28 @@ public class ObjetoConVida extends GameObject {
 		label.setBounds(x, y,117 , 110);
 	}
 
+	public void recibirDano(int golpe) {
+		boolean destruir = false;
+		if (vida <= golpe) {
+			destruir = true;
+		}
+		else {
+			vida = vida - golpe;
+		}
+		if (destruir) {
+			morir();
+		}
+	}
+	
+	public int getVida() {
+		return vida;
+	}
+
+	@Override
+	public void setVida(int v) {
+		vida = v;
+	}
+	
 	@Override
 	public void atacar(GameObject e) {
 		// TODO Auto-generated method stub
