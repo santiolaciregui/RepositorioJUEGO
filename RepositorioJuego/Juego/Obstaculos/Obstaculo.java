@@ -5,7 +5,6 @@ import javax.swing.ImageIcon;
 import Clases.GameObject;
 import Inteligencias.Inteligencia;
 
-
 public abstract class Obstaculo extends GameObject{
 	
 	public Obstaculo(int x, int y, int vida) {
