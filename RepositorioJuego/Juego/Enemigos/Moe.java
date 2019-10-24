@@ -2,6 +2,7 @@ package Enemigos;
 
 import javax.swing.ImageIcon;
 
+import Armas.ArmaMoe;
 import Clases.Enemigo;
 import Clases.GameObject;
 
@@ -15,6 +16,7 @@ public class Moe extends Enemigo {
 		puntosDeMuerte=1500;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
+		arma = new ArmaMoe();
 	}
 	
 	public void atacar(GameObject e) {

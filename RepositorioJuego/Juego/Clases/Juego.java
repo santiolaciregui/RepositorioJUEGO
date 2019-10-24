@@ -20,7 +20,7 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa1(this);
+		this.mapa=new Mapa3(this);
 		tienda= new Tienda(this);
 		monedas=10000000;	
 		puntaje=0;
