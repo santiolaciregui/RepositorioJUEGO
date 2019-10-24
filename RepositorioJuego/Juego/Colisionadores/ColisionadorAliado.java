@@ -24,14 +24,12 @@ public class ColisionadorAliado extends Colisionador {
 		// TODO Auto-generated method stub
 		
 	}
-
+	@Override
+		public void visitarDisparo(DisparoEnemigo d) {	}
+	
 	@Override
 	public void visitarPowerUp(PowerUp p) {	}
 
-	@Override
-	public void visitarDisparo(DisparoEnemigo d) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }
