@@ -35,11 +35,11 @@ public class GUI extends JFrame{
 		
 		etiquetaVida= new JLabel("VIDA: ");
 		etiquetaVida.setForeground(Color.WHITE);
-		etiquetaVida.setFont(new java.awt.Font("Tahoma", 1, 18));
+		etiquetaVida.setFont(new Font("Font.PLAIN", 3, 27));
 		panelAbajo.add(etiquetaVida);
 		etiquetaPuntaje = new JLabel("PUNTAJE:");
 		etiquetaPuntaje.setForeground(Color.WHITE);
-		etiquetaPuntaje.setFont(new java.awt.Font("Tahoma", 1, 18));
+		etiquetaPuntaje.setFont(new Font("Font.PLAIN", 3, 18));
 		panelAbajo.add(etiquetaPuntaje);
 		
 		
@@ -116,6 +116,7 @@ public class GUI extends JFrame{
 		return this.direction;
 	}
 	
+	
 	private class oyenteAgregarEntidad implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
 				int x=e.getX();
@@ -137,7 +138,8 @@ public class GUI extends JFrame{
 
 	public void actualizarPuntajes() {
 		etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje());
-		etiquetaVida.setText("VIDAS: "+juego.getVida());
+		etiquetaVida.setText(""+juego.getVida());
+		etiquetaVida.setLocation(165, 63);
 	}
 
 	
