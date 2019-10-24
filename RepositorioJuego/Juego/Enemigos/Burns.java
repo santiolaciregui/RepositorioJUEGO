@@ -14,7 +14,7 @@ public class Burns extends Enemigo {
 		monedas=1000;
 		puntosDeMuerte=2000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsCaminaGif.gif")));
-		label.setBounds(x, y,117 , 110);
+		label.setBounds(x, y,140 , 140);
 	}
 	
 	public void atacar(GameObject e) {
