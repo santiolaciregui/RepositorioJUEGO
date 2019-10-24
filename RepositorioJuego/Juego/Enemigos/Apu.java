@@ -13,16 +13,18 @@ public class Apu extends Enemigo {
 		vida=1000;
 		monedas=500;
 		puntosDeMuerte=1000;
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuParado.png")));
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}
 	
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuAtacaGif.gif")));
+		e.disminuirVida(dano);
 	}
 	
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuParado.png")));
+		super.parar();
 	}
 
 	@Override

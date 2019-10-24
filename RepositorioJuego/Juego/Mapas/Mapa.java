@@ -2,6 +2,7 @@ package Mapas;
 import java.awt.Rectangle;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Random;
 
 import Clases.Juego;
 import Clases.Enemigo;
@@ -22,8 +23,17 @@ public abstract class Mapa {
 		Wgrilla= 1250;
 	}
 	
-	public abstract LinkedList<GameObject> crearEntidades();
-
+	public LinkedList<GameObject> crearEntidades() {
+		LinkedList<GameObject> entidades= new LinkedList<GameObject>();
+		Random ran= new Random(2);
+		int aux= ran.nextInt();
+		for(int i=0;i<cantEnemigos;i++) {
+			ubicacionDefinitiva(enemigos[i]);
+			GameObject nuevo=enemigos[i];
+			entidades.addFirst(nuevo);
+		}
+		return entidades;
+	}
 	public void mapaSiguiente() {
 		juego.iniciarEntidades();	
 	}
