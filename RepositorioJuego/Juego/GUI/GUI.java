@@ -15,7 +15,7 @@ import Botones.ColeccionBotones;
 public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
-	public static Dimension size = new Dimension(1250, 660);
+	public static Dimension size = new Dimension(1250, 860);
 	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;

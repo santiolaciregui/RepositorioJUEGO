@@ -19,10 +19,11 @@ public class HiloTiempo extends Thread{
 				e.printStackTrace();
 			}
 			juego.agregarEntidades();
-			juego.eliminarEntidades();
+			
 			juego.accionar();
 			juego.colisionar();
 			juego.verificarMapa();
+			juego.eliminarEntidades();
 		}
 	}
 	public void finalizar() {

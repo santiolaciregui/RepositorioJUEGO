@@ -49,7 +49,7 @@ public class Juego {
 		}
 	}
 	
-	public void agregarDisparo(GameObject e) {
+	public void agregarObjetos(GameObject e) {
 		entidadesPendientes.addLast(e);
 		e.setJuego(this);
 	}

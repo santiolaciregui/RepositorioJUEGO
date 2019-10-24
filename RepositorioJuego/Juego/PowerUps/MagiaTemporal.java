@@ -21,8 +21,7 @@ public class MagiaTemporal extends PowerUp {
 
 	@Override
 	public void atacar(GameObject e) {
-		// TODO Auto-generated method stub
-		
+		this.atacar(e);
 	}
 
 	@Override
@@ -36,13 +35,6 @@ public class MagiaTemporal extends PowerUp {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	@Override
 	public void morir() {
 		// TODO Auto-generated method stub
@@ -65,7 +57,6 @@ public class MagiaTemporal extends PowerUp {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		realizarAccion()
 	}
 
 	@Override

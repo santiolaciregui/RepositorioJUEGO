@@ -15,4 +15,9 @@ public abstract class PowerUp extends GameObject implements MouseListener{
 	}
 	public void mover() {	}
 	
+	@Override
+	public void serColisionado(Colisionador col) {
+		col.visitarPowerUp(this);
+	}
+	
 }

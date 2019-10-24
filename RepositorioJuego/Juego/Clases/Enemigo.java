@@ -57,7 +57,7 @@ public abstract class Enemigo extends GameObject{
 			break;
 		}
 		if(powerup!=null) {
-			juego.agregarDisparo(powerup);
+			juego.agregarObjetos(powerup);
 		}
 	}
 

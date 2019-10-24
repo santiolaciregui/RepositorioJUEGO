@@ -3,6 +3,7 @@ package Colisionadores;
 import Clases.Aliado;
 import Clases.Enemigo;
 import Disparos.DisparoAliado;
+import Disparos.DisparoEnemigo;
 import PowerUps.PowerUp;
 
 public class ColisionadorEnemigo extends Colisionador{
@@ -22,7 +23,12 @@ public class ColisionadorEnemigo extends Colisionador{
 		// TODO Auto-generated method stub	
 	}
 	@Override
-	public void afectarPowerUp(PowerUp p) {
+	public void visitarPowerUp(PowerUp p) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void visitarDisparo(DisparoEnemigo d) {
 		// TODO Auto-generated method stub
 		
 	}

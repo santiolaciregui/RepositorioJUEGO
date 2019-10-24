@@ -25,7 +25,7 @@ public class Homero extends Aliado {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
 		contador++;
 		if(contador==55) {
-			juego.agregarDisparo(arma.crearDisparo(this.getPos()));
+			juego.agregarObjetos(arma.crearDisparo(this.getPos()));
 			contador=0;
 		}
 	}

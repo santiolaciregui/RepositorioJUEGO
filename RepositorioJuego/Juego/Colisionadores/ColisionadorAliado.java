@@ -3,6 +3,7 @@ package Colisionadores;
 import Clases.Aliado;
 import Clases.Enemigo;
 import Disparos.DisparoAliado;
+import Disparos.DisparoEnemigo;
 import PowerUps.PowerUp;
 
 public class ColisionadorAliado extends Colisionador {
@@ -10,11 +11,9 @@ public class ColisionadorAliado extends Colisionador {
 	public ColisionadorAliado(Aliado a) {
 		miEntidad=a;
 	}
-
 	@Override
 	public void visitar(Aliado a) {	
 	}
-
 	@Override
 	public void visitar(Enemigo e) {
 		miEntidad.atacar(e);
@@ -27,7 +26,10 @@ public class ColisionadorAliado extends Colisionador {
 	}
 
 	@Override
-	public void afectarPowerUp(PowerUp p) {
+	public void visitarPowerUp(PowerUp p) {	}
+
+	@Override
+	public void visitarDisparo(DisparoEnemigo d) {
 		// TODO Auto-generated method stub
 		
 	}
