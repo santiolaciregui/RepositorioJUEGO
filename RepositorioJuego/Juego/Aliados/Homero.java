@@ -31,11 +31,17 @@ public class Homero extends Aliado {
 	}
 
 	@Override
-	public void mover() {  }
+	public void mover() { disparar(); }
 
 	@Override
 	public void atacar(GameObject e) {
 		disparar();
+	}
+
+	@Override
+	public void morir() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

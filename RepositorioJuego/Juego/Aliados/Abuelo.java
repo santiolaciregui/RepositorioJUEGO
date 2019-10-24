@@ -23,6 +23,10 @@ public class Abuelo extends Aliado {
 
 	@Override
 	public void mover() {	}
+
+	@Override
+	public void morir() {	
+	}
 	
 
 }

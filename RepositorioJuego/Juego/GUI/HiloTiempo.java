@@ -14,17 +14,15 @@ public class HiloTiempo extends Thread{
 	public void run() {
 		while(hayJuego){
 			try {
-				Thread.sleep(40);
+				Thread.sleep(20);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			juego.agregarEntidades();
 			juego.eliminarEntidades();
-			juego.atacar();
 			juego.mover();
+			juego.colisionar();
 			juego.verificarMapa();
-			juego.pararEnemigosSiEsNecesario();
-			
 		}
 	}
 	public void finalizar() {
