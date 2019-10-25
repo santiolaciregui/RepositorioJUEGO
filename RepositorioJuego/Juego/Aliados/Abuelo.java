@@ -17,7 +17,7 @@ public class Abuelo extends Aliado {
 		monedas=precio;
 		arma= new ArmaAbuelo();
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloParado.png")));
-		label.setBounds(x, y,127 , 116);
+		label.setBounds(x, y,123 , 116);
 		contador=0;
 	}
 	

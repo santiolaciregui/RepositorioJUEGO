@@ -4,6 +4,7 @@ import Clases.Aliado;
 import Clases.Enemigo;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
+import Obstaculos.Obstaculo;
 import PowerUps.PowerUp;
 
 public class ColisionadorPowerUp extends Colisionador{
@@ -14,19 +15,33 @@ public class ColisionadorPowerUp extends Colisionador{
 	}
 	
 	@Override
-	public void visitar(Aliado a) {
-		power.atacar(a);		
+	public void visitar(Aliado a) {	}
+
+	@Override
+	public void visitar(Enemigo e) { e.mover();	}
+
+	@Override
+	public void visitar(DisparoAliado d) {
+		d.mover();
+		
 	}
 
 	@Override
-	public void visitar(Enemigo e) {	}
+	public void visitar(DisparoEnemigo d) {
+		d.mover();
+		
+	}
 
 	@Override
-	public void visitarDisparo(DisparoAliado d) {	}
+	public void visitar(PowerUp p) {
+		p.mover();
+		
+	}
 
 	@Override
-	public void visitarPowerUp(PowerUp p) {	}
+	public void visitar(Obstaculo o) {
+		// TODO Auto-generated method stub
+		
+	}
 
-	@Override
-	public void visitarDisparo(DisparoEnemigo d) {	}
 }

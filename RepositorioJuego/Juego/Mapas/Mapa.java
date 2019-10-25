@@ -13,14 +13,16 @@ public abstract class Mapa {
 	protected Juego juego;
 	protected int cantFilas, altodelaFila, Hgrilla, Wgrilla;
 	protected int vida;
-	protected Enemigo[] enemigos;
+	protected LinkedList<GameObject> listaEnemigos;
+	protected GameObject[] enemigos;
 	
-	protected Mapa(Juego j) {
+	public Mapa(Juego j) {
 		juego=j;
 		cantFilas=6;
 		Hgrilla= 221;
 		altodelaFila=(int)(Hgrilla/cantFilas);
 		Wgrilla= 1250;
+		listaEnemigos= new LinkedList<GameObject>();
 	}
 	
 	public LinkedList<GameObject> crearEntidades() {
@@ -30,6 +32,7 @@ public abstract class Mapa {
 		for(int i=0;i<cantEnemigos;i++) {
 			ubicacionDefinitiva(enemigos[i]);
 			GameObject nuevo=enemigos[i];
+			listaEnemigos.addLast(nuevo);
 			entidades.addFirst(nuevo);
 		}
 		return entidades;
@@ -55,7 +58,6 @@ public abstract class Mapa {
 		rNuevo.height=30;
 		rNuevo.width=80;
 		Rectangle rIterador= new Rectangle();
-		it.next();
 		while(it.hasNext() && !hayColision) {
 			GameObject aux=it.next();
 			rIterador=aux.getLabel().getBounds();

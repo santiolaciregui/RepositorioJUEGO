@@ -1,24 +1,23 @@
 package Disparos;
 
 import Clases.GameObject;
-import Colisionadores.ColDisparoAliado;
-import Colisionadores.Colisionador;
+import Colisionadores.*;
 
 public class DisparoEnemigo extends Disparo{
 	public DisparoEnemigo(int damage, int x, int y) {
 		super(damage, x, y);
 		velocidad=15;
-		this.col= new ColDisparoAliado(this);
+		this.col= new ColDisparoEnemigo(this);
 	}
 
 	public void mover() {
-		this.setPos(this.getPos().x+velocidad,this.getPos().y);
-		if(this.getLabel().getLocation().x>1250)
+		this.setPos(this.getPos().x-velocidad,this.getPos().y);
+		if(this.getPos().x>1100 || this.getPos().y<0)
 			this.vida=0;
 	}
 	
 	public void serColisionado(Colisionador col) {
-		col.visitarDisparo(this);
+		col.visitar(this);
 	}
 	
 	public void atacar(GameObject e) {

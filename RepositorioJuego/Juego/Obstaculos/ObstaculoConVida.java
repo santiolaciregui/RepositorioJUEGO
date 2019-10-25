@@ -6,10 +6,10 @@ import javax.swing.ImageIcon;
 import Clases.GameObject;
 import Colisionadores.Colisionador;
 
-public class ObjetoConVida extends GameObject {
+public class ObstaculoConVida extends Obstaculo {
 	protected int duracion;
 	
-	public ObjetoConVida(int x, int y) {
+	public ObstaculoConVida(int x, int y) {
 		super(x,y);
 		duracion = 10;
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersMuerto.png")));
@@ -65,7 +65,7 @@ public class ObjetoConVida extends GameObject {
 
 	@Override
 	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
+		col.visitar(this);
 		
 	}
 

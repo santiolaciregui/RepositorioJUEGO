@@ -29,7 +29,6 @@ public class Barney extends Enemigo {
 	
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyParado.png")));
-		super.parar();
 	}
 
 	@Override

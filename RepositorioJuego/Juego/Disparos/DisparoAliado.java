@@ -18,7 +18,9 @@ public class DisparoAliado extends Disparo{
 			this.vida=0;
 	}
 	
-	public void serColisionado(Colisionador col) {	}
+	public void serColisionado(Colisionador col) {	
+		col.visitar(this);
+	}
 	
 	public void atacar(GameObject e) {
 		e.disminuirVida(dano);	

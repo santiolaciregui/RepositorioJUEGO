@@ -4,27 +4,23 @@ import java.awt.event.MouseListener;
 
 import Clases.GameObject;
 import Colisionadores.Colisionador;
+import Colisionadores.ColisionadorPowerUp;
 
 public abstract class PowerUp extends GameObject implements MouseListener{
-	protected GameObject aliado;
 	
 	protected PowerUp(int x, int y) {
 		super(x,y);
 		vida=50;
+		col= new ColisionadorPowerUp(this);
 		
 	}
 	public void mover() {	}
 	
 	@Override
 	public void serColisionado(Colisionador col) {	
-		col.visitarPowerUp(this);
+		col.visitar(this);
 	}
 	
-	public void golpearJugador(GameObject a) {
-		this.realizarAccion(a);
-		this.vida=0;
-	}
-	
-	public abstract void realizarAccion(GameObject aliado);
+	public void atacar(GameObject a) {	}
 	
 }

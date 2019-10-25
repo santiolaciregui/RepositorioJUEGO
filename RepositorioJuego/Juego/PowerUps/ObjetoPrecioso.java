@@ -20,38 +20,19 @@ public class ObjetoPrecioso extends GameObject {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
-
-	public void golpearJugador(GameObject j) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void golpearEnemigo(GameObject e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void accept(Colisionador v) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void accionar() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	@Override
 	public void mover() {
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public void serColisionado(Colisionador col) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
-	public void golpearAliado(GameObject j) {
+	public void morir() {
 		// TODO Auto-generated method stub
 		
 	}
