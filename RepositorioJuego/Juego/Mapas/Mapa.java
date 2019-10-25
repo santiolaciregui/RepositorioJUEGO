@@ -14,7 +14,7 @@ public abstract class Mapa {
 	protected int cantFilas, altodelaFila, Hgrilla, Wgrilla;
 	protected int vida;
 	protected LinkedList<GameObject> listaEnemigos;
-	protected Enemigo[] enemigos;
+	protected GameObject[] enemigos;
 	
 	public Mapa(Juego j) {
 		juego=j;

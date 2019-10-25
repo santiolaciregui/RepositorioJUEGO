@@ -137,10 +137,12 @@ public class Juego {
 					e1.colisionar(e2);
 					collidedGeneral = true;
 				}
+				
 			}
 			if(!collidedGeneral) {
 				e1.mover();
 			}
+			
 		}
 	}
 	private boolean verificarColision(GameObject e1, GameObject e2) {

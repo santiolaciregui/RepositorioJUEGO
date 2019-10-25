@@ -36,7 +36,6 @@ public class Moe extends Enemigo {
 	
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeParado.png")));
-		super.parar();
 	}
 
 	@Override

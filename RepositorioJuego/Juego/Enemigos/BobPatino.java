@@ -24,7 +24,6 @@ public class BobPatino extends Enemigo {
 	
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobParado.png")));
-		super.parar();
 	}
 
 	@Override

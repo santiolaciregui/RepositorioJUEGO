@@ -43,7 +43,7 @@ public class ObstaculoConVida extends Obstaculo {
 
 	@Override
 	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
+		col.visitar(this);
 		
 	}
 

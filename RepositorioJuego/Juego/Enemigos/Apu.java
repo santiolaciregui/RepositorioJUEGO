@@ -24,7 +24,6 @@ public class Apu extends Enemigo {
 	
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuParado.png")));
-		super.parar();
 	}
 
 	@Override

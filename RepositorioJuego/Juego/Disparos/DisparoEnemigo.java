@@ -17,7 +17,7 @@ public class DisparoEnemigo extends Disparo{
 	}
 	
 	public void serColisionado(Colisionador col) {
-		col.visitarDisparo(this);
+		col.visitar(this);
 	}
 	
 	public void atacar(GameObject e) {

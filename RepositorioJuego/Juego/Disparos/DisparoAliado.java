@@ -19,7 +19,7 @@ public class DisparoAliado extends Disparo{
 	}
 	
 	public void serColisionado(Colisionador col) {	
-		col.visitarDisparo(this);
+		col.visitar(this);
 	}
 	
 	public void atacar(GameObject e) {
