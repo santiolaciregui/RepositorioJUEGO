@@ -20,7 +20,6 @@ public class ColisionadorEnemigo extends Colisionador{
 		
 	@Override
 	public void visitarDisparo(DisparoAliado d) {
-		// TODO Auto-generated method stub	
 	}
 	@Override
 	public void visitarPowerUp(PowerUp p) {

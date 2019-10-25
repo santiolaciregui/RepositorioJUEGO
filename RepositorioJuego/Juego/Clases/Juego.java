@@ -20,7 +20,7 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa3(this);
+		this.mapa=new Mapa1(this);
 		tienda= new Tienda(this);
 		monedas=10000000;	
 		puntaje=0;
@@ -45,7 +45,9 @@ public class Juego {
 			if(!mapa.hayColisionesConOtrosPersonajes(nuevo)) {
 				nuevo.setJuego(this);
 				entidadesPendientes.addLast(nuevo);
+				tienda.reset();
 		}
+		
 	}
 	
 	public void agregarObjetos(GameObject e) {
@@ -125,31 +127,29 @@ public class Juego {
 	}
 	
 	
-	public void accionar(){
-		if(!entidades.isEmpty())
-			for(GameObject e: entidades)
-				e.mover();
-	}
-	
 	public void colisionar() {
 		for(int i=0; i<entidades.size();i++) {
-			for(int j=i+1;j<entidades.size();j++) {
-				GameObject e1= entidades.get(i);
+			GameObject e1= entidades.get(i);
+			boolean collidedGeneral = false;
+			for(int j=0;j<entidades.size();j++) {
 				GameObject e2=entidades.get(j);
-				verificarColision(e1,e2);
+				if(e1 != e2 && verificarColision(e1,e2)) {
+					e1.colisionar(e2);
+					collidedGeneral = true;
+				}
+			}
+			if(!collidedGeneral) {
+				e1.mover();
 			}
 		}
 	}
-	private void verificarColision(GameObject e1, GameObject e2) {
+	private boolean verificarColision(GameObject e1, GameObject e2) {
 		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
 		Rectangle r1= e1.getLabel().getBounds();
 		r1.height/=2;
 		Rectangle r2= e2.getLabel().getBounds();
 		r2.height/=2;
-		if(r1.intersects(r2)) {
-			e1.colisionar(e2);
-			e2.colisionar(e1);
-		}
+		return r1.intersects(r2);
 	}
 		
 	public void verificarMapa() {

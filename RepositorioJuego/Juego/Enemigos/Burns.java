@@ -2,24 +2,37 @@ package Enemigos;
 
 import javax.swing.ImageIcon;
 
+import Armas.ArmaBurns;
 import Clases.Enemigo;
 import Clases.GameObject;
 
 public class Burns extends Enemigo {
-
+	int contadorDisparo;
 	public Burns(int x, int y) {
 		super(x, y);
 		dano=800;
 		vida=2000;
+		contadorDisparo=0;
 		monedas=1000;
 		puntosDeMuerte=2000;
+		arma= new ArmaBurns();
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsCaminaGif.gif")));
 		label.setBounds(x, y,140 , 140);
 	}
 	
+	
+	public void mover() {
+		super.mover();
+		atacar(null);
+	}
 	public void atacar(GameObject e) {
-		super.atacar(e);
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsAtacaGif.gif")));
+		
+		contadorDisparo++;
+		if(contadorDisparo==15) {
+			juego.agregarObjetos(arma.crearDisparo(this.getPos()));
+			contadorDisparo=0;
+		}
 	}
 	
 	public void parar() {

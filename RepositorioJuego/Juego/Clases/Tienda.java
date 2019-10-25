@@ -4,14 +4,14 @@ import Mapas.Mapa;
 
 public class Tienda {
 	protected Juego juego;
-	protected Aliado aAgregar;
+	protected GameObject aAgregar;
 
 	public Tienda(Juego j) {
 		juego=j;
 		aAgregar=null;
 	}
 	
-	public void aAgregar(Aliado nuevo) {
+	public void aAgregar(GameObject nuevo) {
 		aAgregar=null;
 		if(juego.getMonedas()>= nuevo.getMonedas())
 			aAgregar=nuevo;
@@ -21,6 +21,10 @@ public class Tienda {
 		if(aAgregar==null)
 			return null;
 		return aAgregar;
+	}
+	
+	public void reset() {
+		aAgregar=null;
 	}
 	
 	

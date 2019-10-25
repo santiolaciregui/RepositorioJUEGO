@@ -39,10 +39,6 @@ public class MagiaTemporal extends PowerUp {
 		
 	}
 
-	public void realizarAccion() {
-		
-	}
-
 	@Override
 	public void mouseClicked(MouseEvent e) {
 	}
@@ -54,8 +50,7 @@ public class MagiaTemporal extends PowerUp {
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent e) {
-		this.vida=0;
+	public void mouseReleased(MouseEvent e) {		
 		
 	}
 
@@ -71,10 +66,6 @@ public class MagiaTemporal extends PowerUp {
 		
 	}
 
-	@Override
-	public void realizarAccion(GameObject aliado) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

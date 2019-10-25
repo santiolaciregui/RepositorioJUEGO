@@ -19,7 +19,7 @@ public class Mapa1 extends Mapa {
 		enemigos[1]= new Barney(1200,330);
 		enemigos[2]= new Flanders(1200,450);
 		enemigos[3]= new Barney(2000,380);
-		enemigos[4]= new Flanders(2000,490);
-		enemigos[5]= new Barney(2000,600);		
+		enemigos[4]= new Flanders(2000,460);
+		enemigos[5]= new Barney(2000,500);		
 	}
 }

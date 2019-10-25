@@ -7,6 +7,7 @@ import Colisionadores.Colisionador;
 public abstract class GameObject {
 	protected int vida, dano;
 	protected Juego juego;
+	protected int monedas;
 	protected JLabel label;
 	protected Colisionador col;
 
@@ -88,5 +89,10 @@ public abstract class GameObject {
 	public abstract void mover();
 	public abstract void parar();
 	public abstract void morir();
+
+
+	public int getMonedas() {
+		return monedas;
+	}
 	
 }

@@ -47,7 +47,7 @@ public abstract class Enemigo extends GameObject{
 	}
 	
 	protected void lanzarPowerUp() {
-		int n= 1;
+		int n= (int) (Math.random() * 4) + 1;
 		PowerUp powerup=null;
 		switch(n) {
 		case 1: 

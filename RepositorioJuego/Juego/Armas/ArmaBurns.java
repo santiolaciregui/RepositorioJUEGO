@@ -4,9 +4,10 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 
-import Disparos.*;
+import Disparos.Disparo;
+import Disparos.DisparoEnemigo;
 
-public class ArmaMoe extends Arma{
+public class ArmaBurns extends Arma{
 
 	@Override
 	public Disparo crearDisparo(Point pos) {

@@ -2,17 +2,16 @@ package Obstaculos;
 
 import javax.swing.ImageIcon;
 
-
 import Clases.GameObject;
 import Colisionadores.Colisionador;
 
-public class ObjetoConVida extends GameObject {
+public class ObstaculoTemporal extends Obstaculo {
 	protected int duracion;
 	
-	public ObjetoConVida(int x, int y) {
+	public ObstaculoTemporal(int x, int y) {
 		super(x,y);
 		duracion = 10;
-		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersMuerto.png")));
+		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/TamborGif.gif")));
 		label.setBounds(x, y,117 , 110);
 	}
 
@@ -33,14 +32,7 @@ public class ObjetoConVida extends GameObject {
 		// TODO Auto-generated method stub
 		
 	}
-		
-
-	public void accept(Colisionador col) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
+	
 	@Override
 	public void serColisionado(Colisionador col) {
 		// TODO Auto-generated method stub

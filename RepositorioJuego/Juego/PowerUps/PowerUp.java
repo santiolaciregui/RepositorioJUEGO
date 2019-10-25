@@ -23,6 +23,4 @@ public abstract class PowerUp extends GameObject implements MouseListener{
 	
 	public void atacar(GameObject a) {	}
 	
-	public abstract void realizarAccion(GameObject aliado);
-	
 }

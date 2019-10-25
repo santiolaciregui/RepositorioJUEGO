@@ -5,7 +5,7 @@ import Clases.Tienda;
 
 
 public class ColeccionBotones {
-	private RoundButton homero, marge, lisa, bart, abuelo;
+	private RoundButton homero, marge, lisa, bart, abuelo, obstaculo;
 	private JPanel panelAbajo;
 	public ColeccionBotones(JPanel panel,Tienda tienda) {
 		homero= new BotonHomero(tienda);
@@ -13,6 +13,7 @@ public class ColeccionBotones {
 		bart= new BotonBart(tienda);
 		lisa= new BotonLisa(tienda);
 		abuelo= new BotonAbuelo(tienda);
+		obstaculo= new BotonObstaculoConVida(tienda);
 		panelAbajo=panel;
 		panelAbajo.add(homero);
 		panelAbajo.add(marge);
@@ -27,5 +28,6 @@ public class ColeccionBotones {
 		panelAbajo.add(bart);
 		panelAbajo.add(lisa);
 		panelAbajo.add(abuelo);
+		panelAbajo.add(obstaculo);
 	}
 }
