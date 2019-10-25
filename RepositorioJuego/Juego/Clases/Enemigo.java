@@ -1,7 +1,5 @@
 package Clases;
 
-import java.util.Random;
-
 import Armas.Arma;
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorEnemigo;
