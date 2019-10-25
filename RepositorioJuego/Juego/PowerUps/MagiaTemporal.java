@@ -20,9 +20,7 @@ public class MagiaTemporal extends PowerUp {
 	}
 
 	@Override
-	public void atacar(GameObject e) {
-		this.atacar(e);
-	}
+	public void atacar(GameObject e) {	}
 
 	@Override
 	public void parar() {
@@ -41,10 +39,6 @@ public class MagiaTemporal extends PowerUp {
 		
 	}
 
-	public void realizarAccion() {
-		
-	}
-
 	@Override
 	public void mouseClicked(MouseEvent e) {
 	}
@@ -56,7 +50,8 @@ public class MagiaTemporal extends PowerUp {
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent e) {
+	public void mouseReleased(MouseEvent e) {		
+		
 	}
 
 	@Override
