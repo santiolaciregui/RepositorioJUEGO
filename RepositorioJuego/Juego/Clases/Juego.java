@@ -87,6 +87,8 @@ public class Juego {
 			}
 			entidadesAeliminar.clear();
 			gui.actualizarPuntajes();
+			gui.actualizarVidas();
+			gui.actualizarMonedas();
 	}
 	
 
@@ -143,7 +145,6 @@ public class Juego {
 			if(!collidedGeneral) {
 				e1.mover();
 			}
-			
 		}
 	}
 	private boolean verificarColision(GameObject e1, GameObject e2) {
