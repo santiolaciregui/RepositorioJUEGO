@@ -109,6 +109,9 @@ public class GUI extends JFrame{
 		repaint();
 	}
 	
+	public void cartelMonedasInsuficientes() {
+		JOptionPane.showMessageDialog(null,"Monedas insuficientes","aver tontito rescatate",JOptionPane.ERROR_MESSAGE);
+	}
 	
 	public boolean getLock(){
 		return this.lock;
@@ -143,7 +146,7 @@ public class GUI extends JFrame{
 	}
 
 	public void actualizarPuntajes() {
-		etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje());		
+		etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje()+" ");		
 	}
 	
 	public void actualizarVidas() {
@@ -151,7 +154,7 @@ public class GUI extends JFrame{
 		etiquetaVida.setLocation(165, 63);
 	}
 	public void actualizarMonedas() {
-		etiquetaMonedas.setText("MONEDAS: "+juego.getMonedas());
+		etiquetaMonedas.setText("MONEDAS: "+juego.getMonedas()+" ");
 	}
 	
 

@@ -12,6 +12,8 @@ public class Marge extends Aliado {
 		dano=100;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
 		label.setBounds(x, y,117 , 110);
+		precio = 1000;
+		monedas = precio;
 	}
 	
 	public void atacar(GameObject e) {

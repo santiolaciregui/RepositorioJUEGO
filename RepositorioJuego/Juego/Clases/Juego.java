@@ -22,7 +22,7 @@ public class Juego {
 		entidadesPendientes= new LinkedList<GameObject>();
 		this.mapa=new Mapa3(this);
 		tienda= new Tienda(this);
-		monedas=10000000;	
+		monedas = 3000;	
 		puntaje=0;
 		vida=3;
 	}
@@ -125,6 +125,10 @@ public class Juego {
 	public void aumentarMonedas(int monedas) {
 		this.monedas+=monedas;
 	}
+	public void disminuirMonedas(int monedas) {
+		this.monedas -= monedas;
+	}
+	
 	public int getMonedas() {
 		return monedas;
 	}
@@ -139,8 +143,7 @@ public class Juego {
 				if(e1 != e2 && verificarColision(e1,e2)) {
 					e1.colisionar(e2);
 					collidedGeneral = true;
-				}
-				
+				}				
 			}
 			if(!collidedGeneral) {
 				e1.mover();
@@ -167,5 +170,9 @@ public class Juego {
 	}
 	public void setTiempo(HiloTiempo tiempo) {
 		this.tiempo = tiempo;
+	}
+	
+	public GUI getGui() {
+		return gui;
 	}
 }
