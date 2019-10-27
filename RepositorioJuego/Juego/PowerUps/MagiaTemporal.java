@@ -1,14 +1,7 @@
 package PowerUps;
 
-import java.awt.event.MouseEvent;
-
 import javax.swing.ImageIcon;
-
-import org.w3c.dom.events.EventTarget;
-import org.w3c.dom.views.AbstractView;
-
 import Clases.GameObject;
-import Colisionadores.Colisionador;
 
 public class MagiaTemporal extends PowerUp {	
 	protected int duracion;
@@ -39,32 +32,6 @@ public class MagiaTemporal extends PowerUp {
 		
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {		
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 

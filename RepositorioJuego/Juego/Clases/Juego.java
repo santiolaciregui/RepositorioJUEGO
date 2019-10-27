@@ -20,7 +20,7 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa1(this);
+		this.mapa=new Mapa3(this);
 		tienda= new Tienda(this);
 		monedas=10000000;	
 		puntaje=0;
@@ -39,10 +39,10 @@ public class Juego {
 	
 	public void agregarEntidad(int x, int y) {
 		GameObject nuevo= tienda.getCompra();
-		nuevo.setPos(x, y);
-		mapa.ubicacionDefinitiva(nuevo);
 		if(nuevo!=null) 
 			if(!mapa.hayColisionesConOtrosPersonajes(nuevo)) {
+				nuevo.setPos(x, y);
+				mapa.ubicacionDefinitiva(nuevo);
 				nuevo.setJuego(this);
 				entidadesPendientes.addLast(nuevo);
 				tienda.reset();
@@ -65,6 +65,7 @@ public class Juego {
 		}
 		entidadesPendientes.clear();
 	}
+	
 	
 	public void eliminarEntidades() {
 		if(vida==0)
@@ -148,14 +149,14 @@ public class Juego {
 	private boolean verificarColision(GameObject e1, GameObject e2) {
 		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
 		Rectangle r1= e1.getLabel().getBounds();
-		r1.height/=2;
+		r1.height/=1.5;
 		Rectangle r2= e2.getLabel().getBounds();
-		r2.height/=2;
+		r2.height/=1.5;
 		return r1.intersects(r2);
 	}
 		
 	public void verificarMapa() {
-		if(entidades.size()==0) 
+		if(mapa.listaEnemigos().size()==0) 
 			mapa.mapaSiguiente();
 	}
 	
