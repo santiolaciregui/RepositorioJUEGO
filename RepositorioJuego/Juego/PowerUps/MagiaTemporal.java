@@ -33,6 +33,10 @@ public class MagiaTemporal extends PowerUp {
 	}
 
 
-
+	@Override
+	public void realizarAccion(GameObject aliado) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
