@@ -1,16 +1,13 @@
 package PowerUps;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.LinkedList;
 
 import Clases.GameObject;
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorPowerUp;
 
 public abstract class PowerUp extends GameObject{
-	
 	protected PowerUp(int x, int y) {
 		super(x,y);
 		vida=50;
@@ -27,6 +24,8 @@ public abstract class PowerUp extends GameObject{
 	
 	public void atacar(GameObject a) {	}
 	
+	
+	public abstract void realizarAccion() ;
 	public class oyenteLabel implements MouseListener{
 
 		@Override
@@ -42,9 +41,9 @@ public abstract class PowerUp extends GameObject{
 		}
 
 		@Override
-		public void mouseReleased(MouseEvent e) {
-			vida=0;
-			
+		public void mouseReleased(MouseEvent e1) {
+			vida=0;			
+			realizarAccion();
 		}
 
 		@Override

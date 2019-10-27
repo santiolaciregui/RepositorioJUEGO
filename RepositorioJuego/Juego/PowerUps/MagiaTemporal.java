@@ -1,5 +1,7 @@
 package PowerUps;
 
+import java.util.Random;
+
 import javax.swing.ImageIcon;
 import Clases.GameObject;
 
@@ -29,14 +31,18 @@ public class MagiaTemporal extends PowerUp {
 	@Override
 	public void morir() {
 		// TODO Auto-generated method stub
-		
 	}
-
-
-	@Override
-	public void realizarAccion(GameObject aliado) {
-		// TODO Auto-generated method stub
-		
+	
+	public void realizarAccion() {
+		Random r = new Random();
+		int valorDado = r.nextInt(2);
+		for(GameObject e: juego.listaEntidades()) {
+			if(valorDado==0)
+				e.aumentarVida(500);
+			else
+				e.setDano(1000);
+		}		
 	}
+	
 
 }
