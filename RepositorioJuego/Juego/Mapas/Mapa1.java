@@ -24,7 +24,8 @@ public class Mapa1 extends Mapa {
 	}
 	
 	public void mapaSiguiente() {
-		juego.setMapa(new Mapa2(juego));
+		juego.limpiarLista();
+		juego.setMapa(new Mapa3(juego));
 		super.mapaSiguiente();
 //		juego.iniciarEntidades();
 	}

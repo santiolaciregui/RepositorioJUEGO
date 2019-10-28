@@ -23,6 +23,7 @@ public class Barney extends Enemigo {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyCaminaGif.gif")));
 	}
 	public void atacar(GameObject e) {
+		System.out.println("pego ");
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyAtacaGif.gif")));
 		e.disminuirVida(dano);
 	}

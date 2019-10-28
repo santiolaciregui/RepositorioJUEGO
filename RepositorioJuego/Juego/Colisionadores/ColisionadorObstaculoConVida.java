@@ -19,20 +19,17 @@ public class ColisionadorObstaculoConVida extends Colisionador {
 
 	@Override
 	public void visitar(Enemigo e) {
-		e.parar();
 		
 	}
 
 	@Override
 	public void visitar(DisparoAliado d) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void visitar(DisparoEnemigo d) {
-		// TODO Auto-generated method stub
-		
+		d.mover();
 	}
 
 	@Override

@@ -15,13 +15,13 @@ import Botones.ColeccionBotones;
 public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
-	public static Dimension size = new Dimension(1250, 860);
+	public static Dimension size = new Dimension(1250, 790);
 	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;
 	@SuppressWarnings("unused")
 	private ColeccionBotones botones;
-	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas;
+	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas, gaton;
 	private boolean lock = false;
 	private HiloTiempo tiempo;
 	private int direction = -1;
@@ -31,17 +31,18 @@ public class GUI extends JFrame{
 		iniciarPanelArriba();
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
+		gaton= new JLabel();
 		
 		//ETIQUETA VIDA
 		etiquetaVida= new JLabel("VIDA: ");
-		etiquetaVida.setForeground(Color.WHITE);
-		etiquetaVida.setFont(new Font("Font.PLAIN", 3, 27));
-		panelAbajo.add(etiquetaVida);
+		etiquetaVida.setForeground(Color.BLACK);
+		etiquetaVida.setFont(new Font("Font.PLAIN", 3, 24));
+		panelArriba.add(etiquetaVida);
 		//ETIQUETA MONEDAS
 		etiquetaMonedas = new JLabel("MONEDAS: ");
-		etiquetaMonedas.setForeground(Color.WHITE);
+		etiquetaMonedas.setForeground(Color.BLACK);
 		etiquetaMonedas.setFont(new Font("Font.PLAIN", 3, 18));
-		panelAbajo.add(etiquetaMonedas);
+		panelArriba.add(etiquetaMonedas);
 		//ETIQUETA PUNTAJE
 		etiquetaPuntaje = new JLabel("PUNTAJE:");
 		etiquetaPuntaje.setForeground(Color.WHITE);
@@ -62,6 +63,8 @@ public class GUI extends JFrame{
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		
+		
 	}
 	
 	private void iniciarContentPane() {
@@ -73,7 +76,7 @@ public class GUI extends JFrame{
 	
 	private void iniciarPanelArriba() {
 		panelArriba = new JPanelConFondo(new ImageIcon(getClass().getResource("/Imagenes/PanelArribaoriginal.png")).getImage());
-		panelArriba.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+		panelArriba.setLayout(new FlowLayout());
 		contentPane.add(panelArriba);
 	}
 	
@@ -151,10 +154,11 @@ public class GUI extends JFrame{
 	
 	public void actualizarVidas() {
 		etiquetaVida.setText(""+juego.getVida());
-		etiquetaVida.setLocation(165, 63);
+		etiquetaVida.setLocation(410, 13);
 	}
 	public void actualizarMonedas() {
 		etiquetaMonedas.setText("MONEDAS: "+juego.getMonedas()+" ");
+		etiquetaMonedas.setLocation(740, 17);
 	}
 	
 

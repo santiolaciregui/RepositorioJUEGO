@@ -33,7 +33,7 @@ public class Abuelo extends Aliado {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
 		contador++;
 		if(contador==55) {
-			juego.agregarObjetos(arma.crearDisparo(this.getPos()));
+			juego.agregarObjetos(arma.crearDisparo(this.getPos(), dano));
 			contador=0;
 		}
 	}
