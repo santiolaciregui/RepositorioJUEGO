@@ -2,7 +2,7 @@ package Botones;
 
 import Clases.Aliado;
 import Clases.Tienda;
-import Obstaculos.Obstaculo;
+import Obstaculos.Tambor;
 import Obstaculos.ObstaculoConVida;
 
 public class BotonObstaculoConVida extends RoundButton{
@@ -12,7 +12,7 @@ public class BotonObstaculoConVida extends RoundButton{
 	}
 
 	@Override
-	public Obstaculo crear() {
+	public Tambor crear() {
 		return new ObstaculoConVida(0,0);
 	}
 	

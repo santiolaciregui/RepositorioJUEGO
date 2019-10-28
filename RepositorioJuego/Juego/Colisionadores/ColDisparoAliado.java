@@ -5,7 +5,9 @@ import Clases.Enemigo;
 import Disparos.Disparo;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import Obstaculos.Obstaculo;
+import Obstaculos.ObstaculoConVida;
+import Obstaculos.ObstaculoTemporal;
+import Obstaculos.Tambor;
 import PowerUps.PowerUp;
 
 public class ColDisparoAliado extends Colisionador{
@@ -39,7 +41,13 @@ public class ColDisparoAliado extends Colisionador{
 	}
 
 	@Override
-	public void visitar(Obstaculo o) {
+	public void visitar(ObstaculoConVida o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ObstaculoTemporal o) {
 		// TODO Auto-generated method stub
 		
 	}

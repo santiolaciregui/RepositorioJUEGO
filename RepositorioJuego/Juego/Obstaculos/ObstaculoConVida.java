@@ -5,8 +5,9 @@ import javax.swing.ImageIcon;
 
 import Clases.GameObject;
 import Colisionadores.Colisionador;
+import Colisionadores.ColisionadorObstaculo;
 
-public class ObstaculoConVida extends Obstaculo {
+public abstract class ObstaculoConVida extends GameObject {
 	protected int duracion;
 	
 	public ObstaculoConVida(int x, int y) {
@@ -14,6 +15,7 @@ public class ObstaculoConVida extends Obstaculo {
 		duracion = 10;
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersMuerto.png")));
 		label.setBounds(x, y,117 , 110);
+		super.col = new ColisionadorObstaculo();
 	}
 
 	public void recibirDano(int golpe) {
@@ -63,12 +65,14 @@ public class ObstaculoConVida extends Obstaculo {
 	}
 
 
-	@Override
-	public void serColisionado(Colisionador col) {
-		col.visitar(this);
-		
+	public void disminuirVida(int valor, int damage) {
+		super.disminuirVida(damage);
+		monedas=monedas/2;
 	}
 
+	public void serColisionado(Colisionador col) {
+		col.visitar(this);
+	}
 	@Override
 	public void morir() {
 		// TODO Auto-generated method stub

@@ -5,7 +5,9 @@ import Clases.Enemigo;
 import Clases.GameObject;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import Obstaculos.Obstaculo;
+import Obstaculos.ObstaculoConVida;
+import Obstaculos.ObstaculoTemporal;
+import Obstaculos.Tambor;
 import PowerUps.PowerUp;
 
 public abstract class Colisionador {
@@ -17,5 +19,6 @@ public abstract class Colisionador {
 	public abstract void visitar(DisparoAliado d);
 	public abstract void visitar(DisparoEnemigo d);
 	public abstract void visitar(PowerUp p);
-	public abstract void visitar(Obstaculo o);
+	public abstract void visitar(ObstaculoConVida o);
+	public abstract void visitar(ObstaculoTemporal o);
 }

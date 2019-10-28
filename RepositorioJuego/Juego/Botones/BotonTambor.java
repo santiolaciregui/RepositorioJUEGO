@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 import Clases.GameObject;
 import Clases.Tienda;
+import Obstaculos.Tambor;
 
 public class BotonTambor extends RoundButton{
 
@@ -13,7 +14,7 @@ public class BotonTambor extends RoundButton{
 	}
 
 	public GameObject crear() {
-		return null;
+		return new Tambor(0,0);
 	}
 	
 }
