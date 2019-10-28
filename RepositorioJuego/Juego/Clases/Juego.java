@@ -89,7 +89,6 @@ public class Juego {
 				entidades.remove(e);
 			}
 			entidadesAeliminar.clear();
-			gui.actualizarPuntajes();
 			gui.actualizarVidas();
 			gui.actualizarMonedas();
 	}

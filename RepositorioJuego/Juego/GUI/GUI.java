@@ -21,7 +21,7 @@ public class GUI extends JFrame{
 	protected GameObject proximoAagregar, proximoAeliminar;
 	@SuppressWarnings("unused")
 	private ColeccionBotones botones;
-	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas;
+	private JLabel etiquetaVida, etiquetaMonedas, monedasInsuficientes;
 	private boolean lock = false;
 	private HiloTiempo tiempo;
 	private int direction = -1;
@@ -42,12 +42,11 @@ public class GUI extends JFrame{
 		etiquetaMonedas.setForeground(Color.BLACK);
 		etiquetaMonedas.setFont(new Font("Font.PLAIN", 3, 18));
 		panelArriba.add(etiquetaMonedas);
-		//ETIQUETA PUNTAJE
-		etiquetaPuntaje = new JLabel("PUNTAJE:");
-		etiquetaPuntaje.setForeground(Color.WHITE);
-		etiquetaPuntaje.setFont(new Font("Font.PLAIN", 3, 18));
-		panelAbajo.add(etiquetaPuntaje);
-		
+		//ETIQUETA MONEDAS INSUFICIENTES
+		monedasInsuficientes = new JLabel();
+		monedasInsuficientes.setForeground(Color.BLACK);
+		monedasInsuficientes.setFont(new Font("Font.PLAIN", 2, 35));
+		panelAbajo.add(monedasInsuficientes);
 		
 		juego=new Juego(this);
 		
@@ -110,7 +109,7 @@ public class GUI extends JFrame{
 	}
 	
 	public void cartelMonedasInsuficientes() {
-		JOptionPane.showMessageDialog(null,"Monedas insuficientes","aver tontito rescatate",JOptionPane.ERROR_MESSAGE);
+		monedasInsuficientes.setText("MONEDAS INSUFICIENTES  ");		
 	}
 	
 	public boolean getLock(){
@@ -131,6 +130,7 @@ public class GUI extends JFrame{
 				int x=e.getX();
 				int y=e.getY();
 				juego.agregarEntidad(x,y);
+				monedasInsuficientes.setText(null);
 		}
 		public void mousePressed(MouseEvent e) {}
 		public void mouseReleased(MouseEvent e) {
@@ -145,9 +145,6 @@ public class GUI extends JFrame{
 		new GUI();
 	}
 
-	public void actualizarPuntajes() {
-		etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje()+" ");		
-	}
 	
 	public void actualizarVidas() {
 		etiquetaVida.setText(""+juego.getVida());
