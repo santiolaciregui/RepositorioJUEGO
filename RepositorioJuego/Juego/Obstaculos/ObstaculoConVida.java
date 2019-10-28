@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 
 import Clases.GameObject;
 import Colisionadores.Colisionador;
-import Colisionadores.ColisionadorObstaculo;
+import Colisionadores.ColisionadorObstaculoConVida;
 
 public abstract class ObstaculoConVida extends GameObject {
 	protected int duracion;
@@ -15,7 +15,7 @@ public abstract class ObstaculoConVida extends GameObject {
 		duracion = 10;
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersMuerto.png")));
 		label.setBounds(x, y,117 , 110);
-		super.col = new ColisionadorObstaculo();
+		col = new ColisionadorObstaculoConVida();
 	}
 
 	public void recibirDano(int golpe) {

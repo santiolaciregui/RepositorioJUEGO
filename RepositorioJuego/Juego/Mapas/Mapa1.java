@@ -13,13 +13,19 @@ public class Mapa1 extends Mapa {
 	public Mapa1(Juego j) {
 		super(j);
 		vida=5;
-		cantEnemigos=6;
+		cantEnemigos=2;
 		enemigos= new Enemigo[cantEnemigos];
 		enemigos[0]= new Flanders(1200,200);
 		enemigos[1]= new Barney(1200,330);
-		enemigos[2]= new Flanders(1200,450);
-		enemigos[3]= new Barney(2000,380);
-		enemigos[4]= new Flanders(2000,460);
-		enemigos[5]= new Barney(2000,500);		
+//		enemigos[2]= new Flanders(1200,450);
+//		enemigos[3]= new Barney(2000,380);
+//		enemigos[4]= new Flanders(2000,460);
+//		enemigos[5]= new Barney(2000,500);		
+	}
+	
+	public void mapaSiguiente() {
+		juego.setMapa(new Mapa2(juego));
+		super.mapaSiguiente();
+//		juego.iniciarEntidades();
 	}
 }

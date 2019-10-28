@@ -20,11 +20,12 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa3(this);
+		this.mapa=new Mapa1(this);
 		tienda= new Tienda(this);
 		monedas = 3000;	
 		puntaje=0;
 		vida=3;
+		iniciarEntidades();
 	}
 	
 	
@@ -46,6 +47,7 @@ public class Juego {
 				nuevo.setJuego(this);
 				entidadesPendientes.addLast(nuevo);
 				tienda.reset();
+				monedas -= nuevo.getMonedas();
 		}
 		
 	}
@@ -83,6 +85,7 @@ public class Juego {
 			entidadesAeliminar= new LinkedList<GameObject>();
 			for(GameObject e: aux) {
 				gui.eliminarEnemigo(e);
+				mapa.eliminarEnemigo(e);
 				entidades.remove(e);
 			}
 			entidadesAeliminar.clear();
@@ -164,7 +167,9 @@ public class Juego {
 			mapa.mapaSiguiente();
 	}
 	
-	
+	public void setMapa(Mapa m) {
+		mapa= m;
+	}
 	public HiloTiempo getTiempo() {
 		return tiempo;
 	}

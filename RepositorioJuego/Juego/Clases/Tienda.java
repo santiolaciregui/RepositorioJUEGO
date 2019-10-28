@@ -15,7 +15,6 @@ public class Tienda {
 		aAgregar=null;
 		if(juego.getMonedas() >= nuevo.getMonedas()) {
 			aAgregar=nuevo;
-			juego.disminuirMonedas(nuevo.getMonedas());
 		}
 		else
 			juego.getGui().cartelMonedasInsuficientes();

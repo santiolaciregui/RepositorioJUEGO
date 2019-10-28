@@ -2,6 +2,7 @@ package Mapas;
 import java.awt.Rectangle;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 
 import Clases.Juego;
@@ -42,10 +43,7 @@ public abstract class Mapa {
 	}
 	
 	public void eliminarEnemigo(GameObject aEliminar) {
-		for(GameObject e: listaEnemigos) {
-			if(e==aEliminar)
-				listaEnemigos.remove(e);
-		}
+		listaEnemigos.remove(aEliminar);
 	}
 	
 	public LinkedList<GameObject> listaEnemigos(){
