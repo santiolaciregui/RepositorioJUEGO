@@ -24,6 +24,7 @@ public class Flanders extends Enemigo  {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersCaminaGif.gif")));
 	}
 	public void atacar(GameObject e) {
+		super.atacar(e);
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
 		e.disminuirVida(dano);
 	}

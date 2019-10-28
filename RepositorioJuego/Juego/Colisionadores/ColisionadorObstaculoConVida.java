@@ -9,7 +9,7 @@ import Obstaculos.ObstaculoTemporal;
 import Obstaculos.Tambor;
 import PowerUps.PowerUp;
 
-public class ColisionadorObstaculo extends Colisionador {
+public class ColisionadorObstaculoConVida extends Colisionador {
 
 	@Override
 	public void visitar(Aliado a) {

@@ -1,7 +1,11 @@
 package Clases;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import Armas.Arma;
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorAliado;
+import PowerUps.PowerUp.oyenteLabel;
 
 public abstract class Aliado extends GameObject {
 	protected int monedas;
@@ -11,9 +15,10 @@ public abstract class Aliado extends GameObject {
 	protected Aliado(int x,int y) {
 		super(x,y);	
 		col= new ColisionadorAliado(this);
+		label.addMouseListener(new oyenteLabel());
 	}
 	
-	public void disminuirVida(int valor, int damage) {
+	public void disminuirVida(int damage) {
 		super.disminuirVida(damage);
 		monedas=monedas/2;
 	}
@@ -32,5 +37,37 @@ public abstract class Aliado extends GameObject {
 		return monedas;
 	}
 
+	public class oyenteLabel implements MouseListener{
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e1) {
+			vida=0;			
+			juego.aumentarMonedas(precio);
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	}
 
 }
