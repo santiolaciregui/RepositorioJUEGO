@@ -4,6 +4,7 @@ import java.awt.Point;
 import javax.swing.JLabel;
 
 import Colisionadores.Colisionador;
+import PowerUps.PowerUp.oyenteLabel;
 public abstract class GameObject {
 	protected int vida, dano;
 	protected Juego juego;
@@ -93,6 +94,12 @@ public abstract class GameObject {
 
 	public int getMonedas() {
 		return monedas;
+	}
+
+
+	public void mejorarAliado(oyenteLabel oyenteLabel) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

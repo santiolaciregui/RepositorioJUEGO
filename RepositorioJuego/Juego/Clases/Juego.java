@@ -20,9 +20,9 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa1(this);
+		this.mapa=new Mapa3(this);
 		tienda= new Tienda(this);
-		monedas=10000000;	
+		monedas = 3000;	
 		puntaje=0;
 		vida=3;
 	}
@@ -39,10 +39,10 @@ public class Juego {
 	
 	public void agregarEntidad(int x, int y) {
 		GameObject nuevo= tienda.getCompra();
-		nuevo.setPos(x, y);
-		mapa.ubicacionDefinitiva(nuevo);
 		if(nuevo!=null) 
 			if(!mapa.hayColisionesConOtrosPersonajes(nuevo)) {
+				nuevo.setPos(x, y);
+				mapa.ubicacionDefinitiva(nuevo);
 				nuevo.setJuego(this);
 				entidadesPendientes.addLast(nuevo);
 				tienda.reset();
@@ -66,6 +66,7 @@ public class Juego {
 		entidadesPendientes.clear();
 	}
 	
+	
 	public void eliminarEntidades() {
 		if(vida==0)
 			tiempo.finalizar();
@@ -86,6 +87,8 @@ public class Juego {
 			}
 			entidadesAeliminar.clear();
 			gui.actualizarPuntajes();
+			gui.actualizarVidas();
+			gui.actualizarMonedas();
 	}
 	
 
@@ -122,6 +125,10 @@ public class Juego {
 	public void aumentarMonedas(int monedas) {
 		this.monedas+=monedas;
 	}
+	public void disminuirMonedas(int monedas) {
+		this.monedas -= monedas;
+	}
+	
 	public int getMonedas() {
 		return monedas;
 	}
@@ -136,26 +143,24 @@ public class Juego {
 				if(e1 != e2 && verificarColision(e1,e2)) {
 					e1.colisionar(e2);
 					collidedGeneral = true;
-				}
-				
+				}				
 			}
 			if(!collidedGeneral) {
 				e1.mover();
 			}
-			
 		}
 	}
 	private boolean verificarColision(GameObject e1, GameObject e2) {
 		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
 		Rectangle r1= e1.getLabel().getBounds();
-		r1.height/=2;
+		r1.height/=1.5;
 		Rectangle r2= e2.getLabel().getBounds();
-		r2.height/=2;
+		r2.height/=1.5;
 		return r1.intersects(r2);
 	}
 		
 	public void verificarMapa() {
-		if(entidades.size()==0) 
+		if(mapa.listaEnemigos().size()==0) 
 			mapa.mapaSiguiente();
 	}
 	
@@ -165,5 +170,9 @@ public class Juego {
 	}
 	public void setTiempo(HiloTiempo tiempo) {
 		this.tiempo = tiempo;
+	}
+	
+	public GUI getGui() {
+		return gui;
 	}
 }

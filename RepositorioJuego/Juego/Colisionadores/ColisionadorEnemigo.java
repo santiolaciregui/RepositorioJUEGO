@@ -25,7 +25,7 @@ public class ColisionadorEnemigo extends Colisionador{
 	}
 	@Override
 	public void visitar(DisparoEnemigo d) {
-		// TODO Auto-generated method stub
+		d.mover();
 		
 	}
 	@Override

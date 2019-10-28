@@ -27,8 +27,6 @@ public abstract class Enemigo extends GameObject{
 	}
 	
 	@Override
-	
-	
 	public void disminuirVida(int damage) {
 		super.disminuirVida(damage);
 		if(vida==0) {

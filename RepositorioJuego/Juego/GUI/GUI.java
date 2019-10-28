@@ -21,7 +21,7 @@ public class GUI extends JFrame{
 	protected GameObject proximoAagregar, proximoAeliminar;
 	@SuppressWarnings("unused")
 	private ColeccionBotones botones;
-	private JLabel etiquetaPuntaje, etiquetaVida;
+	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas;
 	private boolean lock = false;
 	private HiloTiempo tiempo;
 	private int direction = -1;
@@ -32,11 +32,17 @@ public class GUI extends JFrame{
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
 		
-		
+		//ETIQUETA VIDA
 		etiquetaVida= new JLabel("VIDA: ");
 		etiquetaVida.setForeground(Color.WHITE);
 		etiquetaVida.setFont(new Font("Font.PLAIN", 3, 27));
 		panelAbajo.add(etiquetaVida);
+		//ETIQUETA MONEDAS
+		etiquetaMonedas = new JLabel("MONEDAS: ");
+		etiquetaMonedas.setForeground(Color.WHITE);
+		etiquetaMonedas.setFont(new Font("Font.PLAIN", 3, 18));
+		panelAbajo.add(etiquetaMonedas);
+		//ETIQUETA PUNTAJE
 		etiquetaPuntaje = new JLabel("PUNTAJE:");
 		etiquetaPuntaje.setForeground(Color.WHITE);
 		etiquetaPuntaje.setFont(new Font("Font.PLAIN", 3, 18));
@@ -103,6 +109,9 @@ public class GUI extends JFrame{
 		repaint();
 	}
 	
+	public void cartelMonedasInsuficientes() {
+		JOptionPane.showMessageDialog(null,"Monedas insuficientes","aver tontito rescatate",JOptionPane.ERROR_MESSAGE);
+	}
 	
 	public boolean getLock(){
 		return this.lock;
@@ -137,11 +146,16 @@ public class GUI extends JFrame{
 	}
 
 	public void actualizarPuntajes() {
-		etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje());
+		etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje()+" ");		
+	}
+	
+	public void actualizarVidas() {
 		etiquetaVida.setText(""+juego.getVida());
 		etiquetaVida.setLocation(165, 63);
 	}
-
+	public void actualizarMonedas() {
+		etiquetaMonedas.setText("MONEDAS: "+juego.getMonedas()+" ");
+	}
 	
 
 }

@@ -41,7 +41,16 @@ public abstract class Mapa {
 		juego.iniciarEntidades();	
 	}
 	
+	public void eliminarEnemigo(GameObject aEliminar) {
+		for(GameObject e: listaEnemigos) {
+			if(e==aEliminar)
+				listaEnemigos.remove(e);
+		}
+	}
 	
+	public LinkedList<GameObject> listaEnemigos(){
+		return listaEnemigos;
+	}
 	public void ubicacionDefinitiva(GameObject nuevo) {
 		Rectangle rectangulo= nuevo.getLabel().getBounds();
 		nuevo.setPos(rectangulo.x-rectangulo.width/2, (((int)(rectangulo.y/altodelaFila))*altodelaFila)-75);

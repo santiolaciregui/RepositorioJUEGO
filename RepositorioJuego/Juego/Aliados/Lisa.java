@@ -27,7 +27,9 @@ public class Lisa extends Aliado {
 	}
 
 	@Override
-	public void mover() {	}
+	public void mover() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParada.png")));
+	}
 
 	@Override
 	public void morir() {

@@ -13,8 +13,12 @@ public class Tienda {
 	
 	public void aAgregar(GameObject nuevo) {
 		aAgregar=null;
-		if(juego.getMonedas()>= nuevo.getMonedas())
+		if(juego.getMonedas() >= nuevo.getMonedas()) {
 			aAgregar=nuevo;
+			juego.disminuirMonedas(nuevo.getMonedas());
+		}
+		else
+			juego.getGui().cartelMonedasInsuficientes();
 	}
 
 	public GameObject getCompra() {
@@ -27,5 +31,7 @@ public class Tienda {
 		aAgregar=null;
 	}
 	
-	
+	public Juego getJuego() {
+		return juego;
+	}
 }
