@@ -57,5 +57,10 @@ public abstract class PowerUp extends GameObject{
 			// TODO Auto-generated method stub
 			
 		}
+		
+		public void ralentizar() {
+		
+		}
+		
 	}
 }

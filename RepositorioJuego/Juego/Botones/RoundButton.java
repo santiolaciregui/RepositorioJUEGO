@@ -73,4 +73,3 @@ public abstract class RoundButton extends JButton {
 	
 	public abstract GameObject crear();
 }
-
