@@ -18,10 +18,10 @@ public class HiloTiempo extends Thread{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			juego.eliminarEntidades();
 			juego.agregarEntidades();
 			juego.colisionar();
 			
-			juego.eliminarEntidades();
 			juego.verificarMapa();
 		}
 	}

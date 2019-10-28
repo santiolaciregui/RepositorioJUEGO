@@ -39,7 +39,7 @@ public abstract class Mapa {
 		return entidades;
 	}
 	public void mapaSiguiente() {
-		juego.iniciarEntidades();	
+		juego.iniciarEntidades();
 	}
 	
 	public void eliminarEnemigo(GameObject aEliminar) {
