@@ -30,7 +30,7 @@ public class Burns extends Enemigo {
 		
 		contadorDisparo++;
 		if(contadorDisparo==15) {
-			juego.agregarObjetos(arma.crearDisparo(this.getPos()));
+			juego.agregarObjetos(arma.crearDisparo(this.getPos(), dano));
 			contadorDisparo=0;
 		}
 	}

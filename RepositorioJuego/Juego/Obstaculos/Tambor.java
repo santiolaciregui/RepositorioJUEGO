@@ -9,8 +9,8 @@ public class Tambor extends ObstaculoConVida{
 		super(x,y);
 		monedas=11;
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/TamborGif.gif")));
-		label.setBounds(x, y, 130, 130);
-		vida=100;
+		label.setBounds(x, y+100, 130, 130);
+		vida=10000;
 	}
 	@Override
 	public void mover() {	}

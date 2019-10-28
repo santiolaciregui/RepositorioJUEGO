@@ -15,13 +15,13 @@ import Botones.ColeccionBotones;
 public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
-	public static Dimension size = new Dimension(1250, 860);
+	public static Dimension size = new Dimension(1250, 790);
 	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;
 	@SuppressWarnings("unused")
 	private ColeccionBotones botones;
-	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas;
+	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas, gaton;
 	private boolean lock = false;
 	private HiloTiempo tiempo;
 	private int direction = -1;
@@ -31,6 +31,7 @@ public class GUI extends JFrame{
 		iniciarPanelArriba();
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
+		gaton= new JLabel();
 		
 		//ETIQUETA VIDA
 		etiquetaVida= new JLabel("VIDA: ");
@@ -61,6 +62,8 @@ public class GUI extends JFrame{
 		setResizable(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
 		
 	}
 	

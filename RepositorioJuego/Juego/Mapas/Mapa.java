@@ -54,8 +54,8 @@ public abstract class Mapa {
 		nuevo.setPos(rectangulo.x-rectangulo.width/2, (((int)(rectangulo.y/altodelaFila))*altodelaFila)-75);
 	}
 		
-	private boolean fueraDeGrilla(GameObject elem) {
-		return elem.getLabel().getBounds().y< 85;
+	public boolean dentroDeGrilla(GameObject elem) {
+		return elem.getPos().y>170 && elem.getPos().y<515;
 	}
 
 	public boolean hayColisionesConOtrosPersonajes(GameObject nuevo) {	

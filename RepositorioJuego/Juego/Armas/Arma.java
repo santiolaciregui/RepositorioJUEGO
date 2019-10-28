@@ -6,5 +6,5 @@ import Disparos.*;
 
 public abstract class Arma {
 	
-	public abstract Disparo crearDisparo(Point pos);	
+	public abstract Disparo crearDisparo(Point pos, int dano);	
 }

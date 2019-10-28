@@ -12,9 +12,6 @@ public abstract class ObstaculoConVida extends GameObject {
 	
 	public ObstaculoConVida(int x, int y) {
 		super(x,y);
-		duracion = 10;
-		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersMuerto.png")));
-		label.setBounds(x, y,117 , 110);
 		col = new ColisionadorObstaculoConVida();
 	}
 
