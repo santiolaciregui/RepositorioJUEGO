@@ -3,8 +3,8 @@ package Clases;
 import java.awt.Point;
 import javax.swing.JLabel;
 
+import Clases.PowerUp.oyenteLabel;
 import Colisionadores.Colisionador;
-import PowerUps.PowerUp.oyenteLabel;
 public abstract class GameObject {
 	protected int vida, dano;
 	protected Juego juego;

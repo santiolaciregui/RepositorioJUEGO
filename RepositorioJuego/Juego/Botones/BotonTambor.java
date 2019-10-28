@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 import Clases.GameObject;
 import Clases.Tienda;
-import Obstaculos.Tambor;
+import ObstaculoConVida.Tambor;
 
 public class BotonTambor extends RoundButton{
 

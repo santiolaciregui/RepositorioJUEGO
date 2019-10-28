@@ -4,7 +4,8 @@ import javax.swing.ImageIcon;
 
 import Clases.GameObject;
 import Clases.Tienda;
-import Obstaculos.Tambor;
+import ObjetoPrecioso.Bomba;
+import ObstaculoConVida.Tambor;
 
 public class BotonBomba extends RoundButton{
 
@@ -14,7 +15,7 @@ public class BotonBomba extends RoundButton{
 	}
 
 	public GameObject crear() {
-		return new Tambor(0,0);
+		return new Bomba(0,0);
 	}
 
 }

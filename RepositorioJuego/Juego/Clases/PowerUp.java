@@ -1,17 +1,16 @@
-package PowerUps;
+package Clases;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.LinkedList;
 
-import Clases.GameObject;
 import Colisionadores.Colisionador;
-import Colisionadores.ColisionadorPowerUp;
+import Colisionadores.ColPowerUp;
 
 public abstract class PowerUp extends GameObject{
 	protected PowerUp(int x, int y) {
 		super(x,y);
 		vida=50;
-		col= new ColisionadorPowerUp(this);
+		col= new ColPowerUp(this);
 		label.addMouseListener(new oyenteLabel());
 		
 	}

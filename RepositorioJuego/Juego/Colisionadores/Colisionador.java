@@ -3,12 +3,13 @@ package Colisionadores;
 import Clases.Aliado;
 import Clases.Enemigo;
 import Clases.GameObject;
+import Clases.ObjetoPrecioso;
+import Clases.ObstaculoConVida;
+import Clases.ObstaculoTemporal;
+import Clases.PowerUp;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import Obstaculos.ObstaculoConVida;
-import Obstaculos.ObstaculoTemporal;
-import Obstaculos.Tambor;
-import PowerUps.PowerUp;
+import ObstaculoConVida.Tambor;
 
 public abstract class Colisionador {
 	
@@ -21,4 +22,5 @@ public abstract class Colisionador {
 	public abstract void visitar(PowerUp p);
 	public abstract void visitar(ObstaculoConVida o);
 	public abstract void visitar(ObstaculoTemporal o);
+	public abstract void visitar(ObjetoPrecioso o);
 }

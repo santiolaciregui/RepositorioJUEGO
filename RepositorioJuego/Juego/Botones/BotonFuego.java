@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 import Clases.GameObject;
 import Clases.Tienda;
+import ObstaculoTemporal.Llama;
 
 public class BotonFuego extends RoundButton {
 
@@ -13,6 +14,6 @@ public class BotonFuego extends RoundButton {
 	}
 
 	public GameObject crear() {
-		return null;
+		return new Llama(0,0);
 	}
 }

@@ -3,9 +3,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import Armas.Arma;
+import Clases.PowerUp.oyenteLabel;
 import Colisionadores.Colisionador;
-import Colisionadores.ColisionadorAliado;
-import PowerUps.PowerUp.oyenteLabel;
+import Colisionadores.ColAliado;
 
 public abstract class Aliado extends GameObject {
 	protected int monedas;
@@ -14,7 +14,7 @@ public abstract class Aliado extends GameObject {
 
 	protected Aliado(int x,int y) {
 		super(x,y);	
-		col= new ColisionadorAliado(this);
+		col= new ColAliado(this);
 		label.addMouseListener(new oyenteLabel());
 	}
 	

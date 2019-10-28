@@ -1,18 +1,17 @@
-package Obstaculos;
+package Clases;
 
 import javax.swing.ImageIcon;
 
-
-import Clases.GameObject;
 import Colisionadores.Colisionador;
-import Colisionadores.ColisionadorObstaculoConVida;
+import Colisionadores.ColObstaculoConVida;
+import Colisionadores.ColObstaculoTemporal;
 
 public abstract class ObstaculoConVida extends GameObject {
 	protected int duracion;
 	
 	public ObstaculoConVida(int x, int y) {
 		super(x,y);
-		col = new ColisionadorObstaculoConVida();
+		col = new ColObstaculoTemporal();
 	}
 
 	public void recibirDano(int golpe) {

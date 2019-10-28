@@ -2,52 +2,53 @@ package Colisionadores;
 
 import Clases.Aliado;
 import Clases.Enemigo;
+import Clases.ObjetoPrecioso;
+import Clases.ObstaculoConVida;
+import Clases.ObstaculoTemporal;
+import Clases.PowerUp;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import Obstaculos.ObstaculoConVida;
-import Obstaculos.ObstaculoTemporal;
-import Obstaculos.Tambor;
-import PowerUps.PowerUp;
+import ObstaculoConVida.Tambor;
 
-public class ColisionadorPowerUp extends Colisionador{
-	protected PowerUp power;
+public class ColAliado extends Colisionador {
 	
-	public ColisionadorPowerUp(PowerUp p) {
-		power=p;
+	public ColAliado(Aliado a) {
+		miEntidad=a;
 	}
-	
 	@Override
-	public void visitar(Aliado a) {	}
-
+	public void visitar(Aliado a) {	
+	}
 	@Override
-	public void visitar(Enemigo e) { e.mover();	}
-
+	public void visitar(Enemigo e) {
+		miEntidad.atacar(e);
+	}
 	@Override
 	public void visitar(DisparoAliado d) {
 		d.mover();
 		
 	}
-
 	@Override
 	public void visitar(DisparoEnemigo d) {
-		d.mover();
+		// TODO Auto-generated method stub
 		
 	}
-
 	@Override
 	public void visitar(PowerUp p) {
-		p.mover();
+		// TODO Auto-generated method stub
 		
 	}
-
 	@Override
 	public void visitar(ObstaculoConVida o) {
 		// TODO Auto-generated method stub
 		
 	}
-
 	@Override
 	public void visitar(ObstaculoTemporal o) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void visitar(ObjetoPrecioso o) {
 		// TODO Auto-generated method stub
 		
 	}

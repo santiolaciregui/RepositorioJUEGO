@@ -2,13 +2,14 @@ package Colisionadores;
 
 import Clases.Aliado;
 import Clases.Enemigo;
+import Clases.ObjetoPrecioso;
+import Clases.ObstaculoConVida;
+import Clases.ObstaculoTemporal;
+import Clases.PowerUp;
 import Disparos.Disparo;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import Obstaculos.ObstaculoConVida;
-import Obstaculos.ObstaculoTemporal;
-import Obstaculos.Tambor;
-import PowerUps.PowerUp;
+import ObstaculoConVida.Tambor;
 
 public class ColDisparoEnemigo extends Colisionador{
 
@@ -47,6 +48,12 @@ public class ColDisparoEnemigo extends Colisionador{
 
 	@Override
 	public void visitar(ObstaculoTemporal o) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ObjetoPrecioso o) {
 		// TODO Auto-generated method stub
 		
 	}

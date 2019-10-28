@@ -6,27 +6,27 @@ import Clases.ObjetoPrecioso;
 import Clases.ObstaculoConVida;
 import Clases.ObstaculoTemporal;
 import Clases.PowerUp;
-import Disparos.Disparo;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
 import ObstaculoConVida.Tambor;
 
-public class ColDisparoAliado extends Colisionador{
+public class ColPowerUp extends Colisionador{
+	protected PowerUp power;
 	
-	public ColDisparoAliado(Disparo d) {
-		miEntidad=d;
+	public ColPowerUp(PowerUp p) {
+		power=p;
 	}
 	
-	public void visitar(Aliado j) {	}
-	
-	public void visitar(Enemigo e) {
-		miEntidad.atacar(e);
-	}
+	@Override
+	public void visitar(Aliado a) {	}
 
+	@Override
+	public void visitar(Enemigo e) { e.mover();	}
 
 	@Override
 	public void visitar(DisparoAliado d) {
-		d.mover();		
+		d.mover();
+		
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class ColDisparoAliado extends Colisionador{
 
 	@Override
 	public void visitar(PowerUp p) {
-		// TODO Auto-generated method stub
+		p.mover();
 		
 	}
 

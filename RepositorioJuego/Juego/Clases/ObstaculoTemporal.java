@@ -1,10 +1,10 @@
-package Obstaculos;
+package Clases;
 
 import javax.swing.ImageIcon;
-import Clases.GameObject;
+
 import Colisionadores.Colisionador;
 
-public class ObstaculoTemporal extends Tambor {
+public class ObstaculoTemporal extends GameObject {
 	protected int duracion;
 	
 	public ObstaculoTemporal(int x, int y) {

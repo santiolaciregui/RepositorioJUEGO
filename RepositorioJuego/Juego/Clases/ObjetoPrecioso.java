@@ -1,12 +1,14 @@
-package PowerUps;
+package Clases;
 
-import Clases.GameObject;
 import Colisionadores.Colisionador;
+import Colisionadores.ColEnemigo;
+import Colisionadores.ColObjetoPrecioso;
 
 public class ObjetoPrecioso extends GameObject {
 
 	public ObjetoPrecioso(int x, int y) {
 		super(x,y);
+		col= new ColObjetoPrecioso(this);
 	}
 
 	@Override
@@ -25,10 +27,8 @@ public class ObjetoPrecioso extends GameObject {
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
 	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
-		
+		col.visitar(this);
 	}
 
 	@Override
