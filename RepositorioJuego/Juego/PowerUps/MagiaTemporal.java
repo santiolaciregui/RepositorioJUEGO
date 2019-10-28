@@ -11,7 +11,7 @@ public class MagiaTemporal extends PowerUp {
 	public MagiaTemporal(int x, int y) {
 		super(x,y);
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/PremioKrusty.gif")));
-		label.setBounds(x, y+40, 75, 60);
+		label.setBounds(x, y+55, 75, 60);
 	}
 
 	@Override

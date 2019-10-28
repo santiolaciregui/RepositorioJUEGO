@@ -26,6 +26,7 @@ public class ColDisparoAliado extends Colisionador{
 	@Override
 	public void visitar(DisparoAliado d) {
 		d.mover();		
+		miEntidad.parar();
 	}
 
 	@Override

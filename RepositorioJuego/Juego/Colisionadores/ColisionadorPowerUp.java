@@ -20,8 +20,9 @@ public class ColisionadorPowerUp extends Colisionador{
 	public void visitar(Aliado a) {	}
 
 	@Override
-	public void visitar(Enemigo e) { e.mover();	}
-
+	public void visitar(Enemigo e) { 
+		e.mover();	
+	}
 	@Override
 	public void visitar(DisparoAliado d) {
 		d.mover();

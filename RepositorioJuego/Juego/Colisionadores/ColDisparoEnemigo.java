@@ -41,8 +41,7 @@ public class ColDisparoEnemigo extends Colisionador{
 
 	@Override
 	public void visitar(ObstaculoConVida o) {
-		// TODO Auto-generated method stub
-		
+		miEntidad.atacar(o);
 	}
 
 	@Override

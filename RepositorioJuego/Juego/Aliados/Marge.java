@@ -26,11 +26,12 @@ public class Marge extends Aliado {
 	}
 
 	@Override
-	public void mover() {	}
+	public void mover() {
+		super.mover();
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
+	}
 
 	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
+	public void morir() {		
 	}
 }

@@ -19,8 +19,8 @@ public abstract class Mapa {
 	
 	public Mapa(Juego j) {
 		juego=j;
-		cantFilas=6;
-		Hgrilla= 221;
+		cantFilas=4;
+		Hgrilla= 250;
 		altodelaFila=(int)(Hgrilla/cantFilas);
 		Wgrilla= 1250;
 		listaEnemigos= new LinkedList<GameObject>();
@@ -51,11 +51,11 @@ public abstract class Mapa {
 	}
 	public void ubicacionDefinitiva(GameObject nuevo) {
 		Rectangle rectangulo= nuevo.getLabel().getBounds();
-		nuevo.setPos(rectangulo.x-rectangulo.width/2, (((int)(rectangulo.y/altodelaFila))*altodelaFila)-75);
+		nuevo.setPos(rectangulo.x-rectangulo.width/2, (((int)(rectangulo.y/altodelaFila))*altodelaFila)-85);
 	}
 		
 	public boolean dentroDeGrilla(GameObject elem) {
-		return elem.getPos().y>170 && elem.getPos().y<515;
+		return elem.getPos().y>170 && elem.getPos().y<515 ;
 	}
 
 	public boolean hayColisionesConOtrosPersonajes(GameObject nuevo) {	
