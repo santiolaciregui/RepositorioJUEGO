@@ -28,10 +28,9 @@ public abstract class Aliado extends GameObject {
 	}
 	
 	@Override
-	public abstract void atacar(GameObject e);
-
-	@Override
-	public abstract void parar();
+	public void atacar(GameObject e) {}
+	
+	public void mover() {}
 	
 	public int getMonedas() {
 		return monedas;

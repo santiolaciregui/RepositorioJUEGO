@@ -20,7 +20,7 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa1(this);
+		this.mapa=new Mapa3(this);
 		tienda= new Tienda(this);
 		monedas = 30000;	
 		puntaje=0;
@@ -168,8 +168,10 @@ public class Juego {
 		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
 		Rectangle r1= e1.getLabel().getBounds();
 		r1.height/=2.15;
+		r1.width/=2;
 		Rectangle r2= e2.getLabel().getBounds();
 		r2.height/=2.15;
+		r2.width/=2;
 		return r1.intersects(r2);
 	}
 		
