@@ -60,6 +60,12 @@ public class Juego {
 	public LinkedList<GameObject> listaEntidades(){
 		return entidades;
 	}
+	
+	public LinkedList<GameObject> listaEntidadesPendientes(){
+		return entidadesPendientes;
+	}
+	
+	
 	public void agregarEntidades() {
 		for(GameObject e: entidadesPendientes) {
 			entidades.addLast(e);
@@ -113,6 +119,11 @@ public class Juego {
 	}
 	public int getVida() {
 		return vida;
+	}
+	
+	public void limpiarLista() {
+		for(GameObject e: entidades)
+			entidadesAeliminar.add(e);
 	}
 	
 	
