@@ -11,7 +11,7 @@ public abstract class ObstaculoConVida extends GameObject {
 	
 	public ObstaculoConVida(int x, int y) {
 		super(x,y);
-		col = new ColObstaculoTemporal();
+		col = new ColObstaculoConVida(this);
 	}
 
 	public void recibirDano(int golpe) {

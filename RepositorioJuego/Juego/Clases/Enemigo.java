@@ -2,6 +2,7 @@ package Clases;
 
 import Armas.Arma;
 import Colisionadores.Colisionador;
+import PowerUpss.MagiaTemporal;
 import Colisionadores.ColEnemigo;
 
 public abstract class Enemigo extends GameObject{
@@ -44,7 +45,7 @@ public abstract class Enemigo extends GameObject{
 		PowerUp powerup=null;
 //		switch(n) {
 //		CASE 1: 
-//			powerup= new MagiaTemporal(this.getPos().x,this.getPos().y);
+			powerup= new MagiaTemporal(this.getPos().x,this.getPos().y);
 //			breAK;
 //		}
 //		IF(POWERUP!=NULL) {

@@ -2,6 +2,7 @@ package Clases;
 
 import javax.swing.ImageIcon;
 
+import Colisionadores.ColObstaculoTemporal;
 import Colisionadores.Colisionador;
 
 public class ObstaculoTemporal extends GameObject {
@@ -10,16 +11,11 @@ public class ObstaculoTemporal extends GameObject {
 	public ObstaculoTemporal(int x, int y) {
 		super(x,y);
 		duracion = 10;
-		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/TamborGif.gif")));
 		label.setBounds(x, y,117 , 110);
+		col = new ColObstaculoTemporal(this);
 	}
 
-	@Override
-	public void atacar(GameObject e) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	@Override
 	public void parar() {
 		// TODO Auto-generated method stub
@@ -27,16 +23,6 @@ public class ObstaculoTemporal extends GameObject {
 	}
 
 	public void mover() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void golpearJugador(GameObject j) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void golpearEnemigo(GameObject e) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -73,6 +59,14 @@ public class ObstaculoTemporal extends GameObject {
 	}
 
 	public void terminar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void atacar(GameObject e) {
+		System.out.println("asdasdasdasd");
 		// TODO Auto-generated method stub
 		
 	}

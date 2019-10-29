@@ -20,7 +20,7 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa3(this);
+		this.mapa=new Mapa1(this);
 		tienda= new Tienda(this);
 		monedas = 30000;	
 		puntaje=0;
@@ -77,8 +77,7 @@ public class Juego {
 	
 	
 	public void eliminarEntidades() {
-		if(vida==0)
-			tiempo.finalizar();
+		
 		for(GameObject e: entidades) {     
 			if(e.getVida()==0) {
 				e.morir();
@@ -86,6 +85,8 @@ public class Juego {
 			}
 		}
 		eliminarAux(entidadesAeliminar);
+		if(vida==0)
+			tiempo.finalizar();
 	}
 	private void eliminarAux(LinkedList<GameObject> lista) {
 			LinkedList<GameObject> aux= (LinkedList<GameObject>) entidadesAeliminar.clone();

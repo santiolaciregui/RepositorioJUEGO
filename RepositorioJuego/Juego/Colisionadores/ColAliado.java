@@ -34,8 +34,6 @@ public class ColAliado extends Colisionador {
 	}
 	@Override
 	public void visitar(PowerUp p) {
-		// TODO Auto-generated method stub
-		
 	}
 	@Override
 	public void visitar(ObstaculoConVida o) {

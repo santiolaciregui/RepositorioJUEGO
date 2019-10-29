@@ -43,8 +43,6 @@ public class ColEnemigo extends Colisionador{
 	}
 	@Override
 	public void visitar(ObstaculoTemporal o) {
-		// TODO Auto-generated method stub
-		
 	}
 	@Override
 	public void visitar(ObjetoPrecioso o) {

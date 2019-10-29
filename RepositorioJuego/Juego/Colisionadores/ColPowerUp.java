@@ -18,7 +18,7 @@ public class ColPowerUp extends Colisionador{
 	}
 	
 	@Override
-	public void visitar(Aliado a) {	}
+	public void visitar(Aliado a) {}
 
 	@Override
 	public void visitar(Enemigo e) { 

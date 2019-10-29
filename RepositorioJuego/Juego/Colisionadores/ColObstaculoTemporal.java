@@ -10,7 +10,10 @@ import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
 
 public class ColObstaculoTemporal extends Colisionador{
-
+	
+	public ColObstaculoTemporal(ObstaculoTemporal o) {
+		miEntidad = o ;
+	}
 	@Override
 	public void visitar(Aliado a) {
 		// TODO Auto-generated method stub
@@ -19,8 +22,8 @@ public class ColObstaculoTemporal extends Colisionador{
 
 	@Override
 	public void visitar(Enemigo e) {
-		// TODO Auto-generated method stub
-		
+		miEntidad.atacar(e);
+		e.mover();
 	}
 
 	@Override

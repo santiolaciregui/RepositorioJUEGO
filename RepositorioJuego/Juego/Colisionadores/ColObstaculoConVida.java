@@ -12,6 +12,10 @@ import ObstaculoConVida.Tambor;
 
 public class ColObstaculoConVida extends Colisionador {
 
+	public ColObstaculoConVida(ObstaculoConVida obstaculoConVida) {
+		miEntidad = obstaculoConVida;
+	}
+
 	@Override
 	public void visitar(Aliado a) {
 		// TODO Auto-generated method stub
