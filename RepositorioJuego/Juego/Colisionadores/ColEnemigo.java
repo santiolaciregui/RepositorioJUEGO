@@ -20,7 +20,9 @@ public class ColEnemigo extends Colisionador{
 		miEntidad.atacar(a);
 	}
 	@Override
-	public void visitar(Enemigo e) {}
+	public void visitar(Enemigo e) {
+		e.mover();
+	}
 	@Override
 	public void visitar(DisparoAliado d) {
 		// TODO Auto-generated method stub
@@ -39,10 +41,13 @@ public class ColEnemigo extends Colisionador{
 	
 	@Override
 	public void visitar(ObstaculoConVida o) {
+		miEntidad.parar();
 		miEntidad.atacar(o);
+		
 	}
 	@Override
 	public void visitar(ObstaculoTemporal o) {
+		miEntidad.mover();
 	}
 	@Override
 	public void visitar(ObjetoPrecioso o) {

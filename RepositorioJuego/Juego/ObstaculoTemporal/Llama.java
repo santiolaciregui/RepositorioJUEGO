@@ -17,13 +17,13 @@ public class Llama extends ObstaculoTemporal implements Runnable {
 	}
 	
 	public void atacar(GameObject e) {
-		e.disminuirVida(dano);
+		super.atacar(e);
 	}
 
 	@Override
 	public void run() {
 		try {
-			Thread.sleep(40);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -4,6 +4,7 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 import Clases.GameObject;
+import Clases.PowerUp;
 
 public class MagiaTemporal extends PowerUp {	
 	protected int duracion;

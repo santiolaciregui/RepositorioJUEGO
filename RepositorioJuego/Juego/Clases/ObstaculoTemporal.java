@@ -27,13 +27,9 @@ public class ObstaculoTemporal extends GameObject {
 		
 	}
 
-	public void accept(Colisionador v) {
-	
-	}
-
 	@Override
 	public void serColisionado(Colisionador col) {
-		// TODO Auto-generated method stub
+		col.visitar(this);
 		
 	}
 
@@ -66,9 +62,7 @@ public class ObstaculoTemporal extends GameObject {
 
 	@Override
 	public void atacar(GameObject e) {
-		System.out.println("asdasdasdasd");
-		// TODO Auto-generated method stub
-		
+		e.disminuirVida(dano);		
 	}
 
 }

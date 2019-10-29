@@ -9,7 +9,7 @@ public class Marge extends Aliado {
 	public Marge(int x, int y) {
 		super(x,y);
 		vida=2000;
-		dano=100;
+		dano=70;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
 		label.setBounds(x, y,117 , 110);
 		precio = 1000;

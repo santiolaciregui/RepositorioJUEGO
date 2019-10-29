@@ -30,7 +30,7 @@ public class Flanders extends Enemigo  {
 	}
 	
 	public void parar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersParado.png")));
+		super.parar();
 		
 	}
 

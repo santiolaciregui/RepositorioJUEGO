@@ -24,7 +24,7 @@ public class ColObstaculoConVida extends Colisionador {
 
 	@Override
 	public void visitar(Enemigo e) {
-		
+		e.parar();		
 	}
 
 	@Override

@@ -23,7 +23,6 @@ public class ColObstaculoTemporal extends Colisionador{
 	@Override
 	public void visitar(Enemigo e) {
 		miEntidad.atacar(e);
-		e.mover();
 	}
 
 	@Override

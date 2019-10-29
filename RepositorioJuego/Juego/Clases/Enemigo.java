@@ -2,7 +2,7 @@ package Clases;
 
 import Armas.Arma;
 import Colisionadores.Colisionador;
-import PowerUpss.MagiaTemporal;
+import PowerUps.MagiaTemporal;
 import Colisionadores.ColEnemigo;
 
 public abstract class Enemigo extends GameObject{
@@ -14,7 +14,7 @@ public abstract class Enemigo extends GameObject{
 	protected Enemigo(int x,int y) {
 		super(x,y);
 		col= new ColEnemigo(this);
-		velocidad=1;
+		velocidad=3;
 	}
 
 	public void mover() {
@@ -23,6 +23,10 @@ public abstract class Enemigo extends GameObject{
 			this.setVida(0);
 			juego.disminuirVida(1);
 		}
+	}
+	
+	public void parar() {
+		this.setPos(this.getPos().x,  this.getPos().y);
 	}
 	
 	@Override
