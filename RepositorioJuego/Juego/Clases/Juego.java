@@ -22,7 +22,7 @@ public class Juego {
 		entidadesPendientes= new LinkedList<GameObject>();
 		this.mapa=new Mapa1(this);
 		tienda= new Tienda(this);
-		monedas = 30000;	
+		monedas = 10000;	
 		puntaje=0;
 		vida=3;
 		iniciarEntidades();
@@ -77,7 +77,11 @@ public class Juego {
 	
 	
 	public void eliminarEntidades() {
-		
+		if(vida==0) {
+			limpiarLista();
+			gui.gameOver();
+			tiempo.finalizar();
+		}
 		for(GameObject e: entidades) {     
 			if(e.getVida()==0) {
 				e.morir();
@@ -85,8 +89,6 @@ public class Juego {
 			}
 		}
 		eliminarAux(entidadesAeliminar);
-		if(vida==0)
-			tiempo.finalizar();
 	}
 	private void eliminarAux(LinkedList<GameObject> lista) {
 			LinkedList<GameObject> aux= (LinkedList<GameObject>) entidadesAeliminar.clone();
@@ -99,6 +101,7 @@ public class Juego {
 			entidadesAeliminar.clear();
 			gui.actualizarVidas();
 			gui.actualizarMonedas();
+			gui.actualizarBotones();
 	}
 	
 
@@ -126,7 +129,6 @@ public class Juego {
 		for(GameObject e: entidades)
 			entidadesAeliminar.add(e);
 	}
-	
 	
 	
 	public void aumentarPuntaje(int p) {

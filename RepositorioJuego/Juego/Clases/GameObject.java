@@ -92,7 +92,7 @@ public abstract class GameObject {
 	public abstract void morir();
 
 
-	public int getMonedas() {
+	public  int getMonedas() {
 		return monedas;
 	}
 

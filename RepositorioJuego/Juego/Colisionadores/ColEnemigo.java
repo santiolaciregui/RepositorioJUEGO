@@ -21,7 +21,8 @@ public class ColEnemigo extends Colisionador{
 	}
 	@Override
 	public void visitar(Enemigo e) {
-		e.mover();
+		e.setPos(e.getPos().x+5, e.getPos().y);
+		e.parar();
 	}
 	@Override
 	public void visitar(DisparoAliado d) {
@@ -30,8 +31,7 @@ public class ColEnemigo extends Colisionador{
 	}
 	@Override
 	public void visitar(DisparoEnemigo d) {
-		d.mover();
-		
+		miEntidad.mover();
 	}
 	@Override
 	public void visitar(PowerUp p) {
@@ -41,7 +41,6 @@ public class ColEnemigo extends Colisionador{
 	
 	@Override
 	public void visitar(ObstaculoConVida o) {
-		miEntidad.parar();
 		miEntidad.atacar(o);
 		
 	}

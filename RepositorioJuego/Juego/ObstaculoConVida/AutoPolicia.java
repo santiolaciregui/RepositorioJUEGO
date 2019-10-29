@@ -10,7 +10,7 @@ public class AutoPolicia extends ObstaculoConVida{
 		super(x,y);
 		monedas=11;
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AutoPolicia.png")));
-		label.setBounds(x, y+100, 400, 130);
+		label.setBounds(x, y+100, 250, 130);
 		vida=10000;
 	}
 	@Override

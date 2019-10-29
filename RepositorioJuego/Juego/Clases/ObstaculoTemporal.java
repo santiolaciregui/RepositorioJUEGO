@@ -10,8 +10,6 @@ public class ObstaculoTemporal extends GameObject {
 	
 	public ObstaculoTemporal(int x, int y) {
 		super(x,y);
-		duracion = 10;
-		label.setBounds(x, y,117 , 110);
 		col = new ColObstaculoTemporal(this);
 	}
 
@@ -23,8 +21,9 @@ public class ObstaculoTemporal extends GameObject {
 	}
 
 	public void mover() {
-		// TODO Auto-generated method stub
-		
+		vida--;
+		System.out.println(vida
+				);
 	}
 
 	@Override
@@ -40,8 +39,7 @@ public class ObstaculoTemporal extends GameObject {
 	}
 
 	public int getTiempo() {
-		// TODO Auto-generated method stub
-		return 0;
+		return duracion;
 	}
 
 	public void setTiempo(int t) {

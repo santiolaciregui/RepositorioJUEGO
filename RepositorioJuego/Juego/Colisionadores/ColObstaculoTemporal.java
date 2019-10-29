@@ -16,48 +16,49 @@ public class ColObstaculoTemporal extends Colisionador{
 	}
 	@Override
 	public void visitar(Aliado a) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
 	@Override
 	public void visitar(Enemigo e) {
 		miEntidad.atacar(e);
+		miEntidad.mover();
 	}
 
 	@Override
 	public void visitar(DisparoAliado d) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
 	@Override
 	public void visitar(DisparoEnemigo d) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
 	@Override
 	public void visitar(PowerUp p) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
 	@Override
 	public void visitar(ObstaculoConVida o) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
 	@Override
 	public void visitar(ObstaculoTemporal o) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
 	@Override
 	public void visitar(ObjetoPrecioso o) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 

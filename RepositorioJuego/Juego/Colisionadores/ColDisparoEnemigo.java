@@ -20,18 +20,18 @@ public class ColDisparoEnemigo extends Colisionador{
 	public void visitar(Aliado j) {
 		miEntidad.atacar(j);
 	}
-	public void visitar(Enemigo e) { 
-		e.mover();
+	public void visitar(Enemigo e) {
+		miEntidad.mover();
 	}
 
 	@Override
 	public void visitar(DisparoAliado d) {
-		d.mover();
+		miEntidad.mover();
 	}
 
 	@Override
 	public void visitar(DisparoEnemigo d) {
-		d.mover();
+		miEntidad.mover();
 	}
 
 	@Override

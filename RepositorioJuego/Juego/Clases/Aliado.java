@@ -8,7 +8,6 @@ import Colisionadores.Colisionador;
 import Colisionadores.ColAliado;
 
 public abstract class Aliado extends GameObject {
-	protected int monedas;
 	protected int precio;
 	protected Arma arma;
 
@@ -32,9 +31,6 @@ public abstract class Aliado extends GameObject {
 	
 	public void mover() {}
 	
-	public int getMonedas() {
-		return monedas;
-	}
 
 	public class oyenteLabel implements MouseListener{
 

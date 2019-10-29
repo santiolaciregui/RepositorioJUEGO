@@ -10,8 +10,8 @@ public class ArmaAbuelo extends Arma {
 	
 	public DisparoAliado crearDisparo(Point pos, int dano) {
 		DisparoAliado disparo= new DisparoAliado(dano, pos.x, pos.y+50);
-		disparo.getLabel().setIcon(new ImageIcon(getClass().getResource("/Imagenes/FuegoAbuelitoGif.gif")));
-		disparo.getLabel().setBounds(disparo.getPos().x+50, disparo.getPos().y, 60, 80);
+		disparo.getLabel().setIcon(new ImageIcon(getClass().getResource("/Imagenes/oficial2.png")));
+		disparo.getLabel().setBounds(disparo.getPos().x+20, disparo.getPos().y, 60, 70);
 		return disparo;
 	}
 	

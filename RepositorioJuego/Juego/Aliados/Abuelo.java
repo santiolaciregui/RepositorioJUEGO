@@ -1,4 +1,6 @@
 package Aliados;
+import java.awt.Point;
+
 import javax.swing.ImageIcon;
 
 import Armas.ArmaAbuelo;
@@ -33,7 +35,10 @@ public class Abuelo extends Aliado {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
 		contador++;
 		if(contador==55) {
-			juego.agregarObjetos(arma.crearDisparo(this.getPos(), dano));
+			Point pos= this.getPos();
+			juego.agregarObjetos(arma.crearDisparo(pos, dano));
+			pos.y-=90;
+			juego.agregarObjetos(arma.crearDisparo(pos, dano));
 			contador=0;
 		}
 	}

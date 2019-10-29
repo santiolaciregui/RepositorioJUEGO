@@ -16,6 +16,7 @@ import Clases.Tienda;
 
 public abstract class RoundButton extends JButton {
 	protected Tienda tienda;
+	protected int valor;
 	
 	public RoundButton(Tienda tien) {
 		tienda= tien;
@@ -62,7 +63,6 @@ public abstract class RoundButton extends JButton {
 		}
 		return shape.contains(x, y);
 	}
-
 	private class oyenteBoton implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			GameObject entidad= crear();
@@ -71,5 +71,17 @@ public abstract class RoundButton extends JButton {
 		}
 	}
 	
+	public void checkActive() {
+		if(this.tienda.getJuego().getMonedas() >= this.crear().getMonedas()) {
+			this.activar();
+		}else {
+			this.desactivar();
+		}
+	}
+	
 	public abstract GameObject crear();
+	protected abstract void activar();
+	protected abstract void desactivar();
+	
+	
 }

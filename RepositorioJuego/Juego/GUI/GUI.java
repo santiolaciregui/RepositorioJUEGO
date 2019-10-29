@@ -21,7 +21,7 @@ public class GUI extends JFrame{
 	protected GameObject proximoAagregar, proximoAeliminar;
 	@SuppressWarnings("unused")
 	private ColeccionBotones botones;
-	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas, gaton;
+	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas, gameOver;
 	private boolean lock = false;
 	private HiloTiempo tiempo;
 	private int direction = -1;
@@ -31,7 +31,6 @@ public class GUI extends JFrame{
 		iniciarPanelArriba();
 		iniciarPanelGrilla();
 		iniciarPanelAbajo();
-		gaton= new JLabel();
 		
 		//ETIQUETA VIDA
 		etiquetaVida= new JLabel("VIDA: ");
@@ -112,6 +111,19 @@ public class GUI extends JFrame{
 		repaint();
 	}
 	
+	public void gameOver() {
+		gameOver= new JLabel();
+		gameOver.setBounds(0,0,1280,720);
+		gameOver.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/perder2.png")));
+		terminarJuego(gameOver);
+	}
+	public void ganar() {
+		ganar= new JLabel();
+		ganar.setBounds(0,0,1280,720);
+		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/ganar.png")));
+		terminarJuego(ganar);
+	}
+	
 	public void cartelMonedasInsuficientes() {
 		JOptionPane.showMessageDialog(null,"Monedas insuficientes","aver tontito rescatate",JOptionPane.ERROR_MESSAGE);
 	}
@@ -159,6 +171,10 @@ public class GUI extends JFrame{
 	public void actualizarMonedas() {
 		etiquetaMonedas.setText("MONEDAS: "+juego.getMonedas()+" ");
 		etiquetaMonedas.setLocation(740, 17);
+	}
+	
+	public void actualizarBotones() {
+		botones.actualizar();
 	}
 	
 
