@@ -22,8 +22,6 @@ public class ObstaculoTemporal extends GameObject {
 
 	public void mover() {
 		vida--;
-		System.out.println(vida
-				);
 	}
 
 	@Override

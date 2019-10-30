@@ -13,8 +13,7 @@ public class ObjetoPrecioso extends GameObject {
 
 	@Override
 	public void atacar(GameObject e) {
-		// TODO Auto-generated method stub
-		
+		e.disminuirVida(dano);
 	}
 
 	@Override
@@ -24,8 +23,7 @@ public class ObjetoPrecioso extends GameObject {
 	}
 	@Override
 	public void mover() {
-		// TODO Auto-generated method stub
-		
+		vida--;		
 	}
 	public void serColisionado(Colisionador col) {
 		col.visitar(this);

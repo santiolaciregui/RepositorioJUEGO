@@ -15,9 +15,7 @@ public class Lava extends ObstaculoTemporal {
 		vida=200;
 		dano=400;
 	}
-	@Override
-	public void atacar(GameObject e) {
-		e.disminuirVida(dano);
-	}
+	
+	
 }
 

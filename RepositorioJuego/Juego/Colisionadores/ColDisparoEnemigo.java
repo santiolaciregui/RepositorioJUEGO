@@ -36,7 +36,7 @@ public class ColDisparoEnemigo extends Colisionador{
 
 	@Override
 	public void visitar(PowerUp p) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
@@ -47,14 +47,13 @@ public class ColDisparoEnemigo extends Colisionador{
 
 	@Override
 	public void visitar(ObstaculoTemporal o) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
 	@Override
 	public void visitar(ObjetoPrecioso o) {
-		// TODO Auto-generated method stub
-		
+		miEntidad.mover();		
 	}
 
 }

@@ -42,20 +42,19 @@ public class ColDisparoAliado extends Colisionador{
 
 	@Override
 	public void visitar(ObstaculoConVida o) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
 	@Override
 	public void visitar(ObstaculoTemporal o) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 
 	@Override
 	public void visitar(ObjetoPrecioso o) {
-		// TODO Auto-generated method stub
-		
+		miEntidad.mover();		
 	}
 
 }

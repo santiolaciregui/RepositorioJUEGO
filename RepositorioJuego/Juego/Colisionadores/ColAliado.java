@@ -47,7 +47,7 @@ public class ColAliado extends Colisionador {
 	}
 	@Override
 	public void visitar(ObjetoPrecioso o) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 

@@ -56,8 +56,6 @@ public class ColObstaculoConVida extends Colisionador {
 
 	@Override
 	public void visitar(ObjetoPrecioso o) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
