@@ -120,6 +120,8 @@ public class Juego {
 	
 	public void disminuirVida(int vida) {
 		this.vida -= vida;
+		if (vida == 1)
+			System.out.println("0 vida");
 	}
 	public int getVida() {
 		return vida;
