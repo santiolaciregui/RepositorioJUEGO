@@ -47,8 +47,6 @@ public class GUI extends JFrame{
 		etiquetaPuntaje.setForeground(Color.WHITE);
 		etiquetaPuntaje.setFont(new Font("Font.PLAIN", 3, 18));
 		panelAbajo.add(etiquetaPuntaje);
-		
-		
 		juego=new Juego(this);
 		
 		iniciarBotones();
@@ -113,9 +111,9 @@ public class GUI extends JFrame{
 	
 	public void gameOver() {
 		gameOver= new JLabel();
-		gameOver.setBounds(0,0,1280,720);
-		gameOver.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/perder2.png")));
-		terminarJuego(gameOver);
+		gameOver.setBounds(110,110,1280,720);
+		gameOver.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/HomeroMuerto.png")));
+		panelArriba.add(gameOver);
 	}
 	public void ganar() {
 		ganar= new JLabel();
