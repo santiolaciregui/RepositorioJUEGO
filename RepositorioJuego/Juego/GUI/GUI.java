@@ -27,41 +27,7 @@ public class GUI extends JFrame{
 	private int direction = -1;
 	
 	public GUI() {
-		iniciarContentPane();
-		iniciarPanelArriba();
-		iniciarPanelGrilla();
-		iniciarPanelAbajo();
-		
-		//ETIQUETA VIDA
-		etiquetaVida= new JLabel("VIDA: ");
-		etiquetaVida.setForeground(Color.BLACK);
-		etiquetaVida.setFont(new Font("Font.PLAIN", 3, 24));
-		panelArriba.add(etiquetaVida);
-		//ETIQUETA MONEDAS
-		etiquetaMonedas = new JLabel("MONEDAS: ");
-		etiquetaMonedas.setForeground(Color.BLACK);
-		etiquetaMonedas.setFont(new Font("Font.PLAIN", 3, 18));
-		panelArriba.add(etiquetaMonedas);
-		//ETIQUETA PUNTAJE
-		etiquetaPuntaje = new JLabel("PUNTAJE:");
-		etiquetaPuntaje.setForeground(Color.WHITE);
-		etiquetaPuntaje.setFont(new Font("Font.PLAIN", 3, 18));
-		panelAbajo.add(etiquetaPuntaje);
-		juego=new Juego(this);
-		
-		iniciarBotones();
-		
-		tiempo = new HiloTiempo(juego);
-		tiempo.start();
-		setVisible(true);
-		setTitle(titulo);
-		setSize(size);
-		setResizable(true);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		
-		
+		inicializarTodo();
 	}
 	
 	private void iniciarContentPane() {
@@ -111,9 +77,9 @@ public class GUI extends JFrame{
 	
 	public void gameOver() {
 		gameOver= new JLabel();
-		gameOver.setBounds(110,110,1280,720);
+		gameOver.setBounds(0,0,1280,720);
 		gameOver.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/HomeroMuerto.png")));
-		panelArriba.add(gameOver);
+		terminarJuego(gameOver);
 	}
 	public void ganar() {
 		ganar= new JLabel();
@@ -121,9 +87,74 @@ public class GUI extends JFrame{
 		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/ganar.png")));
 		terminarJuego(ganar);
 	}
+	private void terminarJuego(JLabel label) {
+		JButton volverAJugar= new JButton();
+		volverAJugar.setBounds(50, 20, 230, 36);
+		volverAJugar.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/volverAJugar.png")));
+		volverAJugar.setOpaque(false);
+		volverAJugar.setBackground(new Color(0,0,0));
+		volverAJugar.setBorderPainted(false);
+		volverAJugar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				repaint();
+//				inicializarTodo();
+				requestFocus();
+			}
+		});
+		
+		JButton salir= new JButton();
+		salir.setBounds(50, 70, 61, 29);
+		salir.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/salir.png")));
+		salir.setOpaque(false);
+		salir.setBackground(new Color(0,0,0));
+		salir.setBorderPainted(false);
+		salir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();				
+			}
+		});
+		
+		contentPane.removeAll();
+		contentPane.add(label);
+		contentPane.add(volverAJugar);
+		contentPane.add(salir);
+		this.repaint();
+	}
 	
+	public void inicializarTodo() {
+		iniciarContentPane();
+		iniciarPanelArriba();
+		iniciarPanelGrilla();
+		iniciarPanelAbajo();
+		
+		//ETIQUETA VIDA
+		etiquetaVida= new JLabel("VIDA: ");
+		etiquetaVida.setForeground(Color.BLACK);
+		etiquetaVida.setFont(new Font("Font.PLAIN", 3, 24));
+		panelArriba.add(etiquetaVida);
+		//ETIQUETA MONEDAS
+		etiquetaMonedas = new JLabel("MONEDAS: ");
+		etiquetaMonedas.setForeground(Color.BLACK);
+		etiquetaMonedas.setFont(new Font("Font.PLAIN", 3, 18));
+		panelArriba.add(etiquetaMonedas);
+
+		juego = new Juego(this);
+		
+		iniciarBotones();
+		
+		tiempo = new HiloTiempo(juego);
+		juego.setTiempo(tiempo);
+		tiempo.start();
+		setVisible(true);
+		setTitle(titulo);
+		setSize(size);
+		setResizable(true);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	}
 	public void cartelMonedasInsuficientes() {
-		JOptionPane.showMessageDialog(null,"Monedas insuficientes","aver tontito rescatate",JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null,"Monedas insuficientes","Fondos insuficientes para comprar este personaje",JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public boolean getLock(){

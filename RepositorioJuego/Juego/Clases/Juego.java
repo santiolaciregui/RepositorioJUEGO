@@ -77,11 +77,7 @@ public class Juego {
 	
 	
 	public void eliminarEntidades() {
-		if(vida==0) {
-			limpiarLista();
-			gui.gameOver();
-			tiempo.finalizar();
-		}
+		
 		for(GameObject e: entidades) {     
 			if(e.getVida()==0) {
 				e.morir();
@@ -120,10 +116,6 @@ public class Juego {
 	
 	public void disminuirVida(int vida) {
 		this.vida -= vida;
-		if (vida == 1 || vida == 0) {
-			System.out.println("0 vida");
-			getGui().gameOver();
-		}
 	}
 	public int getVida() {
 		return vida;
@@ -185,6 +177,11 @@ public class Juego {
 	public void verificarMapa() {
 		if(mapa.listaEnemigos().size()==0) 
 			mapa.mapaSiguiente();
+		if(vida==0) {
+			limpiarLista();
+			gui.gameOver();
+			tiempo.finalizar();
+		}
 	}
 	
 	public void setMapa(Mapa m) {
