@@ -14,7 +14,8 @@ public abstract class Enemigo extends GameObject{
 	protected Enemigo(int x,int y) {
 		super(x,y);
 		col= new ColEnemigo(this);
-		velocidad=25;
+		velocidad=3
+				;
 	}
 
 	public void mover() {
