@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 import Colisionadores.ColObstaculoTemporal;
 import Colisionadores.Colisionador;
 
-public class ObstaculoTemporal extends GameObject {
+public abstract class ObstaculoTemporal extends GameObject {
 	protected int duracion;
 	
 	public ObstaculoTemporal(int x, int y) {

@@ -21,7 +21,7 @@ public class GUI extends JFrame{
 	protected GameObject proximoAagregar, proximoAeliminar;
 	@SuppressWarnings("unused")
 	private ColeccionBotones botones;
-	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas, gameOver;
+	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas, gameOver, ganar;
 	private boolean lock = false;
 	private HiloTiempo tiempo;
 	private int direction = -1;
@@ -68,6 +68,7 @@ public class GUI extends JFrame{
 	public void agregarObject(JLabel nuevo) {
 		panelGrilla.add(nuevo);
 		nuevo.setLocation(nuevo.getBounds().getLocation());
+		panelGrilla.setComponentZOrder(nuevo, 0);
 		repaint();
 	}
 	public void eliminarEnemigo(GameObject aEliminar) {
@@ -89,7 +90,7 @@ public class GUI extends JFrame{
 	}
 	private void terminarJuego(JLabel label) {
 		JButton volverAJugar= new JButton();
-		volverAJugar.setBounds(50, 20, 230, 36);
+		volverAJugar.setBounds(500, 250, 230, 36);
 		volverAJugar.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/volverAJugar.png")));
 		volverAJugar.setOpaque(false);
 		volverAJugar.setBackground(new Color(0,0,0));
@@ -97,13 +98,13 @@ public class GUI extends JFrame{
 		volverAJugar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				repaint();
-//				inicializarTodo();
+				inicializarTodo();
 				requestFocus();
 			}
 		});
 		
 		JButton salir= new JButton();
-		salir.setBounds(50, 70, 61, 29);
+		salir.setBounds(580, 360, 61, 29);
 		salir.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/salir.png")));
 		salir.setOpaque(false);
 		salir.setBackground(new Color(0,0,0));
@@ -114,10 +115,10 @@ public class GUI extends JFrame{
 			}
 		});
 		
-		contentPane.removeAll();
-		contentPane.add(label);
-		contentPane.add(volverAJugar);
-		contentPane.add(salir);
+		panelGrilla.removeAll();
+		panelGrilla.add(label);
+		panelGrilla.add(volverAJugar);
+		panelGrilla.add(salir);
 		this.repaint();
 	}
 	

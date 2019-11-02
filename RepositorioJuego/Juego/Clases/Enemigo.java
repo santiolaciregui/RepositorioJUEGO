@@ -5,7 +5,7 @@ import Colisionadores.Colisionador;
 import PowerUps.MagiaTemporal;
 import Colisionadores.ColEnemigo;
 
-public abstract class Enemigo extends GameObject{
+public abstract class Enemigo extends GameObject implements Cloneable{
 	protected int monedas;
 	protected int velocidad;
 	protected int puntosDeMuerte;
@@ -14,8 +14,7 @@ public abstract class Enemigo extends GameObject{
 	protected Enemigo(int x,int y) {
 		super(x,y);
 		col= new ColEnemigo(this);
-		velocidad=3
-				;
+		velocidad=3;
 	}
 
 	public void mover() {
@@ -74,6 +73,6 @@ public abstract class Enemigo extends GameObject{
 	public void golpearDisparoEnemigo(GameObject d) {
 	}
 	
-	public abstract Enemigo clonar();
+	public abstract Enemigo crear();
 
 }

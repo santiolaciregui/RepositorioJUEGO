@@ -41,9 +41,8 @@ public class Burns extends Enemigo {
 }
 
 	@Override
-	public Enemigo clonar() {
-		// TODO Auto-generated method stub
-		return null;
+	public Enemigo crear() {
+		return new Burns(0,0);
 	}
 
 	@Override

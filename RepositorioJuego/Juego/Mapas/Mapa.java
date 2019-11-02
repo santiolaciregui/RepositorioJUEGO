@@ -1,4 +1,5 @@
 package Mapas;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -6,6 +7,10 @@ import java.util.Queue;
 import java.util.Random;
 
 import Clases.Juego;
+import Clases.ObstaculoConVida;
+import Clases.ObstaculoTemporal;
+import ObstaculoConVida.Tambor;
+import ObstaculoTemporal.Llama;
 import Clases.Enemigo;
 import Clases.GameObject;
 
@@ -15,7 +20,7 @@ public abstract class Mapa {
 	protected int cantFilas, altodelaFila, Hgrilla, Wgrilla;
 	protected int vida;
 	protected LinkedList<GameObject> listaEnemigos;
-	protected GameObject[] enemigos;
+	protected Enemigo[] enemigos;
 	
 	public Mapa(Juego j) {
 		juego=j;
@@ -29,12 +34,16 @@ public abstract class Mapa {
 	public LinkedList<GameObject> crearEntidades() {
 		LinkedList<GameObject> entidades= new LinkedList<GameObject>();
 		Random ran= new Random(2);
-		int aux= ran.nextInt();
-		for(int i=0;i<cantEnemigos;i++) {
-			ubicacionDefinitiva(enemigos[i]);
-			GameObject nuevo=enemigos[i];
+		int aux;
+		for(int i=0; i<cantEnemigos; i++) {
+			aux= ran.nextInt(2);
+			GameObject nuevo;
+			nuevo=enemigos[aux].crear();
+			nuevo.setPos(posicionAleatoria().x, posicionAleatoria().y);
+			ubicacionDefinitiva(nuevo);
+			System.out.println(nuevo.getPos());
 			listaEnemigos.addLast(nuevo);
-			entidades.addFirst(nuevo);
+			entidades.addLast(nuevo);
 		}
 		return entidades;
 	}
@@ -76,5 +85,12 @@ public abstract class Mapa {
 				}
 		}
 		return hayColision;
+	}
+	
+	public Point posicionAleatoria() {
+		int numeroX = (int)Math.floor(Math.random()*(1400-1200+1)+1600);
+		int numeroY = (int)Math.floor(Math.random()*(550-220+1)+200);
+		Point punto= new Point(numeroX, numeroY);
+		return punto;
 	}
 }

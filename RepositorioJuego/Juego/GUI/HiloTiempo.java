@@ -14,7 +14,7 @@ public class HiloTiempo extends Thread{
 	public void run() {
 		while(hayJuego){
 			try {
-				Thread.sleep(40);
+				Thread.sleep(30);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}			
