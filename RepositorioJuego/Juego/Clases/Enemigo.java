@@ -20,7 +20,7 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 	protected Enemigo(int x,int y) {
 		super(x,y);
 		col= new ColEnemigo(this);
-		velocidad=3;
+		velocidad=10;
 	}
 
 	

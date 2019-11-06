@@ -78,19 +78,19 @@ public class GUI extends JFrame{
 	
 	public void gameOver() {
 		gameOver= new JLabel();
-		gameOver.setBounds(0,0,1280,720);
-		gameOver.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/HomeroMuerto.png")));
+		gameOver.setBounds(0,0,1280,550);
+		gameOver.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/perder2.png")));
 		terminarJuego(gameOver);
 	}
 	public void ganar() {
 		ganar= new JLabel();
-		ganar.setBounds(0,0,1280,720);
+		ganar.setBounds(0,0,1280,485);
 		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/ganar.png")));
 		terminarJuego(ganar);
 	}
 	private void terminarJuego(JLabel label) {
 		JButton volverAJugar= new JButton();
-		volverAJugar.setBounds(500, 250, 230, 36);
+		volverAJugar.setBounds(580, 360, 461, 29);
 		volverAJugar.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/volverAJugar.png")));
 		volverAJugar.setOpaque(false);
 		volverAJugar.setBackground(new Color(0,0,0));
@@ -104,7 +104,7 @@ public class GUI extends JFrame{
 		});
 		
 		JButton salir= new JButton();
-		salir.setBounds(580, 360, 61, 29);
+		salir.setBounds(580, 350, 401, 129);
 		salir.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/salir.png")));
 		salir.setOpaque(false);
 		salir.setBackground(new Color(0,0,0));
