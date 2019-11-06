@@ -45,16 +45,16 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 	}
 	
 	protected void lanzarPowerUp() {
-//		int n= (int) (Math.random() * 4) + 1;
+		int n= (int) (Math.random() * 4) + 1;
 		PowerUp powerup=null;
-//		switch(n) {
-//		CASE 1: 
+		switch(n) {
+		case 1: 
 			powerup= new MagiaTemporal(this.getPos().x,this.getPos().y);
-//			breAK;
-//		}
-//		IF(POWERUP!=NULL) {
+			break;
+		}
+		if(powerup!=null) {
 			juego.agregarObjetos(powerup);
-//		}
+		}
 	}
 
 	public void serColisionado(Colisionador col) {
