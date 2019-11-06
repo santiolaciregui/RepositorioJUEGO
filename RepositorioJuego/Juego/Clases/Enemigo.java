@@ -55,7 +55,6 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 	
 	protected void lanzarPowerUp() {
 		Random numAleatorio = new Random();
-		// Numero entero entre 25 y 75
 		int n = numAleatorio.nextInt(8-1+1) + 1;
 		PowerUp powerup=null;
 		switch(n) {

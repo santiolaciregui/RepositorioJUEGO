@@ -37,9 +37,14 @@ public abstract class Mapa {
 			nuevo=enemigos[aux].crear();
 			nuevo.setPos(posicionAleatoria().x, posicionAleatoria().y);
 			ubicacionDefinitiva(nuevo);
-			System.out.println(nuevo.getPos());
-			listaEnemigos.addLast(nuevo);
-			entidades.addLast(nuevo);
+			if(!hayColisionesConOtrosPersonajes(nuevo, entidades)) {
+				listaEnemigos.addLast(nuevo);
+				entidades.addLast(nuevo);
+			}
+			else {
+				i--;
+				nuevo=null;
+			}
 		}
 		return entidades;
 	}
@@ -63,9 +68,9 @@ public abstract class Mapa {
 		return elem.getPos().y>170 && elem.getPos().y<515 ;
 	}
 
-	public boolean hayColisionesConOtrosPersonajes(GameObject nuevo) {	
+	public boolean hayColisionesConOtrosPersonajes(GameObject nuevo, LinkedList<GameObject> lista) {	
 		boolean hayColision=false;
-		Iterator<GameObject> it=juego.listaEntidades().iterator();
+		Iterator<GameObject> it=lista.iterator();
 		Rectangle rNuevo=nuevo.getLabel().getBounds();
 		rNuevo.height=30;
 		rNuevo.width=80;
@@ -84,28 +89,14 @@ public abstract class Mapa {
 	}
 	
 	public Point posicionAleatoria() {
-		Random ran1 = new Random();
-		Random ran2 = new Random();
+		Random ranx1 = new Random();
+		Random rany1 = new Random();
 		// Numero entero entre 25 y 75
-		int x = ran1.nextInt(1400-1200+1)+1200;
-		int y = ran2.nextInt(550-220+1)+220;
-		int numeroX = (int)Math.floor(Math.random()*(1400-1200+1)+1600);
-		int numeroY = (int)Math.floor(Math.random()*(550-220+1)+200);
+		int x = ranx1.nextInt(1800-1200+1)+1200;
+		int y = rany1.nextInt(550-220+1)+220;
 		Point punto= new Point(x, y);
 		return punto;
 	}
 	
-	public Point posicionAleatoria1() {
-		int numero;
-		ArrayList<Integer> numeros = new ArrayList<Integer>();
-		for (int i = 1; i <= 5; i++) {
-		    numero = (int) (Math.random() * 50 + 1);
-		    if (numeros.contains(numero)) {
-		        i--;
-		    } else {
-		        numeros.add(numero);
-		    }
-		}
-		return null;
-	}
+
 }

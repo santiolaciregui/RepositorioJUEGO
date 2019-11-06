@@ -41,7 +41,7 @@ public class Juego {
 		GameObject nuevo= tienda.getCompra();
 		if(nuevo!=null) {
 			nuevo.setPos(x, y);
-			if(!mapa.hayColisionesConOtrosPersonajes(nuevo) && mapa.dentroDeGrilla(nuevo)) {
+			if(!mapa.hayColisionesConOtrosPersonajes(nuevo, entidades) && mapa.dentroDeGrilla(nuevo)) {
 				mapa.ubicacionDefinitiva(nuevo);
 				nuevo.setJuego(this);
 				entidadesPendientes.addLast(nuevo);
