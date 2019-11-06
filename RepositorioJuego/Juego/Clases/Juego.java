@@ -15,7 +15,6 @@ public class Juego {
 	private Mapa mapa;
 	
 	public Juego(GUI gui) {
-		
 		this.gui=gui;
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
