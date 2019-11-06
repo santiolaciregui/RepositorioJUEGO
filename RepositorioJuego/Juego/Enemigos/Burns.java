@@ -29,7 +29,7 @@ public class Burns extends Enemigo {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsAtacaGif.gif")));
 		
 		contadorDisparo++;
-		if(contadorDisparo==15) {
+		if(contadorDisparo==27) {
 			juego.agregarObjetos(arma.crearDisparo(this.getPos(), dano));
 			contadorDisparo=0;
 		}
