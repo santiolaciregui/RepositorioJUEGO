@@ -1,7 +1,8 @@
 package Clases;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.LinkedList;
+
+import javax.swing.ImageIcon;
 
 import Colisionadores.Colisionador;
 import Colisionadores.ColPowerUp;
@@ -12,6 +13,8 @@ public abstract class PowerUp extends GameObject{
 		vida=50;
 		col= new ColPowerUp(this);
 		label.addMouseListener(new oyenteLabel());
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/PremioKrusty.gif")));
+		label.setBounds(x, y+55, 75, 60);
 		
 	}
 	public void mover() {	}
@@ -55,10 +58,6 @@ public abstract class PowerUp extends GameObject{
 		public void mouseExited(MouseEvent e) {
 			// TODO Auto-generated method stub
 			
-		}
-		
-		public void ralentizar() {
-		
 		}
 		
 	}

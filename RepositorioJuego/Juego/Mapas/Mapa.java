@@ -1,16 +1,12 @@
 package Mapas;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Random;
 
 import Clases.Juego;
-import Clases.ObstaculoConVida;
-import Clases.ObstaculoTemporal;
-import ObstaculoConVida.Tambor;
-import ObstaculoTemporal.Llama;
 import Clases.Enemigo;
 import Clases.GameObject;
 
@@ -88,9 +84,28 @@ public abstract class Mapa {
 	}
 	
 	public Point posicionAleatoria() {
+		Random ran1 = new Random();
+		Random ran2 = new Random();
+		// Numero entero entre 25 y 75
+		int x = ran1.nextInt(1400-1200+1)+1200;
+		int y = ran2.nextInt(550-220+1)+220;
 		int numeroX = (int)Math.floor(Math.random()*(1400-1200+1)+1600);
 		int numeroY = (int)Math.floor(Math.random()*(550-220+1)+200);
-		Point punto= new Point(numeroX, numeroY);
+		Point punto= new Point(x, y);
 		return punto;
+	}
+	
+	public Point posicionAleatoria1() {
+		int numero;
+		ArrayList<Integer> numeros = new ArrayList<Integer>();
+		for (int i = 1; i <= 5; i++) {
+		    numero = (int) (Math.random() * 50 + 1);
+		    if (numeros.contains(numero)) {
+		        i--;
+		    } else {
+		        numeros.add(numero);
+		    }
+		}
+		return null;
 	}
 }

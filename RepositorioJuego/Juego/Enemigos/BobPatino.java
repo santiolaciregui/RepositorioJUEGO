@@ -17,6 +17,10 @@ public class BobPatino extends Enemigo {
 		label.setBounds(x, y,117 , 110);
 	}
 	
+	public void mover() {
+		super.mover();
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobCaminaGif.gif")));
+	}
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobAtacaGif.gif")));
 		e.disminuirVida(dano);
