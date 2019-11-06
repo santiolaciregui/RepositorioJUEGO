@@ -85,7 +85,7 @@ public class GUI extends JFrame{
 	public void ganar() {
 		ganar= new JLabel();
 		ganar.setBounds(0,0,1280,485);
-		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/ganar.png")));
+		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/ganar.png")));
 		terminarJuego(ganar);
 	}
 	private void terminarJuego(JLabel label) {
