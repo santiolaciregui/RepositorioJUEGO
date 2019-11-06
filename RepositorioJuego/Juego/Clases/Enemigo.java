@@ -14,7 +14,7 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 	protected Enemigo(int x,int y) {
 		super(x,y);
 		col= new ColEnemigo(this);
-		velocidad=10;
+		velocidad=3;
 	}
 
 	public void mover() {
@@ -45,16 +45,16 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 	}
 	
 	protected void lanzarPowerUp() {
-		int n= (int) (Math.random() * 4) + 1;
+//		int n= (int) (Math.random() * 4) + 1;
 		PowerUp powerup=null;
-		switch(n) {
-		case 1: 
+//		switch(n) {
+//		CASE 1: 
 			powerup= new MagiaTemporal(this.getPos().x,this.getPos().y);
-			break;
-		}
-		if(powerup!=null) {
+//			breAK;
+//		}
+//		IF(POWERUP!=NULL) {
 			juego.agregarObjetos(powerup);
-		}
+//		}
 	}
 
 	public void serColisionado(Colisionador col) {
