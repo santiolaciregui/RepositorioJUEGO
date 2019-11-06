@@ -11,7 +11,7 @@ public class Homero extends Aliado {
 	protected int contador;
 	public Homero( int x, int y) {
 		super(x,y);
-		dano=200;
+		dano=400;
 		vida=1100;
 		precio=1500;
 		monedas=precio;

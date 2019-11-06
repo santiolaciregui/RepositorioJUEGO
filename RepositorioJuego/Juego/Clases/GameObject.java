@@ -2,8 +2,6 @@ package Clases;
 
 import java.awt.Point;
 import javax.swing.JLabel;
-
-import Clases.PowerUp.oyenteLabel;
 import Colisionadores.Colisionador;
 public abstract class GameObject {
 	protected int vida, dano;
@@ -27,6 +25,13 @@ public abstract class GameObject {
 	}
 	
 	
+	public int getDano() {
+		return dano;
+	}
+	
+	public void setDano(int d) {
+		dano+=d;
+	}
 	public void setLabel(JLabel label) {
 		this.label = label;
 	}
@@ -40,15 +45,7 @@ public abstract class GameObject {
 	}
 	public Point getPos() {
 		return label.getLocation();
-	}
-	
-	public void setDano(int dano) {
-		this.dano = dano;
 	}	
-	public int getDano() {
-		return dano;	
-	}	
-	
 	
 	public void colisionar(GameObject e) {
 		e.serColisionado(col);
@@ -62,11 +59,6 @@ public abstract class GameObject {
 	}
 	
 	
-	public void aumentarVida(int vida ) {
-		this.vida+=vida;
-		if(vida>100)
-			vida=100;
-	}
 	
 	public void disminuirVida(int dano) {
 		vida-=dano;
@@ -76,7 +68,10 @@ public abstract class GameObject {
 		}
 	}
 	
-	
+	public  int getMonedas() {
+		return monedas;
+	}
+
 	public void setJuego(Juego j) {
 		juego=j;
 	}
@@ -85,21 +80,12 @@ public abstract class GameObject {
 		return juego;
 	}
 	
+	public void aumentarDano(int dano) {	}
+	public void aumentarVida(int vida) {	}
 	public abstract void serColisionado(Colisionador col);
 	public abstract void atacar(GameObject e);
 	public abstract void mover();
 	public abstract void parar();
 	public abstract void morir();
-
-
-	public  int getMonedas() {
-		return monedas;
-	}
-
-
-	public void mejorarAliado(oyenteLabel oyenteLabel) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }
