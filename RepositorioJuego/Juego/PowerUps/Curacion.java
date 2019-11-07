@@ -1,16 +1,16 @@
 package PowerUps;
 
-import java.util.Random;
-
-import javax.swing.ImageIcon;
 import Clases.GameObject;
 import Clases.PowerUp;
+import Colisionadores.ColCuracion;
 
 public class Curacion extends PowerUp {	
 	protected int duracion;
 	
 	public Curacion(int x, int y) {
 		super(x,y);
+		mejora=500;
+		afectacion=new ColCuracion(this);
 	}
 
 	@Override
@@ -27,14 +27,12 @@ public class Curacion extends PowerUp {
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
+	public void realizarAccion() {
+		for(GameObject e: juego.listaEntidades())
+			e.serColisionado(afectacion);
 	}
 	
-	public void realizarAccion() {
-		for(GameObject e: juego.listaEntidades()) {
-			e.aumentarVida(500);
-		}
+	public int getMejora() {
+		return mejora;
 	}
 }

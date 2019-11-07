@@ -1,9 +1,7 @@
 package ObjetoPrecioso;
 
 import javax.swing.ImageIcon;
-import Clases.GameObject;
 import Clases.ObjetoPrecioso;
-import Clases.ObstaculoConVida;
 
 public class Bomba extends ObjetoPrecioso{
 	

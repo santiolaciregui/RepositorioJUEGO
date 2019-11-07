@@ -11,16 +11,7 @@ import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
 import ObstaculoConVida.Tambor;
 
-public abstract class Colisionador {
+public abstract class Colisionador extends Visitor {
 	
 	protected GameObject miEntidad;
-	
-	public abstract void visitar(Aliado a);
-	public abstract void visitar(Enemigo e);
-	public abstract void visitar(DisparoAliado d);
-	public abstract void visitar(DisparoEnemigo d);
-	public abstract void visitar(PowerUp p);
-	public abstract void visitar(ObstaculoConVida o);
-	public abstract void visitar(ObstaculoTemporal o);
-	public abstract void visitar(ObjetoPrecioso o);
 }

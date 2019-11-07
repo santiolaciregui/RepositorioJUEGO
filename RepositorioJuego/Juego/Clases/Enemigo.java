@@ -1,29 +1,30 @@
 package Clases;
 
 import java.util.Random;
-
 import Armas.Arma;
-import Colisionadores.Colisionador;
+import Colisionadores.Visitor;
+import Estados.Estado;
 import PowerUps.Congelar;
 import PowerUps.Curacion;
 import PowerUps.MegaFuerza;
 import Colisionadores.ColEnemigo;
 
-public abstract class Enemigo extends GameObject implements Cloneable{
+public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 	protected int monedas;
 	protected int velocidad;
-
-
 	protected int puntosDeMuerte;
 	protected Arma arma;
-	
+	protected Estado estado;
+
 	protected Enemigo(int x,int y) {
 		super(x,y);
 		col= new ColEnemigo(this);
 		velocidad=3;
 	}
 
-	
+	public void atacar(GameObject e) {
+		e.disminuirVida(dano);
+	}
 	public void mover() {
 		this.setPos(this.getPos().x - velocidad, this.getPos().y);
 		if(this.getPos().x<-10) {
@@ -40,21 +41,22 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 		this.velocidad = velocidad;
 	}
 	
-	@Override
-	public void disminuirVida(int damage) {
-		super.disminuirVida(damage);
+	public int getVelocidad() {
+		return velocidad;
+	}
+	public void reducirVida(int dano) {
+		vida-=dano;
 		if(vida==0) {
-			juego.aumentarMonedas(damage);
+			juego.aumentarMonedas(dano);
 			juego.aumentarPuntaje(puntosDeMuerte);
 			lanzarPowerUp();
 		}
 	}
-
-	@Override
-	public void atacar(GameObject e) {	}
+	public void disminuirVida(int damage) {
+		estado.disminuirVida(damage);
+	}
 	
 	protected void lanzarPowerUp() {
-
 		Random numAleatorio = new Random();
 		int n = numAleatorio.nextInt(8-1+1) + 1;
 		PowerUp powerup=null;
@@ -74,11 +76,16 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 			juego.agregarObjetos(powerup);
 	}
 
-	public void serColisionado(Colisionador col) {
+	public void serColisionado(Visitor col) {
 		col.visitar(this);
 	}
 	
 	public void golpearPowerUp(GameObject e) {
+	}
+	
+	public void setEstado(Estado est) {
+		estado=est;
+		
 	}
 
 	public void golpearObstaculoBarricada(GameObject o) {
@@ -90,6 +97,19 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 	public void golpearDisparoEnemigo(GameObject d) {
 	}
 	
-	public abstract Enemigo crear();
+	protected void setearValoresClone(Enemigo e) {
+		e.setVida(this.getVida());
+		e.setDano(this.getDano());
+		e.setJuego(this.getJuego());
+		e.setVelocidad(e.velocidad);
+		e.setLabel(this.getLabel());
+		e.setCol(new ColEnemigo(e));
+	}
+	
+	
+	public abstract Enemigo clonar();
+	public abstract void cambiarLabel();
+	
+	
 
 }

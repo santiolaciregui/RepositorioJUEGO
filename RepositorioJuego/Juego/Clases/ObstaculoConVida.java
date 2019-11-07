@@ -3,6 +3,7 @@ package Clases;
 import javax.swing.ImageIcon;
 
 import Colisionadores.Colisionador;
+import Colisionadores.Visitor;
 import Colisionadores.ColObstaculoConVida;
 import Colisionadores.ColObstaculoTemporal;
 
@@ -22,9 +23,6 @@ public abstract class ObstaculoConVida extends GameObject {
 		else {
 			vida = vida - golpe;
 		}
-		if (destruir) {
-			morir();
-		}
 	}
 	
 	public int getVida() {
@@ -37,12 +35,6 @@ public abstract class ObstaculoConVida extends GameObject {
 	}
 	
 	@Override
-	public void atacar(GameObject e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void parar() {
 		// TODO Auto-generated method stub
 		
@@ -53,12 +45,6 @@ public abstract class ObstaculoConVida extends GameObject {
 		// TODO Auto-generated method stub
 		
 	}
-		
-
-	public void accept(Colisionador col) {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 	public void disminuirVida(int valor, int damage) {
@@ -66,13 +52,9 @@ public abstract class ObstaculoConVida extends GameObject {
 		monedas=monedas/2;
 	}
 
-	public void serColisionado(Colisionador col) {
+	public void serColisionado(Visitor col) {
 		col.visitar(this);
 	}
-	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }

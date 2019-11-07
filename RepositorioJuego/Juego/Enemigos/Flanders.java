@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import Clases.Enemigo;
 import Clases.GameObject;
 import Clases.Juego;
+import Estados.Normal;
 
 public class Flanders extends Enemigo  {
 
@@ -17,6 +18,7 @@ public class Flanders extends Enemigo  {
 		puntosDeMuerte=1300;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
+		estado= new Normal(this);
 	}
 	
 	public void mover() {
@@ -26,7 +28,7 @@ public class Flanders extends Enemigo  {
 	public void atacar(GameObject e) {
 		super.atacar(e);
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersAtacaGif.gif")));
-		e.disminuirVida(dano);
+		super.atacar(e);
 	}
 	
 	public void parar() {
@@ -35,15 +37,11 @@ public class Flanders extends Enemigo  {
 	}
 
 	@Override
-	public Enemigo crear() {
+	public Enemigo clonar() {
 		return new Flanders(0,0);
 	}
 
 	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	public void cambiarLabel() {	}	
 
 }

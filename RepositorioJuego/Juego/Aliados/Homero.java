@@ -38,10 +38,4 @@ public class Homero extends Aliado {
 		}
 	}
 
-	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

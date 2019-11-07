@@ -1,46 +1,51 @@
 package Colisionadores;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import Clases.Aliado;
 import Clases.Enemigo;
+import Clases.GameObject;
 import Clases.ObjetoPrecioso;
 import Clases.ObstaculoConVida;
 import Clases.ObstaculoTemporal;
 import Clases.PowerUp;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import ObstaculoConVida.Tambor;
+import PowerUps.Congelar;
+import PowerUps.Curacion;
 
-public class ColPowerUp extends Colisionador{
-	protected PowerUp power;
+public class ColCongelar extends Visitor {
+	protected Congelar power;
 	
-	public ColPowerUp(PowerUp p) {
-		power=p;
+	public ColCongelar(Congelar power) {
+		this.power=power;
 	}
-	
 	@Override
-	public void visitar(Aliado a) {
-		a.disminuirVida(power.getDano());
+	public void visitar(Aliado a) {		
 	}
 
 	@Override
-	public void visitar(Enemigo e) { 
-		e.mover();	
+	public void visitar(Enemigo e) {
+		power.agregarAMapeo(e);
+		e.setVelocidad(power.getMejora());		
 	}
+
 	@Override
 	public void visitar(DisparoAliado d) {
-		d.mover();
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void visitar(DisparoEnemigo d) {
-		d.mover();
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void visitar(PowerUp p) {
-		p.mover();
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -58,6 +63,8 @@ public class ColPowerUp extends Colisionador{
 
 	@Override
 	public void visitar(ObjetoPrecioso o) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

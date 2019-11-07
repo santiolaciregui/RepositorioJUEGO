@@ -1,9 +1,8 @@
 package Clases;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 import Armas.Arma;
-import Colisionadores.Colisionador;
+import Colisionadores.Visitor;
 import Colisionadores.ColAliado;
 
 public abstract class Aliado extends GameObject {
@@ -21,20 +20,21 @@ public abstract class Aliado extends GameObject {
 	public void aumentarVida(int vida ) {
 		this.vida+=vida;	
 	}
+	
+	public void atacar(GameObject e) {
+		e.disminuirVida(dano);
+	}
 	public void disminuirVida(int damage) {
-		super.disminuirVida(damage);
+		vida-=dano;
 		if (!herido) {
 			herido = true;
 			monedas /= 2;
 		}
 	}
 
-	public void serColisionado(Colisionador col) {
+	public void serColisionado(Visitor col) {
 		col.visitar(this);
 	}
-	
-	@Override
-	public void atacar(GameObject e) {	}
 	
 	public void mover() {	}
 	

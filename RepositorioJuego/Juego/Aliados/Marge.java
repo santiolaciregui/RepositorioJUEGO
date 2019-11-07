@@ -18,7 +18,7 @@ public class Marge extends Aliado {
 	
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeAtacaGif.gif")));
-		e.disminuirVida(dano);
+		super.atacar(e);
 	}
 	
 	public void parar() {
@@ -29,9 +29,5 @@ public class Marge extends Aliado {
 	public void mover() {
 
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
-	}
-
-	@Override
-	public void morir() {		
 	}
 }

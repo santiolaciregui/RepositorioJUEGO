@@ -34,7 +34,7 @@ public abstract class Mapa {
 		for(int i=0; i<cantEnemigos; i++) {
 			aux= ran.nextInt(2);
 			GameObject nuevo;
-			nuevo=enemigos[aux].crear();
+			nuevo=enemigos[aux].clonar();
 			nuevo.setPos(posicionAleatoria().x, posicionAleatoria().y);
 			ubicacionDefinitiva(nuevo);
 			if(!hayColisionesConOtrosPersonajes(nuevo, entidades)) {

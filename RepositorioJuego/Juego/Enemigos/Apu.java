@@ -2,8 +2,9 @@ package Enemigos;
 
 import javax.swing.ImageIcon;
 
+import Clases.Aliado;
 import Clases.Enemigo;
-import Clases.GameObject;
+import Colisionadores.Visitor;
 
 public class Apu extends Enemigo {
 
@@ -17,9 +18,9 @@ public class Apu extends Enemigo {
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacar(GameObject e) {
+	public void atacar(Aliado a) {
+		super.atacar(a);
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuAtacaGif.gif")));
-		e.disminuirVida(dano);
 	}
 	
 	public void parar() {
@@ -27,14 +28,13 @@ public class Apu extends Enemigo {
 	}
 
 	@Override
-	public Enemigo crear() {
-		return new Apu(0,0);
+	public Enemigo clonar() {
+		Enemigo clone= new Apu(0,0);
+		setearValoresClone(clone);
+		return clone;
 	}
 
 	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void cambiarLabel() {	}
 
 }

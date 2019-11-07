@@ -3,6 +3,7 @@ package Clases;
 import java.awt.Point;
 import javax.swing.JLabel;
 import Colisionadores.Colisionador;
+import Colisionadores.Visitor;
 public abstract class GameObject {
 	protected int vida, dano;
 	protected Juego juego;
@@ -58,16 +59,6 @@ public abstract class GameObject {
 		this.col = col;
 	}
 	
-	
-	
-	public void disminuirVida(int dano) {
-		vida-=dano;
-		if(vida<0) {
-			vida=0;
-			this.morir();
-		}
-	}
-	
 	public  int getMonedas() {
 		return monedas;
 	}
@@ -80,12 +71,12 @@ public abstract class GameObject {
 		return juego;
 	}
 	
+	public void disminuirVida(int dano) {	}
 	public void aumentarDano(int dano) {	}
 	public void aumentarVida(int vida) {	}
-	public abstract void serColisionado(Colisionador col);
-	public abstract void atacar(GameObject e);
+	public abstract void serColisionado(Visitor visitor);
 	public abstract void mover();
+	public abstract void atacar(GameObject e);
 	public abstract void parar();
-	public abstract void morir();
 	
 }

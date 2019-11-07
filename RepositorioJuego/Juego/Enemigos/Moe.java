@@ -5,6 +5,7 @@ import javax.swing.ImageIcon;
 import Armas.ArmaMoe;
 import Clases.Enemigo;
 import Clases.GameObject;
+import Estados.Normal;
 
 public class Moe extends Enemigo {
 	int contadorDisparo;
@@ -18,6 +19,7 @@ public class Moe extends Enemigo {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 		arma = new ArmaMoe();
+		estado= new Normal(this);
 	}
 	
 	public void mover() {
@@ -39,15 +41,11 @@ public class Moe extends Enemigo {
 	}
 
 	@Override
-	public Enemigo crear() {
+	public Enemigo clonar() {
 		return new Moe(0,0);
 	}
 
 	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	public void cambiarLabel() {	}	
 
 }

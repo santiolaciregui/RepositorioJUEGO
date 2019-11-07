@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
 import Clases.GameObject;
-import Clases.Juego;
+import Colisionadores.Visitor;
 
 public class Barney extends Enemigo {
 
@@ -24,7 +24,7 @@ public class Barney extends Enemigo {
 	}
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyAtacaGif.gif")));
-		e.disminuirVida(dano);
+		
 	}
 	
 	public void parar() {
@@ -32,14 +32,12 @@ public class Barney extends Enemigo {
 	}
 
 	@Override
-	public Enemigo crear() {
-		return new Barney(0,0);
+	public Enemigo clonar() {
+		Enemigo clone= new Barney(0,0);
+		setearValoresClone(clone);
+		return clone;
 	}
 
 	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	public void cambiarLabel() {	}
 }

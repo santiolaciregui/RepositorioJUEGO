@@ -1,7 +1,6 @@
 package Clases;
 
-import Colisionadores.Colisionador;
-import Colisionadores.ColEnemigo;
+import Colisionadores.Visitor;
 import Colisionadores.ColObjetoPrecioso;
 
 public class ObjetoPrecioso extends GameObject {
@@ -11,7 +10,6 @@ public class ObjetoPrecioso extends GameObject {
 		col= new ColObjetoPrecioso(this);
 	}
 
-	@Override
 	public void atacar(GameObject e) {
 		e.disminuirVida(dano);
 	}
@@ -25,14 +23,9 @@ public class ObjetoPrecioso extends GameObject {
 	public void mover() {
 		vida--;		
 	}
-	public void serColisionado(Colisionador col) {
+	public void serColisionado(Visitor col) {
 		col.visitar(this);
 	}
 
-	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

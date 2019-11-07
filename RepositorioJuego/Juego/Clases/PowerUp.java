@@ -1,13 +1,13 @@
 package Clases;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 import javax.swing.ImageIcon;
-
-import Colisionadores.Colisionador;
+import Colisionadores.Visitor;
 import Colisionadores.ColPowerUp;
 
 public abstract class PowerUp extends GameObject{
+	protected Visitor afectacion;
+	protected int mejora;
 	protected PowerUp(int x, int y) {
 		super(x,y);
 		vida=50;
@@ -20,7 +20,7 @@ public abstract class PowerUp extends GameObject{
 	public void mover() {	}
 	
 	@Override
-	public void serColisionado(Colisionador col) {	
+	public void serColisionado(Visitor col) {	
 		col.visitar(this);
 	}
 	
@@ -28,6 +28,10 @@ public abstract class PowerUp extends GameObject{
 	
 	
 	public abstract void realizarAccion() ;
+	
+	public int getMejora() {
+		return mejora;
+	}
 	public class oyenteLabel implements MouseListener{
 
 		@Override

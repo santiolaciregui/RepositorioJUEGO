@@ -8,39 +8,39 @@ import Clases.ObstaculoTemporal;
 import Clases.PowerUp;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import ObstaculoConVida.Tambor;
+import PowerUps.Congelar;
+import PowerUps.Curacion;
+import PowerUps.MegaFuerza;
 
-public class ColPowerUp extends Colisionador{
-	protected PowerUp power;
-	
-	public ColPowerUp(PowerUp p) {
-		power=p;
+public class ColMegaFuerza extends Visitor {
+	protected MegaFuerza power;
+	public ColMegaFuerza(MegaFuerza power) {
+		this.power=power;
 	}
-	
 	@Override
-	public void visitar(Aliado a) {
-		a.disminuirVida(power.getDano());
+	public void visitar(Aliado a) {	
+		a.aumentarDano(a.getDano()*2);
 	}
 
 	@Override
-	public void visitar(Enemigo e) { 
-		e.mover();	
+	public void visitar(Enemigo e) {	
 	}
+
 	@Override
 	public void visitar(DisparoAliado d) {
-		d.mover();
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void visitar(DisparoEnemigo d) {
-		d.mover();
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void visitar(PowerUp p) {
-		p.mover();
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -58,6 +58,8 @@ public class ColPowerUp extends Colisionador{
 
 	@Override
 	public void visitar(ObjetoPrecioso o) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

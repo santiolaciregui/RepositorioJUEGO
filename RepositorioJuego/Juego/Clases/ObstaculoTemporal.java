@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColObstaculoTemporal;
 import Colisionadores.Colisionador;
+import Colisionadores.Visitor;
 
 public abstract class ObstaculoTemporal extends GameObject {
 	protected int duracion;
@@ -25,17 +26,10 @@ public abstract class ObstaculoTemporal extends GameObject {
 	}
 
 	@Override
-	public void serColisionado(Colisionador col) {
+	public void serColisionado(Visitor col) {
 		col.visitar(this);
 		
 	}
-
-	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public int getTiempo() {
 		return duracion;
 	}
@@ -56,7 +50,6 @@ public abstract class ObstaculoTemporal extends GameObject {
 	}
 
 
-	@Override
 	public void atacar(GameObject e) {
 		e.disminuirVida(dano);		
 	}

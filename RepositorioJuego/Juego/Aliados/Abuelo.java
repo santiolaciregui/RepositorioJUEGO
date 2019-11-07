@@ -46,11 +46,6 @@ public class Abuelo extends Aliado {
 	@Override
 	public void mover() {	
 		disparar();
-	}
-
-	@Override
-	public void morir() {	
-	}
-	
+	}	
 
 }

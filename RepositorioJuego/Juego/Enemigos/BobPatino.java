@@ -23,7 +23,7 @@ public class BobPatino extends Enemigo {
 	}
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobAtacaGif.gif")));
-		e.disminuirVida(dano);
+		super.atacar(e);
 	}
 	
 	public void parar() {
@@ -31,13 +31,10 @@ public class BobPatino extends Enemigo {
 	}
 
 	@Override
-	public Enemigo crear() {
+	public Enemigo clonar() {
 		return new BobPatino(0,0);
 	}
 
 	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void cambiarLabel() {	}
 }

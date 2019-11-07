@@ -19,7 +19,7 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa1(this);
+		this.mapa=new Mapa3(this);
 		tienda= new Tienda(this);
 		monedas = 10000;	
 		puntaje=0;
@@ -78,7 +78,6 @@ public class Juego {
 	public void eliminarEntidades() {
 		for(GameObject e: entidades) {     
 			if(e.getVida()==0) {
-				e.morir();
 				entidadesAeliminar.add(e);
 			}
 		}

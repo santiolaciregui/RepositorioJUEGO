@@ -1,7 +1,5 @@
 package Clases;
 
-import Mapas.Mapa;
-
 public class Tienda {
 	protected Juego juego;
 	protected GameObject aAgregar;

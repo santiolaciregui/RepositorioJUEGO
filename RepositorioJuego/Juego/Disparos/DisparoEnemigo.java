@@ -1,5 +1,6 @@
 package Disparos;
 
+import Clases.Aliado;
 import Clases.GameObject;
 import Colisionadores.*;
 
@@ -16,7 +17,7 @@ public class DisparoEnemigo extends Disparo{
 			this.vida=0;
 	}
 	
-	public void serColisionado(Colisionador col) {
+	public void serColisionado(Visitor col) {
 		col.visitar(this);
 	}
 	
@@ -27,8 +28,5 @@ public class DisparoEnemigo extends Disparo{
 
 	@Override
 	public void parar() {	}
-
-	@Override
-	public void morir() {	}
 
 }

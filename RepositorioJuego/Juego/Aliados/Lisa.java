@@ -19,7 +19,7 @@ public class Lisa extends Aliado {
 	
 	public void atacar(GameObject e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaAtacaGif.gif")));
-		e.disminuirVida(dano);
+		super.atacar(e);
 	}
 	
 	public void parar() {
@@ -30,12 +30,4 @@ public class Lisa extends Aliado {
 	public void mover() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParada.png")));
 	}
-
-	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-
 }
