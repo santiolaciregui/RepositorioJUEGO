@@ -21,7 +21,6 @@ public class Burns extends Enemigo {
 		monedas=1000;
 		puntosDeMuerte=2000;
 		arma= new ArmaBurns();
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsCaminaGif.gif")));
 		label.setBounds(x, y,140 , 140);
 		enemigoAleatorio();		
 	}
@@ -51,22 +50,28 @@ public class Burns extends Enemigo {
 
 	@Override
 	public void cambiarLabel() {
-		if(vida>1500)
+		if(vida>2000)
 			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsAtacaMejoradoGif.gif")));
 		else
+			if(vida<=2000)
 			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsAtacaGif.gif")));
 	}
 	
 	private void enemigoAleatorio() {
 		Random numAleatorio = new Random();
-		int n = numAleatorio.nextInt(20-1+1) + 1;
+		int n = numAleatorio.nextInt(2);
 		if(n==0) {
+<<<<<<< HEAD
 			this.setEstado(new Normal(this));
 			this.vida=1400;
+=======
+			this.setEstado(new SuperPoderoso(this));
+			this.vida=3000;
+>>>>>>> 689e807bba9d17ed29364000556b6aeb1d783fc6
 		}
 		else {
-			this.setEstado(new SuperPoderoso(this));
-			this.vida=1700;
+			this.setEstado(new Normal(this));
+			this.vida=2000;
 		}
 	}
 }
