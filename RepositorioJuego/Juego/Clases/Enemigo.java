@@ -54,6 +54,10 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 	public void atacar(GameObject e) {	}
 	
 	protected void lanzarPowerUp() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e3643d6bcbde6254a67e28e258f0c581751e6e6
 		Random numAleatorio = new Random();
 		int n = numAleatorio.nextInt(8-1+1) + 1;
 		PowerUp powerup=null;
@@ -69,9 +73,14 @@ public abstract class Enemigo extends GameObject implements Cloneable{
 				break;
 				
 		}
+<<<<<<< HEAD
 		if(powerup!=null) {
 			juego.agregarObjetos(powerup);
 		}
+=======
+		if(powerup!=null) 
+			juego.agregarObjetos(powerup);
+>>>>>>> 2e3643d6bcbde6254a67e28e258f0c581751e6e6
 	}
 
 	public void serColisionado(Colisionador col) {
