@@ -62,7 +62,7 @@ public class Burns extends Enemigo {
 		int n = numAleatorio.nextInt(20-1+1) + 1;
 		if(n==0) {
 			this.setEstado(new Normal(this));
-			this.vida=2000;
+			this.vida=1400;
 		}
 		else {
 			this.setEstado(new SuperPoderoso(this));

@@ -31,7 +31,7 @@ public class ColDisparoEnemigo extends Colisionador{
 
 	@Override
 	public void visitar(DisparoEnemigo d) {
-		d.mover();
+		miEntidad.mover();
 	}
 
 	@Override

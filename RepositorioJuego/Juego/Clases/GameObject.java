@@ -78,5 +78,6 @@ public abstract class GameObject {
 	public abstract void mover();
 	public abstract void atacar(GameObject e);
 	public abstract void parar();
+	public void moverAnteBala() {}
 	
 }

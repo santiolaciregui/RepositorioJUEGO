@@ -32,7 +32,7 @@ public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 			juego.disminuirVida(1);
 		}
 	}
-	
+
 	public void parar() {
 		this.setPos(this.getPos().x,  this.getPos().y);
 	}

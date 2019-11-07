@@ -38,7 +38,7 @@ public class ColObjetoPrecioso extends Colisionador {
 
 	@Override
 	public void visitar(PowerUp p) {
-		miEntidad.mover();		
+//		miEntidad.mover();		
 	}
 
 	@Override
