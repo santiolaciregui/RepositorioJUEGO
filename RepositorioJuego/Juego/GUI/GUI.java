@@ -84,13 +84,13 @@ public class GUI extends JFrame{
 	}
 	public void ganar() {
 		ganar= new JLabel();
-		ganar.setBounds(0,0,1280,485);
-		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Sprites/ganar.png")));
+		ganar.setBounds(0,0,1280,600);
+		ganar.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/ganar.png")));
 		terminarJuego(ganar);
 	}
 	private void terminarJuego(JLabel label) {
 		JButton volverAJugar= new JButton();
-		volverAJugar.setBounds(580, 360, 461, 29);
+		volverAJugar.setBounds(370, 360, 461, 35);
 		volverAJugar.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/volverAJugar.png")));
 		volverAJugar.setOpaque(false);
 		volverAJugar.setBackground(new Color(0,0,0));
@@ -104,7 +104,7 @@ public class GUI extends JFrame{
 		});
 		
 		JButton salir= new JButton();
-		salir.setBounds(580, 350, 401, 129);
+		salir.setBounds(370, 350, 401, 129);
 		salir.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/salir.png")));
 		salir.setOpaque(false);
 		salir.setBackground(new Color(0,0,0));

@@ -72,6 +72,9 @@ public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 				break;
 				
 		}
+		if(powerup!=null) {
+			juego.agregarObjetos(powerup);
+		}
 		if(powerup!=null) 
 			juego.agregarObjetos(powerup);
 	}

@@ -34,7 +34,7 @@ public class Abuelo extends Aliado {
 	public void disparar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
 		contador++;
-		if(contador==55) {
+		if(contador==25) {
 			Point pos= this.getPos();
 			juego.agregarObjetos(arma.crearDisparo(pos, dano));
 			pos.y-=90;

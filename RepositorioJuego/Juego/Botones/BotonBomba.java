@@ -27,7 +27,6 @@ public class BotonBomba extends RoundButton{
 	@Override
 	public void desactivar() {
 		this.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoBombaByN.png")));
-		
 	}
 
 }
