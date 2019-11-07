@@ -10,19 +10,18 @@ public class ColeccionBotones {
 	private RoundButton [] botones;
 	private JPanel panelAbajo;
 	public ColeccionBotones(JPanel panel,Tienda tienda) {
-		botones= new RoundButton[10];
+		botones= new RoundButton[6];
 		botones[0]= new BotonHomero(tienda);
 		botones[1] = new BotonMarge(tienda);
 		botones[2] = new BotonBart(tienda);
 		botones[3] = new BotonLisa(tienda);
 		botones[4] = new BotonAbuelo(tienda);
-		botones[5] = new BotonTambor(tienda);
-		botones[6] = new BotonFuego(tienda);
-		botones[7] = new BotonPolicia(tienda);
-		botones[8] = new BotonLava(tienda);
-		botones[9] = new BotonBomba(tienda);
+//		botones[5] = new BotonTambor(tienda);
+//		botones[6] = new BotonFuego(tienda);
+//		botones[7] = new BotonPolicia(tienda);
+//		botones[8] = new BotonLava(tienda);
+		botones[5] = new BotonBomba(tienda);
 		panelAbajo = panel;
-		botones[7].desactivar();
 		agregarAPanel();
 	}
 	
