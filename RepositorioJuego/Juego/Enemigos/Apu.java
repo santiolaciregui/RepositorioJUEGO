@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 import Clases.Aliado;
 import Clases.Enemigo;
+import Clases.GameObject;
 import Colisionadores.Visitor;
 
 public class Apu extends Enemigo {
@@ -18,17 +19,16 @@ public class Apu extends Enemigo {
 		label.setBounds(x, y,117 , 110);
 	}
 	
-<<<<<<< HEAD
 	public void atacar(Aliado a) {
 		super.atacar(a);
-=======
+	}		
+		
 	public void mover() {
 		super.mover();
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuCaminaGif.gif")));
 	}
 	
 	public void atacar(GameObject e) {
->>>>>>> 182c200bd2970ae006941a57ea2d48df97fec574
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuAtacaGif.gif")));
 	}
 	
