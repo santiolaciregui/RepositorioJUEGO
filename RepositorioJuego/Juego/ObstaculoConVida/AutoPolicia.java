@@ -15,11 +15,10 @@ public class AutoPolicia extends ObstaculoConVida{
 	}
 	@Override
 	public void mover() {	}
-
 	@Override
-	public void morir() {
+	public void atacar(GameObject e) {
 		// TODO Auto-generated method stub
 		
 	}
-	
+
 }

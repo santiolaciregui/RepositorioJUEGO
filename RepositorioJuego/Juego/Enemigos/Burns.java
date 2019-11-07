@@ -34,11 +34,7 @@ public class Burns extends Enemigo {
 	public void atacar(GameObject e) {
 		cambiarLabel();
 		contadorDisparo++;
-<<<<<<< HEAD
 		if(contadorDisparo==50) {
-=======
-		if(contadorDisparo==27) {
->>>>>>> 182c200bd2970ae006941a57ea2d48df97fec574
 			juego.agregarObjetos(arma.crearDisparo(this.getPos(), dano));
 			contadorDisparo=0;
 		}
@@ -70,7 +66,7 @@ public class Burns extends Enemigo {
 		}
 		else {
 			this.setEstado(new SuperPoderoso(this));
-			this.vida=3000;
+			this.vida=1700;
 		}
 	}
 }

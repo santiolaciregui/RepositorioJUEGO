@@ -16,10 +16,5 @@ public class Bomba extends ObjetoPrecioso{
 	@Override
 	public void mover() {super.mover();}
 
-	@Override
-	public void morir() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }

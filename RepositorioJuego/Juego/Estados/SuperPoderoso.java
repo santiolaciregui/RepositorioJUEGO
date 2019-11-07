@@ -11,7 +11,7 @@ public class SuperPoderoso extends Estado {
 	@Override
 	public void disminuirVida(int dano) {
 		enemigo.reducirVida(dano/2);
-		if(enemigo.getVida()<1500) {
+		if(enemigo.getVida()<1700) {
 			enemigo.setEstado(new Normal(enemigo));
 			enemigo.cambiarLabel();
 		}
