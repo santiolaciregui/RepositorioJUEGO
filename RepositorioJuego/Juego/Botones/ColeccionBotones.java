@@ -18,10 +18,11 @@ public class ColeccionBotones {
 		botones[4] = new BotonAbuelo(tienda);
 		botones[5] = new BotonTambor(tienda);
 		botones[6] = new BotonFuego(tienda);
-		botones[7] = new BotonBomba(tienda);
+		botones[7] = new BotonPolicia(tienda);
 		botones[8] = new BotonLava(tienda);
-		botones[9] = new BotonPolicia(tienda);
+		botones[9] = new BotonBomba(tienda);
 		panelAbajo = panel;
+		botones[7].desactivar();
 		agregarAPanel();
 	}
 	
