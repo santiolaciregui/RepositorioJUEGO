@@ -35,11 +35,11 @@ public class MegaFuerza extends PowerUp implements Runnable {
 	}
 
 	public void run() {
-		for(GameObject e: juego.getMapa().listaEnemigos()) { 
+		for(GameObject e: juego.listaEntidades()) { 
 			e.serColisionado(afectacion);
 		}
 		try {
-			Thread.sleep(9000);
+			Thread.sleep(20000);
 		} 
 		catch (InterruptedException e1) {
 			e1.printStackTrace();

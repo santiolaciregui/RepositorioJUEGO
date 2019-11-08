@@ -5,7 +5,6 @@ import javax.swing.ImageIcon;
 import Clases.GameObject;
 import Clases.Tienda;
 import ObjetoPrecioso.Bomba;
-import ObstaculoConVida.Tambor;
 
 public class BotonBomba extends RoundButton{
 
@@ -14,8 +13,17 @@ public class BotonBomba extends RoundButton{
 		this.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoBombaByN.png")));
 	}
 
+	public void checkActive() {
+		if(this.tienda.hayBomba()) {
+			this.activar();
+		}else {
+			this.desactivar();
+		}
+	}
 	public GameObject crear() {
-		return new Bomba(0,0);
+		GameObject toReturn= new Bomba(0,0);
+		tienda.desactivarBomba();
+		return toReturn;
 	}
 
 	@Override

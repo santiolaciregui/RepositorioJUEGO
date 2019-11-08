@@ -6,7 +6,7 @@ import Aliados.Marge;
 import Clases.Aliado;
 import Clases.Tienda;
 
-public class BotonMarge extends RoundButton {
+public class BotonMarge extends BotonPersonaje {
 	
 	public BotonMarge(Tienda tienda) {
 		super(tienda);

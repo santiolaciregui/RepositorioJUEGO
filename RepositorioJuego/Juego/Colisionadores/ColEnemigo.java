@@ -28,7 +28,7 @@ public class ColEnemigo extends Colisionador{
 	public void visitar(DisparoAliado d) {	}
 	@Override
 	public void visitar(DisparoEnemigo d) {	
-		
+		miEntidad.mover();
 	}
 	@Override
 	public void visitar(PowerUp p) {	}

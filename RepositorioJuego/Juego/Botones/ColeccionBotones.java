@@ -1,12 +1,10 @@
 package Botones;
 import javax.swing.JPanel;
-
-import Clases.Juego;
 import Clases.Tienda;
 
 
 public class ColeccionBotones {
-	private RoundButton homero, marge, lisa, bart, abuelo, tambor, fuego, bomba, lava, autoPoli;
+	private RoundButton homero, marge, lisa, bart, abuelo, bomba;
 	private RoundButton [] botones;
 	private JPanel panelAbajo;
 	public ColeccionBotones(JPanel panel,Tienda tienda) {
@@ -16,10 +14,6 @@ public class ColeccionBotones {
 		botones[2] = new BotonBart(tienda);
 		botones[3] = new BotonLisa(tienda);
 		botones[4] = new BotonAbuelo(tienda);
-//		botones[5] = new BotonTambor(tienda);
-//		botones[6] = new BotonFuego(tienda);
-//		botones[7] = new BotonPolicia(tienda);
-//		botones[8] = new BotonLava(tienda);
 		botones[5] = new BotonBomba(tienda);
 		panelAbajo = panel;
 		agregarAPanel();

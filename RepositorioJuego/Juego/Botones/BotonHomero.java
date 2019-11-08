@@ -6,7 +6,7 @@ import Aliados.Homero;
 import Clases.Aliado;
 import Clases.Tienda;
 
-public class BotonHomero extends RoundButton {
+public class BotonHomero extends BotonPersonaje {
 	
 	public BotonHomero(Tienda tienda) {
 		super(tienda);

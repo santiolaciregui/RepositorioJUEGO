@@ -18,7 +18,7 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa1(this);
+		this.mapa=new Mapa3(this);
 		tienda= new Tienda(this);
 		monedas = 10000;	
 		puntaje=0;
@@ -145,14 +145,18 @@ public class Juego {
 	
 	public void colisionar() {
 		for(int i=0; i<entidades.size();i++) {
+			boolean collidedGeneral = false;
 			GameObject e1= entidades.get(i);
 			for(int j=0;j<entidades.size();j++) {
 				GameObject e2=entidades.get(j);
 				if(e1 != e2 && verificarColision(e1,e2)) {
 					e1.colisionar(e2);
+					collidedGeneral=true;
 				}				
 			}
-			e1.mover();
+			if(!collidedGeneral) {
+				e1.mover();
+			}
 		}
 	}
 	private boolean verificarColision(GameObject e1, GameObject e2) {
@@ -172,7 +176,8 @@ public class Juego {
 			if(mapa==null)
 				gui.ganar();
 		}
-		if(vida==0) {
+		if(vida<=0) {
+			vida=0;
 			limpiarLista();
 			gui.gameOver();
 			tiempo.finalizar();

@@ -74,6 +74,7 @@ public class GUI extends JFrame{
 	
 	public void gameOver() {
 		gameOver= new JLabel();
+		
 		gameOver.setBounds(0,0,1280,550);
 		gameOver.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/perder2.png")));
 		terminarJuego(gameOver);

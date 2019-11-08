@@ -6,7 +6,7 @@ import Aliados.Abuelo;
 import Clases.Aliado;
 import Clases.Tienda;
 
-public class BotonAbuelo extends RoundButton{
+public class BotonAbuelo extends BotonPersonaje{
 	public BotonAbuelo(Tienda tienda) {
 		super(tienda);
 		this.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoAbueloByN.png")));	

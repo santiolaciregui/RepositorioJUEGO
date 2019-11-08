@@ -10,8 +10,8 @@ public class Mapa2 extends Mapa {
 		vida=5;
 		cantEnemigos=10;
 		enemigos= new Enemigo[cantEnemigos];
-		enemigos[0]= new Apu(1129,380);
-		enemigos[1]= new BobPatino(1080,210);
+		enemigos[0]= new Apu(0,0);
+		enemigos[1]= new Moe(0,0);
 	}
 	
 	public void mapaSiguiente() {

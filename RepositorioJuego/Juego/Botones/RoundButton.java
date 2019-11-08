@@ -3,20 +3,14 @@ package Botones;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.geom.*;
 import javax.swing.*;
-
-import Aliados.Bart;
-import Clases.Aliado;
 import Clases.GameObject;
 import Clases.Tienda;
 
 
 public abstract class RoundButton extends JButton {
 	protected Tienda tienda;
-	protected int valor;
 	
 	public RoundButton(Tienda tien) {
 		tienda= tien;
@@ -71,17 +65,10 @@ public abstract class RoundButton extends JButton {
 		}
 	}
 	
-	public void checkActive() {
-		if(this.tienda.getJuego().getMonedas() >= this.crear().getMonedas()) {
-			this.activar();
-		}else {
-			this.desactivar();
-		}
-	}
-	
 	public abstract GameObject crear();
 	protected abstract void activar();
 	protected abstract void desactivar();
+	protected abstract void checkActive();
 	
 	
 }
