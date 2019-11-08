@@ -6,6 +6,7 @@ import Clases.Aliado;
 import Clases.Enemigo;
 import Clases.GameObject;
 import Colisionadores.Visitor;
+import Estados.EnemigoNormal;
 
 public class Apu extends Enemigo {
 
@@ -17,6 +18,7 @@ public class Apu extends Enemigo {
 		puntosDeMuerte=1000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
+		estado = new EnemigoNormal(this);
 	}
 	
 	public void atacar(Aliado a) {

@@ -30,7 +30,7 @@ public class Moe extends Enemigo {
 	public void atacar(Aliado e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeAtacaGif.gif")));
 		contadorDisparo++;
-		if(contadorDisparo==15) {
+		if(contadorDisparo==35) {
 			juego.agregarObjetos(arma.crearDisparo(this.getPos(), dano));
 			contadorDisparo=0;
 		}

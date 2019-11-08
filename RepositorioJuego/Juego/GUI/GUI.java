@@ -187,10 +187,6 @@ public class GUI extends JFrame{
 		new GUI();
 	}
 
-	public void actualizarPuntajes() {
-		etiquetaPuntaje.setText("PUNTAJE: "+juego.getPuntaje()+" ");		
-	}
-	
 	public void actualizarVidas() {
 		etiquetaVida.setText(""+juego.getVida());
 		etiquetaVida.setLocation(410, 13);

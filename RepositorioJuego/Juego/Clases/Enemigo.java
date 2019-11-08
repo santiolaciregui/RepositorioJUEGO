@@ -49,7 +49,7 @@ public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 		vida-=dano;
 		if(vida==0) {
 			juego.aumentarMonedas(dano);
-			juego.aumentarPuntaje(puntosDeMuerte);
+
 			lanzarPowerUp();
 		}
 	}
