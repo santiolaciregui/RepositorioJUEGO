@@ -30,4 +30,10 @@ public class Lisa extends Aliado {
 	public void mover() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParada.png")));
 	}
+
+	@Override
+	public void cambiarLabel() {
+		// TODO Auto-generated method stub
+		
+	}
 }

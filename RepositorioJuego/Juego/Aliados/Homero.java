@@ -35,4 +35,10 @@ public class Homero extends Aliado {
 		}
 	}
 
+	@Override
+	public void cambiarLabel() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

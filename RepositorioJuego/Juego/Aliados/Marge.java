@@ -30,4 +30,10 @@ public class Marge extends Aliado {
 
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
 	}
+
+	@Override
+	public void cambiarLabel() {
+		// TODO Auto-generated method stub
+		
+	}
 }

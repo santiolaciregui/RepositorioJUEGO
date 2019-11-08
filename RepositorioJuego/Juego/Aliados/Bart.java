@@ -28,5 +28,11 @@ public class Bart extends Aliado {
 	@Override
 	public void mover() {	}
 
+	@Override
+	public void cambiarLabel() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

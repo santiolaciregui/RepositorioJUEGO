@@ -46,6 +46,12 @@ public class Abuelo extends Aliado {
 	@Override
 	public void mover() {	
 		disparar();
+	}
+
+	@Override
+	public void cambiarLabel() {
+		// TODO Auto-generated method stub
+		
 	}	
 
 }
