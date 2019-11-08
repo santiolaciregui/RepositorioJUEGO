@@ -18,4 +18,9 @@ public class Mapa3 extends Mapa {
 		enemigos[1]= new BobPatino(0,0);
 		obstaculos[0]= new AutoPolicia(0,0);
 	}
+	
+	public void mapaSiguiente() {
+		juego.limpiarLista();
+		juego.setMapa(null);
+	}
 }

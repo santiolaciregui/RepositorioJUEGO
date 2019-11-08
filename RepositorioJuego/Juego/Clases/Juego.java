@@ -163,6 +163,7 @@ public class Juego {
 	}
 		
 	public void verificarMapa() {
+		System.out.println(mapa.listaEnemigos().size());
 		if(mapa.listaEnemigos().size()==0) { 
 			mapa.mapaSiguiente();
 			if(mapa==null)
