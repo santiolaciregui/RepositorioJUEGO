@@ -8,7 +8,7 @@ public class Bart extends Aliado {
 
 	public Bart(int x, int y) {
 		super(x,y);
-		dano=1;
+		dano=400;
 		vida=800;
 		precio=1000;
 		monedas=precio;
@@ -26,12 +26,16 @@ public class Bart extends Aliado {
 	}
 
 	@Override
-	public void mover() {	}
+	public void mover() {	
+		estado.parar();
+	}
 
-	@Override
 	public void cambiarLabel() {
-		// TODO Auto-generated method stub
-		
+		if(dano>400)
+			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaMejoradoGif.gif")));
+		else
+			if(dano==400)
+				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
 	}
 
 

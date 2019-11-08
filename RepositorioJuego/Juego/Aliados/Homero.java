@@ -3,7 +3,6 @@ import javax.swing.ImageIcon;
 import Armas.ArmaHomero;
 import Clases.Aliado;
 import Clases.GameObject;
-import Colisionadores.ColAliado;
 
 public class Homero extends Aliado {
 	protected int contador;
@@ -19,7 +18,6 @@ public class Homero extends Aliado {
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
 		label.setBounds(x, y,117 , 110);
 		contador=0;
-		col=new ColAliado(this);
 	}
 	
 	public void parar() {
@@ -27,7 +25,7 @@ public class Homero extends Aliado {
 	}
 
 	@Override
-	public void mover() { atacar(null); }
+	public void mover() { atacar(null);	}
 
 	@Override
 	public void atacar(GameObject e) {
@@ -40,11 +38,11 @@ public class Homero extends Aliado {
 	}
 
 	public void cambiarLabel() {
-		if(dano>400)
-			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaMejoradoGif.gif")));
+		if(dano>100)
+			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
 		else
-			if(dano==400)
-				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
+			if(dano==100)
+				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaMejoradoGif.gif")));
 	}
 
 }

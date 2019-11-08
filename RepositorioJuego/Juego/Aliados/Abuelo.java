@@ -4,7 +4,6 @@ import javax.swing.ImageIcon;
 import Armas.ArmaAbuelo;
 import Clases.Aliado;
 import Clases.GameObject;
-import Colisionadores.ColAliado;
 
 public class Abuelo extends Aliado {
 	protected int contador;
@@ -20,7 +19,6 @@ public class Abuelo extends Aliado {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloParado.png")));
 		label.setBounds(x, y,123 , 116);
 		contador=0;
-		col=new ColAliado(this);
 	}
 	
 	public void atacar(GameObject e) {
@@ -49,11 +47,11 @@ public class Abuelo extends Aliado {
 	}
 
 	public void cambiarLabel() {
-		if(dano>500)
-			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaMejoradoGif.gif")));
+		if(dano>150)
+			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaMejoradoGif.gif")));
 		else
-			if(dano==400)
-				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
+			if(dano==150)
+				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
 	}
 
 }

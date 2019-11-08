@@ -7,5 +7,7 @@ public abstract class EstadoAliado extends Estado {
 	public EstadoAliado(Aliado a) {
 		aliado=a;
 	}
+	
+	public abstract void aumentarDano(int d);
 
 }

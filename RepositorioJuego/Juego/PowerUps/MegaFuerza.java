@@ -38,7 +38,6 @@ public class MegaFuerza extends PowerUp implements Runnable {
 
 	public void agregarAMapeo(Aliado a) {
 		mapeo.put(a, a.getDano());
-		
 	}
 	
 	public void run() {

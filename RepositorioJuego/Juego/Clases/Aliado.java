@@ -3,7 +3,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import Armas.Arma;
 import Colisionadores.Visitor;
-import Estados.Estado;
 import Estados.EstadoAliado;
 import Estados.AliadoNormal;
 import Colisionadores.ColAliado;
@@ -12,12 +11,12 @@ public abstract class Aliado extends GameObject {
 	protected int precio;
 	protected Arma arma;
 	protected boolean herido;
-	protected Estado estado;
+	protected EstadoAliado estado;
 	protected Aliado(int x,int y) {
 		super(x,y);	
-		col = new ColAliado(this);
 		label.addMouseListener(new oyenteLabel());
 		herido = false;
+		col = new ColAliado(this);
 		estado=new AliadoNormal(this);
 	}
 	
@@ -47,7 +46,7 @@ public abstract class Aliado extends GameObject {
 	public void mover() {	}
 	
 	public void aumentarDano(int d) {
-		dano+=d;
+		estado.aumentarDano(d);
 	}
 
 	public void setEstado(EstadoAliado e) {

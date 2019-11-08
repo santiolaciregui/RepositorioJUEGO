@@ -9,7 +9,7 @@ public class Lisa extends Aliado {
 
 	public Lisa(int x, int y) {
 		super(x,y);
-		dano=60;
+		dano=100;
 		vida=700;
 		precio=800;
 		monedas=precio;
@@ -31,9 +31,12 @@ public class Lisa extends Aliado {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParada.png")));
 	}
 
-	@Override
 	public void cambiarLabel() {
-		// TODO Auto-generated method stub
-		
+		if(dano>100)
+			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaAtacaMejoradaGif.gif")));
+		else
+			if(dano==100)
+				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaAtacaGif.gif")));
 	}
+	
 }
