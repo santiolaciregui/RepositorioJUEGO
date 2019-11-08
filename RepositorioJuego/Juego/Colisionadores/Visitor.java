@@ -3,11 +3,11 @@ package Colisionadores;
 import Clases.Aliado;
 import Clases.Enemigo;
 import Clases.ObjetoPrecioso;
-import Clases.ObstaculoConVida;
-import Clases.ObstaculoTemporal;
 import Clases.PowerUp;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
+import ObstaculoConVida.ObstaculoConVida;
+import ObstaculoTemporal.ObstaculoTemporal;
 
 public abstract class Visitor {
 	public abstract void visitar(Aliado a);

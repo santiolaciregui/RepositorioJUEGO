@@ -16,11 +16,6 @@ public class Curacion extends PowerUp {
 	@Override
 	public void atacar(GameObject e) {	}
 
-	@Override
-	public void parar() {
-		// TODO Auto-generated method stub
-	}
-
 
 	@Override
 	public void mover() {

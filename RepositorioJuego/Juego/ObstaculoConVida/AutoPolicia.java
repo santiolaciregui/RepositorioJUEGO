@@ -1,8 +1,8 @@
+
 package ObstaculoConVida;
 
 import javax.swing.ImageIcon;
 import Clases.GameObject;
-import Clases.ObstaculoConVida;
 
 public class AutoPolicia extends ObstaculoConVida{
 	
@@ -15,10 +15,16 @@ public class AutoPolicia extends ObstaculoConVida{
 	}
 	@Override
 	public void mover() {	}
+	
 	@Override
 	public void atacar(GameObject e) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public ObstaculoConVida clonar() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

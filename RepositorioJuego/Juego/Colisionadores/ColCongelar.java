@@ -7,11 +7,11 @@ import Clases.Aliado;
 import Clases.Enemigo;
 import Clases.GameObject;
 import Clases.ObjetoPrecioso;
-import Clases.ObstaculoConVida;
-import Clases.ObstaculoTemporal;
 import Clases.PowerUp;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
+import ObstaculoConVida.ObstaculoConVida;
+import ObstaculoTemporal.ObstaculoTemporal;
 import PowerUps.Congelar;
 import PowerUps.Curacion;
 

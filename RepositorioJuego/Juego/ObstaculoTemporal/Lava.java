@@ -1,9 +1,7 @@
 package ObstaculoTemporal;
 
 import javax.swing.ImageIcon;
-
-import Clases.GameObject;
-import Clases.ObstaculoTemporal;
+import Clases.Obstaculo;
 
 public class Lava extends ObstaculoTemporal {
 
@@ -14,6 +12,12 @@ public class Lava extends ObstaculoTemporal {
 		label.setBounds(x, y+100, 107, 130);
 		vida=200;
 		dano=400;
+	}
+
+	@Override
+	public Obstaculo clonar() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

@@ -54,12 +54,6 @@ public class Congelar extends PowerUp implements Runnable {
 		}
 		instancia=null;
 	}
-
-	@Override
-	public void parar() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public int getMejora() {
 		return mejora;

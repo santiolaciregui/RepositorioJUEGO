@@ -56,10 +56,4 @@ public class MegaFuerza extends PowerUp implements Runnable {
 		}
 		instancia=null;
 	}
-
-	@Override
-	public void parar() {
-		// TODO Auto-generated method stub
-		
-	}
 }

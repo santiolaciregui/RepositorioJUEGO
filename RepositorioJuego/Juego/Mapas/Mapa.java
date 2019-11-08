@@ -1,14 +1,11 @@
 package Mapas;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
-
 import Clases.Juego;
-import Clases.ObstaculoConVida;
-import ObstaculoConVida.Tambor;
+import Clases.Obstaculo;
 import Clases.Enemigo;
 import Clases.GameObject;
 
@@ -19,7 +16,7 @@ public abstract class Mapa {
 	protected int vida;
 	protected LinkedList<GameObject> listaEnemigos, listaObstaculos;
 	protected Enemigo[] enemigos;
-	protected ObstaculoConVida[] obstaculos;
+	protected Obstaculo[] obstaculos;
 	
 	public Mapa(Juego j) {
 		juego=j;

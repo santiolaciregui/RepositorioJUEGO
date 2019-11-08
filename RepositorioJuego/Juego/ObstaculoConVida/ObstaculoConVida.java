@@ -1,13 +1,10 @@
-package Clases;
+package ObstaculoConVida;
 
-import javax.swing.ImageIcon;
-
-import Colisionadores.Colisionador;
-import Colisionadores.Visitor;
+import Clases.Obstaculo;
 import Colisionadores.ColObstaculoConVida;
-import Colisionadores.ColObstaculoTemporal;
+import Colisionadores.Visitor;
 
-public abstract class ObstaculoConVida extends GameObject {
+public abstract class ObstaculoConVida extends Obstaculo {
 	protected int duracion;
 	
 	public ObstaculoConVida(int x, int y) {
@@ -24,22 +21,6 @@ public abstract class ObstaculoConVida extends GameObject {
 			vida = vida - golpe;
 		}
 	}
-	
-	public int getVida() {
-		return vida;
-	}
-
-	@Override
-	public void setVida(int v) {
-		vida = v;
-	}
-	
-	public abstract ObstaculoConVida clonar() ;
-	@Override
-	public void mover() {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 	public void disminuirVida(int valor, int damage) {
@@ -50,6 +31,4 @@ public abstract class ObstaculoConVida extends GameObject {
 	public void serColisionado(Visitor col) {
 		col.visitar(this);
 	}
-	
-
 }

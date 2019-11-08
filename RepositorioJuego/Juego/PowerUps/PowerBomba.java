@@ -12,9 +12,4 @@ public class PowerBomba extends PowerUp {
 	public void realizarAccion() {		
 		juego.getTienda().activarBomba();
 	}
-
-	@Override
-	public void parar() {
-	}
-
 }

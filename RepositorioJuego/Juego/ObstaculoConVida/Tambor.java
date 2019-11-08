@@ -3,7 +3,6 @@ package ObstaculoConVida;
 import javax.swing.ImageIcon;
 
 import Clases.GameObject;
-import Clases.ObstaculoConVida;
 
 public class Tambor extends ObstaculoConVida{
 	

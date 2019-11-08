@@ -2,12 +2,12 @@ package Mapas;
 
 import Clases.Enemigo;
 import Clases.Juego;
-import Clases.ObstaculoConVida;
-import Clases.ObstaculoTemporal;
 import Enemigos.Barney;
 import Enemigos.Flanders;
 import ObstaculoConVida.AutoPolicia;
+import ObstaculoConVida.ObstaculoConVida;
 import ObstaculoConVida.Tambor;
+import ObstaculoTemporal.ObstaculoTemporal;
 
 public class Mapa1 extends Mapa {
 	public Mapa1(Juego j) {

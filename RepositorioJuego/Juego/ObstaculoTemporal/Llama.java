@@ -3,7 +3,7 @@ package ObstaculoTemporal;
 import javax.swing.ImageIcon;
 
 import Clases.GameObject;
-import Clases.ObstaculoTemporal;
+import Clases.Obstaculo;
 
 public class Llama extends ObstaculoTemporal {
 
@@ -18,6 +18,12 @@ public class Llama extends ObstaculoTemporal {
 	
 	public void atacar(GameObject e) {
 		super.atacar(e);
+	}
+
+	@Override
+	public Obstaculo clonar() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
