@@ -1,6 +1,7 @@
 package ObstaculoConVida;
 
 import javax.swing.ImageIcon;
+
 import Clases.GameObject;
 import Clases.ObstaculoConVida;
 
@@ -20,7 +21,9 @@ public class Tambor extends ObstaculoConVida{
 		// TODO Auto-generated method stub
 		
 	}
-
+	public ObstaculoConVida clonar() {
+		return new Tambor(0,0);
+	}
 
 	
 }

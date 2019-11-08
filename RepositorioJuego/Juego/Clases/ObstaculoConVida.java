@@ -34,6 +34,7 @@ public abstract class ObstaculoConVida extends GameObject {
 		vida = v;
 	}
 	
+	public abstract ObstaculoConVida clonar() ;
 	@Override
 	public void mover() {
 		// TODO Auto-generated method stub
