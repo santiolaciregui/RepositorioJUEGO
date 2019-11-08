@@ -1,8 +1,5 @@
 package Aliados;
-import java.util.Random;
-
 import javax.swing.ImageIcon;
-
 import Armas.ArmaHomero;
 import Clases.Aliado;
 import Clases.GameObject;

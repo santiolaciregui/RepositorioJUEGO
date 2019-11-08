@@ -22,13 +22,13 @@ public class ColEnemigo extends Colisionador{
 	@Override
 	public void visitar(Enemigo e) {
 		e.setPos(e.getPos().x+11, e.getPos().y);
-		e.parar();
+		
 	}
 	@Override
 	public void visitar(DisparoAliado d) {	}
 	@Override
 	public void visitar(DisparoEnemigo d) {	
-		d.mover();
+		
 	}
 	@Override
 	public void visitar(PowerUp p) {	}
