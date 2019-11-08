@@ -16,8 +16,7 @@ public class Lava extends ObstaculoTemporal {
 
 	@Override
 	public Obstaculo clonar() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Lava(0,0);
 	}
 	
 	

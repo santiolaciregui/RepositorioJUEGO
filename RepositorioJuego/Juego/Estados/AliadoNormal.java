@@ -17,11 +17,11 @@ public class AliadoNormal extends EstadoAliado{
 	}
 	@Override
 	public void atacar() {
-		aliado.atacarNormalGrafico();
+		aliado.atacarNormal();
 	}
 	@Override
 	public void parar() {
-		aliado.pararNormalGrafico();		
+		aliado.pararNormal();		
 	}
 
 }

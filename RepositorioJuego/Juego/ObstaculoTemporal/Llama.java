@@ -22,8 +22,7 @@ public class Llama extends ObstaculoTemporal {
 
 	@Override
 	public Obstaculo clonar() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Llama(0,0);
 	}
 
 }

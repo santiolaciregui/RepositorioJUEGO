@@ -3,7 +3,6 @@ import java.awt.Point;
 import javax.swing.ImageIcon;
 import Armas.ArmaAbuelo;
 import Clases.Aliado;
-import Clases.GameObject;
 
 public class Abuelo extends Aliado {
 	protected int contador;
@@ -21,24 +20,17 @@ public class Abuelo extends Aliado {
 		contador=0;
 	}
 	
-	public void atacarNormalGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	public void atacarNormal() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
+		disparar();
 	}
 	
-	public void pararNormalGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
-	}
-	
-	public void atacarSuperPoderosoGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
-	}
-	
-	public void pararSuperPoderosoGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
+	public void atacarSuperPoderoso() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaMejoradoGif.gif")));
+		disparar();
 	}
 	
 	public void disparar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
 		contador++;
 		if(contador==25) {
 			Point pos= this.getPos();
@@ -51,7 +43,10 @@ public class Abuelo extends Aliado {
 
 	@Override
 	public void mover() {	
-		disparar();
+		estado.atacar();
 	}
 
+	public void pararNormal() {		}
+	public void pararSuperPoderoso() {	}
+	
 }

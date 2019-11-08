@@ -28,6 +28,7 @@ public class BotonBomba extends RoundButton{
 
 	@Override
 	public void activar() {
+		this.setEnabled(true);
 		this.setIcon(new ImageIcon(getClass().getResource("/Imagenes/IconoBomba.png")));
 		
 	}

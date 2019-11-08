@@ -17,13 +17,11 @@ public class ColObjetoPrecioso extends Colisionador {
 	@Override
 	public void visitar(Aliado a) {
 		miEntidad.atacar(a);
-		miEntidad.mover();
 	}
 
 	@Override
 	public void visitar(Enemigo e) {
 		miEntidad.atacar(e);
-		miEntidad.mover();
 	}
 
 	@Override
@@ -38,7 +36,7 @@ public class ColObjetoPrecioso extends Colisionador {
 
 	@Override
 	public void visitar(PowerUp p) {
-//		miEntidad.mover();		
+		miEntidad.mover();		
 	}
 
 	@Override

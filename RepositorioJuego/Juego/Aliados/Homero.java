@@ -2,7 +2,6 @@ package Aliados;
 import javax.swing.ImageIcon;
 import Armas.ArmaHomero;
 import Clases.Aliado;
-import Clases.GameObject;
 
 public class Homero extends Aliado {
 	protected int contador;
@@ -20,36 +19,31 @@ public class Homero extends Aliado {
 		contador=0;
 	}
 	
-	public void atacarNormalGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	public void atacarNormal() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
+		disparar();
 	}
 	
-	public void pararNormalGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
-	}
-
 	@Override
 	public void mover() {	
-//		estado.parar();
+		estado.atacar();
 	}
 	
-	public void atacarSuperPoderosoGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	public void atacarSuperPoderoso() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaMejoradoGif.gif")));
+		disparar();
 	}
 	
-	public void pararSuperPoderosoGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
-	}
-
-	@Override
-	public void atacar(GameObject e) {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
+	public void disparar() {
 		contador++;
-		if(contador==20) {
+		if(contador==50) {
 			juego.agregarObjetos(arma.crearDisparo(this.getPos(), danoArma));
 			contador=0;
 		}
 	}
 
+	
+	public void pararNormal() {	}
+	public void pararSuperPoderoso() {	}
 
 }

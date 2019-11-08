@@ -17,24 +17,24 @@ public class Lisa extends Aliado {
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacarNormalGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	public void atacarNormal() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaAtacaGif.gif")));
 	}
 	
-	public void pararNormalGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
+	public void pararNormal() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParada.png")));
 	}
 
 	@Override
 	public void mover() {	
-//		estado.parar();
+		estado.parar();
 	}
 	
-	public void atacarSuperPoderosoGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	public void atacarSuperPoderoso() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaAtacaMejoradaGif.gif")));
 	}
 	
-	public void pararSuperPoderosoGrafico() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
+	public void pararSuperPoderoso() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParadaMejorada.png")));
 	}
 }

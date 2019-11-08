@@ -42,12 +42,7 @@ public abstract class Aliado extends GameObject {
 
 	public void serColisionado(Visitor col) {
 		col.visitar(this);
-	}
-	
-	public void mover() {	
-		estado.parar();
-	}
-	
+	}	
 	
 	public void aumentarDano(int d) {
 		estado.aumentarDano(d);
@@ -89,9 +84,8 @@ public abstract class Aliado extends GameObject {
 		}
 	}
 	
-	public abstract void atacarSuperPoderosoGrafico();
-	public abstract void atacarNormalGrafico();
-
-	public abstract void pararSuperPoderosoGrafico();
-	public abstract void pararNormalGrafico();
+	public abstract void atacarSuperPoderoso();
+	public abstract void atacarNormal();
+	public abstract void pararSuperPoderoso();
+	public abstract void pararNormal();
 }

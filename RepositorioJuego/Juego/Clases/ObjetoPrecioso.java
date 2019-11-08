@@ -11,7 +11,8 @@ public class ObjetoPrecioso extends GameObject {
 	}
 
 	public void atacar(GameObject e) {
-		e.disminuirVida(dano);
+		if (vida<13)
+			e.disminuirVida(dano);
 	}
 
 	@Override

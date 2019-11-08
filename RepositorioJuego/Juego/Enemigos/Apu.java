@@ -5,7 +5,6 @@ import javax.swing.ImageIcon;
 import Clases.Aliado;
 import Clases.Enemigo;
 import Clases.GameObject;
-import Colisionadores.Visitor;
 import Estados.EnemigoNormal;
 
 public class Apu extends Enemigo {
@@ -40,8 +39,7 @@ public class Apu extends Enemigo {
 
 	@Override
 	public Enemigo clonar() {
-		Enemigo clone= new Apu(0,0);
-		setearValoresClone(clone);
+		Enemigo clone= new Flanders(0,0);
 		return clone;
 	}
 
