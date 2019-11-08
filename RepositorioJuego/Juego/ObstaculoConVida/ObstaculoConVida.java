@@ -12,19 +12,8 @@ public abstract class ObstaculoConVida extends Obstaculo {
 		col = new ColObstaculoConVida(this);
 	}
 
-	public void recibirDano(int golpe) {
-		boolean destruir = false;
-		if (vida <= golpe) {
-			destruir = true;
-		}
-		else {
-			vida = vida - golpe;
-		}
-	}
-
-	public void disminuirVida(int valor, int damage) {
-		super.disminuirVida(damage);
-		monedas=monedas/2;
+	public void disminuirVida(int damage) {
+		vida-=damage;
 	}
 
 	public void serColisionado(Visitor col) {

@@ -9,7 +9,7 @@ public class Abuelo extends Aliado {
 	protected int danoArma;
 	public Abuelo(int x, int y) {
 		super(x,y);
-		vida=2000;
+		vida=200000;
 		danoArma=500;
 		dano=danoArma/4;
 		precio=5000;

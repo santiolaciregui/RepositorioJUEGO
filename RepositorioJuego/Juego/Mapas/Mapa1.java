@@ -18,6 +18,7 @@ public class Mapa1 extends Mapa {
 		enemigos[1]= new Barney(0,0);
 		obstaculos = new Obstaculo[cantObstaculos];
 		obstaculos[0] = new Llama(0,0);
+		distribucion=2000;
 	}
 	
 	public void mapaSiguiente() {

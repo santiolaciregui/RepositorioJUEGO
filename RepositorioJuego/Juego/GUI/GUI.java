@@ -68,7 +68,9 @@ public class GUI extends JFrame{
 		repaint();
 	}
 	public void eliminarEnemigo(GameObject aEliminar) {
+
 		panelGrilla.remove(aEliminar.getLabel());
+
 		repaint();
 	}
 	

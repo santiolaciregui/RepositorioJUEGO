@@ -7,7 +7,7 @@ import Clases.PowerUp;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
 import ObstaculoConVida.ObstaculoConVida;
-import ObstaculoConVida.Tambor;
+
 import ObstaculoTemporal.ObstaculoTemporal;
 
 public class ColPowerUp extends Colisionador{

@@ -163,11 +163,13 @@ public class Juego {
 	}
 		
 	public void verificarMapa() {
-		System.out.println(mapa.listaEnemigos().size());
 		if(mapa.listaEnemigos().size()==0) { 
 			mapa.mapaSiguiente();
-			if(mapa==null)
+			if(mapa==null) {
+				limpiarLista();
 				gui.ganar();
+				tiempo.finalizar();
+			}
 		}
 		if(vida<=0) {
 			vida=0;

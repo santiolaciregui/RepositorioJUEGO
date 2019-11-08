@@ -19,6 +19,7 @@ public class Mapa2 extends Mapa {
 		enemigos[1]= new Moe(0,0);
 		obstaculos[0]= new Tambor(0,0);
 		obstaculos[1]= new Lava(0,0);
+		distribucion=3000;
 	}
 	
 	public void mapaSiguiente() {

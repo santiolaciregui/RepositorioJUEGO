@@ -10,8 +10,8 @@ public class Bomba extends ObjetoPrecioso{
 		monedas=11;
 		dano=350;
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BombaGif.gif")));
-		label.setBounds(x-20, y+70, 210, 230);
-		vida=30;
+		label.setBounds(x+115, y+115, 230, 230);
+		vida=25;
 	}
 	@Override
 	public void mover() {super.mover();}

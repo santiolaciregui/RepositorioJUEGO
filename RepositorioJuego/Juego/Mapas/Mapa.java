@@ -13,6 +13,7 @@ public abstract class Mapa {
 	protected int cantEnemigos, cantObstaculos;
 	protected Juego juego;
 	protected int cantFilas, altodelaFila, Hgrilla, Wgrilla;
+	protected int distribucion;
 	protected int vida;
 	protected LinkedList<GameObject> listaEnemigos, listaObstaculos;
 	protected Enemigo[] enemigos;
@@ -107,7 +108,7 @@ public abstract class Mapa {
 		Random ranx = new Random();
 		Random rany = new Random();
 		// Numero entero entre 25 y 75
-		int x = ranx.nextInt(2200-1200+1)+1200;
+		int x = ranx.nextInt(distribucion-1200+1)+1200;
 		int y = rany.nextInt(550-220+1)+220;
 		Point punto= new Point(x, y);
 		return punto;
