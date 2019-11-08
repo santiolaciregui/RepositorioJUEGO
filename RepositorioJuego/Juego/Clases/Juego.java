@@ -46,7 +46,7 @@ public class Juego {
 				entidadesPendientes.addLast(nuevo);
 				tienda.reset();
 				monedas -= nuevo.getMonedas();
-		}
+			}
 		}
 		
 	}

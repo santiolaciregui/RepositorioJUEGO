@@ -2,8 +2,6 @@ package GUI;
 import javax.swing.*;
 import Clases.GameObject;
 import Clases.Juego;
-import Enemigos.Flanders;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +9,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import Botones.ColeccionBotones;
 
-@SuppressWarnings("serial")
 public class GUI extends JFrame{
 	
 	public static String titulo = "Los Simpsons";
@@ -19,7 +16,6 @@ public class GUI extends JFrame{
 	private JPanel panelAbajo, panelGrilla, panelArriba, contentPane;
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;
-	@SuppressWarnings("unused")
 	private ColeccionBotones botones;
 	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas, gameOver, ganar;
 	private boolean lock = false;
