@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import Clases.Juego;
+import ObstaculoConVida.Tambor;
 import Clases.Enemigo;
 import Clases.GameObject;
 
@@ -15,7 +16,7 @@ public abstract class Mapa {
 	protected Juego juego;
 	protected int cantFilas, altodelaFila, Hgrilla, Wgrilla;
 	protected int vida;
-	protected LinkedList<GameObject> listaEnemigos;
+	protected LinkedList<GameObject> listaEnemigos, listaObstaculos;
 	protected Enemigo[] enemigos;
 	
 	public Mapa(Juego j) {
@@ -25,6 +26,7 @@ public abstract class Mapa {
 		altodelaFila=(int)(Hgrilla/cantFilas);
 		Wgrilla= 1250;
 		listaEnemigos= new LinkedList<GameObject>();
+		listaObstaculos = new LinkedList<GameObject>();
 	}
 	
 	public LinkedList<GameObject> crearEntidades() {
@@ -47,7 +49,7 @@ public abstract class Mapa {
 			}
 		}
 		return entidades;
-	}
+	}	
 	public void mapaSiguiente() {
 		juego.iniciarEntidades();
 	}
@@ -97,6 +99,4 @@ public abstract class Mapa {
 		Point punto= new Point(x, y);
 		return punto;
 	}
-	
-
 }

@@ -27,7 +27,4 @@ public class DisparoAliado extends Disparo{
 		this.vida=0;
 	}	
 
-	@Override
-	public void parar() {	}
-
 }

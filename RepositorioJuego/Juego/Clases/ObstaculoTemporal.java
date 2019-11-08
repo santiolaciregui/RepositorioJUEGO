@@ -15,12 +15,6 @@ public abstract class ObstaculoTemporal extends GameObject {
 	}
 
 	
-	@Override
-	public void parar() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public void mover() {
 		vida--;
 	}
