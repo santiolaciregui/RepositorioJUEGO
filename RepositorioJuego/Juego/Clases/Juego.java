@@ -8,7 +8,6 @@ import Mapas.*;
 public class Juego {
 	private LinkedList<GameObject> entidades, entidadesAeliminar, entidadesPendientes;
 	private GUI gui;
-	
 	private int puntaje, monedas, vida;
 	private Tienda tienda;
 	private HiloTiempo tiempo;
@@ -19,7 +18,7 @@ public class Juego {
 		entidades= new LinkedList<GameObject>();
 		entidadesAeliminar= new LinkedList<GameObject>();
 		entidadesPendientes= new LinkedList<GameObject>();
-		this.mapa=new Mapa3(this);
+		this.mapa=new Mapa1(this);
 		tienda= new Tienda(this);
 		monedas = 10000;	
 		puntaje=0;
@@ -147,17 +146,13 @@ public class Juego {
 	public void colisionar() {
 		for(int i=0; i<entidades.size();i++) {
 			GameObject e1= entidades.get(i);
-			boolean collidedGeneral = false;
 			for(int j=0;j<entidades.size();j++) {
 				GameObject e2=entidades.get(j);
 				if(e1 != e2 && verificarColision(e1,e2)) {
 					e1.colisionar(e2);
-					collidedGeneral = true;
 				}				
 			}
-			if(!collidedGeneral) {
-				e1.mover();
-			}
+			e1.mover();
 		}
 	}
 	private boolean verificarColision(GameObject e1, GameObject e2) {

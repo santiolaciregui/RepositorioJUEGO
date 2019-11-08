@@ -12,7 +12,7 @@ public class DisparoEnemigo extends Disparo{
 
 	public void mover() {
 		this.setPos(this.getPos().x-velocidad,this.getPos().y);
-		if(this.getPos().x>1100 || this.getPos().y<0)
+		if(this.getPos().x>1200 || this.getPos().y<0)
 			this.vida=0;
 	}
 	

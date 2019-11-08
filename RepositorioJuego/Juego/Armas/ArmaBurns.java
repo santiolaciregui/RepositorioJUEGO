@@ -11,9 +11,9 @@ public class ArmaBurns extends Arma{
 
 	@Override
 	public Disparo crearDisparo(Point pos, int dano) {
-		DisparoEnemigo disparo= new DisparoEnemigo(dano, pos.x, pos.y+50);
+		DisparoEnemigo disparo= new DisparoEnemigo(dano, pos.x-50, pos.y+50);
 		disparo.getLabel().setIcon(new ImageIcon(getClass().getResource("/Imagenes/FuegoInvertidoGif.gif")));
-		disparo.getLabel().setBounds(disparo.getPos().x-10, disparo.getPos().y, 30, 30);
+		disparo.getLabel().setBounds(disparo.getPos().x, disparo.getPos().y, 30, 30);
 		return disparo;
 	}
 

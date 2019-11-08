@@ -19,7 +19,7 @@ public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 	protected Enemigo(int x,int y) {
 		super(x,y);
 		col= new ColEnemigo(this);
-		velocidad=3;
+		velocidad=2;
 	}
 
 	public void atacar(GameObject e) {
