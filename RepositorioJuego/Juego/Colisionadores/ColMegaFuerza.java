@@ -17,7 +17,8 @@ public class ColMegaFuerza extends Visitor {
 	}
 	@Override
 	public void visitar(Aliado a) {	
-		a.aumentarDano(a.getDano()*2);
+		power.agregarAMapeo(a);
+		a.aumentarDano(power.getMejora());
 	}
 
 	@Override

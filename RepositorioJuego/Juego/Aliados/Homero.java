@@ -3,12 +3,15 @@ import javax.swing.ImageIcon;
 import Armas.ArmaHomero;
 import Clases.Aliado;
 import Clases.GameObject;
+import Colisionadores.ColAliado;
 
 public class Homero extends Aliado {
 	protected int contador;
+	protected int danoArma;
 	public Homero( int x, int y) {
 		super(x,y);
-		dano=400;
+		danoArma=400;
+		dano=danoArma/4;
 		vida=1100;
 		precio=1500;
 		monedas=precio;
@@ -16,6 +19,7 @@ public class Homero extends Aliado {
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
 		label.setBounds(x, y,117 , 110);
 		contador=0;
+		col=new ColAliado(this);
 	}
 	
 	public void parar() {
@@ -30,16 +34,17 @@ public class Homero extends Aliado {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
 		contador++;
 		if(contador==20) {
-			juego.agregarObjetos(arma.crearDisparo(this.getPos(), dano));
+			juego.agregarObjetos(arma.crearDisparo(this.getPos(), danoArma));
 			contador=0;
 		}
-		System.out.println(vida);
 	}
 
-	@Override
 	public void cambiarLabel() {
-		// TODO Auto-generated method stub
-		
+		if(dano>400)
+			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaMejoradoGif.gif")));
+		else
+			if(dano==400)
+				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
 	}
 
 }

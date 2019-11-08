@@ -1,26 +1,26 @@
 package Aliados;
 import java.awt.Point;
-
 import javax.swing.ImageIcon;
-
 import Armas.ArmaAbuelo;
-import Armas.ArmaHomero;
 import Clases.Aliado;
 import Clases.GameObject;
-import Clases.Juego;
+import Colisionadores.ColAliado;
 
 public class Abuelo extends Aliado {
 	protected int contador;
+	protected int danoArma;
 	public Abuelo(int x, int y) {
 		super(x,y);
 		vida=2000;
-		dano=500;
+		danoArma=500;
+		dano=danoArma/4;
 		precio=3000;
 		monedas=precio;
 		arma= new ArmaAbuelo();
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloParado.png")));
 		label.setBounds(x, y,123 , 116);
 		contador=0;
+		col=new ColAliado(this);
 	}
 	
 	public void atacar(GameObject e) {
@@ -36,9 +36,9 @@ public class Abuelo extends Aliado {
 		contador++;
 		if(contador==25) {
 			Point pos= this.getPos();
-			juego.agregarObjetos(arma.crearDisparo(pos, dano));
+			juego.agregarObjetos(arma.crearDisparo(pos, danoArma));
 			pos.y-=90;
-			juego.agregarObjetos(arma.crearDisparo(pos, dano));
+			juego.agregarObjetos(arma.crearDisparo(pos, danoArma));
 			contador=0;
 		}
 	}
@@ -48,10 +48,12 @@ public class Abuelo extends Aliado {
 		disparar();
 	}
 
-	@Override
 	public void cambiarLabel() {
-		// TODO Auto-generated method stub
-		
-	}	
+		if(dano>500)
+			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaMejoradoGif.gif")));
+		else
+			if(dano==400)
+				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
+	}
 
 }

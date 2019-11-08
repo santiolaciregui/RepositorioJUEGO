@@ -5,22 +5,24 @@ import java.util.Map;
 
 import javax.swing.ImageIcon;
 
+import Clases.Aliado;
 import Clases.Enemigo;
 import Clases.GameObject;
 import Clases.PowerUp;
 import Colisionadores.ColMegaFuerza;
 
 public class MegaFuerza extends PowerUp implements Runnable {	
-	protected int duracion;
 	private static MegaFuerza instancia;
-	protected Map<Enemigo, Integer> mapeo;
+	protected Map<Aliado, Integer> mapeo;
+	protected int mejora;
 	
 	public MegaFuerza(int x, int y) {
 		super(x,y);
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/PremioKrusty.gif")));
 		label.setBounds(x, y+55, 75, 60);
 		afectacion= new ColMegaFuerza(this);
-		mapeo=new LinkedHashMap<Enemigo, Integer>();
+		mapeo=new LinkedHashMap<Aliado, Integer>();
+		mejora=700;
 	}
 
 	public static MegaFuerza getInstancia(int x, int y) {
@@ -34,6 +36,11 @@ public class MegaFuerza extends PowerUp implements Runnable {
 		(new Thread(this)).start();
 	}
 
+	public void agregarAMapeo(Aliado a) {
+		mapeo.put(a, a.getDano());
+		
+	}
+	
 	public void run() {
 		for(GameObject e: juego.listaEntidades()) { 
 			e.serColisionado(afectacion);
@@ -44,8 +51,8 @@ public class MegaFuerza extends PowerUp implements Runnable {
 		catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
-		for(Map.Entry<Enemigo,Integer> entry: mapeo.entrySet()) {
-			entry.getKey().setVelocidad(entry.getValue());
+		for(Map.Entry<Aliado,Integer> entry: mapeo.entrySet()) {
+			entry.getKey().setDano(entry.getValue());
 		}
 		instancia=null;
 	}
