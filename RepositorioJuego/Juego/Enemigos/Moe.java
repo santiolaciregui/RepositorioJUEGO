@@ -6,7 +6,7 @@ import Armas.ArmaMoe;
 import Clases.Aliado;
 import Clases.Enemigo;
 import Clases.GameObject;
-import Estados.Normal;
+import Estados.EnemigoNormal;
 
 public class Moe extends Enemigo {
 	int contadorDisparo;
@@ -20,7 +20,7 @@ public class Moe extends Enemigo {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 		arma = new ArmaMoe();
-		estado= new Normal(this);
+		estado= new EnemigoNormal(this);
 	}
 	
 	public void mover() {

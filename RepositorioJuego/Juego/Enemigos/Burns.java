@@ -7,8 +7,8 @@ import javax.swing.ImageIcon;
 import Armas.ArmaBurns;
 import Clases.Enemigo;
 import Clases.GameObject;
-import Estados.Normal;
-import Estados.SuperPoderoso;
+import Estados.EnemigoNormal;
+import Estados.EnemigoSuperPoderoso;
 import Estados.Estado;
 
 public class Burns extends Enemigo {
@@ -61,11 +61,11 @@ public class Burns extends Enemigo {
 		Random numAleatorio = new Random();
 		int n = numAleatorio.nextInt(5);
 		if(n==0) {
-			this.setEstado(new SuperPoderoso(this));
+			this.setEstado(new EnemigoSuperPoderoso(this));
 			this.vida=3000;
 		}
 		else {
-			this.setEstado(new Normal(this));
+			this.setEstado(new EnemigoNormal(this));
 			this.vida=2000;
 		}
 	}

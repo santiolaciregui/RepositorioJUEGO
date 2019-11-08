@@ -2,9 +2,9 @@ package Estados;
 
 import Clases.Enemigo;
 
-public class Normal extends Estado{
+public class EnemigoNormal extends EstadoEnemigo{
 
-	public Normal(Enemigo e) {
+	public EnemigoNormal(Enemigo e) {
 		super(e);
 	}
 

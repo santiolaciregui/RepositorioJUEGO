@@ -3,7 +3,7 @@ package Enemigos;
 import javax.swing.ImageIcon;
 import Clases.Enemigo;
 import Clases.GameObject;
-import Estados.Normal;
+import Estados.EnemigoNormal;
 
 public class Flanders extends Enemigo  {
 
@@ -15,7 +15,7 @@ public class Flanders extends Enemigo  {
 		puntosDeMuerte=1300;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
-		estado= new Normal(this);
+		estado= new EnemigoNormal(this);
 	}
 	
 	public void mover() {
