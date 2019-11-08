@@ -42,7 +42,9 @@ public class Moe extends Enemigo {
 
 	@Override
 	public Enemigo clonar() {
-		return new Moe(0,0);
+		Enemigo clone= new Moe(0,0);
+		setearValoresClone(clone);
+		return clone;
 	}
 
 	@Override
