@@ -59,15 +59,10 @@ public class Burns extends Enemigo {
 	
 	private void enemigoAleatorio() {
 		Random numAleatorio = new Random();
-		int n = numAleatorio.nextInt(2);
+		int n = numAleatorio.nextInt(5);
 		if(n==0) {
-<<<<<<< HEAD
-			this.setEstado(new Normal(this));
-			this.vida=1400;
-=======
 			this.setEstado(new SuperPoderoso(this));
 			this.vida=3000;
->>>>>>> 689e807bba9d17ed29364000556b6aeb1d783fc6
 		}
 		else {
 			this.setEstado(new Normal(this));

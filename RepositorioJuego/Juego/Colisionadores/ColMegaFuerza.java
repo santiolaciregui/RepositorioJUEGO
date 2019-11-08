@@ -8,8 +8,6 @@ import Clases.ObstaculoTemporal;
 import Clases.PowerUp;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import PowerUps.Congelar;
-import PowerUps.Curacion;
 import PowerUps.MegaFuerza;
 
 public class ColMegaFuerza extends Visitor {

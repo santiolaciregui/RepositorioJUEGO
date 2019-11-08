@@ -82,24 +82,11 @@ public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 	public void serColisionado(Visitor col) {
 		col.visitar(this);
 	}
-	
-	public void golpearPowerUp(GameObject e) {
-	}
-	
+
 	public void setEstado(Estado est) {
 		estado=est;
 		
-	}
-
-	public void golpearObstaculoBarricada(GameObject o) {
-	}
-
-	public void golpearDisparoJugador(GameObject d) {
-	}
-
-	public void golpearDisparoEnemigo(GameObject d) {
-	}
-	
+	}	
 	protected void setearValoresClone(Enemigo e) {
 		e.setVida(this.getVida());
 		e.setDano(this.getDano());

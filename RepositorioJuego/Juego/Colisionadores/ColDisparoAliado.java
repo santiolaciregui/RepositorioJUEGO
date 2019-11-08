@@ -9,7 +9,6 @@ import Clases.PowerUp;
 import Disparos.Disparo;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import ObstaculoConVida.Tambor;
 
 public class ColDisparoAliado extends Colisionador{
 	
@@ -17,12 +16,13 @@ public class ColDisparoAliado extends Colisionador{
 		miEntidad=d;
 	}
 	
-	public void visitar(Aliado j) {	}
+	public void visitar(Aliado j) {
+		miEntidad.mover();
+	}
 	
 	public void visitar(Enemigo e) {
 		miEntidad.atacar(e);
 	}
-
 
 	@Override
 	public void visitar(DisparoAliado d) {
@@ -36,7 +36,7 @@ public class ColDisparoAliado extends Colisionador{
 
 	@Override
 	public void visitar(PowerUp p) {
-		// TODO Auto-generated method stub
+		miEntidad.mover();
 		
 	}
 

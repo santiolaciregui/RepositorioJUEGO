@@ -3,6 +3,7 @@ package Enemigos;
 import javax.swing.ImageIcon;
 
 import Armas.ArmaMoe;
+import Clases.Aliado;
 import Clases.Enemigo;
 import Clases.GameObject;
 import Estados.Normal;
@@ -23,11 +24,10 @@ public class Moe extends Enemigo {
 	}
 	
 	public void mover() {
-		super.mover();
 		atacar(null);
+		super.mover();
 	}
-	public void atacar(GameObject e) {
-		
+	public void atacar(Aliado e) {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeAtacaGif.gif")));
 		contadorDisparo++;
 		if(contadorDisparo==15) {

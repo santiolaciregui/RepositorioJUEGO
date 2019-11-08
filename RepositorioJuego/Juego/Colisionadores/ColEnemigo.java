@@ -8,7 +8,7 @@ import Clases.ObstaculoTemporal;
 import Clases.PowerUp;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import ObstaculoConVida.Tambor;
+
 
 public class ColEnemigo extends Colisionador{
 	
@@ -25,19 +25,13 @@ public class ColEnemigo extends Colisionador{
 		e.parar();
 	}
 	@Override
-	public void visitar(DisparoAliado d) {
-		// TODO Auto-generated method stub
-		
+	public void visitar(DisparoAliado d) {	}
+	@Override
+	public void visitar(DisparoEnemigo d) {	
+		d.mover();
 	}
 	@Override
-	public void visitar(DisparoEnemigo d) {
-		miEntidad.moverAnteBala();
-	}
-	@Override
-	public void visitar(PowerUp p) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void visitar(PowerUp p) {	}
 	
 	@Override
 	public void visitar(ObstaculoConVida o) {

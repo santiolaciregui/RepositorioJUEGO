@@ -9,7 +9,6 @@ import Clases.PowerUp;
 import Disparos.Disparo;
 import Disparos.DisparoAliado;
 import Disparos.DisparoEnemigo;
-import ObstaculoConVida.Tambor;
 
 public class ColDisparoEnemigo extends Colisionador{
 

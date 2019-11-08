@@ -1,6 +1,5 @@
 package Disparos;
 
-import Clases.Aliado;
 import Clases.GameObject;
 import Colisionadores.*;
 
