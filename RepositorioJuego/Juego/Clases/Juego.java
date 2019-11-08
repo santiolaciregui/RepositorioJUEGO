@@ -76,7 +76,7 @@ public class Juego {
 	
 	public void eliminarEntidades() {
 		for(GameObject e: entidades) {     
-			if(e.getVida()==0) {
+			if(e.getVida()<=0) {
 				entidadesAeliminar.add(e);
 			}
 		}

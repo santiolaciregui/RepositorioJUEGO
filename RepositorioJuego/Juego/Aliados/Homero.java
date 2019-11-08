@@ -33,6 +33,7 @@ public class Homero extends Aliado {
 			juego.agregarObjetos(arma.crearDisparo(this.getPos(), dano));
 			contador=0;
 		}
+		System.out.println(vida);
 	}
 
 	@Override

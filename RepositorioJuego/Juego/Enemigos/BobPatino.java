@@ -4,8 +4,7 @@ import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
 import Clases.GameObject;
-import Estados.Estado;
-import Estados.Normal;
+import Estados.EnemigoNormal;
 
 public class BobPatino extends Enemigo {
 	public BobPatino(int x, int y) {
@@ -16,7 +15,7 @@ public class BobPatino extends Enemigo {
 		puntosDeMuerte=1000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
-		estado = new Normal(this);
+		estado = new EnemigoNormal(this);
 	}
 	
 	public void mover() {

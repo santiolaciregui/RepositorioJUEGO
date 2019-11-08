@@ -25,7 +25,6 @@ public class Burns extends Enemigo {
 		enemigoAleatorio();		
 	}
 	
-	
 	public void mover() {
 		super.mover();
 		atacar(null);
