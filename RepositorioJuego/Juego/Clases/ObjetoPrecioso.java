@@ -15,11 +15,6 @@ public class ObjetoPrecioso extends GameObject {
 	}
 
 	@Override
-	public void parar() {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
 	public void mover() {
 		vida--;		
 	}
