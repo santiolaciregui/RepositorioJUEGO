@@ -65,7 +65,7 @@ public abstract class Mapa {
 	}
 		
 	public boolean dentroDeGrilla(GameObject elem) {
-		return elem.getPos().y>170 && elem.getPos().y<515 ;
+		return elem.getPos().y>180 && elem.getPos().y<515 ;
 	}
 
 	public boolean hayColisionesConOtrosPersonajes(GameObject nuevo, LinkedList<GameObject> lista) {	
