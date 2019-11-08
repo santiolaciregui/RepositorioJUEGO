@@ -12,7 +12,7 @@ public class Moe extends Enemigo {
 	int contadorDisparo;
 	public Moe(int x, int y) {
 		super(x, y);
-		dano=500;
+		dano=100;
 		vida=1200;
 		monedas=1000;
 		puntosDeMuerte=1500;

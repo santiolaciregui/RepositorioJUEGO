@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 import Clases.Enemigo;
 import Clases.GameObject;
-import Colisionadores.Visitor;
+import Estados.EnemigoNormal;
 
 public class Barney extends Enemigo {
 
@@ -16,6 +16,7 @@ public class Barney extends Enemigo {
 		puntosDeMuerte=1000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
+		estado= new EnemigoNormal(this);
 	}
 	
 	public void mover() {
