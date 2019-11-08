@@ -3,18 +3,21 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import Armas.Arma;
 import Colisionadores.Visitor;
+import Estados.Estado;
+import Estados.Normal;
 import Colisionadores.ColAliado;
 
 public abstract class Aliado extends GameObject {
 	protected int precio;
 	protected Arma arma;
 	protected boolean herido;
-
+	protected Estado estado;
 	protected Aliado(int x,int y) {
 		super(x,y);	
 		col = new ColAliado(this);
 		label.addMouseListener(new oyenteLabel());
 		herido = false;
+	
 	}
 	
 	public void aumentarVida(int vida ) {
