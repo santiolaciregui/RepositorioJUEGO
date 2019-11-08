@@ -60,6 +60,7 @@ public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 		Random numAleatorio = new Random();
 		int n = numAleatorio.nextInt(8-1+1) + 1;
 		PowerUp powerup=null;
+		n = 4;
 		switch(n) {
 			case 1: 
 				powerup= new Curacion(this.getPos().x,this.getPos().y);
