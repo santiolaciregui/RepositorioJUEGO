@@ -13,7 +13,6 @@ public class Barney extends Enemigo {
 		dano=100;
 		vida=1300;
 		monedas=500;
-		puntosDeMuerte=1000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BarneyCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 		estado= new EnemigoNormal(this);

@@ -15,7 +15,6 @@ public class Moe extends Enemigo {
 		dano=100;
 		vida=1200;
 		monedas=1000;
-		puntosDeMuerte=1500;
 		contadorDisparo=0;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MoeCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);

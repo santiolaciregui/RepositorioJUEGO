@@ -12,7 +12,6 @@ public class Flanders extends Enemigo  {
 		dano=30;
 		vida=1100;
 		monedas=700;
-		puntosDeMuerte=1300;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/FlandersCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 		estado= new EnemigoNormal(this);

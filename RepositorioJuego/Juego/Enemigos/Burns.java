@@ -19,7 +19,6 @@ public class Burns extends Enemigo {
 		dano=800;
 		contadorDisparo=0;
 		monedas=1000;
-		puntosDeMuerte=2000;
 		arma= new ArmaBurns();
 		label.setBounds(x, y,140 , 140);
 		enemigoAleatorio();		

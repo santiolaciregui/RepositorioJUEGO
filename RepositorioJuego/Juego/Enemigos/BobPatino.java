@@ -12,7 +12,6 @@ public class BobPatino extends Enemigo {
 		dano=300;
 		vida=1400;
 		monedas=700;
-		puntosDeMuerte=1000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BobCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 		estado = new EnemigoNormal(this);
