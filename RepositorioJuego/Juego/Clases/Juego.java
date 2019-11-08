@@ -20,7 +20,7 @@ public class Juego {
 		entidadesPendientes= new LinkedList<GameObject>();
 		this.mapa=new Mapa1(this);
 		tienda= new Tienda(this);
-		monedas = 10000;	
+		monedas = 4999;	
 		puntaje=0;
 		vida=3;
 		iniciarEntidades();
@@ -123,13 +123,6 @@ public class Juego {
 	}
 	
 	
-	public void aumentarPuntaje(int p) {
-		puntaje+=p;
-	}
-	public int getPuntaje() {
-		return puntaje;
-	}
-
 
 	public void aumentarMonedas(int monedas) {
 		this.monedas+=monedas;

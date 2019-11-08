@@ -21,6 +21,7 @@ public class Mapa1 extends Mapa {
 	public void mapaSiguiente() {
 		juego.limpiarLista();
 		juego.setMapa(new Mapa2(juego));
+		juego.aumentarMonedas(15000);
 		super.mapaSiguiente();
 	}
 }

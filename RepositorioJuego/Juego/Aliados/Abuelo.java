@@ -14,7 +14,7 @@ public class Abuelo extends Aliado {
 		vida=2000;
 		danoArma=500;
 		dano=danoArma/4;
-		precio=3000;
+		precio=5000;
 		monedas=precio;
 		arma= new ArmaAbuelo();
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloParado.png")));
