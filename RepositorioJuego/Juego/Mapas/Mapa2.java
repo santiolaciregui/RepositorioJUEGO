@@ -10,13 +10,12 @@ import ObstaculoTemporal.Lava;
 public class Mapa2 extends Mapa {
 	public Mapa2(Juego j) {
 		super(j);
-		vida=5;
 		cantEnemigos=10;
-		cantObstaculos=2;
+		cantObstaculos=3;
 		enemigos= new Enemigo[cantEnemigos];
-		obstaculos= new Obstaculo[cantObstaculos];
-		enemigos[0]= new Apu(0,0);
+		enemigos[0]= new Flanders(0,0);
 		enemigos[1]= new Moe(0,0);
+		obstaculos= new Obstaculo[cantObstaculos-1];
 		obstaculos[0]= new Tambor(0,0);
 		obstaculos[1]= new Lava(0,0);
 		distribucion=3000;

@@ -1,8 +1,6 @@
 package ObstaculoTemporal;
 
 import javax.swing.ImageIcon;
-
-import Clases.GameObject;
 import Clases.Obstaculo;
 
 public class Llama extends ObstaculoTemporal {
@@ -15,14 +13,11 @@ public class Llama extends ObstaculoTemporal {
 		vida=580;
 		dano=15;
 	}
-	
-	public void atacar(GameObject e) {
-		super.atacar(e);
-	}
 
 	@Override
 	public Obstaculo clonar() {
-		return new Llama(0,0);
+		Obstaculo clone= new Llama(0,0);
+		return clone;
 	}
 
 }

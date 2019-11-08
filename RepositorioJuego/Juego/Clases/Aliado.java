@@ -12,6 +12,7 @@ public abstract class Aliado extends GameObject {
 	protected Arma arma;
 	protected boolean herido;
 	protected EstadoAliado estado;
+	
 	protected Aliado(int x,int y) {
 		super(x,y);	
 		label.addMouseListener(new oyenteLabel());

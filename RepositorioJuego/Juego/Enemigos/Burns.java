@@ -39,12 +39,6 @@ public class Burns extends Enemigo {
 	public void parar() {
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsParado.png")));
 	}
-	
-
-	@Override
-	public Enemigo clonar() {
-		return new Burns(0,0);
-	}
 
 	@Override
 	public void cambiarLabel() {
@@ -55,16 +49,9 @@ public class Burns extends Enemigo {
 			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BurnsAtacaGif.gif")));
 	}
 	
-	private void enemigoAleatorio() {
-		Random numAleatorio = new Random();
-		int n = numAleatorio.nextInt(5);
-		if(n==0) {
-			this.setEstado(new EnemigoSuperPoderoso(this));
-			this.vida=3000;
-		}
-		else {
-			this.setEstado(new EnemigoNormal(this));
-			this.vida=2000;
-		}
+	@Override
+	public Enemigo clonar() {
+		Enemigo clone= new Burns(0,0);
+		return clone;
 	}
 }

@@ -19,7 +19,6 @@ public class ColPowerUp extends Colisionador{
 	
 	@Override
 	public void visitar(Aliado a) {
-		a.disminuirVida(power.getDano());
 	}
 
 	@Override

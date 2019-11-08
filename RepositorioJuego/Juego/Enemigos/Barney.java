@@ -34,7 +34,6 @@ public class Barney extends Enemigo {
 	@Override
 	public Enemigo clonar() {
 		Enemigo clone= new Barney(0,0);
-		setearValoresClone(clone);
 		return clone;
 	}
 

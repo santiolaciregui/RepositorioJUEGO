@@ -14,7 +14,6 @@ public class Apu extends Enemigo {
 		dano=200;
 		vida=1000;
 		monedas=500;
-		puntosDeMuerte=1000;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/ApuCaminaGif.gif")));
 		label.setBounds(x, y,117 , 110);
 		estado = new EnemigoNormal(this);
@@ -39,7 +38,7 @@ public class Apu extends Enemigo {
 
 	@Override
 	public Enemigo clonar() {
-		Enemigo clone= new Flanders(0,0);
+		Enemigo clone= new Apu(0,0);
 		return clone;
 	}
 

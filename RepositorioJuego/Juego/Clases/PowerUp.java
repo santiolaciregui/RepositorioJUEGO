@@ -13,7 +13,6 @@ public abstract class PowerUp extends GameObject{
 		vida=50;
 		col= new ColPowerUp(this);
 		label.addMouseListener(new oyenteLabel());
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/PremioKrusty.gif")));
 		label.setBounds(x, y+55, 75, 60);
 		
 	}

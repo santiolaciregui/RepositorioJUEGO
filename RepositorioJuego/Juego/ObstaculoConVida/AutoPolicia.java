@@ -2,7 +2,6 @@
 package ObstaculoConVida;
 
 import javax.swing.ImageIcon;
-import Clases.GameObject;
 import Clases.Obstaculo;
 
 public class AutoPolicia extends ObstaculoConVida{
@@ -17,11 +16,6 @@ public class AutoPolicia extends ObstaculoConVida{
 	@Override
 	public void mover() {	}
 	
-	@Override
-	public void atacar(GameObject e) {
-		// TODO Auto-generated method stub
-		
-	}
 	@Override
 	public Obstaculo clonar() {
 		Obstaculo clone= new AutoPolicia(0,0);

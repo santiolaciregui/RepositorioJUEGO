@@ -6,7 +6,7 @@ public class Bart extends Aliado {
 
 	public Bart(int x, int y) {
 		super(x,y);
-		dano=200;
+		dano=100;
 		vida=800;
 		precio=1000;
 		monedas=precio;

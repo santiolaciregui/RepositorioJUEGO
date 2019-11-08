@@ -11,7 +11,7 @@ public class Homero extends Aliado {
 		danoArma=400;
 		dano=danoArma/4;
 		vida=1100;
-		precio=1500;
+		precio=2500;
 		monedas=precio;
 		arma= new ArmaHomero();
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));

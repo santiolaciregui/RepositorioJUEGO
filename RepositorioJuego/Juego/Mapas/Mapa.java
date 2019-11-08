@@ -14,7 +14,6 @@ public abstract class Mapa {
 	protected Juego juego;
 	protected int cantFilas, altodelaFila, Hgrilla, Wgrilla;
 	protected int distribucion;
-	protected int vida;
 	protected LinkedList<GameObject> listaEnemigos, listaObstaculos;
 	protected Enemigo[] enemigos;
 	protected Obstaculo[] obstaculos;
@@ -48,9 +47,10 @@ public abstract class Mapa {
 				nuevo=null;
 			}
 		}
-		for(int i=0; i<cantObstaculos; i++) {
+		for(int i=0; i<cantObstaculos-1; i++) {
+			aux=ran.nextInt(cantObstaculos-1);
 			GameObject nuevo;
-			nuevo=obstaculos[i];
+			nuevo=obstaculos[aux].clonar();
 			Point lugar=posicionAleatoriaObstaculos();
 			nuevo.setPos(lugar.x, lugar.y);
 			ubicacionDefinitiva(nuevo);
@@ -119,7 +119,7 @@ public abstract class Mapa {
 		Random rany1 = new Random();
 		// Numero entero entre 25 y 75
 		int x = ranx1.nextInt(900-800+1)+800;
-		int y = rany1.nextInt(450-250+1)+220;
+		int y = rany1.nextInt(450-200+1)+200;
 		Point punto= new Point(x, y);
 		return punto;
 	}

@@ -1,5 +1,6 @@
 package ObstaculoConVida;
 
+import Clases.GameObject;
 import Clases.Obstaculo;
 import Colisionadores.ColObstaculoConVida;
 import Colisionadores.Visitor;
@@ -19,4 +20,6 @@ public abstract class ObstaculoConVida extends Obstaculo {
 	public void serColisionado(Visitor col) {
 		col.visitar(this);
 	}
+	
+	public void atacar(GameObject e) {	}
 }

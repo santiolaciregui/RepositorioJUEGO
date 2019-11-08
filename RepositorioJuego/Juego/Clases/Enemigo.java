@@ -3,6 +3,8 @@ package Clases;
 import java.util.Random;
 import Armas.Arma;
 import Colisionadores.Visitor;
+import Estados.EnemigoNormal;
+import Estados.EnemigoSuperPoderoso;
 import Estados.Estado;
 import PowerUps.Congelar;
 import PowerUps.Curacion;
@@ -58,9 +60,8 @@ public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 	
 	protected void lanzarPowerUp() {
 		Random numAleatorio = new Random();
-		int n = numAleatorio.nextInt(8-1+1) + 1;
+		int n = numAleatorio.nextInt(10) + 1;
 		PowerUp powerup=null;
-		n = 4;
 		switch(n) {
 			case 1: 
 				powerup= new Curacion(this.getPos().x,this.getPos().y);
@@ -89,6 +90,20 @@ public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 		estado=est;
 		
 	}	
+	
+	protected void enemigoAleatorio() {
+		Random numAleatorio = new Random();
+		int n = numAleatorio.nextInt(5);
+		if(n==0) {
+			this.setEstado(new EnemigoSuperPoderoso(this));
+			this.vida=3000;
+		}
+		else {
+			this.setEstado(new EnemigoNormal(this));
+			this.vida=2000;
+		}
+	}
+	
 	protected void setearValoresClone(Enemigo e) {
 		e.setVida(this.getVida());
 		e.setDano(this.getDano());
@@ -98,6 +113,7 @@ public abstract class Enemigo extends GameObject implements Clonacion<Enemigo>{
 		e.setCol(new ColEnemigo(e));
 		e.monedas=this.monedas;
 		e.arma=this.arma;
+		e.setLabel(this.getLabel());
 	}
 	
 	

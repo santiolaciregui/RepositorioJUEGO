@@ -2,7 +2,7 @@ package ObstaculoConVida;
 
 import javax.swing.ImageIcon;
 
-import Clases.GameObject;
+import Clases.Obstaculo;
 
 public class Tambor extends ObstaculoConVida{
 	
@@ -12,14 +12,11 @@ public class Tambor extends ObstaculoConVida{
 		label.setBounds(x, y+100, 130, 130);
 		vida=400;
 	}
+	
 	@Override
 	public void mover() {	}
-	@Override
-	public void atacar(GameObject e) {
-		// TODO Auto-generated method stub
-		
-	}
-	public ObstaculoConVida clonar() {
+	
+	public Obstaculo clonar() {
 		return new Tambor(0,0);
 	}
 

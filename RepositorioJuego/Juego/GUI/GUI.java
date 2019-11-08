@@ -17,7 +17,7 @@ public class GUI extends JFrame{
 	private Juego juego;
 	protected GameObject proximoAagregar, proximoAeliminar;
 	private ColeccionBotones botones;
-	private JLabel etiquetaPuntaje, etiquetaVida, etiquetaMonedas, gameOver, ganar;
+	private JLabel etiquetaVida, etiquetaMonedas, gameOver, ganar;
 	private boolean lock = false;
 	private HiloTiempo tiempo;
 	private int direction = -1;

@@ -3,7 +3,6 @@ package Aliados;
 import javax.swing.ImageIcon;
 
 import Clases.Aliado;
-import Clases.GameObject;
 
 public class Lisa extends Aliado {
 
@@ -11,7 +10,7 @@ public class Lisa extends Aliado {
 		super(x,y);
 		dano=100;
 		vida=700;
-		precio=800;
+		precio=1000;
 		monedas=precio;
 		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParada.png")));
 		label.setBounds(x, y,117 , 110);

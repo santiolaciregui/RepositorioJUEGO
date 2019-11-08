@@ -72,8 +72,6 @@ public abstract class GameObject {
 	}
 	
 	public void disminuirVida(int dano) {	}
-	public void aumentarDano(int dano) {	}
-	public void aumentarVida(int vida) {	}
 	public abstract void serColisionado(Visitor visitor);
 	public abstract void mover();
 	public abstract void atacar(GameObject e);
