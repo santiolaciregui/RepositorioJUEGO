@@ -5,8 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
 import Clases.Juego;
-import Clases.Obstaculo;
-import Clases.Enemigo;
+import Clases.Obstaculo;import Clases.Enemigo;
 import Clases.GameObject;
 
 public abstract class Mapa {
@@ -35,7 +34,8 @@ public abstract class Mapa {
 			aux= ran.nextInt(2);
 			GameObject nuevo;
 			nuevo=enemigos[aux].clonar();
-			nuevo.setPos(posicionAleatoria().x, posicionAleatoria().y);
+			Point lugar=posicionAleatoriaEnemigos();
+			nuevo.setPos(lugar.x, lugar.y);
 			ubicacionDefinitiva(nuevo);
 			if(!hayColisionesConOtrosPersonajes(nuevo, entidades)) {
 				listaEnemigos.addLast(nuevo);
@@ -46,11 +46,11 @@ public abstract class Mapa {
 				nuevo=null;
 			}
 		}
-		for(int i=0; i<3; i++) {
-			aux= ran.nextInt(2);
+		for(int i=0; i<cantObstaculos; i++) {
 			GameObject nuevo;
-			nuevo=obstaculos[aux].clonar();
-			nuevo.setPos(posicionAleatoria().x, posicionAleatoria().y);
+			nuevo=obstaculos[i];
+			Point lugar=posicionAleatoriaObstaculos();
+			nuevo.setPos(lugar.x, lugar.y);
 			ubicacionDefinitiva(nuevo);
 			if(!hayColisionesConOtrosPersonajes(nuevo, entidades)) {
 				entidades.addLast(nuevo);
@@ -102,12 +102,22 @@ public abstract class Mapa {
 		return hayColision;
 	}
 	
-	public Point posicionAleatoria() {
+	public Point posicionAleatoriaEnemigos() {
+		Random ranx = new Random();
+		Random rany = new Random();
+		// Numero entero entre 25 y 75
+		int x = ranx.nextInt(2200-1200+1)+1200;
+		int y = rany.nextInt(550-220+1)+220;
+		Point punto= new Point(x, y);
+		return punto;
+	}
+	
+	public Point posicionAleatoriaObstaculos() {
 		Random ranx1 = new Random();
 		Random rany1 = new Random();
 		// Numero entero entre 25 y 75
-		int x = ranx1.nextInt(1800-1200+1)+1200;
-		int y = rany1.nextInt(550-220+1)+220;
+		int x = ranx1.nextInt(900-800+1)+800;
+		int y = rany1.nextInt(450-250+1)+220;
 		Point punto= new Point(x, y);
 		return punto;
 	}
