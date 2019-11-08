@@ -4,7 +4,8 @@ import java.awt.event.MouseListener;
 import Armas.Arma;
 import Colisionadores.Visitor;
 import Estados.Estado;
-import Estados.Normal;
+import Estados.EstadoAliado;
+import Estados.AliadoNormal;
 import Colisionadores.ColAliado;
 
 public abstract class Aliado extends GameObject {
@@ -17,7 +18,7 @@ public abstract class Aliado extends GameObject {
 		col = new ColAliado(this);
 		label.addMouseListener(new oyenteLabel());
 		herido = false;
-	
+		estado=new AliadoNormal(this);
 	}
 	
 	public void aumentarVida(int vida ) {
@@ -27,12 +28,16 @@ public abstract class Aliado extends GameObject {
 	public void atacar(GameObject e) {
 		e.disminuirVida(dano);
 	}
-	public void disminuirVida(int damage) {
+	
+	public void reducirVida(int dano) {
 		vida-=dano;
 		if (!herido) {
 			herido = true;
 			monedas /= 2;
 		}
+	}
+	public void disminuirVida(int damage) {
+		estado.disminuirVida(damage);
 	}
 
 	public void serColisionado(Visitor col) {
@@ -45,6 +50,9 @@ public abstract class Aliado extends GameObject {
 		dano+=d;
 	}
 
+	public void setEstado(EstadoAliado e) {
+		estado=e;
+	}
 	public class oyenteLabel implements MouseListener{
 
 		@Override
@@ -77,5 +85,6 @@ public abstract class Aliado extends GameObject {
 			
 		}
 	}
-
+	
+	public abstract void cambiarLabel();
 }

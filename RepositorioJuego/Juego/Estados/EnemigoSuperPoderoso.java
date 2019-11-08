@@ -2,9 +2,9 @@ package Estados;
 
 import Clases.Enemigo;
 
-public class SuperPoderoso extends Estado {
+public class EnemigoSuperPoderoso extends EstadoEnemigo {
 	
-	public SuperPoderoso(Enemigo e) {
+	public EnemigoSuperPoderoso(Enemigo e) {
 		super(e);
 	}
 
@@ -12,7 +12,7 @@ public class SuperPoderoso extends Estado {
 	public void disminuirVida(int dano) {
 		enemigo.reducirVida(dano/2);
 		if(enemigo.getVida()<=2000) {
-			enemigo.setEstado(new Normal(enemigo));
+			enemigo.setEstado(new EnemigoNormal(enemigo));
 			enemigo.cambiarLabel();
 		}
 	}
