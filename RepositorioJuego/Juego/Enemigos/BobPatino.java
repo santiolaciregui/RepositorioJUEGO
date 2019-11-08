@@ -32,9 +32,7 @@ public class BobPatino extends Enemigo {
 
 	@Override
 	public Enemigo clonar() {
-		Enemigo clone= new BobPatino(0,0);
-		setearValoresClone(clone);
-		return clone;
+		return new BobPatino(0,0);
 	}
 
 	@Override

@@ -33,9 +33,7 @@ public class Flanders extends Enemigo  {
 
 	@Override
 	public Enemigo clonar() {
-		Enemigo clone= new Flanders(0,0);
-		setearValoresClone(clone);
-		return clone;
+		return new Flanders(0,0);
 	}
 
 	@Override

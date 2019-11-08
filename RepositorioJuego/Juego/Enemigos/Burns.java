@@ -45,9 +45,7 @@ public class Burns extends Enemigo {
 
 	@Override
 	public Enemigo clonar() {
-		Enemigo clone= new Burns(0,0);
-		setearValoresClone(clone);
-		return clone;
+		return new Burns(0,0);
 	}
 
 	@Override
