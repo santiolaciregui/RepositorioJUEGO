@@ -8,7 +8,7 @@ import Mapas.*;
 public class Juego {
 	private LinkedList<GameObject> entidades, entidadesAeliminar, entidadesPendientes;
 	private GUI gui;
-	private int puntaje, monedas, vida;
+	private int monedas, vida;
 	private Tienda tienda;
 	private HiloTiempo tiempo;
 	private Mapa mapa;
@@ -21,7 +21,6 @@ public class Juego {
 		this.mapa=new Mapa1(this);
 		tienda= new Tienda(this);
 		monedas = 4999;	
-		puntaje=0;
 		vida=3;
 		iniciarEntidades();
 	}

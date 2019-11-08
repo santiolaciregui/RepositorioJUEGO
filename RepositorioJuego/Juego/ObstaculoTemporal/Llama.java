@@ -12,8 +12,8 @@ public class Llama extends ObstaculoTemporal {
 		monedas=11;
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LlamaGif.gif")));
 		label.setBounds(x, y+100, 155, 155);
-		vida=100;
-		dano=10;
+		vida=580;
+		dano=15;
 	}
 	
 	public void atacar(GameObject e) {

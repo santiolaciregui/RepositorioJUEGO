@@ -15,6 +15,4 @@ public class Bomba extends ObjetoPrecioso{
 	}
 	@Override
 	public void mover() {super.mover();}
-
-	
 }

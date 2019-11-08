@@ -10,8 +10,8 @@ public class Lava extends ObstaculoTemporal {
 		monedas=5000;
 		this.label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LavaGif.gif")));
 		label.setBounds(x, y+100, 107, 130);
-		vida=200;
-		dano=400;
+		vida=400;
+		dano=100;
 	}
 
 	@Override

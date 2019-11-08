@@ -22,7 +22,6 @@ public abstract class ObstaculoConVida extends Obstaculo {
 		}
 	}
 
-
 	public void disminuirVida(int valor, int damage) {
 		super.disminuirVida(damage);
 		monedas=monedas/2;
