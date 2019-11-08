@@ -12,10 +12,21 @@ public class AliadoSuperPoderoso extends EstadoAliado {
 	public void disminuirVida(int dano) {
 		aliado.setEstado(new AliadoNormal(aliado));
 		aliado.setDano(dano);
-		aliado.cambiarLabel();
+		aliado.atacarSuperPoderosoGrafico();
 	}
 
 	@Override
 	public void aumentarDano(int d) {	}
+
+	@Override
+	public void atacar() {
+		aliado.atacarSuperPoderosoGrafico();
+	}
+
+	@Override
+	public void parar() {
+		aliado.pararSuperPoderosoGrafico();
+		
+	}
 
 }

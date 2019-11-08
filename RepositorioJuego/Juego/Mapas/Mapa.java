@@ -5,7 +5,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
 import Clases.Juego;
-import Clases.Obstaculo;import Clases.Enemigo;
+import Clases.Obstaculo;
+import Clases.Enemigo;
 import Clases.GameObject;
 
 public abstract class Mapa {

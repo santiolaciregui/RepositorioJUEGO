@@ -20,12 +20,26 @@ public class Homero extends Aliado {
 		contador=0;
 	}
 	
-	public void parar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroParado.png")));
+	public void atacarNormalGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	}
+	
+	public void pararNormalGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
 	}
 
 	@Override
-	public void mover() { atacar(null);	}
+	public void mover() {	
+//		estado.parar();
+	}
+	
+	public void atacarSuperPoderosoGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	}
+	
+	public void pararSuperPoderosoGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
+	}
 
 	@Override
 	public void atacar(GameObject e) {
@@ -37,12 +51,5 @@ public class Homero extends Aliado {
 		}
 	}
 
-	public void cambiarLabel() {
-		if(dano>100)
-			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaGif.gif")));
-		else
-			if(dano==100)
-				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/HomeroAtacaMejoradoGif.gif")));
-	}
 
 }

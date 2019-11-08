@@ -14,7 +14,14 @@ public class AliadoNormal extends EstadoAliado{
 	public void aumentarDano(int d) {
 		aliado.setDano(d);
 		aliado.setEstado(new AliadoSuperPoderoso(aliado));
-		aliado.cambiarLabel();
+	}
+	@Override
+	public void atacar() {
+		aliado.atacarNormalGrafico();
+	}
+	@Override
+	public void parar() {
+		aliado.pararNormalGrafico();		
 	}
 
 }

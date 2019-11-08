@@ -9,5 +9,8 @@ public abstract class EstadoAliado extends Estado {
 	}
 	
 	public abstract void aumentarDano(int d);
+	public abstract void atacar();
+	public abstract void parar();
+	
 
 }

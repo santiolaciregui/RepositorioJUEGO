@@ -21,12 +21,20 @@ public class Abuelo extends Aliado {
 		contador=0;
 	}
 	
-	public void atacar(GameObject e) {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
+	public void atacarNormalGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
 	}
 	
-	public void parar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloParado.png")));
+	public void pararNormalGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
+	}
+	
+	public void atacarSuperPoderosoGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	}
+	
+	public void pararSuperPoderosoGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
 	}
 	
 	public void disparar() {
@@ -44,14 +52,6 @@ public class Abuelo extends Aliado {
 	@Override
 	public void mover() {	
 		disparar();
-	}
-
-	public void cambiarLabel() {
-		if(dano>150)
-			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaMejoradoGif.gif")));
-		else
-			if(dano==150)
-				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/AbueloAtacaGif.gif")));
 	}
 
 }

@@ -26,6 +26,7 @@ public abstract class Aliado extends GameObject {
 	
 	public void atacar(GameObject e) {
 		e.disminuirVida(dano);
+		estado.atacar();
 	}
 	
 	public void reducirVida(int dano) {
@@ -43,7 +44,10 @@ public abstract class Aliado extends GameObject {
 		col.visitar(this);
 	}
 	
-	public void mover() {	}
+	public void mover() {	
+		estado.parar();
+	}
+	
 	
 	public void aumentarDano(int d) {
 		estado.aumentarDano(d);
@@ -85,5 +89,9 @@ public abstract class Aliado extends GameObject {
 		}
 	}
 	
-	public abstract void cambiarLabel();
+	public abstract void atacarSuperPoderosoGrafico();
+	public abstract void atacarNormalGrafico();
+
+	public abstract void pararSuperPoderosoGrafico();
+	public abstract void pararNormalGrafico();
 }

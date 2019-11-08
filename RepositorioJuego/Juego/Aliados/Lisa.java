@@ -17,26 +17,24 @@ public class Lisa extends Aliado {
 		label.setBounds(x, y,117 , 110);
 	}
 	
-	public void atacar(GameObject e) {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaAtacaGif.gif")));
-		super.atacar(e);
+	public void atacarNormalGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
 	}
 	
-	public void parar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParada.png")));
+	public void pararNormalGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
 	}
 
 	@Override
-	public void mover() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaParada.png")));
-	}
-
-	public void cambiarLabel() {
-		if(dano>100)
-			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaAtacaMejoradaGif.gif")));
-		else
-			if(dano==100)
-				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LisaAtacaGif.gif")));
+	public void mover() {	
+//		estado.parar();
 	}
 	
+	public void atacarSuperPoderosoGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	}
+	
+	public void pararSuperPoderosoGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
+	}
 }

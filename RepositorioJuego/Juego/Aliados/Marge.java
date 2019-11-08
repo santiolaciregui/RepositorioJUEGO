@@ -16,26 +16,24 @@ public class Marge extends Aliado {
 		monedas = precio;
 	}
 	
-	public void atacar(GameObject e) {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeAtacaGif.gif")));
-		super.atacar(e);
+	public void atacarNormalGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
 	}
 	
-	public void parar() {
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
+	public void pararNormalGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
 	}
 
 	@Override
-	public void mover() {
-
-		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeParada.png")));
+	public void mover() {	
+//		estado.parar();
 	}
-
-	public void cambiarLabel() {
-		if(dano>200)
-			label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeAtacaMejoradaGif.gif")));
-		else
-			if(dano==200)
-				label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/MargeAtacaGif.gif")));
+	
+	public void atacarSuperPoderosoGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartAtacaGif.gif")));
+	}
+	
+	public void pararSuperPoderosoGrafico() {
+		label.setIcon(new ImageIcon(getClass().getResource("/Imagenes/BartParado.png")));
 	}
 }
